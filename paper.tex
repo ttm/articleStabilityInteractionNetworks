@@ -94,7 +94,7 @@ Centro de Ciências Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
              %  but any date may be explicitly specified
 
 \begin{abstract}
-    This article reports a minimal and general characterization of interaction networks evolution. Such a task involves a selection of aspects to investigate, which lead to: 1) activity distribution in time and among participants, 2) a sound and stable classification of vertex: peripheral, intermediary and hub sectors, 3) composition of basic measures into components with greater dispersion. While time patterns of activity are not obvious, participant activity follow concentrations expected by scale-free networks. Comparison with ideal Erd\"os-R\'enyi network with the same number of edges and vertexes revealed as a sound criterion  for distinguishing sectors on the networks. Principal components in basic measures spaces revealed interesting and regular patterns of independence and dispersion. This includes a ranking of measures that most contribute to dispersion: 1) degree and strength measures, 2) symmetry related quantization, and 3) clusterization. Results suggested typologies for these networks and participants. Further work include considerations of text production, psychoanalysis inspired typologies, participatory democracy exploitation of observed properties, and better visualization support for network evolution.
+    This article reports a characterization of interaction networks and its stability. Such a task involves a selection of aspects to investigate, which lead to: 1) activity distribution in time and among participants, 2) a sound classification of vertex: peripheral, intermediary and hub sectors, 3) combination of basic measures into components with greater dispersion. While time patterns of activity are not obvious, participant activity follows a scale-free distribution. Comparison with ideal Erd\"os-R\'enyi network with the same number of edges and vertexes was a sound criterion  for distinguishing sectors on the networks. Principal components in basic measures spaces revealed interesting and regular patterns of independence and dispersion. This includes a ranking of measures that most contribute to dispersion: 1) degree and strength measures, 2) symmetry related quantization, and 3) clusterization. Results suggest typologies for these networks and participants. Further work include considerations of text production, psychoanalysis inspired typologies, participatory democracy exploitation of observed properties, and better visualization support for network evolution.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
@@ -129,7 +129,7 @@ for more than a decade~\cite{barabasiEvo,newmanEvolving}.
 While significant measures will depend on the model and system characteristics~\cite{newmanStru, newmanWeight},
 this work considers only directed, weighted and human interaction networks. Undirected and unweighted representation of such networks is also seen in the literature and can be obtained by simplification~\cite{GMANE2}.
 
-Text production and typologies of online participants benefit from results here presented~\cite{rcText,rcTipo}. 
+Text mining and typologies of online participants benefit from results here presented~\cite{rcText,rcTipo}. 
 Although all networks considered originated from email lists,
  coherence with literature suggests that results hold for a more general class of interaction networks,
  such as observed in online platforms (LinkedIn, Facebook, Twitter).
@@ -142,7 +142,7 @@ The evolution considered in the present article is characterized by a constant n
  The evolution of interaction networks was addressed with focus on community evolution, a work that ignores the direction of edges~\cite{barabasiEvo}. Two topologically different networks are repported to emerge, depending on the frequency of interactions, which present a generalized power law or an exponencial connectivity distribution~\cite{barabasiTopologicalEv}. 
 Recent work on email lists consider an isolated snapshot in order to verify or draw hypothesis. In such, free-scale properties were verified~\cite{bird}, and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
 
- Such results are in accordance with phenomena observed in this work and linguistic characterization is being described in a deriving article~\cite{rcText}.
+ Such results are in accordance with phenomena observed in this work and linguistic characterization is being described in a deriving article~\cite{rcText}. See Appendix~\ref{sec:fure} for further considerations of related work.
 
 \section{Data description}
     \subsection{Email lists and messages}
@@ -267,7 +267,7 @@ These compound criteria, and reduction of possibilities to them, can be formaliz
 
 Results from applying this classification method is further reported in Section~\ref{subsec:pih}.
 
-        \subsubsection{Prevalence of topological measures}
+        \subsubsection{Topological measures}\label{measures}
 This article
 restricts this analisys to a small selection of the most basic
 measures of each vertex:
@@ -300,7 +300,7 @@ Evolution of network is observed within a fixed number of messages (window size:
  All $ws=$50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000 were used. Within a same $ws$, the number vertex and edges vary in time, as do other network characteristics. Further work should deepen inspection of measure interdependence, this article holds to measures in Section~\ref{measures}.
 
         \subsubsection*{Visualization of network evolution}
-In refining hypotheses, visualization of the network was crucial. Animations, image galleries and an online gadgets were made~\cite{animacoes,galGMANE,appGMANE}. Mapping of various topological measures to glyphs and layouts are being further explored as a parallel research. Furthermore, stable aspects of measures prominance along time are captured through mean and standard deviation (see Section~\ref{}). Constant sector sizes along time are observed in a timeline fashion in Appendix~\ref{}.
+In refining hypotheses, visualization of the network was crucial. Animations, image galleries and an online gadgets were made~\cite{animacoes,galGMANE,appGMANE}. Mapping of various topological measures to glyphs and layouts are being further explored as a parallel research. Furthermore, stable aspects of measures prominance along time are captured through mean and standard deviation (see Section~\ref{measures}). Constant sector sizes along time are observed in a timeline fashion in Appendix~\ref{figures}.
 
 
     \subsection{Typological deepening}
@@ -328,7 +328,7 @@ It was considered central to benefit from key human typologies, both by adding d
     \subsection{Constancy and discrepancy of activity along time}\label{constDisc}
         \subsubsection{Seconds and minutes}
 The incidence of messages at each second in a minute and at each minute in an hour is compatible with uniform distribution tests.
-If compared to simulations using an uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function.}, messages were slightly more evenly distributed in all lists: for both seconds and minutes  $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$. Simulations reach these values, but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$ (see subsection~\ref{consistency}).
+If compared to simulations using an uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function.}, messages were slightly more evenly distributed in all lists: for both seconds and minutes  $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$. Simulations reach these values, but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
 
         \subsubsection{Hours of the day}
 Table~\ref{dia} shows how the four lists distribute activity along the day.
@@ -368,7 +368,7 @@ A reasonable window size for observation can be inferred by monitoring the giant
 Appendix~\ref{figures} is dedicated to figures on these networks and their evolution.
 
 
-    \subsection{Prevalence of centrality over asymmetries and asymetries over clusterization}\label{measures}
+    \subsection{Prevalence of centrality over asymmetries and asymetries over clusterization}\label{prevalence}
 
 The principal component exhibit ponderation of centrality measures: degrees, strengthes and betweenness centrality. Clustering coefficient is presented in almost perfect orthogonality. Dispersion is more prevalent in symmetry related measures than clustering coefficient. This holds for all network snapshots observed, even with as few messages as to degenerate structure. Symmetric and asymmetric edges have been reported as bounded to different roles played by participants and relations~\cite{newmanEvolving}. Principal components formation from original measures can be observed in Tables~\ref{compPCA0},~\ref{compPCA} and~\ref{compPCA2}. Individual vertexes relation with top two principal components can be appreciated in Figures~\ref{PCA} and~\ref{PCA2}.
 This peculiar first component that consists of the averaged sum of degree, strength and betweenness measures was verified to be incident in virtually all networks with 500 or more messages and most smaller networks (degeneration of basic structure is critical with $ws \approx 50-100$ messages). This composition of principal component suggests that all six degree and strength measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics.
@@ -456,17 +456,61 @@ Renato Fabbri is grateful to CNPq (process: 140860/2013-4,
 project 870336/1997-5), United Nations Development Program (PNUD/ONU, contract: 2013/000566; project BRA/12/018)  and 
 the Postgraduate Committee of the IFSC/USP. This author is also grateful for
 the American Jewish Committee for maintaining an online copy of the Adorno book
-used on the epigraph~\cite{adorno}. Authors thanks Gmane creators and keepers, specifically: Gmane is run by Lars Magne Ingebrigtsen, and the administrators are Tom Koelman, Jason R. Mastaler, Steinar Bang, Jon Ericson, Wolfgang Schnerring, Sebastian D.B. Krause, Nicolas Bareil, Raymond Scholz, and Adam Sjøgren. Authors thank refered email lists communities and welcome feedback as core contribution to this, and similar, research.
+used on the epigraph~\cite{adorno}. Authors thanks Gmane creators and maintainers, specifically: Gmane is run by Lars Magne Ingebrigtsen, and the administrators are Tom Koelman, Jason R. Mastaler, Steinar Bang, Jon Ericson, Wolfgang Schnerring, Sebastian D.B. Krause, Nicolas Bareil, Raymond Scholz, and Adam Sjøgren. Authors thank refered email lists communities and welcome feedback as core contribution to this, and similar, research.
 \end{acknowledgments}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
+\section{Data and scripts further description}\label{scripts}
+Messages are downloaded from GMANE database by RSS in the mbox email text format. 
+They are requested one by one to avoid reaching maximum size of the requests accepted by
+GMANE API. 
+
+Every message has about 30 fields, from which the following are crucial
+for the present work:
+\begin{itemize}
+    \item ``From'' field, as it specifies the sender of the message, in the usual format of ``First\_name Last\_Name $<email>$''.
+    \item ``Date'' field, which is given with the resolution of a second.
+    \item ``Message-ID'', important to state antecedent/consequent relation between messages and therefore from an author to a replier.
+    \item ``References'', has the ID of the message it is an answer for, if any, and earlier messages in the thread.
+\end{itemize}
+
+Field ``In-Reply-To'' has only the ID of the message it replies and can be sometimes
+a shortcut or an alternative to ``References''. Also, the textual content of the messages,
+accessed through ``payload'' method of the mbox message object, is of central interest and
+the authors dedicated an article to include the textual content of the messages to the analysis.
+
+Basic constructs for obtaining all results in this article are described in~\ref{ap:os}. Scripts, written in Python programming language, are publicly available at~\cite{scriptsFim} and very briefly specified below.
+
+\subsection{Third party libraries and software}
+Programming resources used were mainly Python and part of the
+common scientific bundle for the language. More specifically,
+scripts where written for 2.7.3 version of Python,
+with the following third party libraries: Numpy, Pylab/Matplotlib, NetworkX, IGraph.
+Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
+
+\subsection{Python scripts}\label{ap:os}
+All results were obtained with scripts writen in the Python programming language. These are kept in a public repository for backup and sharing with research community~\cite{scriptsFim}. Core scripts, for deriving structures and results exhibited in this article, are in the LEIAME file.
+\section{Further consideration of related work}\label{sec:fure}
+Unreciprocated edges often exceed 50\%, which matches empirical evidence reported in~\cite{newmanEvolving}. Although no correlation of topological characteristics and geographical position was found in a pertinent study~\cite{barabasiGeo}, geographical incidences should be present in further refinement of the analysis.
+
+The seminal Nature Letter by Palla, Bara{\'a}si and Vicsek~\cite{barabasiEvo} has strong confluence with this work, suggesting that smaller size of MET community is responsible for the stronger hubs observed.
+
+Controllability of these networks is also an uncovered issue. These has unintuitive properties and might bring into forefront crucial differences between email interaction networks and interaction networks in Facebook or Twitter~\cite{barabasiControlCapacity,barabasiControlCentrality,barabasiControllability}.
+
+Gender related behavior has been notified in mobile phone datasets~\cite{barabasiSex}, which can be further investigated to hold in email lists and in evolving terms, as a community oriented, non-private interactions are drawn from public emails groups with hundred of participants. 
+
+Considered years altogether, hundreds to thousands of participants post on a list, more rarely dozens or tenths of thousands. The most active lists usually reaches a few thousands of participants. Authors have not checked each list (more than 20 thousand public email groups~\cite{GMANE}), and this might lead to a deeper insights in community-related network evolution.
+
+
+
 
 \section{Tables}\label{sectables}
+\clearpage
 \subsection{PCA tables}
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1}          & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
@@ -529,6 +573,7 @@ $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
   \label{compPCA2}
 \end{table}
 
+\clearpage
 
 \subsection{Tables for activity along time}\label{tabTime}
 \begin{table*}
@@ -676,37 +721,7 @@ Dec & 6.81 &                        &                         &  & & 4.59 & & & 
 
 
 
-\section{Data and scripts further description}\label{scripts}
-Messages are downloaded from GMANE database by RSS in the mbox email text format. 
-They are requested one by one to avoid reaching maximum size of the requests accepted by
-GMANE API. 
-
-Every message has about 30 fields, from which the following are crucial
-for the present work:
-\begin{itemize}
-    \item ``From'' field, as it specifies the sender of the message, in the usual format of ``First\_name Last\_Name $<email>$''.
-    \item ``Date'' field, which is given with the resolution of a second.
-    \item ``Message-ID'', important to state antecedent/consequent relation between messages and therefore from an author to a replier.
-    \item ``References'', has the ID of the message it is an answer for, if any, and earlier messages in the thread.
-\end{itemize}
-
-Field ``In-Reply-To'' has only the ID of the message it replies and can be sometimes
-a shortcut or an alternative to ``References''. Also, the textual content of the messages,
-accessed through ``payload'' method of the mbox message object, is of central interest and
-the authors dedicated an article to include the textual content of the messages to the analysis.
-
-Basic constructs for obtaining all results in this article are described in~\ref{ap:os}. Scripts, written in Python programming language, are publicly available at~\cite{scriptsFim} and very briefly specified below.
-
-\subsection{Third party libraries and software}
-Programming resources used were mainly Python and part of the
-common scientific bundle for the language. More specifically,
-scripts where written for 2.7.3 version of Python,
-with the following third party libraries: Numpy, Pylab/Matplotlib, NetworkX, IGraph.
-Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
-
-\subsection{Python scripts}\label{ap:os}
-All results were obtained with scripts writen in the Python programming language. These are kept in a public repository for backup and sharing with research community~\cite{scriptsFim}. Core scripts, for deriving structures and results exhibited in this article, are in the LEIAME file.
-
+\clearpage
 \section{Figures of vertex classification fractions as the network evolves}\label{figures}
 
 Two lists are exhibited in this section, CPP and LAD. These structures are very similar in all
@@ -724,7 +739,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/10000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:cpp10000_}
 \end{figure*}
 
@@ -740,7 +755,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/5000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:cpp5000_}
 \end{figure*}
 
@@ -756,7 +771,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/1000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:cpp1000_}
 \end{figure*}
 
@@ -773,7 +788,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/500_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:cpp500_}
 \end{figure*}
 
@@ -790,7 +805,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/250_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:cpp250_}
 \end{figure*}
 
@@ -807,7 +822,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/100_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:cpp100_}
 \end{figure*}
 
@@ -823,7 +838,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/50_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:cpp50_}
 \end{figure*}
 
@@ -839,7 +854,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/10000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:lad10000_}
 \end{figure*}
 
@@ -855,7 +870,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/5000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:lad5000_}
 \end{figure*}
 
@@ -870,7 +885,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/1000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:lad1000_}
 \end{figure*}
 
@@ -887,7 +902,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/500_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:lad500_}
 \end{figure*}
 
@@ -904,7 +919,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/250_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:lad250_}
 \end{figure*}
 
@@ -921,7 +936,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/100_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:lad100_}
 \end{figure*}
 
@@ -937,7 +952,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/50_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{benchmarks}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
     \label{fig:lad50_}
 \end{figure*}
 
@@ -953,18 +968,6 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 %        \label{fig:PCM}
 %\end{figure*}
 %
-
-
-\section{Further consideration of related work}
-Unreciprocated edges often exceed 50\%, which matches empirical evidence reported in~\cite{newmanEvolving}. Although no correlation of topological characteristics and geographical position was found in a pertinent study~\cite{barabasiGeo}, geographical incidences should be present in further refinement of the analysis.
-
-The seminal Nature Letter by Palla, Bara{\'a}si and Vicsek~\cite{barabasiEvo} has strong confluence with this work, suggesting that smaller size of MET community is responsible for the stronger hubs observed.
-
-Controllability of these networks is also an uncovered issue. These has unintuitive properties and might bring into forefront crucial differences between email interaction networks and interaction networks in Facebook or Twitter~\cite{barabasiControlCapacity,barabasiControlCentrality,barabasiControllability}.
-
-Gender related behavior has been notified in mobile phone datasets~\cite{barabasiSex}, which can be further investigated to hold in email lists and in evolving terms, as a community oriented, non-private interactions are drawn from public emails groups with hundred of participants. 
-
-Considered years altogether, hundreds to thousands of participants post on a list, more rarely dozens or tenths of thousands. The most active lists usually reaches a few thousands of participants. Authors have not checked each list (more than 20 thousand public email groups~\cite{GMANE}), and this might lead to a deeper insights in community-related network evolution.
 
 
 
