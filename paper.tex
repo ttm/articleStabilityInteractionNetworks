@@ -28,6 +28,7 @@
 \usepackage{etex}
 \reserveinserts{58}
 \usepackage{morefloats}
+\usepackage{hyperref}
 
 \maxdeadcycles=1000
 
@@ -37,7 +38,7 @@
 
 %\title[Evolution of interaction networks]{On the evolution of interaction networks: primitive typology of vertex, prominence of measures and activity statistics}% Force line breaks with \\
 %\title[Evolution of interaction networks]{On the evolution of interaction networks: a primitive typology of vertex}% Force line breaks with \\
-\title[Stability of interaction networks]{Stability in human interaction networks: primitive typology of vertex, prominance of measures and activity statistics}% Force line breaks with \\
+\title[Stability of interaction networks]{Stability in human interaction networks: primitive typology of vertex, prominence of measures and activity statistics}% Force line breaks with \\
 
 \author{Renato Fabbri}%
  \homepage{http://ifsc.usp.br/~fabbri/}
@@ -136,10 +137,10 @@ Although all networks considered originated from email lists,
 
 
 \subsection{Related work}
- Works on network evolution often consider solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Moreover, selected exceptions are repported in this section.
+ Works on network evolution often consider solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Moreover, selected exceptions are reported in this section.
 The evolution considered in the present article is characterized by a constant number of messages, which is also present in literature, but was less explored to date.
 
- The evolution of interaction networks was addressed with focus on community evolution, a work that ignores the direction of edges~\cite{barabasiEvo}. Two topologically different networks are repported to emerge, depending on the frequency of interactions, which present a generalized power law or an exponencial connectivity distribution~\cite{barabasiTopologicalEv}. 
+ The evolution of interaction networks was addressed with focus on community evolution, a work that ignores the direction of edges~\cite{barabasiEvo}. Two topologically different networks are reported to emerge, depending on the frequency of interactions, which present a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. 
 Recent work on email lists consider an isolated snapshot in order to verify or draw hypothesis. In such, free-scale properties were verified~\cite{bird}, and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
 
  Such results are in accordance with phenomena observed in this work and linguistic characterization is being described in a deriving article~\cite{rcText}. See Appendix~\ref{sec:fure} for further considerations of related work.
@@ -147,17 +148,17 @@ Recent work on email lists consider an isolated snapshot in order to verify or d
 \section{Data description}
     \subsection{Email lists and messages}
 Email list messages were obtained from
-the GMANE email archive~\cite{GMANE}, which consists of more than 20,000 email lists and more than 130,000,000 messages~\cite{GMANEwikipedia}. These lists cover a variety of topics, mostly technology-related. It can be described as a corpus with metadata of its messages, like send time, place, sender name, sender email adderss etc.
+the GMANE email archive~\cite{GMANE}, which consists of more than 20,000 email lists and more than 130,000,000 messages~\cite{GMANEwikipedia}. These lists cover a variety of topics, mostly technology-related. It can be described as a corpus with metadata of its messages, like send time, place, sender name, sender email address etc.
 GMANE usage in scientific research is reported in studies of isolated lists and of lexical innovations~\cite{GMANE2,bird}. Appendix~\ref{scripts} is dedicated scripts for gathering and processing GMANE email messages.
 
 
     \subsection{Chosen dataset}
 The four lists below were selected for their diversity, easing initial observance of natural and general properties.
 \begin{itemize}
-    \item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE archive.}. Participantes are from different countries, and English is the language used the most. More technical and less active version of LAU. Abbreviated LAD from now on.
+    \item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE archive.}. Participants are from different countries, and English is the language used the most. More technical and less active version of LAU. Abbreviated LAD from now on.
     \item Development list for the standard C++ library\footnote{gmane.comp.gcc.libstdc++.devel is list ID in GMANE archive.}. Dominated by specialized computer programmers. Participants are from different countries, and English is the language used the most. Abbreviated as CPP from now on.
     \item List of the MetaReciclagem project\footnote{gmane.politics.organizations.metareciclagem is list ID in GMANE archive.}. Dominated by Brazilian activists and digital culture interests. Participants are mostly Brazilians, and Portuguese is the most used language, although Spanish and English usage is commonplace. Abbreviated MET from now on.
-    \item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE archive.}. Dominated by participants with hybrid artistic and technological interests. Participantes are from different countries, and English is the language used the most. Abbreviated as LAU from now on.
+    \item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE archive.}. Dominated by participants with hybrid artistic and technological interests. Participants are from different countries, and English is the language used the most. Abbreviated as LAU from now on.
 \end{itemize} 
 
  The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages exposed in Table~\ref{geralListas}.
@@ -184,7 +185,7 @@ This relation holds for each pair of the lists considered: as the number of part
 
 
 \section{Characterization methods}
-After immersion in the data and on appropriated literature, the following methods for network characterization were chosen: 1) statistics of activity along time; 2) division of network in hubs, intermediary and peripheral vertex; 3) prominence of topological measures; 4) evolutive visualizations and quantitative observations; 5) typological ellaborations of networks and participants.
+After immersion in the data and on appropriated literature, the following methods for network characterization were chosen: 1) statistics of activity along time; 2) division of network in hubs, intermediary and peripheral vertex; 3) prominence of topological measures; 4) evolutive visualizations and quantitative observations; 5) typological elaborations of networks and participants.
 Each of these methods are described bellow, as other handy alternatives.
 
     \subsection{Temporal activity statistics}
@@ -192,12 +193,12 @@ Number of messages along time with respect to seconds, minutes, hours, days of t
 
     \subsection{Interaction network}\label{intNet}
 Regarding literature~\cite{bird,newmanCommunityDirected,newmanCommunity2013}, interaction networks might be both weighted or unweighted, both directed or undirected. Networks in this article are directed and weighted, considered as more informative among possibilities (directed unweighted, and undirected weighted and undirected unweighted).
-More precisely, the networks repported are erected as follows: a direct response from participant B to participant A forms an edge from A to B, as information went from A to B. The reasoning is: if B wrote a response to A, he read what A wrote and formulated a response, so B assimilated information from A, thus $A \rightarrow B$. Inverting edge direction yields the status network, as B read the message and considered what A wrote worth of responding, giving status to A, thus $B\rightarrow A$. This article uses the information network described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, one is added to edge weight. Self-loops were regarded as non-informative and discarded. This networks are described as exhibiting free-scale and small world properties, as expected for a social network~\cite{bird}.
+More precisely, the networks reported are erected as follows: a direct response from participant B to participant A forms an edge from A to B, as information went from A to B. The reasoning is: if B wrote a response to A, he read what A wrote and formulated a response, so B assimilated information from A, thus $A \rightarrow B$. Inverting edge direction yields the status network, as B read the message and considered what A wrote worth of responding, giving status to A, thus $B\rightarrow A$. This article uses the information network described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, one is added to edge weight. Self-loops were regarded as non-informative and discarded. This networks are described as exhibiting free-scale and small world properties, as expected for a social network~\cite{bird}.
 
 \begin{figure}[hb]
     \centering
     \includegraphics[width=0.5\textwidth]{figs/criaRede_}
-    \caption{Formation of interaction network from email messages. Each vertex represents a participant. If participant B replyes participant A, that is regarded as evidence that B received information from A. Multiple messages add ``weight'' to directed edge. Further details are in Section~\ref{intNet}.}
+    \caption{Formation of interaction network from email messages. Each vertex represents a participant. If participant B replies participant A, that is regarded as evidence that B received information from A. Multiple messages add ``weight'' to directed edge. Further details are in Section~\ref{intNet}.}
     \label{formationNetwork}
 \end{figure}
 
@@ -269,7 +270,7 @@ Results from applying this classification method is further reported in Section~
 
         \subsubsection{Topological measures}\label{measures}
 This article
-restricts this analisys to a small selection of the most basic
+restricts this analysis to a small selection of the most basic
 measures of each vertex:
 
 \begin{itemize}
@@ -300,7 +301,7 @@ Evolution of network is observed within a fixed number of messages (window size:
  All $ws=$50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000 were used. Within a same $ws$, the number vertex and edges vary in time, as do other network characteristics. Further work should deepen inspection of measure interdependence, this article holds to measures in Section~\ref{measures}.
 
         \subsubsection*{Visualization of network evolution}
-In refining hypotheses, visualization of the network was crucial. Animations, image galleries and an online gadgets were made~\cite{animacoes,galGMANE,appGMANE}. Mapping of various topological measures to glyphs and layouts are being further explored as a parallel research. Furthermore, stable aspects of measures prominance along time are captured through mean and standard deviation (see Section~\ref{measures}). Constant sector sizes along time are observed in a timeline fashion in Appendix~\ref{figures}.
+In refining hypotheses, visualization of the network was crucial. Animations, image galleries and an online gadgets were made~\cite{animacoes,galGMANE,appGMANE}. Mapping of various topological measures to glyphs and layouts are being further explored as a parallel research. Furthermore, stable aspects of measures prominence along time are captured through mean and standard deviation (see Section~\ref{measures}). Constant sector sizes along time are observed in a timeline fashion in Appendix~\ref{figures}.
 
 
     \subsection{Typological deepening}
@@ -355,34 +356,34 @@ There is a concentration of hub activity and of vertex with few connections. Tab
 
 As specified in Section~\ref{sectioning}, in order to classify nodes as hubs, intermediary or peripheral, $\widetilde{P}(k)$ is compared
 to $P(k)$. For the networks studied here, i.e. derived from public email lists, if degree distribution is used classification, hubs sector size reaches peaks with $10\%$ of all vertexes. 
- If strength is used for comparrison ($\widetilde{P}(k_i=\frac{s_i}{\overline{w}})$) is compared
+ If strength is used for comparison ($\widetilde{P}(k_i=\frac{s_i}{\overline{w}})$) is compared
 to $P(k)$), hubs account for approximately $5\%$ of all vertex, i.e. strength classification yields half the number of hubs as plain degree. 
 This results hold for in and out degrees and strengths, 
 
 Classification criteria exposed in subsection~\ref{sectioning} was used efficiently with windows with at least 200 messages. Specially with 1000 or more messages, criteria yields stable fractions of $\approx 5\%$ of hubs, $\approx [15-20]\%$ of intermediary and $\approx [75-80]\%$ peripheral vertex. The compound criteria, also described in Section~\ref{sectioning}, can be used as a classification refinement. This is specially useful in dealing with fewer messages, in which case the structure degenerates with respect to some of the degree and strength measures, but not all. 
 
-For the networks analysed, differences of using this smoothing process were not significant. There were between 20 and 1200 participants, so each participant were between $5\%$ and $0.08\%$ of all participants.  The bottom line is: for network sizes considered, if connectivity intensity would most proprably not exist in an Ed\"os Renyi network, than it is not an intermediary intensity. As peripheral vertex are abundant, this statistic discussion has no relevance.
+For the networks analysed, differences of using this smoothing process were not significant. There were between 20 and 1200 participants, so each participant were between $5\%$ and $0.08\%$ of all participants.  The bottom line is: for network sizes considered, if connectivity intensity would most probably not exist in an Ed\"os Renyi network, than it is not an intermediary intensity. As peripheral vertex are abundant, this statistic discussion has no relevance.
 
 A reasonable window size for observation can be inferred by monitoring the giant component size and the degeneration of the hub, intermediary and peripheral sections. This degeneration is critical in the span of 50-100 messages. With compound criteria, such as exclusive cascade of Figure~\ref{fig:cpp250_}, the network seems to hold basic structure even with as few as 20-50 messages. This indicates that concentration of activity and low-activity participants occurs even with very few messages.
 
 Appendix~\ref{figures} is dedicated to figures on these networks and their evolution.
 
 
-    \subsection{Prevalence of centrality over asymmetries and asymetries over clusterization}\label{prevalence}
+    \subsection{Prevalence of centrality over asymmetries and asymmetries over clusterization}\label{prevalence}
 
-The principal component exhibit ponderation of centrality measures: degrees, strengthes and betweenness centrality. Clustering coefficient is presented in almost perfect orthogonality. Dispersion is more prevalent in symmetry related measures than clustering coefficient. This holds for all network snapshots observed, even with as few messages as to degenerate structure. Symmetric and asymmetric edges have been reported as bounded to different roles played by participants and relations~\cite{newmanEvolving}. Principal components formation from original measures can be observed in Tables~\ref{compPCA0},~\ref{compPCA} and~\ref{compPCA2}. Individual vertexes relation with top two principal components can be appreciated in Figures~\ref{PCA} and~\ref{PCA2}.
+The principal component exhibit ponderation of centrality measures: degrees, strengths and betweenness centrality. Clustering coefficient is presented in almost perfect orthogonality. Dispersion is more prevalent in symmetry related measures than clustering coefficient. This holds for all network snapshots observed, even with as few messages as to degenerate structure. Symmetric and asymmetric edges have been reported as bounded to different roles played by participants and relations~\cite{newmanEvolving}. Principal components formation from original measures can be observed in Tables~\ref{compPCA0},~\ref{compPCA} and~\ref{compPCA2}. Individual vertexes relation with top two principal components can be appreciated in Figures~\ref{PCA} and~\ref{PCA2}.
 This peculiar first component that consists of the averaged sum of degree, strength and betweenness measures was verified to be incident in virtually all networks with 500 or more messages and most smaller networks (degeneration of basic structure is critical with $ws \approx 50-100$ messages). This composition of principal component suggests that all six degree and strength measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics.
 
 As expected, degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for window larger sizes ($ws>1000$); and high degree is associated with low clustering coefficient, as can be observed in Figure~\ref{clust}.
 
 
-When symmetry of node connectivity is considered, the first component remains mostly the same, but clustering coefficient is only relevant to third and fourth components. A snapshot of vertexes with respect to these first two principal components are in Figure~\ref{PCA2}. This asymmetry and disequilibrium measures revealed as more proper measures to characterization of hubs and intermediaries, as seen in greater spreading of second PCA plot. Both symmetry of node overal activity and of individual relations play important role in second component, as can be observed in Table~\ref{compPCA2}.
+When symmetry of node connectivity is considered, the first component remains mostly the same, but clustering coefficient is only relevant to third and fourth components. A snapshot of vertexes with respect to these first two principal components are in Figure~\ref{PCA2}. This asymmetry and disequilibrium measures revealed as more proper measures to characterization of hubs and intermediaries, as seen in greater spreading of second PCA plot. Both symmetry of node overall activity and of individual relations play important role in second component, as can be observed in Table~\ref{compPCA2}.
 
 
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
-    \caption{PCA of in and out degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Table~\ref{compPCA} has the composition of principle components from the original measures. First principle component is a pondered sum of centrality measures: degrees, strengthes and betweenness centrality. Second component is mostly clustering coefficient in this figure, but asymetries holds second component if also considered. Similarity to plot in Figure~\ref{clust} was verified with all window sizes considered ($ws\;\in\;[100,10000]$), which exposes a common relation is held by degree, strength and betweenness measures to clustering coefficient.}
+    \caption{PCA of in and out degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Table~\ref{compPCA} has the composition of principle components from the original measures. First principle component is a pondered sum of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient in this figure, but asymmetries holds second component if also considered. Similarity to plot in Figure~\ref{clust} was verified with all window sizes considered ($ws\;\in\;[100,10000]$), which exposes a common relation is held by degree, strength and betweenness measures to clustering coefficient.}
     \label{PCA}
 \end{figure}
 
@@ -398,7 +399,7 @@ When symmetry of node connectivity is considered, the first component remains mo
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr11CC}
-    \caption{Clustering versus degree of vertex in interaction network observed, $ws = 1000$ email messages, LAU list. General layout is in accordance with literature. With ver connected vertexes with low clusterization and high clusterization being gradually more incident as number of connections is lowered.}
+    \caption{Clustering versus degree of vertex in interaction network observed, $ws = 1000$ email messages, LAU list. General layout is in accordance with literature: connected vertexes have low clusterization while higher clusterization is gradually more incident as number of connections is lowered.}
     \label{clust}
 \end{figure}
 
@@ -413,8 +414,8 @@ When symmetry of node connectivity is considered, the first component remains mo
 This work aimed at finding common characteristics among (email) interaction networks. The analysis  involved primary measures observance and a formal criteria for coherent ratios of hub, intermediary and hub sectors. Nevertheless, inspection done by visualizations and raw data manipulations suggest peculiarities of interest, specially:
 
 \begin{itemize}
-    \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. Literature repports greater stability of participation in smaller communities~\cite{barabasiEvo}, reason why smaller number of participants in MET was considered a direct cause of stable hubs activity.
-    \item Typically, hub activity is trivial: they interact as much as possible, in every occasion with everyone. Peripheral vertex activity also follows a simple patters: they will interact very rarelly, in very few occasions. Intermediary vertexes seem responsible for network structure.
+    \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. Literature reports greater stability of participation in smaller communities~\cite{barabasiEvo}, reason why smaller number of participants in MET was considered a direct cause of stable hubs activity.
+    \item Typically, hub activity is trivial: they interact as much as possible, in every occasion with everyone. Peripheral vertex activity also follows a simple patters: they will interact very rarely, in very few occasions. Intermediary vertexes seem responsible for network structure.
     \item Network operation modes dictated by intermediary vertexes behavior. These can exhibit preferential communication to peripheral or hub vertex.
     \item Some of the most active participants receive many responses with relative few messages sent, and are never top hubs. These seem as authorities and contrast with participants that respond way more than receive responses.
     \item Most obvious community structure, as observed by hung clustering coefficient, is found only in peripheral and intermediary sectors.
@@ -423,21 +424,21 @@ This work aimed at finding common characteristics among (email) interaction netw
 This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts involved in other typologies, such Meyer-Briggs, Pavlov or F-Scale. This has no pretension of being a direct result from numeric analysis, it is a refinement the description of found structure and classes considered.
 
 \section{Conclusions and future work}
-In fact, some characterization of chosen networks resulted from stable observations. Along temporal activity statistics, this work repports the stability of the principal components (in the concentration of dispersion and composition) and of the ternary partitioning relative sizes (evident with the comparrison with the Erd\"os-Renyi model).
+In fact, some characterization of chosen networks resulted from stable observations. Along temporal activity statistics, this work reports the stability of the principal components (in the concentration of dispersion and composition) and of the ternary partitioning relative sizes (evident with the comparison with the Erd\"os-Renyi model).
 
 The task of delivering a first and general characterization of chosen interaction networks involved starting a larger effort. The different aspects covered requires not only different analytical background, but also considerations about textual production and social psychology. These are receiving attention within dedicated works and are summarized in this section.
 
     \subsection{Further work}
-        \subsubsection{Constancy of general characteristics, easing tipologization of outiliers and mundane occurences}
+        \subsubsection{Constancy of general characteristics, easing tipologization of outliers and mundane occurrences}
 
-Regarding topological aspects of interaction networks, further work should inspect other measures (e.g. closeness centrality, accessibility), and statistics in each of the three conective sectors: hubs, intermediary and peripheral.
+Regarding topological aspects of interaction networks, further work should inspect other measures (e.g. closeness centrality, accessibility), and statistics in each of the three connective sectors: hubs, intermediary and peripheral.
 
  Observance of attributes with greater contribution to principal components of LDA should reveal best chances to present these three sections as clusters in the network measurements space. Another possibility, specially for a brute-force characterization of such sections, is to remove vertexes with degree close to $k_1$ or $k_2$ depicted in figure~\ref{fig:setores}.
 
 
         \subsubsection{Interaction network characterization}
 
-Observed networks were coherent with literature in different aspects, such as concentration of activity, and clusterization versus connectivity patterns. Even so, verification of results in other virtual environment, such as Facebook, Twitter and LinkedIn, should verify the generality of this repport. 
+Observed networks were coherent with literature in different aspects, such as concentration of activity, and clusterization versus connectivity patterns. Even so, verification of results in other virtual environment, such as Facebook, Twitter and LinkedIn, should verify the generality of this report. 
 
 
 
@@ -445,18 +446,18 @@ Observed networks were coherent with literature in different aspects, such as co
 Further work should observe textual production of network sectors. Resulting knowledge purposes to network and participants tipologization, and both topological and textual analysis should foster characterization of interaction networks and participation incidences.
 
 
-        \subsubsection{Tipology enhancements}
-From the stable characteristics, outliers can be pointed and further developed in terms of networks and participants typologization.
+        \subsubsection{Typology enhancements}
+From the stable characteristics, outliers can be pointed and further developed in terms of networks and participants typology.
 
         \subsubsection{Results exploitation}
-Usage of such characteristics are takingn place in linked data and electronic goverment technologies~\cite{ops,opa}. Further steps involve ellaboration and tests of social dynamics that takes advantages of these results
+Usage of such characteristics are taking place in linked data and electronic government technologies~\cite{ops,opa}. Further steps involve elaboration and tests of social dynamics that takes advantages of these results
 
 \begin{acknowledgments}
 Renato Fabbri is grateful to CNPq (process: 140860/2013-4,
 project 870336/1997-5), United Nations Development Program (PNUD/ONU, contract: 2013/000566; project BRA/12/018)  and 
 the Postgraduate Committee of the IFSC/USP. This author is also grateful for
 the American Jewish Committee for maintaining an online copy of the Adorno book
-used on the epigraph~\cite{adorno}. Authors thanks Gmane creators and maintainers, specifically: Gmane is run by Lars Magne Ingebrigtsen, and the administrators are Tom Koelman, Jason R. Mastaler, Steinar Bang, Jon Ericson, Wolfgang Schnerring, Sebastian D.B. Krause, Nicolas Bareil, Raymond Scholz, and Adam Sjøgren. Authors thank refered email lists communities and welcome feedback as core contribution to this, and similar, research.
+used on the epigraph~\cite{adorno}. Authors thanks GMANE creators and maintainers, specifically: GMANE is run by Lars Magne Ingebrigtsen, and the administrators are Tom Koelman, Jason R. Mastaler, Steinar Bang, Jon Ericson, Wolfgang Schnerring, Sebastian D.B. Krause, Nicolas Bareil, Raymond Scholz, and Adam Sjøgren. Authors thank referred email lists communities and welcome feedback as core contribution to this, and similar, research.
 \end{acknowledgments}
 
 
@@ -491,7 +492,7 @@ with the following third party libraries: Numpy, Pylab/Matplotlib, NetworkX, IGr
 Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
 
 \subsection{Python scripts}\label{ap:os}
-All results were obtained with scripts writen in the Python programming language. These are kept in a public repository for backup and sharing with research community~\cite{scriptsFim}. Core scripts, for deriving structures and results exhibited in this article, are in the LEIAME file.
+All results were obtained with scripts written in the Python programming language. These are kept in a public repository for backup and sharing with research community~\cite{scriptsFim}. Core scripts, for deriving structures and results exhibited in this article, are in the LEIAME file.
 \section{Further consideration of related work}\label{sec:fure}
 Unreciprocated edges often exceed 50\%, which matches empirical evidence reported in~\cite{newmanEvolving}. Although no correlation of topological characteristics and geographical position was found in a pertinent study~\cite{barabasiGeo}, geographical incidences should be present in further refinement of the analysis.
 
