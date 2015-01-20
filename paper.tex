@@ -172,14 +172,7 @@ The four lists below were selected for the resulting diversity, easing initial o
 
 \begin{table}
   \centering
-  \begin{tabular}{|l|c|c|c|c|c|}\hline
-list & $date_1$ & $date_{M}$    & $N$  & $\Gamma$ & $\overline{M}$ \\\hline
-LAU  & Jun/29/2003 & Jul/23/2005 & 1183 & 3373 & 5 \\
-LAD  & Jun/30/2003 & Oct/07/2009 & 1268 & 3113 & 4 \\
-MET  & Ago/01/2005 & Mar/07/2008 & 492  & 4607 & 23 \\
-CPP  & Mar/13/2002 & Aug/25/2009 & 1052 & 4506 & 7 \\ \hline
-  \end{tabular}
-  \caption{Columns $date_1$ and $date_M$ have first and last messages dates from the 20,000 messages considered.
+  \caption{Columns $date_1$ and $date_M$ have first and last message dates from the 20,000 messages considered in each email list.
 $N$ is the number of participants (number of different email addresses).
 $\Gamma$ is the number of threads (count of messages without antecedent).
 $\overline{M}$ is messages missing in the 20,000 collection, $100\frac{23}{20000}=0.115$ percent in the worst case.
@@ -187,6 +180,13 @@ MET notably has the fewer participants and the larger number of threads.
 This relation holds for each pair of the lists considered: as the number of participants increases,
  the number of threads decreases.}
   \label{geralListas}
+  \begin{tabular}{|l|c|c|c|c|c|}\hline
+list & $date_1$ & $date_{M}$    & $N$  & $\Gamma$ & $\overline{M}$ \\\hline
+LAU  & Jun/29/2003 & Jul/23/2005 & 1183 & 3373 & 5 \\
+LAD  & Jun/30/2003 & Oct/07/2009 & 1268 & 3113 & 4 \\
+MET  & Ago/01/2005 & Mar/07/2008 & 492  & 4607 & 23 \\
+CPP  & Mar/13/2002 & Aug/25/2009 & 1052 & 4506 & 7 \\ \hline
+  \end{tabular}
 \end{table}
 
 
@@ -205,7 +205,7 @@ More precisely, the networks reported are erected as follows: a direct response 
 \begin{figure}[hb]
     \centering
     \includegraphics[width=0.5\textwidth]{figs/criaRede_}
-    \caption{Formation of interaction network from email messages. Each vertex represents a participant. If participant B replies participant A, that is regarded as evidence that B received information from A. Multiple messages add ``weight'' to directed edge. Further details are in Section~\ref{intNet}.}
+    \caption{Formation of interaction network from email messages. Each vertex represents a participant. A reply message from participant B to a message from participant A is considered as evidence that B received information from A. Multiple messages add ``weight'' to directed edge. Further details are in Section~\ref{intNet}.}
     \label{formationNetwork}
 \end{figure}
 
@@ -220,7 +220,7 @@ Previous messages on the thread create directed edges from their author to the o
     \includegraphics[width=0.5\textwidth]{figs/fser}
     \caption{Degree distribution on scale-free and Erd\"os-R\'enyi ideal networks. The later has more
         intermediary, as the former has more peripheral and hub vertexes. Sections are
-        given by the two intersections of the distributions $k_1$ and $k_2$. Characteristic degrees
+        given by the two intersections $k_1$ and $k_2$ of the connectivity distributions. Characteristic degrees
     are in compact intervals of degree: $[0,k_1]$, $(k_1,k_2]$, $(k_2,k_{max}]$ for the three sections considered (periphery, intermediary and hubs).}
     \label{fig:setores}
 \end{figure}
@@ -365,7 +365,7 @@ to a connectivity distribution of an ideal Erd\"os R\`nyi $P(k)$ with the same n
 to $P(k_i)$), hubs account for approximately $5\%$ of all vertex, i.e. strength classification yields half the number of hubs as plain degree. 
 This results hold for in and out degrees and strengths, 
 
-Classification criteria exposed in Section~\ref{sectioning} was used efficiently with windows of at least 200 messages. Specially with 1000 or more messages, criteria yields stable fractions of $\approx 5\%$ of hubs, $\approx [15-20]\%$ of intermediary and $\approx [75-80]\%$ peripheral vertex, which match literature~\cite{priSect}. A compound criteria, also described in Section~\ref{sectioning}, can be used as a classification refinement. This is specially useful in dealing with fewer messages, in which case the structure degenerates with respect to some of the degree and strength measures, but not all.
+Classification criteria exposed in Section~\ref{sectioning} was used efficiently with windows of at least 200 messages. Specially with 1000 or more messages, criteria yields stable fractions of $\approx 5\%$ of hubs, $\approx [15-20]\%$ of intermediary and $\approx [75-80]\%$ peripheral vertex, which match literature expectations~\cite{secFree}. A compound criteria, also described in Section~\ref{sectioning}, can be used as a classification refinement. This is specially useful in dealing with fewer messages, in which case the structure degenerates with respect to some of the degree and strength measures, but not all.
 A minimum window size for observation of more general properties can be inferred by monitoring the giant component and the degeneration of hub, intermediary and peripheral sections. This degeneration is critical in the span of 50-100 messages for window sizes. With compound criteria, such as exclusive cascade of Figure~\ref{fig:cpp250_}, the networks seem to hold basic structure even with as few as 20-50 messages. This indicates that concentration of activity and low-activity participants occurs even with very few messages.
 
 For the histograms used in the classification process, the usage of at least $\eta$ vertexes for each bin did not yield significant differences.
@@ -404,7 +404,7 @@ When symmetry of node connectivity is considered, the first component remains mo
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr11CC}
-    \caption{Clustering versus degree of vertex in interaction network observed, $ws = 1000$ email messages, LAU list. General layout is in accordance with literature: connected vertexes have low clusterization while higher clusterization is gradually more incident as number of connections is lowered.}
+    \caption{Clustering versus degree of vertex with a window size of $ws = 1000$ email messages (LAU list). General layout is in accordance with literature: connected vertexes have low clusterization while higher clusterization is gradually more incident as number of connections is lowered.}
     \label{clust}
 \end{figure}
 
@@ -416,7 +416,7 @@ When symmetry of node connectivity is considered, the first component remains mo
 
     \subsection{Primitive typology}
 
-This work aimed at finding common characteristics among (email) interaction networks. Analysis involved primary measures observance and formal criteria for coherent ratios of hub, intermediary and hub sectors. Nevertheless, inspection done by visualizations and raw data manipulations suggests agents peculiarities of typological character. These are initial observations, which should be further developed as posed in Section~\ref{sec:ftyp}:
+This work aimed at finding common characteristics among (email) interaction networks. Analysis involved primary measures observance and formal criteria for coherent ratios of hub, intermediary and hub sectors. Nevertheless, inspection done by visualizations and raw data manipulations suggests agents peculiarities of typological character. These are initial observations, which should be further developed as posed in Section~\ref{constDisc}:
 
 \begin{itemize}
     \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. Literature reports greater stability of participation in smaller communities~\cite{barabasiEvo}, reason why smaller number of participants in MET was considered coherent with the stable activity of hubs.
@@ -443,7 +443,7 @@ Regarding topological aspects of interaction networks, further work should inspe
 
 Observed networks were coherent with literature in different aspects, such as concentration of activity, and clusterization versus connectivity patterns. Even so, analysis of data from other virtual environments, such as Facebook, Twitter and LinkedIn, should verify the generality of this report. 
 
-A related work observed textual production of network sectors~\cite{textProd}. Resulting knowledge purposes networks and participants tipologization, and both topological and textual analysis should foster characterization of interaction networks and participation incidences in a dedicated study.
+A related work observed textual production of network sectors~\cite{rcText}. Resulting knowledge purposes networks and participants tipologization, and both topological and textual analysis should foster characterization of interaction networks and participation incidences in a dedicated study.
 Stability reported in this article eases tipologization of outliers and more usual participation patterns.
 
         \subsubsection{Results exploitation}
@@ -497,7 +497,7 @@ for the present work:
 Field ``In-Reply-To'' has only the ID of the message it replies and can be sometimes
 a shortcut or an alternative to ``References''. Also, the textual content of the messages,
 accessed through ``payload'' method of the mbox message object, is of central interest and
-the authors dedicated an article to include the textual content of the messages to the analysis~\cite{textProd}.
+the authors dedicated an article to include the textual content of the messages to the analysis~\cite{rcText}.
 
 \subsection{Third party libraries and software}
 The programming framework used 
@@ -516,6 +516,7 @@ All results were obtained with scripts written in the Python programming languag
 
 \begin{table}[H]
   \centering
+  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a pondered sum of degree and betweenness centrality measures. Second component is mostly clustering coefficient. First and second components sum more than 95\% of total dispersion.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1}          & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$            & $\sigma$ & $\mu$         & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -524,7 +525,6 @@ $cc$      & 4.12          & 2.94     & {\bf 90.45}   & 3.98     & 3.98  & 0.77 \
 $bt$      & {\bf 47.87}   & 1.55     & 6.74          & 4.08     & 47.93 & 0.46 \\ \hline
 $\lambda$ & 64.67         & 0.52     & 33.26         & 0.23     & 2.08  & 0.40 \\ \hline
   \end{tabular}
-  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a pondered sum of degree and betweenness centrality measures. Second component is mostly clustering coefficient. First and second components sum more than 95\% of total dispersion.}
   \label{compPCA0}
 \end{table}
 
@@ -534,6 +534,7 @@ $\lambda$ & 64.67         & 0.52     & 33.26         & 0.23     & 2.08  & 0.40 \
 
 \begin{table}
   \centering
+  \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a pondered sum of degree and strength and betweenness centrality measures. Second component is mostly clustering coefficient. First and second components sum more than 90\% of dispersion.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -547,13 +548,13 @@ $cc$      & 0.99        & 0.70 & {\bf 83.38} & 4.83 & 2.75  & 1.62 \\
 $bt$      & {\bf 13.73} & 0.19 & 6.65  & 1.31 & 14.66 & 10.14 \\ \hline
 $\lambda$ & 81.80 & 0.83 & 12.53 & 0.09  & 3.24 & 0.62 \\ \hline
   \end{tabular}
-  \caption{Principal components' composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a pondered sum of degree and strength measures and betweenness centrality. Second component is mostly clustering coefficient. First and second components sum more than 90\% of dispersion.}
   \label{compPCA}
 \end{table}
 
 
 \begin{table}
   \centering
+  \caption{Principal components formation with measures of symmetry described (see Section~\ref{measures}). LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to third components. Second component is primarily symmetry measures, but also out degree and strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. Clusterization component combines with disequilibrium, while asymmetry is combined to out degree and strength. Three components has in average 80.36\% of dispersion.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -573,7 +574,6 @@ $\mu_{dis}$    & 0.79        & 0.49 & {\bf 14.00} & 1.14 & 3.73  & 3.13 \\
 $\sigma_{dis}$ & 5.18        & 0.72 & 4.93  & 2.48 & {\bf 17.04} & 4.78 \\ \hline
 $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
   \end{tabular}
-  \caption{Distribution of components, added measures of symmetry described in subsection~\ref{measures}. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to third component, with disequilibrium measures. Second component is primarily symmetry measures, but also some out degree and strength contribution. Betweenness again has a role similar to degree, but weaker. Clusterization component combines with disequilibrium, while asymmetry is related to out degree and strength. Three components has in average 80.36\% of dispersion.}
   \label{compPCA2}
 \end{table}
 
@@ -582,7 +582,7 @@ $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
 \subsection{Tables for activity along time}\label{tabTime}
 \begin{table*}
 %\tiny
-    \caption{Hours of the day and percentage of activity ($\frac{\text{counted messages}}{\text{total messages}}$) in each hour, 6 hours and 12 hours. Maximum activity rates are in bold. In hour columns, minimum activity is also bold. The less active period of the day is around 4-6h. Maximum activity is between 10-13h. Afternoon is most active in 6h division of the day. The noon has $\approx \frac{2}{3}$ of 24h activity. }
+    \caption{Percentage of activity ($\frac{\text{counted messages}}{\text{total messages}}$) in each hour, 6 hours and 12 hours. Maximum activity rates are in bold. In 1h columns, minimum activity is also bold. The less active period of the day is around 4-6h. Maximum activity is between 10-13h. Afternoon is most active in 6h division of the day. The noon has $\approx \frac{2}{3}$ of 24h activity. }
 \begin{center}
     \begin{tabular}{ |l|| c|c|c| c|c|c| c|c|c| c|c|c|}
         \hline
@@ -639,7 +639,7 @@ $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
 
 \begin{table*}
 %\tiny
-    \caption{Activity along the days of the month. As can be noted, the pattern is to have no clear prevalent period. One might point a slight tendency for the first two weeks to be more active, although this table does not present statistical foundation for such an assumption. For the scope of this study, differences of activity along the month is assumed to be non existent.}
+    \caption{Activity along the days of the month. The pattern is to have no clear prevalent period. One might point a slight tendency for the first two weeks to be more active, although this table does not present statistical foundation for such an assumption. For the scope of this study, differences of activity along the month is assumed to be inexistent.}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c| c|c|c| c|c|c| c|c|c|}
         \hline
@@ -735,7 +735,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hb]
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/10000}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:cpp10000}
 \end{figure*}
 
@@ -743,7 +743,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/10000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp10000_}
 \end{figure*}
 
@@ -751,7 +751,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/5000}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:cpp5000}
 \end{figure*}
 
@@ -759,7 +759,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/5000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp5000_}
 \end{figure*}
 
@@ -767,7 +767,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/1000}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:cpp1000}
 \end{figure*}
 
@@ -775,7 +775,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/1000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp1000_}
 \end{figure*}
 
@@ -784,7 +784,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/500}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:cpp500}
 \end{figure*}
 
@@ -792,7 +792,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/500_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp500_}
 \end{figure*}
 
@@ -801,7 +801,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/250}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:cpp250}
 \end{figure*}
 
@@ -809,7 +809,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/250_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp250_}
 \end{figure*}
 
@@ -818,7 +818,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/100}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:cpp100}
 \end{figure*}
 
@@ -826,7 +826,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/100_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp100_}
 \end{figure*}
 
@@ -834,7 +834,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/50}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:cpp50}
 \end{figure*}
 
@@ -842,7 +842,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/50_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp50_}
 \end{figure*}
 
@@ -850,7 +850,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/10000}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:lad10000}
 \end{figure*}
 
@@ -858,7 +858,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/10000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad10000_}
 \end{figure*}
 
@@ -866,7 +866,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/5000}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:lad5000}
 \end{figure*}
 
@@ -874,14 +874,14 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/5000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad5000_}
 \end{figure*}
 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/1000}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:lad1000}
 \end{figure*}
 
@@ -889,7 +889,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/1000_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad1000_}
 \end{figure*}
 
@@ -898,7 +898,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/500}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:lad500}
 \end{figure*}
 
@@ -906,7 +906,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/500_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad500_}
 \end{figure*}
 
@@ -915,7 +915,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/250}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:lad250}
 \end{figure*}
 
@@ -923,7 +923,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/250_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad250_}
 \end{figure*}
 
@@ -932,7 +932,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/100}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:lad100}
 \end{figure*}
 
@@ -940,7 +940,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/100_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad100_}
 \end{figure*}
 
@@ -948,7 +948,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/50}
-    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex in equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertex with respect to each measure of activity: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
     \label{fig:lad50}
 \end{figure*}
 
@@ -956,7 +956,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/50_2}
-    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria described in subsection~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to each measure of activity: compound criteria. Red, green and blue are for hubs, intermediary and border (peripheral) vertex fractions. The first two plots picture classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black is used to depict how much a vertex was classified in more than section: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad50_}
 \end{figure*}
 
