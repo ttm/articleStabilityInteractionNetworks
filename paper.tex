@@ -93,10 +93,10 @@ Centro de Ciências Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
 %  \email{ldfcosta@gmail.com}
 %  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 %
-%\author{Osvaldo N. Oliveira Jr.}
-%  \homepage{www.polimeros.ifsc.usp.br/professors/professor.php?id=4}
-%  \email{chu@ifsc.usp.br}
-% \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+\author{Osvaldo N. Oliveira Jr.}
+  \homepage{www.polimeros.ifsc.usp.br/professors/professor.php?id=4}
+  \email{chu@ifsc.usp.br}
+ \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 
 
 \date{\today}% It is always \today, today,
@@ -365,7 +365,7 @@ A minimum window size for observation of more general properties can be inferred
 
 For the histograms used in the classification process, the usage of at least $\eta$ vertexes for each bin did not yield significant differences.
 That was understood as a consequence of the observation scale:
-\emph{There are between 20 and 1200 participants in the message window sizes used to derive most results ($ws \in [200,1500]$ messages). As peripheral vertexes are abundant and span few degrees, there are more than $\eta$ vertexes with each low degree value. Higher degrees cases requires a bit more reasoning. Specified $ws$ implicates that each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Ed\"os R\`enyi network (less than $p$, the probability that a single participant represent when histogram is normalized to density function), than it is not an intermediary connectivity, but a hub.} This concludes the explanation of why using at least $\eta$ vertexes for each bin did not impact results.
+\emph{There are between 20 and 200 participants in the message window sizes used to derive most results ($ws \in [200,1500]$ messages). As peripheral vertexes are abundant and span few degrees, there are more than $\eta$ vertexes with each low degree value. Higher degrees cases requires a bit more reasoning. Specified $ws$ implicates that each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Ed\"os R\`enyi network (less than $p$, the probability that a single participant represent when histogram is normalized to density function), than it is not an intermediary connectivity, but a hub.} This concludes the explanation of why using at least $\eta$ vertexes for each bin did not impact results.
 
 Appendix~\ref{figures} is dedicated to figures of these networks and their evolution.
 
@@ -383,7 +383,7 @@ When symmetry metrics are included, the first component remains mostly the same,
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
-    \caption{PCA of in and out degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Table~\ref{compPCA} exposes the composition of principle components. Principle component is a pondered sum of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Similarity to plot in Figure~\ref{clust} was verified within all window sizes considered ($ws\;\in\;[100,10000]$), which exposes a common relation is held by degree, strength and betweenness measures to clustering coefficient.}
+    \caption{Scatter plot of vertexes using two principal components from a PCA in the measures space of in and out degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Table~\ref{compPCA} exposes the composition of principal components. Principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Similarity to plot in Figure~\ref{clust} was verified within all window sizes considered ($ws\;\in\;[100,10000]$), which exposes a common relation is held by degree, strength and betweenness measures to clustering coefficient. Therefore, the outline of this plot is very similar to Figure~\ref{clust}.}
     \label{PCA}
 \end{figure}
 
@@ -391,7 +391,7 @@ When symmetry metrics are included, the first component remains mostly the same,
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr1PCA}
-    \caption{Degree and strength, clustering coefficient, betweenness centrality and symmetry related measures are used for this scatter plot of principal components. Compositions of first three components are in Table~\ref{compPCA2} and measure details in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions.}
+    \caption{Scatter plot of vertexes using two principal components from a PCA in the measures space of degree, strength, clustering coefficient, betweenness centrality and symmetry related measures. Compositions of first three components are in Table~\ref{compPCA2} and measure details in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertexes.}
     \label{PCA2}
 \end{figure}
 
@@ -399,7 +399,7 @@ When symmetry metrics are included, the first component remains mostly the same,
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr11CC}
-    \caption{Clustering coefficient versus degree of vertex with a window size of $ws = 1000$ email messages, LAU list. General layout is in accordance with literature: connected vertexes have low clusterization while higher clusterization is gradually more incident as number of connections is lowered.}
+    \caption{Clustering coefficient versus degree of vertexes with a window size of $ws = 1000$ email messages, LAU list. General layout is in accordance with literature: connected vertexes have low clusterization while higher clusterization is gradually more incident as number of connections is lowered.}
     \label{clust}
 \end{figure}
 
@@ -511,7 +511,7 @@ Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
 
 \begin{table}[H]
   \centering
-  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a pondered sum of degree and betweenness centrality. The second component is mostly clustering coefficient. First and second components sum more than 95\% of total dispersion.}
+  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a weighted average of degree and betweenness centrality. The second component is mostly clustering coefficient. First and second components sum more than 95\% of total dispersion.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1}          & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$            & $\sigma$ & $\mu$         & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -529,7 +529,7 @@ $\lambda$ & 64.67         & 0.52     & 33.26         & 0.23     & 2.08  & 0.40 \
 
 \begin{table}
   \centering
-  \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a pondered sum of degree and strength and betweenness centrality. The second component is mostly related to clustering coefficient. The first and second components sum more than 90\% of dispersion.}
+  \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a weighted average sum of degree and strength and betweenness centrality. The second component is mostly related to clustering coefficient. The first and second components sum more than 90\% of dispersion.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
