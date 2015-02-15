@@ -53,13 +53,7 @@
  \email{fabbri@usp.br}
   \affiliation{ 
 S\~ao Carlos Institute of Physics, University of S\~ao Paulo (IFSC/USP)%\\This line break forced with \textbackslash\textbackslash
-}%
-%
-%\author{Camilo Akimushkin Valencia}
-%  \homepage{http://ifsc.usp.br/}
-%  \email{akimushkin@ifsc.usp.br}
-%  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
-%
+}
 
 \author{Vilson V. da Silva Jr.}
   \homepage{http://automata.cc/}
@@ -92,7 +86,7 @@ Centro de Ciências Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
 %  \homepage{http://cyvision.ifsc.usp.br/~luciano/}
 %  \email{ldfcosta@gmail.com}
 %  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
-%
+
 \author{Osvaldo N. Oliveira Jr.}
   \homepage{www.polimeros.ifsc.usp.br/professors/professor.php?id=4}
   \email{chu@ifsc.usp.br}
@@ -103,29 +97,30 @@ Centro de Ciências Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
              %  but any date may be explicitly specified
 
 \begin{abstract}
-    This article reports a characterization of interaction networks and its temporal stability. Such a task involves a selection of aspects to investigate, which lead to: 1) activity distribution in time and among participants; 2) a sound classification of vertex: peripheral, intermediary and hub sectors; 3) combination of basic measures into components with greater dispersion (PCA). While time patterns of activity are not obvious, participant activity follows concentrations expected in scale-free networks. Comparison of incident networks with ideal Erd\"os-R\'enyi networks bearing the same number of edges and vertexes reveals a sound criterion for distinguishing sectors on the networks. Principal components in the basic measures space revealed interesting and regular patterns of independence and dispersion. This includes a ranking of measures that most contribute to dispersion: 1) degree and strength measures, 2) symmetry related quantization, and 3) clusterization. Results suggest typologies for these networks and participants. Further work include considerations of text production, psychoanalysis inspired typologies, participatory democracy exploitation of observed properties, and better visualization support for network evolution.
+ This article reports interaction networks stability by means of three quantitative criteria: activity distribution in time and among participants; a sound classification of vertices in peripheral, intermediary and hub sectors; the combination of basic measures into principal components with greater variance. We analyzed the temporal activity and topology evolution of networks in four email lists by considering  window sizes from 50 to 10,000 messages, which were made to slide to generate snapshots of the network along a timeline. Activity in terms of seconds, minutes, days and months was remarkably similar for all the networks. Participant activity follows concentrations expected in scale-free networks.  We compare these networks to Erd\"os-R\'enyi networks in order to assign members to three distinct sectors, namely hubs, intermediary and periphery. The fractions of members in these sectors were essentially the same for all networks and, most importantly, stable over time. If strength is used as the criterion for classification, for instance, ca. 5\% of the vertices are hubs, 15-20\% are intermediary and the remainder compose periphery. The metrics  most representative for  data dispersion were found to be centrality-related  (degree, strength and betweenness), followed by symmetry-related,  and then clustering coefficient. Degree, strength and clustering cope with different symmetry measures to bear secondary components. Again, the importance of these metrics to network topology dispersion was practically the same for all email lists examined, and stable over time. The research also resulted on a sketch of a physics-based typology of agents, with proper social and psychological speculations. Because the network properties reported did not depend on the email list and were stable over time, and because observed structure is in accordance with expectations driven from literature for human interaction networks, we believe that the properties observed  holds for general human interaction networks, and the approach can be applied to other types of networks. Current unfoldings include governance and accountability proposals and implementations, anthropological physics experimentations and the report of quantitative differences of textual production as connectivity of agents changes.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
-\keywords{complex networks, social network analysis, pattern recognition, statistics}%Use showkeys class option if keyword
+\keywords{complex networks, social network analysis, pattern recognition, statistics, anthropological physics}%Use showkeys class option if keyword
 \maketitle
 
-\begin{quotation}
-% `The reason for the persistent plausibility of the typological approach, however, is not a static biological one, but just the opposite: dynamic and social. The fact that human society has been up to now divided into classes affects more than the external relations of men. The marks of social repression are left within the individual soul.' 
-% 
-`The conception of personality structure is the
-best safeguard against the
-inclination to attribute persistent trends in the
-individual to something
-"innate" or "basic" or "racial" within him. The
-Nazi allegation that natural, biological traits decide the total being of a person
-would not have been such
-a successful political device
-had it not been possible to point to numerous
-instances of relative fixity in human behavior and to
-challenge those who
-thought to explain them on any basis other than a biological one.'
+%Obs. Em geral não se incluem citações como esta abaixo nos artigos, e podemos %ter problema de aceitação se um referee não entender o porquê de colocá-la. 
 
+\begin{quotation}
+`The reason for the persistent plausibility of the typological approach, however, is not a static biological one, but just the opposite: dynamic and social. The fact that human society has been up to now divided into classes affects more than the external relations of men. The marks of social repression are left within the individual soul.' 
+
+% `The conception of personality structure is the
+%best safeguard against the
+% inclination to attribute persistent trends in the
+% individual to something
+% "innate" or "basic" or "racial" within him. The
+% Nazi allegation that natural, biological traits decide the total being of a % person
+% would not have been such
+% a successful political device
+% had it not been possible to point to numerous
+% instances of relative fixity in human behavior and to
+% challenge those who
+% thought to explain them on any basis other than a biological one.'
 \emph{- Adorno et al, 1969, p. 747}
 \end{quotation}
 
@@ -144,23 +139,21 @@ Although all networks considered originated from email lists,
 
 
 \subsection{Related work}
-This work approaches network stability through temporal evolution observations.
-This evolution is characterized by a constant number of contiguous messages, of which snapshots are considered to yield a timeline of the network, which is not explored to date, as far as authors know~\cite{netWindowEvo}.
- Works on network evolution often consider solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Moreover, selected exceptions are reported in this section.
 
- The evolution of interaction networks was addressed with a community focus, in a work that ignores the direction of edges~\cite{barabasiEvo}. Two topologically different networks are reported to emerge, depending on the frequency of interactions, presenting a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}.
-In email networks, free-scale properties were verified~\cite{bird}, and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
+This work approaches network stability through temporal evolution observation.
+This evolution is represented by a timeline of activity snapshots with a constant number of contiguous messages. These snapshots yield a succession of networks. This approach, although coherent and intuitive, seems not to be explored to date~\cite{netWindowEvo}.
 
- Such results are in accordance with phenomena observed in this work. Linguistic characterization is being described in a deriving article~\cite{rcText}. See Appendix~\ref{sec:fure} for further considerations of related work, with emphasis on the results from research herein reported.
+Works on network evolution often consider solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Exceptions are reported in this section, specially those more closely related to the present article.
+
+The evolution of human interaction networks was addressed with a community focus, where the direction of edges was not taken into account~\cite{barabasiEvo}. In another article, two topologically different networks emerged from human interaction networks, depending on the frequency of interactions, which could either be a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were verified~\cite{bird}, and different linguistic traces were related to weak and strong ties~\cite{GMANE2}. These results are corroborated by phenomena reported in this paper. See Appendix~\ref{sec:fure} for further considerations of related work, with emphasis on the results described below and deriving articles dedicated to texts produced by each of the primitive connective sectors~\cite{rcText}, a visualization method for network evolution~\cite{versinus} and an ongoing elaboration of the primitive typology.
 
 \section{Data description}
     \subsection{Email lists and messages}
 Email list messages were obtained from
-the GMANE email archive~\cite{GMANE}, which consists of more than 20,000 email lists and more than 130,000,000 messages~\cite{GMANEwikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus with metadata of its messages, including sent time, place, sender name, sender email address.
-GMANE usage in scientific research is reported in studies of isolated lists and of lexical innovations~\cite{GMANE2,bird}. The scripts for gathering and processing GMANE email messages are given in Appendix~\ref{scripts}.
+the GMANE email archive~\cite{GMANE}, which consists of more than 20,000 email lists and more than 130,000,000 messages~\cite{GMANEwikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus with metadata of its messages, including sent time, place, sender name, and sender email address.
+The GMANE usage in scientific research is reported in studies of isolated lists and of lexical innovations~\cite{GMANE2,bird}. The computer scripts for gathering and processing GMANE email messages are given in Appendix~\ref{scripts}. 
 
-    \subsection{Chosen dataset}
-Four email lists were selected for their diversity, easing initial observance of natural and general properties.
+Four email lists were selected for their diversity, making it easier to infer general properties.
 \begin{itemize}
     \item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE.}. Dominated by participants with hybrid artistic and technological interests. Participants are from different countries, and English is the language used the most. Abbreviated as LAU from now on.
     \item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE.}. Participants are from different countries, and English is the language used the most. A more technical and less active version of LAU. Abbreviated LAD from now on.
@@ -168,7 +161,7 @@ Four email lists were selected for their diversity, easing initial observance of
     \item List of the MetaReciclagem project\footnote{gmane.politics.organizations.metareciclagem is list ID in GMANE.}. Dominated by Brazilian activists and digital culture interests. Participants are mostly Brazilians, and Portuguese is the most used language, although Spanish and English are also incident. Abbreviated MET from now on.
 \end{itemize} 
 
- The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages exposed in Table~\ref{geralListas}.
+ The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages, as indicated in Table~\ref{geralListas}.
 
 \begin{table}
   \centering
@@ -177,8 +170,7 @@ $N$ is the number of participants (number of different email addresses).
 $\Gamma$ is the number of threads (count of messages without antecedent).
 $\overline{M}$ is the number of messages missing in the 20,000 collection, $100\frac{23}{20000}=0.115$ percent in the worst case.
 MET notably has the fewer participants and the larger number of threads.
-This relation holds for each of the lists considered: as the number of participants increases,
- the number of threads decreases.}
+This relation holds for each of the lists considered here and a derived article (see Appendix~\ref{sec:fure}): as the number of participants increases, the number of threads decreases.}
   \label{geralListas}
   \begin{tabular}{|l|c|c|c|c|c|}\hline
 list & $date_1$ & $date_{M}$    & $N$  & $\Gamma$ & $\overline{M}$ \\\hline
@@ -190,143 +182,138 @@ CPP  & Mar/13/2002 & Aug/25/2009 & 1052 & 4506 & 7 \\ \hline
 \end{table}
 
 
-
 \section{Characterization methods}
-After immersion with the data and appropriated literature, the following methods for network characterization were chosen: 1) statistics of activity along time; 2) division of network in hubs, intermediary and peripheral vertex; 3) prominence of topological measures; 4) evolutive visualizations and quantitative observations; 5) typological elaborations of networks and participants.
-Each of these methods are described bellow with supporting structures.
+The email lists and the networks generated from them were characterized by: 1) statistics of activity along time, with a detailed analysis for time durations from seconds to years; 2)  sectioning of the networks in hubs, intermediary and peripheral vertices; 3) prominence of topological measures, including their time dependence; 4) iterative visualization and data mining of networks; 5) typological elaborations of networks and participants.  Each of these procedures are described below with supporting structures.
 
-    \subsection{Temporal activity statistics}
-Number of messages along time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. These are exhibited as tables in Appendix~\ref{tabTime}. Results are outlined in Section~\ref{constDisc}.
+Distribution of activity among participants are in Table~\ref{autores} and indirectly through almost all results of this article, as degree and strength are highly correlated to activity.
 
-    \subsection{Interaction network}\label{intNet}
-Regarding literature~\cite{bird,newmanCommunityDirected,newmanCommunity2013}, interaction networks can be modeled both weighted or unweighted, both directed or undirected. Networks in this article are directed and weighted, considered as more informative among possibilities (directed unweighted, undirected weighted, and undirected unweighted).
-The networks were considered as follows: a direct response from participant B to a message from participant A yields an edge from A to B, as information went from A to B. The reasoning is: if B wrote a response to a message from A, he read what A wrote and formulated a response, so B assimilated information from A, thus $A \rightarrow B$. Inverting edge direction yields the status network, as B read the message and considered what A wrote worth responding, giving status to A, thus $B\rightarrow A$. This article uses the information network as described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, one is added to edge weight. Self-loops were regarded as non-informative and discarded. This networks are described as exhibiting free-scale and small world properties, as expected for a social network~\cite{bird}.
+  \subsection{Time activity statistics}                          
+Messages were counted along time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. These are exhibited as Tables~\ref{dia}-\ref{ano} in Appendix~\ref{tabTime}. Results are outlined in Section~\ref{constDisc}.
+
+    \subsection{Interaction network}\label{intNet}                     
+Regarding literature~\cite{bird,newmanCommunityDirected,newmanCommunity2013}, interaction networks can be modeled both weighted or unweighted, both directed or undirected. Networks in this article are directed and weighted, the more informative of trivial possibilities, i.e. we did not observe directed unweighted, undirected weighted, and undirected unweighted representations of the interaction network. The networks were obtained as follows: a direct response from participant B to a message from participant A yields an edge from A to B, as information went from A to B. The reasoning is: if B wrote a response to a message from A, he/she read what A wrote and formulated a response, so B assimilated information from A, thus $A \rightarrow B$. Inverting edge direction yields the status network: B read the message and considered what A wrote worth responding, giving status to A, thus $B\rightarrow A$. This article uses the information network as described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, one is added to the edge weight. Self-loops were regarded as non-informative and discarded. These networks are reported in literature as exhibiting scale-free and small world properties, as expected for  (some) social networks~\cite{bird,newmanBook}.
 
 \begin{figure}[hb]
     \centering
     \includegraphics[width=0.5\textwidth]{figs/criaRede_}
-    \caption{Formation of interaction network from email messages. Each vertex represents a participant. A reply message from participant B to a message from participant A is regarded as evidence that B received information from A. Multiple messages add ``weight'' to directed edge. Further details are in Section~\ref{intNet}.}
+    \caption{Formation of interaction network from email messages. Each vertex represents a participant. A reply message from participant B to a message from participant A is regarded as evidence that B received information from A. Multiple messages add ``weight'' to a directed edge. Further details are given in Section~\ref{intNet}.}
     \label{formationNetwork}
 \end{figure}
 
 
-Previous messages on the thread create directed edges from their author to the observed message's author. Edges can be created from all antecedent messages on the message-response thread. In this work, only the immediate predecessor is linked to new message's author, both for simplicity and for the valid objection that in adding two edges, $x\rightarrow y$ and $y\rightarrow z$, there is also a connection between $x\rightarrow z$. Potential interpretations for this weaker connection are usually common sense, such as: double length, half weight or with one more ``obstacles''. This suggests the adoption of centrality measures that account for the connectivity with all nodes, such as betweenness centrality and accessibility~\cite{luMeasures,access}.
+Edges can be created from all antecedent messages on the message-response thread. We only linked the immediate antecedent to the new message's author, both for simplicity and for the valid objection that in adding two edges, $x\rightarrow y$ and $y\rightarrow z$, there is also a weaker connection between $x$ and $z$. Potential interpretations for this weaker connection are: double length, half weight or with one more ``obstacles''. This suggests pertinence of centrality measures that account for the connectivity with all nodes, such as betweenness centrality and accessibility~\cite{luMeasures,access}.
 
 
-        \subsubsection{Sectioning network in periphery, intermediary and hubs classes}\label{sectioning}
+        \subsubsection{Sectioning networks in periphery, intermediary and hubs sectors}\label{sectioning}
 
-\begin{figure}[hb]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/fser}
-    \caption{Degree distribution on scale-free and Erd\"os-R\'enyi ideal networks. The later has more
-        intermediary, as the former has more peripheral and hub vertexes. Sections are
-        given by the two intersections $k_1$ and $k_2$ of the connectivity distributions. Characteristic degrees
-    are in compact intervals of degree: $[0,k_1]$, $(k_1,k_2]$, $(k_2,k_{max}]$ for the three sections considered (periphery, intermediary and hubs).}
-    \label{fig:setores}
-\end{figure}
 
-Because of social networks tendency to have a scale-free distribution of connectivity,
-one can compare it to an Erd\"os-R\'enyi random graph and consider peripheral, intermediary and hub
-sectors~\cite{3setores}, as depicted in Figure~\ref{fig:setores}.
+Social networks tend to have a scale-free distribution of connectivity, and the primitive sectors (periphery, intermediary and hubs) can be derived from comparison with an Erd\"os-R\'enyi  network with the same number of edges and vertices~\cite{3setores}, as depicted in Figure~\ref{fig:setores}.
 The degree distribution $\widetilde{P}(k)$ of an ideal
-scale-free network $\mathcal{N}_f$ with $N$ vertexes and $z$ edges, has less
-average degree nodes when compared with the distribution $P(k)$ of an Erd\"os-R\'enyi
-random graph with the same number of vertexes and edges:
+scale-free network $\mathcal{N}_f$ with $N$ vertices and $z$ edges has less
+average degree nodes than the distribution $P(k)$ of an Erd\"os-R\'enyi
+network with the same number of vertices and edges. Indeed, we define in this work the intermediary sector of a network to be the set of all the nodes whose degree is less abundant in the real network than on the Erd\"os-R\'enyi model:
 
 \begin{equation}\label{criterio}
     \widetilde{P}(k)<P(k) \Rightarrow \text{k is intermediary degree}
 \end{equation}
 
 If $\mathcal{N}_f$ is directed and has no self-loops, the probability
-of the presence of an edge between two arbitrary vertexes is $p_e=\frac{z}{N(N-1)}$ (see Appendix~\ref{ap:ded}).
-A vertex in the ideal Erd\"os-R\'enyi digraph with the same number of vertexes and edges, and thus the same probability $p_e$ for the presence of an edge, will have degree $k$ with probability:
+of an edge between two arbitrary vertices is $p_e=\frac{z}{N(N-1)}$ (see Appendix~\ref{ap:ded}).
+A vertex in the ideal Erd\"os-R\'enyi digraph with the same number of vertices and edges, and thus the same probability $p_e$ for the presence of an edge, will have degree $k$ with probability:
 
 \begin{equation}
     P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
 \end{equation}
 
-The lower degree fat tail is constituted by the border
-vertexes and is called the peripheral sector. 
-The higher degree fat tail is the hub sector.
+The lower degree fat tail represents the border vertices, i.e. the peripheral sector or periphery where $\widetilde{P}(k)>P(k)$ and $k$ is lower and any intermediary sector value of $k$. The higher degree fat tail is the hub sector, i.e. $\widetilde{P}(k)>P(k)$ and $k$ is higher than any intermediary sector value of $k$. The reasoning for this classification is: 1) vertices so connected that they are virtually inexistent in networks connected at pure chance (e.g. without preferential attachment) are correctly associated to the hubs sector. Vertices with very few connections, which are way more abundant than expected by pure chance, are assigned to the periphery. Vertices with degree values predicted as the most abundant if connections are created by pure chance, near the average, and less frequent in scale-free phenomena, are classified as intermediary. 
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/fser}
+    \caption{Degree distribution on scale-free and Erd\"os-R\'enyi ideal networks. The latter has more
+        intermediary vertices, while the former has more peripheral and hub vertices. Sector borders are
+        given by the two intersections $k_1$ and $k_2$ of the connectivity distributions. Characteristic degrees
+    are in compact intervals of degree: $[0,k_1]$, $(k_1,k_2]$, $(k_2,k_{max}]$ for the three sectors considered (periphery, intermediary and hubs).}
+    \label{fig:setores}
+\end{figure}
 
-The arguments behind this classification are: 1) vertexes so connected that they are virtually inexistent in networks whose edges are incident regardless of vertex properties, are correctly associated to the hubs sector. Vertexes with very few connections, which are way more abundant than expected in networks whose edges are incident regardless of vertex properties, are correctly assigned to periphery. Degree values near average, predicted as the most abundant if connections are created without criteria, and less frequent in free-scale phenomena, are classified to intermediary vertexes.
-
-To ensure statistical validity, bins can be chosen to contain at least $\eta$ vertexes. Thus, each bin, starting at degree $k_i$, spans $\Delta_i=[k_{i},k_{j}]$ degree values, where $j$ is the smallest integer in which degrees $k_i$-$k_{j}$ contain at least $\eta$ vertexes. This changes equation~\ref{criterio} to:
+To ensure statistical validity, bins can be chosen to contain at least $\eta$ vertices. Thus, each bin, starting at degree $k_i$, spans $\Delta_i=[k_{i},k_{j}]$ degree values, where $j$ is the smallest integer with which there are at least $\eta$ vertices with degree larger than or equal $k_i$, and less than or equal $k_{j}$. This changes equation~\ref{criterio} to:
 
 \begin{equation}\label{criterio2}
     \sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i is intermediary}
 \end{equation}
 
-If instead strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used for comparison, with $\overline{w}=\frac{z}{\sum_is_i}$ the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees and strengths, comparisons should be made with $\kappa_i=2k_i^{in}$, $\kappa_i=2k_i^{out}$, $\kappa_i=2\frac{s_i^{in}}{\overline{w}}$ and $\kappa_i=2\frac{s_i^{out}}{\overline{w}}$. Results of these criteria for network segmentation are discussed in Section~\ref{subsec:pih}.
+If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used for comparison, with $\overline{w}=2\frac{z}{\sum_is_i}$ the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees and strengths, comparison should be made with $\kappa_i=2k_i^{in}$, $\kappa_i=2k_i^{out}$, $\kappa_i=2\frac{s_i^{in}}{\overline{w}}$ and $\kappa_i=2\frac{s_i^{out}}{\overline{w}}$. Results of these criteria for network segmentation are discussed in Section~\ref{subsec:pih} and exhibited in Figures~\ref{fig:cpp10000} to~\ref{fig:lad50_} of Appendix~\ref{figures}.
 
-Compound criteria is also used for classification of vertex, considering all measures: total, in and out degree and strength. After a careful inspection of possible combinations, these were reduced to six:
+Since different metrics can be used in the segmentation to identify the three types of vertices, various criteria can be defined, e.g. with a very stringent criterion according to which a vertex will only be classified as hub if it is so for all the metrics. After a careful inspection of possible combinations, these were reduced to six:
 
 \begin{itemize}
-    \item Exclusivist criteria: vertexes are only classified if the class is the same according to all metrics. In this case, vertexes classified does not usually reach 100\%, which is depicted by a black line in Appendix~\ref{figures}.
-    \item Inclusivist criteria: vertex has class given by any of the metrics. Therefore, a vertex can belong to more than one class, and class attribution may add more than total number of vertexes, which is indicated by a black line in Appendix~\ref{figures}.
-    \item Exclusivist cascade: a hub is only classified as hub if it is a hub with respect to all metrics. Intermediary are the vertexes classified as intermediary or hub with respect to all metrics. Remaining vertexes are regarded as peripheral.
-    \item Inclusivist cascade: hubs are vertexes classified as hubs by any of the metrics. The remaining vertexes are classified as intermediary if they belong to this category by any of the metrics. Vertexes only classified as peripheral are the only considered as such.
-    \item Exclusivist externals: vertexes are only hubs if they are classified as such according to all the metrics. The remaining vertexes are classified as peripheral if they fall into hub or peripheral categories by any metric. The rest of the vertexes are classified as intermediary.
-    \item Inclusivist externals: hubs are vertexes classified as hubs according to any metric. The remaining vertexes will be peripheral if classified as such according to any metric. The rest of the vertexes are regarded regarded as intermediary.
+\item Exclusivist criterion:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified (usually) does not reach 100\%, which is indicated by a black line in the figures of Appendix~\ref{figures}.
+        \item Inclusivist criterion: a vertex has the class given by any of the metrics. Therefore, a vertex can belong to more than one class, and the percentages of members may add to more than 100\%, which is indicated by a black line in the figures of Appendix~\ref{figures}.
+    \item Exclusivist cascade: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
+    \item Inclusivist cascade: vertices are hubs if they are so classified according to any of the metrics. The remaining vertices are classified as intermediary, if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
+    \item Exclusivist externals: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes by any metric. The rest of the nodes are classified as intermediary.
+    \item Inclusivist externals: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
 \end{itemize}
 
-These compound criteria, and reduction of possibilities to them, can be formalized in strict mathematical terms. This was considered out of the scope of the present article. Important here is to notice that the compound criteria can be used to examine network sections in the case of a low number of messages, as will be shown later.
 
-Results from applying this classification method is reported in Section~\ref{subsec:pih}.
 
-        \subsubsection{Topological measures}\label{measures}
-The topology of the networks was characterized by a small selection of the most standard
-measurements of each vertex:
+These compound criteria, and the simplification of possibilities listed above (exclusivist/inclusivist, criterion/cascade/externals) , can be formalized in strict mathematical terms, but this was considered out of the scope of the present article. Important here is to notice that the compound criteria can be used to examine network sections in the case of a low number of messages, such as in the last figures of Appendix~\ref{figures}.
+
+Results from applying this classification method, i.e. the achievement of well defined sectors by comparison of the real network with the Erd\"os R\'enyi model, are reported in Section~\ref{subsec:pih} and Appendix~\ref{figures}.
+
+
+\subsubsection{Topological measurements}\label{measures}
+
+The topology of the networks was characterized with a small selection of the most standard measurements for each vertex, as follows:
 
 \begin{itemize}
-    \item Degree $d_i$: number edges linked to                                 vertex $i$.
-    \item In-degree $d_i^{in}$: number of edges ending at                      vertex $i$.
-    \item Out-degree $d_i^{out}$: number of edges departing from               vertex $i$.
-    \item Strength $s$: sum of weights of all edges linked to                  vertex $i$.
-    \item In-strength $s_i^{in}$: sum of weights of all edges ending at        vertex $i$.
+    \item Degree $k_i$: number edges linked to vertex $i$.
+    \item In-degree $k_i^{in}$: number of edges ending at vertex $i$.
+    \item Out-degree $k_i^{out}$: number of edges departing from vertex $i$.
+    \item Strength $s$: sum of weights of all edges linked to vertex $i$.
+    \item In-strength $s_i^{in}$: sum of weights of all edges ending at vertex $i$.
     \item Out-strength $s_i^{out}$: sum of weights of all edges departing from vertex $i$.
-    \item Clustering coefficient $cc_i$: fraction of pairs of neighbors of vertex $i$ that are linked. This is the standard clustering coefficient for undirected graphs. Usage of other clustering coefficients (e.g. for directed graphs) was considering out of scope, as such clustering coefficients are usually employed in special contexts. 
-    \item Betweenness centrality $bt_i$: fraction of geodesics that contain the vertex $i$. Betweenness centrality index considered directions and weight, as specified in~\cite{faster}.
+    \item Clustering coefficient $cc_i$: fraction of pairs of neighbors of $i$ that are linked.  The standard clustering coefficient for undirected graphs was used.
+  \item Betweenness centrality $bt_i$: fraction of geodesics that contain the vertex $i$. Betweenness centrality index considered directions and weight, as specified in~\cite{faster}.
 \end{itemize}
 
-In order to capture asymmetries in the activity of participants, the following metrics were introduced (see Section~\ref{prevalence}):
+In order to capture symmetries in the activity of participants, the following metrics were introduced for a vertex $i$ (see Section~\ref{prevalence}):
 
 \begin{itemize}
-    \item Asymmetry of vertex $i$: $asy_i=\frac{d_i^{in}-d_i^{out}}{d_i}$.
-    \item Mean of edge asymmetry of vertex $i$: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|}$. Where $e_{xy}$ is 1 if there is and edge from $x$ to $y$, $0$ otherwise. $|J_i|$ is the number of neighbors of vertex $i$.
-    \item Standard deviation of edge asymmetry of vertex $i$: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{|J_i|}  }$
-    \item Disequilibrium of vertex $i$: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
-    \item Mean of edge disequilibrium of vertex $i$: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{|J_i|}$, where $w_{xy}$ is weight of edge $x\rightarrow y$ and zero if there is no such edge.
-    \item Standard deviation of edge disequilibrium of vertex $i$: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{|J_i|}}$
+    \item Asymmetry: $asy_i=\frac{d_i^{in}-d_i^{out}}{d_i}$.
+    \item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|}$. Where $e_{xy}$ is 1 if there is and edge from $x$ to $y$, $0$ otherwise. $|J_i|$ is the number of neighbors of vertex $i$.
+    \item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{|J_i|}  }$
+    \item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
+    \item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{|J_i|}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
+    \item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{|J_i|}}$
 \end{itemize}
 
+   \subsection{Evolution of the networks}
+The evolution of the networks was observed within a fixed number of messages (or window size $ws$) that shifts in the message timeline.
+The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics. 
 
-   \subsection{Evolutive observations}
-Evolution of network was observed within a fixed number of messages (or window size $ws$) that shifts in the message timeline.
- All $ws=$ 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000 were used. Within a same $ws$, the number vertexes and edges vary in time, as do other network characteristics. Further work should deepen inspection of measure interdependence.
+        \subsection{Visualization of network evolution}
+The evolution of the networks was visualized with animations, image galleries and online gadgets made for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualization was crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations (see Section~\ref{measures} and Appendix~\ref{sec:pcat}), in addition to the size of the three sectors in a timeline fashion (Appendix~\ref{figures}). Visualization of network structure was specially useful as part of the email lists data mining, from which parts of relevant structures as results were driven.
 
-        \subsubsection*{Visualization of network evolution}
-In refining hypotheses, visualization of the network was crucial.
-
-The evolution of the networks was visualized with animations, image galleries and online gadgets made for this research~\cite{animacoes,galGMANE,appGMANE}. Mapping of various topological measures to glyphs and layouts are being further explored as a parallel research. Furthermore, stable aspects of measures prominence along time are captured through mean and standard deviation (see Section~\ref{measures} and Appendix~\ref{sec:pcat}). Constant sector sizes along time are observed in a timeline fashion in Appendix~\ref{figures}.
 
     \subsection{Typological deepening}
-There are other ways to split a network. To point a common example, the center of the network is defined as all the nodes whose maximum distance to any other node is the radius\footnote{Radius is the minimum maximum distance to all nodes. Equivalently, the radius is the minimum eccentricity.}. 
-In the same framework, the periphery (as opposed to the center) consists of the nodes whose maximum distance to any node is the diameter\footnote{Diameter is the maximum geodesic on the network.}. Accordingly, the intermediary sector can be defined as the nodes that are not in the center or in the periphery. Interestingly, in the email networks analyzed, with these criteria, the center can often be a factor of 4 times larger than the periphery and the intermediary group often exceed 93\% of the nodes~\cite{networkx}.
+There are other ways to split and characterize networks. To point a common example, the center of the network is defined as all the nodes whose maximum distance to any other node is the radius (the radius is the minimum maximum distance to all vertices , i.e. the radius is the minimum eccentricity). 
+In the same framework, the periphery (as opposed to the center) consists of the nodes whose maximum distance to any node is the diameter(diameter being the maximum geodesic on the network). Accordingly, the intermediary sector can be defined as the nodes that are not in the center or in the periphery. Interestingly, in the email networks analyzed, with such criteria, the center can often be a factor of 4 times larger than the periphery and the intermediary group often exceed 90\% of the nodes~\cite{networkx}.
 
-Models of human dynamics can be used to predict and classify activity. In this case, agent activity is commonly considered a Poisson process, as a consequence of the randomly distributed events in time. Even so, evidence-based models suggests that human activity patterns follow non-Poisson statistics, characterized by a long tail of inactivity with of bursts of rapidly occurring events~\cite{barabasiHumanDyn,barabasiPhone}. Emails are reported as having a heavy tailed distribution with $\alpha=1$, together with web browsing and library loans~\cite{barabasiHumanDyn}.
+Models of human dynamics can be used to predict and classify activity. In this case, agent activity is commonly considered a Poisson process, as a consequence of the randomly distributed events in time. Even so, evidence-based models suggests that human activity patterns follow non-Poisson statistics, characterized by a long tail of inactivity with bursts of rapidly occurring events~\cite{barabasiHumanDyn,barabasiPhone}. Emails are reported as having a heavy tailed distribution with $\alpha=1$, together with web browsing and library loans~\cite{barabasiHumanDyn}.
 
-Typologies can also be conveniently adapted from psychiatric, psychological and psychoanalytic theories. 
+Typologies can also be conveniently adapted from psychiatric, psychological and psychoanalytic theories.
 Concerning empirical research,
-Theodor Adorno was a core conceiver of an one-of-a-kind typology that resulted from observing authoritarian
-personality traces\footnote{Some of them related to Nazism adoption, antisemitism and potential fascists.}, sometimes depicted as an authoritarian syndrome.
+Theodor Adorno is a core conceiver of an one-of-a-kind typology that resulted from observing authoritarian
+personality traces to detect Nazism adoption, antisemitism and potential fascists, depicted as an authoritarian syndrome~\cite{adorno}.
 
-%Influenced by Social and Psychoanalytic Theories, Adorno et all applied a questionnaire to individuals, from which they reached a position in the the ``F Scale'', to verify etnocentric, conservatory and antidemocratic trends~\cite{adorno}. From psychoanalitic interviews and the F Scale, they derived a typology, which gathers prejudice-inclined traces in personality. Both, low and high scores are considered with prejudicial traces. This typology has nine authoritarian types, the six types with high score in the F Scale: surface resentment, conventional, authoritarian, rebel and psychopath, crank, manipulative; and three of the five types with low score in the F Scale: rigid, protesting, impulsive, easygoing, genuine liberal. Each side of the dipole has a rank of intensity that increases as the order written above.
+%Influenced by Social and Psychoanalytic Theories, Adorno et all applied a %questionnaire to individuals, from which they reached a position in the the %``F Scale'', to verify etnocentric, conservatory and antidemocratic %trends~\cite{adorno}. From psychoanalitic interviews and the F Scale, they %derived a typology, which gathers prejudice-inclined traces in personality. %Both, low and high scores are considered with prejudicial traces. This %typology has nine authoritarian types, the six types with high score in the F %Scale: surface resentment, conventional, authoritarian, rebel and psychopath, %crank, manipulative; and three of the five types with low score in the F %Scale: rigid, protesting, impulsive, easygoing, genuine liberal. Each side of %the dipole has a rank of intensity that increases as the order written above.
 
- Other typologies include Jung's extroversion-introversion trait with four modes of orientation. This four modes are divided in two perceiving functions (sensation and intuition) and two judging functions (thinking and feeling)~\cite{jung}. Myers-Briggs Type Indicator extrapolated Jungian theories into a questionnaire and added perceiving and judging as a fourth dipole~\cite{myers}. Even plain Freudian criteria, such as neurosis, psychosis, perversity and denegation, can be used directly for such categorization, as they have verbal and behavioral typical traces~\cite{freud,freud2}.
 
-It was considered central to benefit from key human typologies, both by adding descriptions to a type and by further characterizing classes in the terms encountered.
+Other classic typologies of interest include Jung's extroversion-introversion trait with four modes of orientation. This four modes are divided in two perceiving functions (sensation and intuition) and two judging functions (thinking and feeling), each individual manifesting one of these four as dominant, and each mode expressed primarily as in an introverted or extraverted form~\cite{jung}. Myers-Briggs Type Indicator extrapolated Jungian theories into a questionnaire and added perceiving and judging as a fourth dipole~\cite{myers}. Even plain Freudian criteria, such as neurosis, psychosis, perversity and denegation, can be used directly for such categorization, as they have verbal and behavioral typical traces~\cite{freud,freud2}.
 
+It was considered central to benefit from key human typologies, both by describing types and by further characterizing classes in the terms encountered. A primitive physics-based typology is described in Section~\ref{sec:pty} as a consequence of the periphery, intermediary and hub sectors yielded by comparing the real networks with the Erd\"os R\`enyi model.
+Also, ethic and moral issues are developed by such legacy. For example, Adorno et al. conceptualized that personality is dynamic, not static or immutable, and that recognizing this was important for an ethic empirical study of human authoritarian traces~\cite{adorno}.
 
 %    \subsection{Other analisys of interest}
 %
@@ -334,97 +321,93 @@ It was considered central to benefit from key human typologies, both by adding d
 %        \subsubsection{Geographical localization}
 
 \section{Results and discussion}
-    \subsection{Constancy and discrepancy of activity along time}\label{constDisc}
-        \subsubsection{Seconds and minutes}
-The incidence of messages at each second of a minute and at each minute of an hour is compatible with uniform distribution simulations\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations.}. Messages were slightly more evenly distributed in all lists: for both seconds and minutes  $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$. Simulations reach these values, but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
 
-        \subsubsection{Hours of the day}
-Table~\ref{dia} shows how the four lists distribute activity along the day.
-Afternoon was the most active 6h period of the day. Second 12h is $\frac{1}{3}$ more active than first 12h. Even so, activity peak occurs around midday, with a skew toward one hour before noon.
+\subsection{Constancy and discrepancy of activity along time}\label{constDisc}
+One remarkable feature from the analysis is that the activity along time is practically the same for all lists.
 
-        \subsubsection{Days of the week}
- Weekdays also exhibit an interesting pattern, to which is dedicated Table~\ref{semana}: a decrease of activity on weekends of at least one third, reaching two thirds in extreme cases.
+\subsubsection{Seconds and minutes}
+The incidence of messages at each second of a minute and at each minute of an hour is compatible with uniform distribution simulations\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations.}. Messages were slightly more evenly distributed in all lists: for both seconds and minutes  $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$. Simulations reach these values  but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
 
-        \subsubsection{Days along the month}
- Table~\ref{mes} shows activity along the month. Variation of activity in the days along the month is less prominent, one cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity. Last days of the month (29, 30 and 31) are not present in every month, and observed activity is proportional to incidence rates.
+\subsubsection{Hours of the day}
+Higher activity was observed between noon and 6 pm, followed by the time period between 6 pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight, as can be seen in Table ?. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.
 
-        \subsubsection{Months and larger divisions of the year}
-Table~\ref{ano} is dedicated to activity in months and larger divisions of the year.
-Observation points two periods of more prominent activities: Jun-Aug (MET and LAD), and Dec-Mar (CPP, LAU and LAD), which fit academic calendars, vacations and end-of-year holidays.
+\subsubsection{Days of the week and along the month}
+ Higher activity was observed during weekdays, as expected, especially for the CPP and MET lists (see Table~\ref{semana}).
 
-    \subsection{Scalable fat-tail structure}\label{subsec:pih}
+\subsubsection{Days along the month}
+Table~\ref{mes} shows activity along the month. Variation of activity in the days along the month is less prominent, one cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity. Last days of the month (29, 30 and 31) are not present in every month, and observed activity is proportional to incidence rates.
 
-There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} is dedicated to exposing this distribution of activity among participants.
+\subsubsection{Months and larger divisions of the year}
+ Activity is concentrated in Jun-Aug for MET and LAD, and from Dec-Mar for CPP, LAU and LAD (see Table~\ref{ano}). These observations fit academic calendars, vacations and end-of-year holidays.
 
-As specified in Section~\ref{sectioning}, in order to classify nodes as hubs, intermediary or peripheral, the incident connectivity distribution $\widetilde{P}(k)$ is compared
-to a connectivity distribution of an ideal Erd\"os R\`enyi network $P(k)$ with the same number of vertexes and edges. In the networks inspected for this article (see Section~\ref{intNet}), if degree distribution is used for classification, hubs can reach $10\%$ of all vertexes. 
- If instead strength is used for comparison ($\widetilde{P}(k_i=\frac{s_i}{\overline{w}})$) is compared
-to $P(k_i)$), hubs account for approximately $5\%$ of all vertex, i.e. strength classification yields half the number of hubs as plain degree. This results hold for in and out degrees and strengths.
+\subsection{Scalable fat-tail structure}\label{subsec:pih}
+There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} is dedicated to exposing this well known and expected distribution of activity among participants.
 
-Classification criteria exposed in Section~\ref{sectioning} reveled remarkable stability over time, provided that a sample of at least 200 messages is taken as the window of analysis. Specially with 1000 or more messages, stable fractions of $\approx 5\%$ of hubs, $\approx [15-20]\%$ of intermediary and $\approx [75-80]\%$ peripheral vertexes were obtained, which match literature expectations~\cite{secFree}.
-Compound criterion resulted in a greater stability and a window of only 200 messages was already sufficient for the analysis.
-A minimum window size for observation of more general properties can be inferred by monitoring the giant component and the degeneration of hub, intermediary and peripheral sections. This degeneration is critical in the span of 50-100 messages. Upon usage of the compound criteria, such as exclusive cascade of Figure~\ref{fig:cpp250_}, the network seem to hold basic structure even with as few as 20-50 messages. This indicates that concentration of activity and low-activity participants occurs even with very few messages.
+The distribution of vertices in the three sectors defined in Section~\ref{sectioning} (hubs, intermediary, peripheral) is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. Moreover, the same distribution applies to the networks of all the four email lists, to which are dedicated the various figures in Appendix~\ref{figures}. If, for instance, strength is taken as the criterion to define the sectors, $\approx 5\%$ of the vertices are found to be hubs, $\approx [15-20]\%$ are intermediary and $\approx [75-80]\%$ are peripheral, which is consistent with the literature~\cite{secFree}. If the degree is used for classification, hubs can reach $10\%$ of all vertices, i.e. classification with strength yields half the number of hubs as plain degree. These results hold for in and out degrees and strengths. Stable distributions can also be obtained for as few as 200 messages if classification of the three sectors is performed with one of the compound criteria established in Section ?. In fact, a minimum window size for observation of more general properties can be inferred by monitoring the giant component and the degeneration of the hub, intermediary and peripheral sections. This degeneration is critical in the span of 50-100 messages. Even so, using a compound criterion such as exclusive cascade of Figure~\ref{fig:cpp250_}, the networks seem to hold their basic structure even with as few as 20-50 messages. This indicates that concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of Appendix~\ref{figures}. A minimum window size for the observation of more general properties can be inferred by monitoring the giant component and the degeneration of hub, intermediary and peripheral sections.
 
-For the histograms used in the classification process, the usage of at least $\eta$ vertexes for each bin did not yield significant differences.
+
+
+
+For the histograms used in the classification process (see Section~\ref{sectioning}), the use of at least $\eta$ vertices for each bin did not yield significant differences.
 That was understood as a consequence of the observation scale:
-\emph{There are between 20 and 200 participants in the message window sizes used to derive most results ($ws \in [200,1500]$ messages). As peripheral vertexes are abundant and span few degrees, there are more than $\eta$ vertexes with each low degree value. Higher degrees cases requires a bit more reasoning. Specified $ws$ implicates that each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Ed\"os R\`enyi network (less than $p$, the probability that a single participant represent when histogram is normalized to density function), than it is not an intermediary connectivity, but a hub.} This concludes the explanation of why using at least $\eta$ vertexes for each bin did not impact results.
-
-Appendix~\ref{figures} is dedicated to figures of these networks and their evolution.
-
-    \subsection{Prevalence of centrality over asymmetries and asymmetries over clusterization}\label{prevalence}
-
-The principal component (PCA~\cite{pca}) exhibit ponderation of centrality measures: degrees, strengths and betweenness centrality. Clustering coefficient is presented in almost perfect orthogonality. Dispersion is more prevalent in symmetry related measures than clustering coefficient. Symmetric and asymmetric edges have been reported as bonded to different roles played by participants and relations~\cite{newmanEvolving}. Principal components formation from original measures can be observed in Tables~\ref{compPCA0},~\ref{compPCA} and~\ref{compPCA2}. Individual vertexes relation with top two principal components can be appreciated in Figures~\ref{PCA} and~\ref{PCA2}.
-This peculiar first component that consists of the averaged sum of degree, strength and betweenness measures was verified to be incident in virtually all networks with 500 or more messages and most smaller networks (degeneration of basic structure is critical with $ws \approx 50-100$ messages). This composition of the principal component suggests that all six degree and strength measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics. When symmetry measures are used in PCA, though, the third component has special contributions of out degree and strength.
-
-As expected, degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. Also trivial in the light of complex network literature: high degree is associated with low clustering coefficient, as shown in Figure~\ref{clust}.
+\emph{There are between 20 and 200 participants in the message window sizes used to derive most of the results ($ws \in [200,1500]$ messages). As peripheral vertices are abundant and span few degrees, there are more than $\eta$ vertices with each low degree value. For the case of higher degrees, one should consider that with the $ws$ used, each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Ed\"os R\'enyi network (less than $p$, the probability that a single participant represents when the histogram is normalized to the density function), than it is not an intermediary connectivity, but a hub. Therefore, using at least $\eta$ vertices for each bin did not impact the results.}
 
 
-When symmetry metrics are included, the first component remains mostly the same, but clustering coefficient is only relevant to third and fourth components. A snapshot of vertexes with respect to these first two principal components is in Figure~\ref{PCA2}. This asymmetry and disequilibrium measures revealed as more proper measures to characterization of hubs and intermediaries, as seen in greater spreading of second plot. These results are summarized in Table~\ref{compPCA2}.
+
+    \subsection{Prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
+
+
+
+The principal component (PCA~\cite{pca}) exhibited ponderation of centrality measures: degrees, strengths and betweenness centrality. Clustering coefficient is presented in almost perfect orthogonality.
+Symmetry of edges have been reported as bonded to different roles played by participants and relations~\cite{newmanEvolving}, and dispersion was more prevalent in symmetry related measures than clustering coefficient.
+This composition of the principal component suggests that all six degree and strength measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics.
+Most important is that the contribution from the distinct metrics to network topology variance is very similar for all the networks considered, and did not vary with time. This stability in network behavior is remarkable, as will be shown by the very small standard deviations of the contributions from the metrics along time.
+
+The variance is mostly presented by degree, strength and betweenness centrality, as indicated in Tables~\ref{compPCA0} and~\ref{compPCA} for the LAU list (similar results are obtained for the other lists and omitted here for simplicity). The standard deviations are small, which means that the first and second components varies little with time.
+ Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The corresponding PCA plot for the two first components is shown in Figure~\ref{PCA}, where the vertices have been colored according to the sector they belong. As expected peripheral vertices have very low values in the first component and greater dispersion in second component. 
+
+Since the clustering coefficient is almost entirely orthogonal to the degree (and other centrality measurements), the plot of clustering coefficient versus degree in Figure~\ref{clust} is similar to the PCA in Figure~\ref{PCA}.
+
+The PCA plot in Figure~\ref{PCA2}, where all metrics were considered,  reflects symmetry-related relevance for the variance. This is shown in Table~\ref{compPCA2}  where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength). It is concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks than the clustering coefficient, especially for hubs and intermediary vertices, which are more dispersed in Figure~\ref{PCA2} than in Figure~\ref{PCA}. 
 
 
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
-    \caption{Scatter plot of vertexes using two principal components from a PCA in the measures space of in and out degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Table~\ref{compPCA} exposes the composition of principal components. Principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Similarity to plot in Figure~\ref{clust} was verified within all window sizes considered ($ws\;\in\;[100,10000]$), which exposes a common relation is held by degree, strength and betweenness measures to clustering coefficient. Therefore, the outline of this plot is very similar to Figure~\ref{clust}.}
+    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Table~\ref{compPCA} shows the composition of principal components.  Similar plots were obtained for all window sizes  $ws\;\in\;[500,10000]$), and for the networks of the other email lists. Similarity to plot in Figure~\ref{clust} was verified within all window sizes considered ($ws\;\in\;[100,10000]$), which exposes a common relation is held by degree, strength and betweenness measures to clustering coefficient.}
     \label{PCA}
 \end{figure}
 
-
-\begin{figure} 
-   \centering
-        \includegraphics[width=\columnwidth]{figs/ev0pr1PCA}
-    \caption{Scatter plot of vertexes using two principal components from a PCA in the measures space of degree, strength, clustering coefficient, betweenness centrality and symmetry related measures. Compositions of first three components are in Table~\ref{compPCA2} and measure details in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertexes.}
-    \label{PCA2}
-\end{figure}
 
 
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr11CC}
-    \caption{Clustering coefficient versus degree of vertexes with a window size of $ws = 1000$ email messages, LAU list. General layout is in accordance with literature: connected vertexes have low clusterization while higher clusterization is gradually more incident as number of connections is lowered.}
+    \caption{Clustering coefficient versus degree of vertices with a window size of $ws = 1000$ email messages, LAU list. The general layout is consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.}
     \label{clust}
 \end{figure}
 
+\begin{figure} 
+   \centering
+        \includegraphics[width=\columnwidth]{figs/ev0pr1PCA}
+    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of (in-,  out- and total) degree, (in-,  out- and total) strength, betweenness centrality, clustering coefficient and symmetry-related measurements. The composition of the first three components are shown in Table~\ref{compPCA2} and measure details in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertexes.}
+    \label{PCA2}
+\end{figure}
 
+    \subsection{Primitive typology: the activity of participants from different sectors}\label{sec:pty}
 
-
-
-
-
-    \subsection{Primitive typology}\ref{sec:pty}
-
-This work aimed at finding common characteristics among (email) interaction networks. Analysis involved primary measures observance and formal criteria for coherent ratios of hub, intermediary and hub sectors. Nevertheless, inspection done by visualizations and raw data manipulations suggests agents peculiarities of typological character. These are initial observations, which should be further developed as posed in Section~\ref{constDisc}:
+This work is aimed at finding common characteristics among (email) interaction networks. Analysis involved primary measures observance and formal criteria for coherent ratios of hub, intermediary and hub sectors. In this process, inspection done by visualizations and raw data manipulations suggests agents typological peculiarities. These are initial observations, which should be further developed as posed in Section~\ref{constDisc}:
 
 \begin{itemize}
-    \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. Literature reports greater stability of participation in smaller communities~\cite{barabasiEvo}, which is the reason why the smaller number of participants in MET was considered coherent with the stable activity of hubs.
-    \item Typically, hub activity is trivial: they interact as much as possible, in every occasion with everyone. Peripheral vertex activity also follows a simple pattern: they interact very rarely, in very few occasions. Intermediary vertexes seem responsible for network structure.
-    \item Network operation exhibit modes that seem dictated by intermediary vertexes behavior. For example, these can exhibit preferential communication to peripheral, intermediary, or hub vertexes; can be marked by stable communication partners; can involve stable or intermittent patterns of activity.
-    \item Some of the most active participants receive many responses with relative few messages sent, and rarely are top hubs. These seem as authorities and contrast with participants that respond way more than receive responses.
+    \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. There are reports in the literature of greater stability of participation in smaller communities~\cite{barabasiEvo}, which is the reason why the smaller number of participants in MET was considered coherent with the stable activity of hubs.
+    \item Typically, the activity of hubs is trivial: they interact as much as possible, in every occasion with everyone. The activity of peripheral vertices also follows a simple pattern: they interact very rarely, in very few occasions. Thereafter, intermediary vertices seem responsible for the network structure. For example, intermediary vertices may exhibit preferential communication to peripheral, intermediary, or hub vertices; can be marked by stable communication partners; can involve stable or intermittent patterns of activity.
+    \item Some of the most active participants receive many responses with relative few messages sent, and rarely are top hubs. These seem as authorities and contrast with participants that respond much more than receive responses.
     \item The most obvious community structure, as observed by high clustering coefficient, is found only in peripheral and intermediary sectors.
 \end{itemize}
 
-This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts involved in other typologies, such Meyer-Briggs, Pavlov or F-Scale. This has no pretension of being a direct result from numeric analysis, it is a description refinement of the found structure, in typological terms. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
 
+This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts involved in other typologies, such Meyer-Briggs, Pavlov or F-Scale. This has no pretension of being a direct result from numeric analysis, it is a description refinement of the found structure, in typological terms. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
+ 
 \section{Conclusions and future work}
 Characterization of interaction networks resulted from stability observations. Along temporal activity statistics, this work reports the stability of the principal components (in the concentration of dispersion and composition) and of the ternary partitioning (periphery, intermediary, hubs) relative sizes, evident in the comparison with the Erd\"os-R\'enyi model.
 
@@ -434,13 +417,13 @@ The task of delivering a first and general characterization of chosen interactio
 
         \subsubsection{Constancy of general characteristics eases tipologization}
 
-Regarding topological aspects of interaction networks, further work should inspect other measures in each of the three connective sectors: hubs, intermediary and peripheral.
+Regarding topological aspects of interaction networks, further work should inspect other measures in each of the three connective sectors: hubs, intermediary and periphery.
 
- Observance of attributes with greater contribution to principal components of LDA should reveal best chances to present these three sections as clusters in the network measurements space. Another possibility, specially for a brute-force characterization of such sectors, is to remove vertexes with degree close to $k_1$ or $k_2$ depicted in figure~\ref{fig:setores}. The subtraction $\widetilde{P}(k)-P(k)$ should result in two positive clusters for periphery and hubs, and a negative cluster for intermediary vertexes. This might support classification of the three sectors by clustering, a more traditional approach to classification.
+Observance of attributes with greater contribution to principal components of LDA should reveal best chances to present these three sections as clusters in the network measurements space. Another possibility, specially for a brute-force characterization of such sectors, is to remove vertices with degree close to $k_1$ or $k_2$ depicted in figure~\ref{fig:setores}. The subtraction $\widetilde{P}(k)-P(k)$ should result in two positive clusters for periphery and hubs, and a negative cluster for intermediary vertices. This might support classification of the three sectors by clustering, a more traditional approach to classification.
 
 Observed networks were coherent with literature in different aspects, such as concentration of activity, and clusterization versus connectivity patterns. Even so, analysis of data from other virtual environments, such as Facebook, Twitter and LinkedIn, might help understanding how general are these structures and what are convenient uses.
 
-A related work observed textual production of network sectors~\cite{rcText}. Resulting knowledge purposes networks and participants tipologization, and both topological and textual analysis should foster characterization of interaction networks and participation incidences.
+A paired article  is dedicated to textual production of the network sectors~\cite{rcText}. Resulting knowledge purposes networks and participants tipologization, and both topological and textual analysis should foster characterization of interaction networks and participation incidences.
 Stability reported in this article eases tipologization of outliers and more usual participation patterns.
 
         \subsubsection{Results exploitation}
@@ -451,20 +434,18 @@ Renato Fabbri is grateful to CNPq (process: 140860/2013-4,
 project 870336/1997-5), United Nations Development Program (PNUD/ONU, contract: 2013/000566; project BRA/12/018)  and 
 the Postgraduate Committee of the IFSC/USP. This author is also grateful for
 the American Jewish Committee for maintaining an online copy of the Adorno book
-used on the epigraph~\cite{adorno}. Authors thanks GMANE creators and maintainers, specifically: GMANE is run by Lars Magne Ingebrigtsen, and the administrators are Tom Koelman, Jason R. Mastaler, Steinar Bang, Jon Ericson, Wolfgang Schnerring, Sebastian D.B. Krause, Nicolas Bareil, Raymond Scholz, and Adam Sjøgren. Authors thank referred email lists communities and welcome feedback as core contribution to this, and similar, research.
+used on the epigraph~\cite{adorno}. Authors thank GMANE creators and maintainers, specifically: GMANE is run by Lars Magne Ingebrigtsen, and the administrators are Tom Koelman, Jason R. Mastaler, Steinar Bang, Jon Ericson, Wolfgang Schnerring, Sebastian D.B. Krause, Nicolas Bareil, Raymond Scholz, and Adam Sjøgren. Authors thank referred email lists communities and welcome feedback as core contribution to this, and similar, research.
 \end{acknowledgments}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
-\section{Deduction of edge existence probability in a directed network without self-loops}\label{ap:ded}
-Be $\mathcal{N}$ a directed network without self-loops with $z$ edges and $N$ vertexes. The probability that an edge exists between two arbitrary vertex is $p_e=\frac{z}{max( \text{number of edges} |\ \text{N vertexes})}$, where $max( \text{number of edges} |\ \text{N vertexes})=2[(N-1)+(N-2)...1]=2[\sum_1^{N-1}i]=2[\frac{N(N-1)}{2}]$ is the maximum number of edges for a network with $N$ vertexes. Therefore:
+\section{Edge existence probability in a directed network without self-loops}\label{ap:ded}
+Be $\mathcal{N}$ a directed network without self-loops with $z$ edges and $N$ vertices. The probability that an edge exists between two arbitrary vertex is $p_e=\frac{z}{max( \text{number of edges} |\ \text{N vertices})}$, where $max( \text{number of edges} |\ \text{N vertices})=2[(N-1)+(N-2)...1]=2[\sum_1^{N-1}i]=2[\frac{N(N-1)}{2}]$ is the maximum number of edges for a network with $N$ vertices. Therefore:
 \begin{align}
-    p_e&=\frac{z}{max( \text{number of edges} |\ \text{N vertexes})}=\nonumber\\
-       &=\frac{z}{2[(N-1)+(N-2)+...+1]}=\frac{z}{2\frac{N(N-1)}{2}}=\nonumber\\
+    p_e&=\frac{z}{max( \text{number of edges} |\ \text{N vertices})} \\       &=\frac{z}{2[(N-1)+(N-2)+...+1]}=\frac{z}{2\frac{N(N-1)}{2}} \\
    p_e &=\frac{z}{N(N-1)}
 \end{align}
-
 
 \section{Further consideration of related work}\label{sec:fure}
 Unreciprocated edges often exceed 50\%, which matches empirical evidence reported in~\cite{newmanEvolving}. Although no correlation of topological characteristics and geographical position was found in a pertinent study~\cite{barabasiGeo}, geographical incidences should be present in further refinement of the analysis.
@@ -477,10 +458,20 @@ Gender related behavior in mobile phone datasets has been reported~\cite{barabas
 
 Considered years altogether, tenths of thousands of participants can post on a list. The most active lists usually reaches a few thousands of participants. Analysis of resulting data might lead to deeper insights in community-related network evolution~\cite{GMANE}.
 
+\subsection{Paired article to analyse textual production}
+Significant differences in the textual production of each connective sector of the network (periphery, intermediary, hubs) is reported in an article by the same research group~\cite{rcText}. Most importantly, linguistic differences are more prominent between the sectors of a same network than between the same sector in different lists. 
+
+\subsection{The Versinus visualization method for evolving complex networks}
+To visualize network evolution, the Versinus method was developed. The method is simple, and consists of placing each vertex along a sinusoid and a line. Even so, fellow researchers repeatedly asked for an article describing Versinus~\cite{versinus}.
+
+\subsection{Typology of online agents}
+A core purpose of the present article, dedicated to stability in interaction networks, and the article about textual production~\cite{rcText} is to derive a sound typology of online agents, with quantitative criteria driven from physics (to the extent possible). This is a work under construction, but should be online in near future.
+
+
 \section{Data and scripts}\label{scripts}
-Messages are downloaded from GMANE database by RSS in the mbox email text format. 
+Messages are downloaded from the GMANE database by RSS in the mbox email text format. 
 They are requested one by one to avoid reaching maximum size of the requests accepted by
-GMANE API. 
+GMANE API.
 
 Every message has about 30 fields, from which the following are crucial
 for the present work:
@@ -513,7 +504,7 @@ Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
 
 \begin{table}[H]
   \centering
-  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a weighted average of degree and betweenness centrality. The second component is mostly clustering coefficient. First and second components sum more than 95\% of total dispersion.}
+  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a weighted average of degree and betweenness centrality. The second component is mostly clustering coefficient. The first and second components represent more than 95\% of total variance. The $\lambda$ line holds the percentage of total variance attributed to each component.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1}          & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$            & $\sigma$ & $\mu$         & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -531,7 +522,7 @@ $\lambda$ & 64.67         & 0.52     & 33.26         & 0.23     & 2.08  & 0.40 \
 
 \begin{table}
   \centering
-  \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a weighted average sum of degree and strength and betweenness centrality. The second component is mostly related to clustering coefficient. The first and second components sum more than 90\% of dispersion.}
+  \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a weighted average sum of degree and strength and betweenness centrality. The second component is mostly related to the  clustering coefficient. The first and second components represent more than 90\% of the variance.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -551,7 +542,7 @@ $\lambda$ & 81.80 & 0.83 & 12.53 & 0.09  & 3.24 & 0.62 \\ \hline
 
 \begin{table}
   \centering
-  \caption{Principal components formation with measures of symmetry (see Section~\ref{measures}). LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to third component. Second component is primarily symmetry measures, but also out degree and strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. Clusterization component combines with disequilibrium, while asymmetry is combined to out degree and strength. Three components has in average 80.36\% of dispersion.}
+  \caption{Principal components formation with symmetry-related metrics (see Section~\ref{measures}). LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to the third principal component. The second component is primarily derived from symmetry measurements, but also out degree and strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. The clusterization component combines with disequilibrium, while asymmetry is combined to out-degree and out-strength. The three components have in average 80.36\% of the variance.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -576,7 +567,24 @@ $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
 
 \clearpage
 
-\subsection{Tables for activity along time}\label{tabTime}
+\subsection{Tables for activity along time and among participants}\label{tabTime}
+
+\begin{table}
+    \caption{Distribution of activity among agents. First column is dedicated to percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $10D$ column has maximum percentage of participants responsible for 10\% of messages.}
+\begin{center}
+    \begin{tabular}{ | l ||  c | c | c | c | }
+        \hline
+        list & hub & $ 1Q $ & $ 1-3Q $ & $10D$ \\ \hline
+    CPP & 14.41 & 0.19 (27.8\%) & 4.09 (75.13\%) & 83.65 (-10.04\%)   \\ 
+    MET & 11.14 & 0.81 (30.61\%) & 8.33 (75,11\%) & 80.49 (-10.02\%)  \\ 
+    LAU & 2.78 & 1.10 (25.16\%) & 13.02 (75,04\%) & 67.37 (-10.03\%) \\ 
+    LAD & 4.00 & 0.95 (25.50\%) & 11.83 (75,07\%) & 71.13 (-10.03\%) \\\hline
+    \end{tabular}
+\end{center}
+\label{autores}
+\end{table}
+
+
 \begin{table*}
 %\tiny
     \caption{Percentage of activity ($\frac{\text{counted messages}}{\text{total messages}}$) in each hour, 6 hours and 12 hours. Maximum activity rates are in bold. In 1h columns, minimum activity is also bold. The less active period of the day is around 4-6h. Maximum activity is between 10-13h. Afternoon is most active in 6h division of the day. The noon has $\approx \frac{2}{3}$ of 24h activity. }
@@ -705,22 +713,6 @@ Dec & 6.81 &                        &                         &  & & 4.59 & & & 
 \label{ano}
 \end{table*}
 
-\begin{table}
-    \caption{Distribution of activity among agents. First column is dedicated to percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $10D$ column has maximum percentage of participants responsible for 10\% of messages.}
-\begin{center}
-    \begin{tabular}{ | l ||  c | c | c | c | }
-        \hline
-        list & hub & $ 1Q $ & $ 1-3Q $ & $10D$ \\ \hline
-    CPP & 14.41 & 0.19 (27.8\%) & 4.09 (75.13\%) & 83.65 (-10.04\%)   \\ 
-    MET & 11.14 & 0.81 (30.61\%) & 8.33 (75,11\%) & 80.49 (-10.02\%)  \\ 
-    LAU & 2.78 & 1.10 (25.16\%) & 13.02 (75,04\%) & 67.37 (-10.03\%) \\ 
-    LAD & 4.00 & 0.95 (25.50\%) & 11.83 (75,07\%) & 71.13 (-10.03\%) \\\hline
-    \end{tabular}
-\end{center}
-\label{autores}
-\end{table}
-
-
 
 \clearpage
 \section{Figures of vertex classification fractions as the network evolves}\label{figures}
@@ -732,7 +724,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hb]
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/10000}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:cpp10000}
 \end{figure*}
 
@@ -740,7 +732,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/10000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification is plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp10000_}
 \end{figure*}
 
@@ -748,7 +740,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/5000}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:cpp5000}
 \end{figure*}
 
@@ -756,7 +748,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/5000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp5000_}
 \end{figure*}
 
@@ -764,7 +756,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/1000}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:cpp1000}
 \end{figure*}
 
@@ -772,7 +764,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/1000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp1000_}
 \end{figure*}
 
@@ -781,7 +773,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/500}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:cpp500}
 \end{figure*}
 
@@ -789,7 +781,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/500_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp500_}
 \end{figure*}
 
@@ -798,7 +790,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/250}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:cpp250}
 \end{figure*}
 
@@ -806,7 +798,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/250_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp250_}
 \end{figure*}
 
@@ -815,7 +807,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/100}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:cpp100}
 \end{figure*}
 
@@ -823,7 +815,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/100_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp100_}
 \end{figure*}
 
@@ -831,7 +823,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/50}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:cpp50}
 \end{figure*}
 
@@ -839,7 +831,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/CPP/50_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:cpp50_}
 \end{figure*}
 
@@ -847,7 +839,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/10000}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:lad10000}
 \end{figure*}
 
@@ -855,7 +847,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/10000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad10000_}
 \end{figure*}
 
@@ -863,7 +855,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/5000}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:lad5000}
 \end{figure*}
 
@@ -871,14 +863,14 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/5000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad5000_}
 \end{figure*}
 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/1000}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:lad1000}
 \end{figure*}
 
@@ -886,7 +878,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/1000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad1000_}
 \end{figure*}
 
@@ -895,7 +887,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/500}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:lad500}
 \end{figure*}
 
@@ -903,7 +895,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/500_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad500_}
 \end{figure*}
 
@@ -912,7 +904,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/250}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:lad250}
 \end{figure*}
 
@@ -920,7 +912,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/250_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad250_}
 \end{figure*}
 
@@ -929,7 +921,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/100}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:lad100}
 \end{figure*}
 
@@ -937,7 +929,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/100_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad100_}
 \end{figure*}
 
@@ -945,7 +937,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/50}
-    \caption{Distribution of vertexes with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertexes.}
+    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
     \label{fig:lad50}
 \end{figure*}
 
@@ -953,7 +945,7 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \begin{figure*}[hbtp] 
    \centering
         \includegraphics[width=\textwidth]{figs/LAD/50_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertexes with unique classification in plotted in black. On the second plot, black represents the fraction of vertexes that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
     \label{fig:lad50_}
 \end{figure*}
 
@@ -979,3 +971,6 @@ four lists and laying extensively all figures is redundant. Window sizes of $ws 
 \end{document}
 %
 % ****** End of file aipsamp.tex ******
+
+
+
