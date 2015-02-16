@@ -293,10 +293,10 @@ The evolution of the networks was observed within a fixed number of messages, th
 The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics. 
 
         \subsection{Visualization of network evolution}
-The evolution of the networks was visualized with animations, image galleries and online gadgets made for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations (see Section~\ref{measures} and Appendix~\ref{sec:pcat}), in addition to the size of the three sectors in a timeline fashion (Appendix~\ref{figures}). Visualization of network structure was specially useful as part of the email lists data mining, from which parts of relevant structures and results were driven.
+The evolution of the networks was visualized with animations, image galleries and online gadgets made for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations (see Section~\ref{measures} and Appendix~\ref{sec:pcat}), in addition to the size of the three sectors in a timeline fashion (Appendix~\ref{figures}). Visualization of network structure was specially useful as part of the email lists data mining, from which parts of relevant structures and results were driven. See Appendix~\ref{sec:fure} for further directions about visualization and text mining concerning the results herein presented, with dedicated articles.
 
 
-    \subsection{Typological deepening}
+    \subsection{Typological deepening}\label{subsec:typ}
 There are other ways to split and characterize networks. To point a common example, the center of the network is defined as all the nodes whose maximum distance to any other node is the radius (the radius is the minimum maximum distance to all vertices , i.e. the radius is the minimum eccentricity). 
 In the same framework, the periphery (as opposed to the center) consists of the nodes whose maximum distance to any node is the diameter (diameter being the maximum geodesic on the network). Accordingly, the intermediary sector can be defined as the nodes that are not in the center or in the periphery. Interestingly, in the email networks analyzed, with such criteria, the center can often be a factor of 4 times larger than the periphery and the intermediary group often exceeds 90\% of the nodes~\cite{networkx}.
 
@@ -399,27 +399,29 @@ This work is aimed at finding common characteristics among (email) interaction n
 
 
 This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts involved in other typologies, such Meyer-Briggs, Pavlov or F-Scale. This has no pretension of being a direct result of numeric analysis, it is a description refinement of the found structure, in typological terms, and coherent with complex networks literature. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
+
+Another typology suggested by results is about the networks themselves. In accordance with previous research results~\cite{barabasiEvo}, this and paired articles~\cite{rcText,versinus} reports a dipole in human interaction network types: networks with few and stable agents, and (relative) many threads per amount of messages contrasts with networks with many agents of intermittent activity and (relative) few threads per amount of messages.
  
-\section{Conclusions and future work}
-Characterization of interaction networks resulted from stability observations. Along temporal activity statistics, this work reports the stability of the principal components (in the concentration of dispersion and composition) and of the ternary partitioning (periphery, intermediary, hubs) relative sizes, evident in the comparison with the Erd\"os-R\'enyi model.
+\section{Conclusions}
+The characterization of interaction networks resulted from stability observations. Along temporal activity statistics, this work reports the stability of the principal components (in the concentration of dispersion and composition) and of the ternary partitioning (periphery, intermediary, hubs) relative sizes, evident in the comparison with the Erd\"os-R\'enyi model. These results suggested typologies for both agents and the networks.
 
 
     \subsection{Further work}
-The task of delivering a first and general characterization of chosen interaction networks involved starting a larger effort. The different aspects covered requires not only different analytical background, but also considerations about textual production and social psychology. These are receiving attention within dedicated works and are summarized in this section.
+The task of delivering a first and general characterization of chosen interaction networks involved a larger effort. The different aspects covered requires not only different analytical background, but also considerations about textual production and social psychology. These are receiving attention within dedicated works and are summarized in this section.
 
         \subsubsection{Constancy of general characteristics eases tipologization}
 
 Regarding topological aspects of interaction networks, further work should inspect other measures in each of the three connective sectors: hubs, intermediary and periphery.
 
-Observance of attributes with greater contribution to principal components of LDA should reveal best chances to present these three sections as clusters in the network measurements space. Another possibility, specially for a brute-force characterization of such sectors, is to remove vertices with degree close to $k_1$ or $k_2$ depicted in figure~\ref{fig:setores}. The subtraction $\widetilde{P}(k)-P(k)$ should result in two positive clusters for periphery and hubs, and a negative cluster for intermediary vertices. This might support classification of the three sectors by clustering, a more traditional approach to classification.
+Observance of attributes with greater contribution to principal components of LDA should reveal best chances to present these three sections as clusters in the network measurements space. Another possibility, specially for a brute-force characterization of such sectors, is to remove vertices with degree close to $k_1$ or $k_2$ depicted in figure~\ref{fig:setores}. The subtraction $\widetilde{P}(k)-P(k)$ (see Section~\ref{subsec:typ}) results in two positive clusters for periphery and hubs, and a negative cluster for intermediary vertices. This might support classification of the three sectors by clustering, a more traditional approach to classification.
 
 Observed networks were coherent with literature in different aspects, such as concentration of activity, and clusterization versus connectivity patterns. Even so, analysis of data from other virtual environments, such as Facebook, Twitter and LinkedIn, might help understanding how general are these structures and what are convenient uses.
 
-A paired article  is dedicated to textual production of the network sectors~\cite{rcText}. Resulting knowledge purposes networks and participants tipologization, and both topological and textual analysis should foster characterization of interaction networks and participation incidences.
-Stability reported in this article eases tipologization of outliers and more usual participation patterns.
+A paired article  is dedicated to textual production of the network sectors~\cite{rcText}. Resulting knowledge purposes networks and participants typologies, and both topological and textual analysis should foster characterization of interaction networks and participation incidences.
+Stability reported in this article eases tipologization of outliers and more usual participation patterns. See Appendix~\ref{sec:fure} for further consideration of works related to presented results.
 
         \subsubsection{Results exploitation}
-Usage of such characteristics are taking place in linked data and electronic government technologies~\cite{ops,opa,ensaio}. Further steps involve elaboration and tests of social dynamics that takes advantages of these results.
+On the technological trend, usage of such characteristics are taking place in linked data and electronic government technologies~\cite{ops,opa,ensaio}. Further steps involve elaboration and tests of social dynamics that takes advantages of these results. These results are also being used for anthropological physics experiments~\cite{anPhy} and knowledge acquisition~\cite{rcText}.
 
 \begin{acknowledgments}
 Renato Fabbri is grateful to CNPq (process: 140860/2013-4,
@@ -439,25 +441,23 @@ Be $\mathcal{N}$ a directed network without self-loops with $z$ edges and $N$ ve
    p_e &=\frac{z}{N(N-1)}
 \end{align}
 
-\section{Further consideration of related work}\label{sec:fure}
-Unreciprocated edges often exceed 50\%, which matches empirical evidence reported in~\cite{newmanEvolving}. Although no correlation of topological characteristics and geographical position was found in a pertinent study~\cite{barabasiGeo}, geographical incidences should be present in further refinement of the analysis.
+\section{Work related to the results}\label{sec:fure}
+Unreciprocated edges often exceed 50\%, which matches empirical evidence~\cite{newmanEvolving}. Although no correlation of topological characteristics and geographical position was found in a pertinent study~\cite{barabasiGeo}, geographical incidences should be present in further refinement of the analysis.
 
 The seminal Nature Letter by Palla, Barab{\'a}si and Vicsek~\cite{barabasiEvo} has strong confluence with this work, suggesting that smaller size of MET community is responsible for the stronger hubs observed.
 
 Controllability of these networks is also an uncovered issue. These has unintuitive properties and might bring into forefront crucial differences between email interaction networks and interaction networks in Facebook or Twitter~\cite{barabasiControlCapacity,barabasiControlCentrality,barabasiControllability}.
 
-Gender related behavior in mobile phone datasets has been reported~\cite{barabasiSex}. This can be further investigated to hold in email lists and in evolving terms as community oriented, non-private interactions takes are drawn from public email groups with hundreds or thousands of participants. 
-
-Considered years altogether, tenths of thousands of participants can post on a list. The most active lists usually reaches a few thousands of participants. Analysis of resulting data might lead to deeper insights in community-related network evolution~\cite{GMANE}.
+Gender related behavior in mobile phone datasets has been reported~\cite{barabasiSex} and can be further investigated in non-private email lists with hundreds or thousands of participants~\cite{GMANE}.
 
 \subsection{Paired article to analyse textual production}
 Significant differences in the textual production of each connective sector of the network (periphery, intermediary, hubs) is reported in an article by the same research group~\cite{rcText}. Most importantly, linguistic differences are more prominent between the sectors of a same network than between the same sector in different lists. 
 
 \subsection{The Versinus visualization method for evolving complex networks}
-To visualize network evolution, the Versinus method was developed. The method is simple, and consists of placing each vertex along a sinusoid and a line. Even so, fellow researchers repeatedly asked for an article describing Versinus~\cite{versinus}.
+To visualize network evolution, the Versinus method was developed. The method is simple and consists in the placement of each vertex along a sinusoid and a line. In the resulting fixed layout, the time evolution takes place.  Even so, fellow researchers repeatedly asked for an article describing Versinus, and it was written in 2013~\cite{versinus}.
 
 \subsection{Typology of online agents}
-A core purpose of the present article, dedicated to stability in interaction networks, and the article about textual production~\cite{rcText} is to derive a sound typology of online agents, with quantitative criteria driven from physics (to the extent possible). This is a work under construction, but should be online in near future.
+A core purpose of the present article, dedicated to stability in interaction networks, and the article about textual production~\cite{rcText} is to derive a sound typology of online agents, with quantitative criteria driven from physics (to the extent possible). This is a work under construction, with preliminary elaborations in Section~\ref{sec:pty}, but should be published in near future.
 
 
 \section{Data and scripts}\label{scripts}
@@ -496,7 +496,7 @@ Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
 
 \begin{table}[H]
   \centering
-  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a weighted average of degree and betweenness centrality. The second component is mostly clustering coefficient. The first and second components represent more than 95\% of total variance. The $\lambda$ line holds the percentage of total variance attributed to each component.}
+  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a weighted average of degree and betweenness centrality. The second component is mostly clustering coefficient. The first and second components represent more than 95\% of total variance. The $\lambda$ bottom line holds the percentage of total variance attributed to each component.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1}          & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$            & $\sigma$ & $\mu$         & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -514,7 +514,7 @@ $\lambda$ & 64.67         & 0.52     & 33.26         & 0.23     & 2.08  & 0.40 \
 
 \begin{table}
   \centering
-  \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a weighted average sum of degree and strength and betweenness centrality. The second component is mostly related to the  clustering coefficient. The first and second components represent more than 90\% of the variance.}
+  \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a weighted average of degree and strength and betweenness centrality. The second component is mostly related to the  clustering coefficient. The first and second components represent more than 90\% of the variance.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -534,7 +534,7 @@ $\lambda$ & 81.80 & 0.83 & 12.53 & 0.09  & 3.24 & 0.62 \\ \hline
 
 \begin{table}
   \centering
-  \caption{Principal components formation with symmetry-related metrics (see Section~\ref{measures}). LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to the third principal component. The second component is primarily derived from symmetry measurements, but also out degree and strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. The clusterization component combines with disequilibrium, while asymmetry is combined to out-degree and out-strength. The three components have in average 80.36\% of the variance.}
+  \caption{Principal components formation with symmetry-related metrics (see Section~\ref{measures}). LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to the third principal component. The second component is primarily derived from symmetry measurements, but also out-degree and out-strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. The clusterization component combines with disequilibrium, while asymmetry is combined to out-degree and out-strength. The three components have in average 80.36\% of the variance.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
  & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
        & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
@@ -579,7 +579,7 @@ $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
 
 \begin{table*}
 %\tiny
-    \caption{Percentage of activity ($\frac{\text{counted messages}}{\text{total messages}}$) in each hour, 6 hours and 12 hours. Maximum activity rates are in bold. In 1h columns, minimum activity is also bold. The less active period of the day is around 4-6h. Maximum activity is between 10-13h. Afternoon is most active in 6h division of the day. The noon has $\approx \frac{2}{3}$ of 24h activity. }\label{dia}
+    \caption{Percentage of activity ($100\frac{\text{counted messages}}{\text{total messages}}$) in each hour, 6 hours and 12 hours. Maximum activity rates are in bold. In 1h columns, minimum activity is also bold. The less active period of the day is around 4-6h. Maximum activity is between 10-13h. Afternoon is most active in 6h division of the day. The noon has $\approx \frac{2}{3}$ of 24h activity. }\label{dia}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c| c|c|c| c|c|c| c|c|c|}
         \hline
@@ -618,7 +618,7 @@ $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
 
 
 \begin{table}[h]
-    \caption{Concentration of activity on days along the week. Weekend days are at least $\frac{1}{3}$ less active and can reach $\frac{1}{3}$ of activity. MET concentrates activity in weekdays the most, leaving only 13.98\% of total activity to Saturday and Sunday. LAU is the one that less concentrates activity in weekdays, reaching 20.94\% of total activity in weekends. These might suggest professional relation of CPP and MET participants to the topics of interest, or a hobby relation of LAU and LAD participants.}
+    \caption{Percentage of activity on days along the week. Weekend days are at least $\frac{1}{3}$ less active and can reach $\frac{1}{3}$ of activity. MET concentrates activity in weekdays the most, leaving only 13.98\% of total activity to Saturday and Sunday. LAU is the one that less concentrates activity in weekdays, reaching 20.94\% of total activity in weekends. These might suggest professional relation of CPP and MET participants to the topics of interest, or a hobby relation of LAU and LAD participants.}
 \begin{center}
     \begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
         \hline
