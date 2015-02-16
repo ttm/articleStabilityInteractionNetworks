@@ -289,16 +289,16 @@ In order to capture symmetries in the activity of participants, the following me
 \end{itemize}
 
    \subsection{Evolution of the networks}
-The evolution of the networks was observed within a fixed number of messages (or window size $ws$) that shifts in the message timeline.
+The evolution of the networks was observed within a fixed number of messages, the window size $ws$, that shifts in the message timeline.
 The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics. 
 
         \subsection{Visualization of network evolution}
-The evolution of the networks was visualized with animations, image galleries and online gadgets made for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualization was crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations (see Section~\ref{measures} and Appendix~\ref{sec:pcat}), in addition to the size of the three sectors in a timeline fashion (Appendix~\ref{figures}). Visualization of network structure was specially useful as part of the email lists data mining, from which parts of relevant structures as results were driven.
+The evolution of the networks was visualized with animations, image galleries and online gadgets made for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations (see Section~\ref{measures} and Appendix~\ref{sec:pcat}), in addition to the size of the three sectors in a timeline fashion (Appendix~\ref{figures}). Visualization of network structure was specially useful as part of the email lists data mining, from which parts of relevant structures and results were driven.
 
 
     \subsection{Typological deepening}
 There are other ways to split and characterize networks. To point a common example, the center of the network is defined as all the nodes whose maximum distance to any other node is the radius (the radius is the minimum maximum distance to all vertices , i.e. the radius is the minimum eccentricity). 
-In the same framework, the periphery (as opposed to the center) consists of the nodes whose maximum distance to any node is the diameter(diameter being the maximum geodesic on the network). Accordingly, the intermediary sector can be defined as the nodes that are not in the center or in the periphery. Interestingly, in the email networks analyzed, with such criteria, the center can often be a factor of 4 times larger than the periphery and the intermediary group often exceed 90\% of the nodes~\cite{networkx}.
+In the same framework, the periphery (as opposed to the center) consists of the nodes whose maximum distance to any node is the diameter (diameter being the maximum geodesic on the network). Accordingly, the intermediary sector can be defined as the nodes that are not in the center or in the periphery. Interestingly, in the email networks analyzed, with such criteria, the center can often be a factor of 4 times larger than the periphery and the intermediary group often exceeds 90\% of the nodes~\cite{networkx}.
 
 Models of human dynamics can be used to predict and classify activity. In this case, agent activity is commonly considered a Poisson process, as a consequence of the randomly distributed events in time. Even so, evidence-based models suggests that human activity patterns follow non-Poisson statistics, characterized by a long tail of inactivity with bursts of rapidly occurring events~\cite{barabasiHumanDyn,barabasiPhone}. Emails are reported as having a heavy tailed distribution with $\alpha=1$, together with web browsing and library loans~\cite{barabasiHumanDyn}.
 
@@ -310,10 +310,11 @@ personality traces to detect Nazism adoption, antisemitism and potential fascist
 %Influenced by Social and Psychoanalytic Theories, Adorno et all applied a %questionnaire to individuals, from which they reached a position in the the %``F Scale'', to verify etnocentric, conservatory and antidemocratic %trends~\cite{adorno}. From psychoanalitic interviews and the F Scale, they %derived a typology, which gathers prejudice-inclined traces in personality. %Both, low and high scores are considered with prejudicial traces. This %typology has nine authoritarian types, the six types with high score in the F %Scale: surface resentment, conventional, authoritarian, rebel and psychopath, %crank, manipulative; and three of the five types with low score in the F %Scale: rigid, protesting, impulsive, easygoing, genuine liberal. Each side of %the dipole has a rank of intensity that increases as the order written above.
 
 
-Other classic typologies of interest include Jung's extroversion-introversion trait with four modes of orientation. This four modes are divided in two perceiving functions (sensation and intuition) and two judging functions (thinking and feeling), each individual manifesting one of these four as dominant, and each mode expressed primarily as in an introverted or extraverted form~\cite{jung}. Myers-Briggs Type Indicator extrapolated Jungian theories into a questionnaire and added perceiving and judging as a fourth dipole~\cite{myers}. Even plain Freudian criteria, such as neurosis, psychosis, perversity and denegation, can be used directly for such categorization, as they have verbal and behavioral typical traces~\cite{freud,freud2}.
+Other classic typologies of interest include Jung's extroversion-introversion trait with four modes of orientation. This four modes are divided in two perceiving functions (sensation and intuition) and two judging functions (thinking and feeling), each individual manifesting one of these four modes as dominant, and each mode expressed primarily as introverted or extroverted~\cite{jung}. Myers-Briggs Type Indicator extrapolated Jungian theories into a questionnaire and added perceiving and judging as a fourth dipole~\cite{myers}. Even plain Freudian criteria, such as neurosis, psychosis, perversity and denegation, can be used directly for such categorization, as they have verbal and behavioral typical traces~\cite{freud,freud2}.
 
-It was considered central to benefit from key human typologies, both by describing types and by further characterizing classes in the terms encountered. A primitive physics-based typology is described in Section~\ref{sec:pty} as a consequence of the periphery, intermediary and hub sectors yielded by comparing the real networks with the Erd\"os R\`enyi model.
+It was considered central to benefit from key human typologies, both by describing types and by further characterizing classes in the terms encountered. A primitive physics-based typology is described in Section~\ref{sec:pty} as a consequence of the periphery, intermediary and hub sectors yielded by comparing the real networks with the Erd\"os R\'enyi model.
 Also, ethic and moral issues are developed by such legacy. For example, Adorno et al. conceptualized that personality is dynamic, not static or immutable, and that recognizing this was important for an ethic empirical study of human authoritarian traces~\cite{adorno}.
+Indeed, this dynamic typological approach is so vital to secure an ethic study of human systems that our epigraph is devoted to make this point explicit.
 
 %    \subsection{Other analisys of interest}
 %
@@ -329,52 +330,43 @@ One remarkable feature from the analysis is that the activity along time is prac
 The incidence of messages at each second of a minute and at each minute of an hour is compatible with uniform distribution simulations\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations.}. Messages were slightly more evenly distributed in all lists: for both seconds and minutes  $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$. Simulations reach these values  but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
 
 \subsubsection{Hours of the day}
-Higher activity was observed between noon and 6 pm, followed by the time period between 6 pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight, as can be seen in Table ?. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.
+Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight, as can be seen in Table~\ref{dia}. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.
 
-\subsubsection{Days of the week and along the month}
- Higher activity was observed during weekdays, as expected, especially for the CPP and MET lists (see Table~\ref{semana}).
+\subsubsection{Days of the week}
+Higher activity was observed during weekdays, specially for the CPP and MET lists (see Table~\ref{semana}). The decrease of activity on weekends reaches at least one third, and two thirds in extreme cases.
 
 \subsubsection{Days along the month}
 Table~\ref{mes} shows activity along the month. Variation of activity in the days along the month is less prominent, one cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity. Last days of the month (29, 30 and 31) are not present in every month, and observed activity is proportional to incidence rates.
 
 \subsubsection{Months and larger divisions of the year}
- Activity is concentrated in Jun-Aug for MET and LAD, and from Dec-Mar for CPP, LAU and LAD (see Table~\ref{ano}). These observations fit academic calendars, vacations and end-of-year holidays.
+ Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Table~\ref{ano}). These observations fit academic calendars, vacations and end-of-year holidays.
 
 \subsection{Scalable fat-tail structure}\label{subsec:pih}
 There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} is dedicated to exposing this well known and expected distribution of activity among participants.
 
-The distribution of vertices in the three sectors defined in Section~\ref{sectioning} (hubs, intermediary, peripheral) is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. Moreover, the same distribution applies to the networks of all the four email lists, to which are dedicated the various figures in Appendix~\ref{figures}. If, for instance, strength is taken as the criterion to define the sectors, $\approx 5\%$ of the vertices are found to be hubs, $\approx [15-20]\%$ are intermediary and $\approx [75-80]\%$ are peripheral, which is consistent with the literature~\cite{secFree}. If the degree is used for classification, hubs can reach $10\%$ of all vertices, i.e. classification with strength yields half the number of hubs as plain degree. These results hold for in and out degrees and strengths. Stable distributions can also be obtained for as few as 200 messages if classification of the three sectors is performed with one of the compound criteria established in Section ?. In fact, a minimum window size for observation of more general properties can be inferred by monitoring the giant component and the degeneration of the hub, intermediary and peripheral sections. This degeneration is critical in the span of 50-100 messages. Even so, using a compound criterion such as exclusive cascade of Figure~\ref{fig:cpp250_}, the networks seem to hold their basic structure even with as few as 20-50 messages. This indicates that concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of Appendix~\ref{figures}. A minimum window size for the observation of more general properties can be inferred by monitoring the giant component and the degeneration of hub, intermediary and peripheral sections.
-
-
-
+The distribution of vertices in the three sectors defined in Section~\ref{sectioning} (hubs, intermediary, periphery) is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. Moreover, the same distribution applies to the networks of all the four email lists, to which are dedicated the various figures in Appendix~\ref{figures}. If, for instance, strength is taken as the criterion to define the sectors, $\approx 5\%$ of the vertices are found to be hubs, $\approx [15-20]\%$ are intermediary and $\approx [75-80]\%$ are peripheral, which is consistent with the literature~\cite{secFree}. If the degree is used for classification, hubs can reach $10\%$ of all vertices, i.e. classification with strength yields half the number of hubs as plain degree. These results hold for in and out degrees and strengths. Stable distributions can also be obtained for 200 of less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. In fact, a minimum window size for observation of more general properties can be inferred by monitoring the giant component and the degeneration of the hub, intermediary and peripheral sections. This degeneration is critical in the span of 50-100 messages. Even so, using a compound criterion, such as exclusive cascade of Figure~\ref{fig:cpp250_}, the networks seem to hold their basic structure with as few as 20-50 messages. This indicates that concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of Appendix~\ref{figures}.
 
 For the histograms used in the classification process (see Section~\ref{sectioning}), the use of at least $\eta$ vertices for each bin did not yield significant differences.
 That was understood as a consequence of the observation scale:
-\emph{There are between 20 and 200 participants in the message window sizes used to derive most of the results ($ws \in [200,1500]$ messages). As peripheral vertices are abundant and span few degrees, there are more than $\eta$ vertices with each low degree value. For the case of higher degrees, one should consider that with the $ws$ used, each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Ed\"os R\'enyi network (less than $p$, the probability that a single participant represents when the histogram is normalized to the density function), than it is not an intermediary connectivity, but a hub. Therefore, using at least $\eta$ vertices for each bin did not impact the results.}
-
-
+\emph{There are between 20 and 200 participants in the message window sizes used to derive most of the results ($ws \in [200,1500]$ messages). As peripheral vertices are abundant and span few degrees, there are more than $\eta$ vertices with each low degree value. For the case of higher degrees, one should consider that with the $ws$ used, each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Erd\"os R\'enyi network (less than $p$, the probability that a single participant represents when the histogram is normalized to the density function), than it is not an intermediary connectivity, but a hub. Therefore, using at least $\eta$ vertices for each bin did not impact the results.}
 
     \subsection{Prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
-
-
-
-The principal component (PCA~\cite{pca}) exhibited ponderation of centrality measures: degrees, strengths and betweenness centrality. Clustering coefficient is presented in almost perfect orthogonality.
+The principal component (PCA~\cite{pca}) exhibited a ponderation of centrality measures: degrees, strengths and betweenness centrality. Clustering coefficient is presented in almost perfect orthogonality.
 Symmetry of edges have been reported as bonded to different roles played by participants and relations~\cite{newmanEvolving}, and dispersion was more prevalent in symmetry related measures than clustering coefficient.
 This composition of the principal component suggests that all six degree and strength measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics.
-Most important is that the contribution from the distinct metrics to network topology variance is very similar for all the networks considered, and did not vary with time. This stability in network behavior is remarkable, as will be shown by the very small standard deviations of the contributions from the metrics along time.
+The contribution from the distinct metrics to network topology variance is very similar for all the networks considered, and did not vary with time. This stability in network behavior is remarkable, as shown by the very small standard deviations of the contributions from the metrics along time in Appendix~\ref{sec:pcat}.
 
-The variance is mostly presented by degree, strength and betweenness centrality, as indicated in Tables~\ref{compPCA0} and~\ref{compPCA} for the LAU list (similar results are obtained for the other lists and omitted here for simplicity). The standard deviations are small, which means that the first and second components varies little with time.
- Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The corresponding PCA plot for the two first components is shown in Figure~\ref{PCA}, where the vertices have been colored according to the sector they belong. As expected peripheral vertices have very low values in the first component and greater dispersion in second component. 
+The dispersion is mostly presented by degree, strength and betweenness centrality, as indicated in Tables~\ref{compPCA0} and~\ref{compPCA} for the LAU list (similar results are obtained for the other lists and omitted here for simplicity). The standard deviations are small, which means that the first and second components varies little with time.
+ Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The corresponding PCA plot for the two first components is shown in Figure~\ref{PCA}, where each vertex is colored according to the sector they belong. As expected, peripheral vertices have very low values in the first component and greater dispersion in the second component. 
+The plot of clustering coefficient versus degree in Figure~\ref{clust} is similar to the PCA in Figure~\ref{PCA}.
 
-Since the clustering coefficient is almost entirely orthogonal to the degree (and other centrality measurements), the plot of clustering coefficient versus degree in Figure~\ref{clust} is similar to the PCA in Figure~\ref{PCA}.
-
-The PCA plot in Figure~\ref{PCA2}, where all metrics were considered,  reflects symmetry-related relevance for the variance. This is shown in Table~\ref{compPCA2}  where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength). It is concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks than the clustering coefficient, especially for hubs and intermediary vertices, which are more dispersed in Figure~\ref{PCA2} than in Figure~\ref{PCA}. 
+The PCA plot in Figure~\ref{PCA2}, where all metrics are considered, reflects symmetry-related relevance for the variance. This is shown in Table~\ref{compPCA2}  where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength). It is concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices, which are more dispersed in Figure~\ref{PCA2} than in Figure~\ref{PCA}. 
 
 
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
-    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Table~\ref{compPCA} shows the composition of principal components.  Similar plots were obtained for all window sizes  $ws\;\in\;[500,10000]$), and for the networks of the other email lists. Similarity to plot in Figure~\ref{clust} was verified within all window sizes considered ($ws\;\in\;[100,10000]$), which exposes a common relation is held by degree, strength and betweenness measures to clustering coefficient.}
+    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Table~\ref{compPCA} shows the composition of principal components.  Similar plots were obtained for all window sizes  $ws\;\in\;[500,10000]$, and for the networks of the other email lists, which exposes a common relation held by degree, strength and betweenness measures to clustering coefficient.}
     \label{PCA}
 \end{figure}
 
@@ -390,13 +382,13 @@ The PCA plot in Figure~\ref{PCA2}, where all metrics were considered,  reflects 
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr1PCA}
-    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of (in-,  out- and total) degree, (in-,  out- and total) strength, betweenness centrality, clustering coefficient and symmetry-related measurements. The composition of the first three components are shown in Table~\ref{compPCA2} and measure details in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertexes.}
+    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of (in-,  out- and total) degree, (in-,  out- and total) strength, betweenness centrality, clustering coefficient and symmetry-related measurements. The composition of the first three components are shown in Table~\ref{compPCA2} and measure details in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertices.}
     \label{PCA2}
 \end{figure}
 
     \subsection{Primitive typology: the activity of participants from different sectors}\label{sec:pty}
 
-This work is aimed at finding common characteristics among (email) interaction networks. Analysis involved primary measures observance and formal criteria for coherent ratios of hub, intermediary and hub sectors. In this process, inspection done by visualizations and raw data manipulations suggests agents typological peculiarities. These are initial observations, which should be further developed as posed in Section~\ref{constDisc}:
+This work is aimed at finding common characteristics among (email) interaction networks. Analysis involved primary measures observance and a formal criteria for coherent ratios of hub, intermediary and hub sectors. In this process, inspection done by visualizations and raw data manipulations suggests agents typological peculiarities. These are initial observations, which inspired this article and other ongoing research:
 
 \begin{itemize}
     \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. There are reports in the literature of greater stability of participation in smaller communities~\cite{barabasiEvo}, which is the reason why the smaller number of participants in MET was considered coherent with the stable activity of hubs.
@@ -406,7 +398,7 @@ This work is aimed at finding common characteristics among (email) interaction n
 \end{itemize}
 
 
-This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts involved in other typologies, such Meyer-Briggs, Pavlov or F-Scale. This has no pretension of being a direct result from numeric analysis, it is a description refinement of the found structure, in typological terms. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
+This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts involved in other typologies, such Meyer-Briggs, Pavlov or F-Scale. This has no pretension of being a direct result of numeric analysis, it is a description refinement of the found structure, in typological terms, and coherent with complex networks literature. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
  
 \section{Conclusions and future work}
 Characterization of interaction networks resulted from stability observations. Along temporal activity statistics, this work reports the stability of the principal components (in the concentration of dispersion and composition) and of the ternary partitioning (periphery, intermediary, hubs) relative sizes, evident in the comparison with the Erd\"os-R\'enyi model.
@@ -587,7 +579,7 @@ $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
 
 \begin{table*}
 %\tiny
-    \caption{Percentage of activity ($\frac{\text{counted messages}}{\text{total messages}}$) in each hour, 6 hours and 12 hours. Maximum activity rates are in bold. In 1h columns, minimum activity is also bold. The less active period of the day is around 4-6h. Maximum activity is between 10-13h. Afternoon is most active in 6h division of the day. The noon has $\approx \frac{2}{3}$ of 24h activity. }
+    \caption{Percentage of activity ($\frac{\text{counted messages}}{\text{total messages}}$) in each hour, 6 hours and 12 hours. Maximum activity rates are in bold. In 1h columns, minimum activity is also bold. The less active period of the day is around 4-6h. Maximum activity is between 10-13h. Afternoon is most active in 6h division of the day. The noon has $\approx \frac{2}{3}$ of 24h activity. }\label{dia}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c| c|c|c| c|c|c| c|c|c|}
         \hline
@@ -621,7 +613,6 @@ $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
 23h & 4.30 &                        &                         & 3.64  & & & 4.23 & & & 4.53 & & \\\hline
     \end{tabular}
 \end{center}
-\label{dia}
 \end{table*}
 
 
