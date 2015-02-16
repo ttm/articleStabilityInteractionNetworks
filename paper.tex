@@ -435,9 +435,10 @@ used on the epigraph~\cite{adorno}. Authors thank GMANE creators and maintainers
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 \section{Edge existence probability in a directed network without self-loops}\label{ap:ded}
-Be $\mathcal{N}$ a directed network without self-loops with $z$ edges and $N$ vertices. The probability that an edge exists between two arbitrary vertex is $p_e=\frac{z}{max( \text{number of edges} |\ \text{N vertices})}$, where $max( \text{number of edges} |\ \text{N vertices})=2[(N-1)+(N-2)...1]=2[\sum_1^{N-1}i]=2[\frac{N(N-1)}{2}]$ is the maximum number of edges for a network with $N$ vertices. Therefore:
+Be $\mathcal{N}$ a directed network without self-loops with $z$ edges and $N$ vertices. The probability that an edge exists between two arbitrary vertex is $p_e=\frac{z}{max( \text{number of edges} |\ \text{N vertices})}$, where $max( \text{number of edges} |\ \text{N vertices})=2[(N-1)+(N-2)+...+1]=2[\sum_1^{N-1}i]=2[\frac{N(N-1)}{2}]$ is the maximum number of edges for a network with $N$ vertices. Therefore:
 \begin{align}
-    p_e&=\frac{z}{max( \text{number of edges} |\ \text{N vertices})} \\       &=\frac{z}{2[(N-1)+(N-2)+...+1]}=\frac{z}{2\frac{N(N-1)}{2}} \\
+    p_e&=\frac{z}{max( \text{number of edges} |\ \text{N vertices})} \nonumber \\
+       &=\frac{z}{2[(N-1)+(N-2)+...+1]}=\frac{z}{2\frac{N(N-1)}{2}} \nonumber \\
    p_e &=\frac{z}{N(N-1)}
 \end{align}
 
