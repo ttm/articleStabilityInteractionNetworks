@@ -1,0 +1,84 @@
+
+
+1. Epígrafe – em geral não se colocam epígrafes em artigos. Verifique na PLOS One se eles permitem epígrafes, mas acredito que não.
+
+Fizemos artigos com o Luciano com epígrafes. Caso haja pedido da revista para retirar a epígrafe, retiraremos.
+Já explicitei que a epígrafe aponta para o cerne do artigo, que é o estudo das tipologias enquanto classificações
+dinâmicas. Caso contrário corremos riscos sérios de cairmos em embates éticos.
+ 
+
+2. A introdução eu ainda não cuidei em detalhe. Adianto, de qualquer maneira, que ela não está obedecendo uma regra comum da escrita científica de tratar dos assuntos do geral para o específico. Ou seja, deve começar com contextualização do problema científico ou da área em que se insere, e depois afunilar para o trabalho específico.
+
+Começar falando de redes em geral e contextualizar com mais generalidade do que fizemos até agora acho que pega até mal.
+
+ 
+3. No Related Work, todo o material mais relevante tem que vir já no corpo do artigo. Em geral não se coloca ‘related work” em apêndice ou Supp. Info.
+
+Ok, embora ache que deixa o artigo menos magro e simples, fundi as duas seções. Achei que ficou bom como endosso da introdução.
+ 
+
+4. O conteúdo da subseção E (typological deepening) certamente não é de metodologia que tenha sido empregada no artigo, e portanto não pode ser colocado onde está. Há diferentes argumentos que poderiam ser colocados na discussão de resultados (talvez na Seção V.D).
+
+Discordo plenamente. É metodologia de especulação tipológica, como encontrado em alguns artigos mais recentes de redes complexas (!!!).
+ 
+
+5. Na Seção de Resultados e Discussão, acho importante colocar um parágrafo introdutório, similar ao que eu tinha incluído na última versão que enviei. Serve para guiar o leitor, uma vez que há grande diversidade de resultados e é importante enfatizar quais serão as contribuições mais relevantes. Acho que o mais fácil seria você modificar o meu texto, alterando partes que você acha necessário.
+
+Aproveitei o texto seu nas seções. Coloquei no início dos resultados, antes das subseções:
+
+Remarkable features from the analysis of the four email lists are:
+\begin{itemize}
+    \item The activity along time is practically the same for all lists (Section~\ref{constDisc}).
+    \item The fraction of participants in each connective sector is stable and can be observed even with very few messages (Section~\ref{subsec:pih}).
+    \item The measures combine in principal components in the same way and with symmetry related measures presenting more dispersion than clustering coefficient (Section~\ref{prevalence}).
+    \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
+\end{itemize}
+
+Furthermore, the Appendix holds tables and figures from which such results can be observed.
+
+ 
+
+6. A divisão dos resultados sobre atividade no tempo trunca o texto, ficando com subdivisões muito pequenas e de pouca importância com relação às contribuições. O mais relevante é ressaltar o todo: que a atividade tem o mesmo padrão para todas as listas.
+
+Está ressaltado no trecho que passei acima. A divisão é importante para organizar o conhecimento, já que os resultados são vários.
+ 
+
+7. Sugiro que as tabelas da Seção V.A (atividade no tempo) fiquem na Supporting Information. A numeração terá que ser acertada (atualmente a primeira Tabela que aparece é Table V).
+
+Pois há tabelas anteriores. Tabelas para mais listas podem ir para supporting information, um mínimo acho importante que fique no Apêndice. Sua sugestão está anotada, pode ter certeza.
+ 
+
+8. Acho o título da Seção V.B (Scalable fat-tail structure) difícil de processar. Um leitor médio não saberá do que se trata.
+
+É o nome que se dá, é nome obtido pela literatura *básica*. Considerando seu comentário, e para não deixar o texto mais incoerente com a radição acadêmica, coloquei: "Scalable fat-tail structure: constancy of participants fraction in the connective sectors"
+ 
+
+9. Os Apêndices que contêm resultados precisam ser chamados de Supp. Info., com tabelas e figuras numeradas a partir de Table S1 ou Figure S1.
+
+Ok, estou trabalhando para soltar uma toolbox (que mesmo em desenvolvimento está recebendo ~10 downloads diários), com isso teremos um conjunto mais refinado de figuras e tabelas. SI não é impresso junto ao artigo, certo? Se estiver correto, acho por bem deixar somente o que for repetido fora, senão o leitor não terá como absorver os resultados.
+ 
+
+10. Na descrição da Seção V.C, eu havia incluído um parágrafo introdutório para contextualizar. Como afirmei no item 5 acima, o mais fácil seria você modificar o meu texto, alterando partes que você acha necessário.
+
+Coloquei assim:
+The contribution from the distinct metrics to network topology 
+is very similar for all the networks considered, and did not vary with time.
+ This stability in network behavior is remarkable, as can be noticed by the very
+small standard deviations of the contributions from the metrics along time (Tables~\ref{compPCA0}-\ref{compPCA2}).
+
+Por favor (por favor), abra o arquivo anotado que lhe enviei. As duas afirmações que você escreveu como introdução a esta seção estão falsas (falsas), por isso as limei. Também, não é o mais importante que é estável, isso é arbitrário. Por exemplo, para mim, considerando a literatura da área e as implicações físicas destes conhecimentos, a relevância das medidas de simetria (que criamos com este artigo) ser maior que as medidas de clusterização é o mais importante.
+
+
+ 
+
+11. Na Seção V.D, na minha versão eu tinha tentado manter exatamente o que você tinha escrito, só acertando o inglês do texto. Se introduzi erros foi devido a não ter interpretado corretamente. Na sua nova versão retornaram alguns problemas de inglês (por exemplo, o “Thereafter” não está adequado e pode distrair o leitor). Acho mais fácil você voltar ao meu texto e corrigir o que você acha que interpretei errado.
+
+Mudei thereafter já que você não acha adequado (não vejo problema e acho usual). Deixei o resto, pois o que você escreveu está incorreto. Veja a primeira frase:
+
+The tools developed for visualization of network activity and evolution were instrumental for a number of observations, which are summarized below. 
+ 
+A tipologia não é resultado da visualização, mas da manipulação dos dados, que também envolve a visualização.
+
+12. A Seção de Further Work está muito comprida, além do que é usual, pois “Further Work” normalmente vem junto com “Conclusions” no artigo. 
+
+Embora further work estivesse junto com conclusions como subseção, fundi as duas, para confluir com seus apontamentos.
