@@ -81,23 +81,23 @@ Curso de Psicologia, Universidade Federal do Cer\'a (UFC)
 Centro de Ciências Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
 }%Lines break automatically or can be forced with \\
 
-
-%\author{Luciano da Fontoura Costa}
-%  \homepage{http://cyvision.ifsc.usp.br/~luciano/}
-%  \email{ldfcosta@gmail.com}
+%
+%%\author{Luciano da Fontoura Costa}
+%%  \homepage{http://cyvision.ifsc.usp.br/~luciano/}
+%%  \email{ldfcosta@gmail.com}
 %  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 
-\author{Osvaldo N. Oliveira Jr.}
-  \homepage{www.polimeros.ifsc.usp.br/professors/professor.php?id=4}
-  \email{chu@ifsc.usp.br}
- \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+%\author{Osvaldo N. Oliveira Jr.}
+%  \homepage{www.polimeros.ifsc.usp.br/professors/professor.php?id=4}
+%  \email{chu@ifsc.usp.br}
+% \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 
 
 \date{\today}% It is always \today, today,
              %  but any date may be explicitly specified
 
 \begin{abstract}
- This article reports interaction networks stability by means of three quantitative criteria: activity distribution in time and among participants; a sound classification of vertices in peripheral, intermediary and hub sectors; the combination of basic measures into principal components with greater variance. We analyzed the temporal activity and topology evolution of networks in four email lists by considering  window sizes from 50 to 10,000 messages, which were made to slide to generate snapshots of the network along a timeline. Activity in terms of seconds, minutes, days and months was remarkably similar for all the networks. Participant activity follows concentrations expected in scale-free networks.  We compare these networks to Erd\"os-R\'enyi networks in order to assign members to three distinct sectors, namely hubs, intermediary and periphery. The fractions of members in these sectors were essentially the same for all networks and, most importantly, stable over time. If strength is used as the criterion for classification, for instance, ca. 5\% of the vertices are hubs, 15-20\% are intermediary and the remainder compose periphery. The metrics  most representative for  data dispersion were found to be centrality-related  (degree, strength and betweenness), followed by symmetry-related,  and then clustering coefficient. Degree, strength and clustering cope with different symmetry measures to bear secondary components. Again, the importance of these metrics to network topology dispersion was practically the same for all email lists examined, and stable over time. The research also resulted on a sketch of a physics-based typology of agents, with proper social and psychological speculations. Because the network properties reported did not depend on the email list and were stable over time, and because observed structure is in accordance with expectations driven from literature for human interaction networks, we believe that the properties observed  holds for general human interaction networks, and the approach can be applied to other types of networks. Current unfoldings include governance and accountability proposals and implementations, anthropological physics experimentations and the report of quantitative differences of textual production as connectivity of agents changes.
+ This article reports interaction networks stability by means of three quantitative criteria: activity distribution in time and among participants; a sound classification of vertices in peripheral, intermediary and hub sectors; the combination of basic measures into principal components with greater variance. We analyzed the temporal activity and topology evolution of networks in four email lists by considering  window sizes from 50 to 10,000 messages, which were made to slide to generate snapshots of the network along a timeline. Activity in terms of seconds, minutes, days and months was remarkably similar for all the networks. Participant activity follows concentrations expected in scale-free networks.  We compare these networks to Erd\"os-R\'enyi networks in order to assign members to three distinct sectors, namely hubs, intermediary and periphery. The fractions of members in these sectors were essentially the same for all networks and, most importantly, stable over time. If strength is used as the criterion for classification, for instance, ca. 5\% of the vertices are hubs, 15-20\% are intermediary and the remainder compose periphery. The metrics  most representative for  data dispersion were found to be centrality-related  (degree, strength and betweenness), followed by symmetry-related,  and then clustering coefficient. Degree, strength and clustering cope with different symmetry measures to bear secondary components. Again, the importance of these metrics to network topology dispersion was practically the same for all email lists examined, and stable over time. The research also resulted on a sketch of a physics-based typology of agents, with proper social and psychological speculations. Because the network properties reported did not depend on the email list and were stable over time, and because observed structure is in accordance with expectations driven from literature for human interaction networks, we believe that the properties observed  holds for general human interaction networks, and the approach can be applied to other types of networks. Current unfoldings include governance and accountability proposals and implementations, anthropological physics experiments and the report of quantitative differences of textual production as connectivity of agents changes.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
@@ -138,14 +138,32 @@ Although all networks considered originated from email lists,
  such as observed in online platforms (e.g. LinkedIn, Facebook, Twitter).
 
 
-\subsection{Related work}
+\subsection{Related work}\label{sec:related}
 
 This work approaches network stability through temporal evolution observation.
-This evolution is represented by a timeline of activity snapshots with a constant number of contiguous messages. These snapshots yield a succession of networks. This approach, although coherent and intuitive, seems not to be explored to date~\cite{netWindowEvo}.
+The evolution is represented by a timeline of activity snapshots with a constant number of contiguous messages. These snapshots yield a succession of networks. This approach, although coherent and intuitive, seems not to be explored to date~\cite{netWindowEvo}.
 
 Works on network evolution often consider solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Exceptions are reported in this section, specially those more closely related to the present article.
 
-The evolution of human interaction networks was addressed with a community focus, where the direction of edges was not taken into account~\cite{barabasiEvo}. In another article, two topologically different networks emerged from human interaction networks, depending on the frequency of interactions, which could either be a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were verified~\cite{bird}, and different linguistic traces were related to weak and strong ties~\cite{GMANE2}. These results are corroborated by phenomena reported in this paper. See Appendix~\ref{sec:fure} for further considerations of related work, with emphasis on the results described below and deriving articles dedicated to texts produced by each of the primitive connective sectors~\cite{rcText}, a visualization method for network evolution~\cite{versinus} and an ongoing elaboration of the primitive typology.
+The evolution of human interaction networks was addressed with a community focus, where the direction of edges was not taken into account~\cite{barabasiEvo}. In another article, two topologically different networks emerged from human interaction networks, depending on the frequency of interactions, which could either be a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were verified~\cite{bird}, and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
+
+Unreciprocated edges often exceed 50\% in the networks analyzed, which matches empirical evidence~\cite{newmanEvolving}. No correlation of topological characteristics and geographical position was found~\cite{barabasiGeo}, therefore geographical incidences was discarded in the present article.
+On the other hand, gender related behavior in mobile phone datasets has been reported~\cite{barabasiSex} and was not considered in this article as the email messages and addresses have no gender related metadata~\cite{GMANE}.
+Controllability of these networks is also an uncovered issue. These has unintuitive properties and might bring into forefront crucial properties~\cite{barabasiControlCapacity,barabasiControlCentrality,barabasiControllability}, which might be the subject of subsequent research.
+
+The seminal Nature Letter by Palla, Barab{\'a}si and Vicsek~\cite{barabasiEvo} has strong confluence with this work, suggesting that the smaller size of MET community is responsible for the stronger hubs observed.
+
+These results are corroborated by phenomena reported in this paper, which is an indicative that the stability reported herein is common to general human interaction networks.
+
+\subsection{Paired article to analyse textual production}\label{subsec:text}
+Significant differences in the textual production of each connective sector of the network (periphery, intermediary, hubs) is reported in an article by the same research group~\cite{rcText}. Most importantly, linguistic differences are more prominent between the sectors of a same network than between the same sector in different lists. 
+
+\subsection{The Versinus visualization method for evolving complex networks}
+To visualize network evolution, the Versinus method was developed. The method is simple and consists in the placement of each vertex along a sinusoid and a line. In the resulting fixed layout, the time evolution takes place.  Even so, fellow researchers repeatedly asked for an article describing Versinus, and therefore it was written in 2013~\cite{versinus}.
+
+\subsection{Typology of online agents}
+A core purpose of the present article, dedicated to stability in interaction networks, and the article about textual production~\cite{rcText} is to derive a sound typology of online agents, with quantitative criteria driven from physics (to the extent possible). This is a work under construction, with preliminary elaborations in Section~\ref{sec:pty}, but should be extensively published in near future.
+
 
 \section{Data description}
     \subsection{Email lists and messages}
@@ -170,7 +188,7 @@ $N$ is the number of participants (number of different email addresses).
 $\Gamma$ is the number of threads (count of messages without antecedent).
 $\overline{M}$ is the number of messages missing in the 20,000 collection, $100\frac{23}{20000}=0.115$ percent in the worst case.
 MET notably has the fewer participants and the larger number of threads.
-This relation holds for each of the lists considered here and a derived article (see Appendix~\ref{sec:fure}): as the number of participants increases, the number of threads decreases.}
+This relation holds for each of the lists considered here and a derived article (see Section~\ref{subsec:text}): as the number of participants increases, the number of threads decreases.}
   \label{geralListas}
   \begin{tabular}{|l|c|c|c|c|c|}\hline
 list & $date_1$ & $date_{M}$    & $N$  & $\Gamma$ & $\overline{M}$ \\\hline
@@ -293,8 +311,7 @@ The evolution of the networks was observed within a fixed number of messages, th
 The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics. 
 
         \subsection{Visualization of network evolution}
-The evolution of the networks was visualized with animations, image galleries and online gadgets made for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations (see Section~\ref{measures} and Appendix~\ref{sec:pcat}), in addition to the size of the three sectors in a timeline fashion (Appendix~\ref{figures}). Visualization of network structure was specially useful as part of the email lists data mining, from which parts of relevant structures and results were driven. See Appendix~\ref{sec:fure} for further directions about visualization and text mining concerning the results herein presented, with dedicated articles.
-
+The evolution of the networks was visualized with animations, image galleries and online gadgets made for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations (see Section~\ref{measures} and Appendix~\ref{sec:pcat}), in addition to the size of the three sectors in a timeline fashion (Appendix~\ref{figures}). Visualization of network structure was specially useful as part of the email lists data mining, from which parts of relevant structures and results were driven. See Appendix~\ref{sec:related} for further directions about visualization and text mining concerning the results herein presented, with dedicated articles.
 
     \subsection{Typological deepening}\label{subsec:typ}
 There are other ways to split and characterize networks. To point a common example, the center of the network is defined as all the nodes whose maximum distance to any other node is the radius (the radius is the minimum maximum distance to all vertices , i.e. the radius is the minimum eccentricity). 
@@ -323,6 +340,16 @@ Indeed, this dynamic typological approach is so vital to secure an ethic study o
 
 \section{Results and discussion}
 
+Remarkable features from the analysis of the four email lists are:
+\begin{itemize}
+    \item The activity along time is practically the same for all lists (Section~\ref{constDisc}).
+    \item The fraction of participants in each connective sector is stable and can be observed even with very few messages (Section~\ref{subsec:pih}).
+    \item The measures combine in principal components in the same way and with symmetry related measures presenting more dispersion than clustering coefficient (Section~\ref{prevalence}).
+    \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
+\end{itemize}
+
+Furthermore, the Appendix holds tables and figures from which such results can be observed.
+
 \subsection{Constancy and discrepancy of activity along time}\label{constDisc}
 One remarkable feature from the analysis is that the activity along time is practically the same for all lists.
 
@@ -341,7 +368,7 @@ Table~\ref{mes} shows activity along the month. Variation of activity in the day
 \subsubsection{Months and larger divisions of the year}
  Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Table~\ref{ano}). These observations fit academic calendars, vacations and end-of-year holidays.
 
-\subsection{Scalable fat-tail structure}\label{subsec:pih}
+\subsection{Scalable fat-tail structure: constancy of participants fraction in the connective sectors}\label{subsec:pih}
 There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} is dedicated to exposing this well known and expected distribution of activity among participants.
 
 The distribution of vertices in the three sectors defined in Section~\ref{sectioning} (hubs, intermediary, periphery) is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. Moreover, the same distribution applies to the networks of all the four email lists, to which are dedicated the various figures in Appendix~\ref{figures}. If, for instance, strength is taken as the criterion to define the sectors, $\approx 5\%$ of the vertices are found to be hubs, $\approx [15-20]\%$ are intermediary and $\approx [75-80]\%$ are peripheral, which is consistent with the literature~\cite{secFree}. If the degree is used for classification, hubs can reach $10\%$ of all vertices, i.e. classification with strength yields half the number of hubs as plain degree. These results hold for in and out degrees and strengths. Stable distributions can also be obtained for 200 of less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. In fact, a minimum window size for observation of more general properties can be inferred by monitoring the giant component and the degeneration of the hub, intermediary and peripheral sections. This degeneration is critical in the span of 50-100 messages. Even so, using a compound criterion, such as exclusive cascade of Figure~\ref{fig:cpp250_}, the networks seem to hold their basic structure with as few as 20-50 messages. This indicates that concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of Appendix~\ref{figures}.
@@ -351,6 +378,11 @@ That was understood as a consequence of the observation scale:
 \emph{There are between 20 and 200 participants in the message window sizes used to derive most of the results ($ws \in [200,1500]$ messages). As peripheral vertices are abundant and span few degrees, there are more than $\eta$ vertices with each low degree value. For the case of higher degrees, one should consider that with the $ws$ used, each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Erd\"os R\'enyi network (less than $p$, the probability that a single participant represents when the histogram is normalized to the density function), than it is not an intermediary connectivity, but a hub. Therefore, using at least $\eta$ vertices for each bin did not impact the results.}
 
     \subsection{Prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
+The contribution from the distinct metrics to network topology 
+is very similar for all the networks considered, and did not vary with time.
+ This stability in network behavior is remarkable, as can be noticed by the very 
+small standard deviations of the contributions from the metrics along time (Tables~\ref{compPCA0}-\ref{compPCA2}).
+
 The principal component (PCA~\cite{pca}) exhibited a ponderation of centrality measures: degrees, strengths and betweenness centrality. Clustering coefficient is presented in almost perfect orthogonality.
 Symmetry of edges have been reported as bonded to different roles played by participants and relations~\cite{newmanEvolving}, and dispersion was more prevalent in symmetry related measures than clustering coefficient.
 This composition of the principal component suggests that all six degree and strength measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics.
@@ -392,7 +424,7 @@ This work is aimed at finding common characteristics among (email) interaction n
 
 \begin{itemize}
     \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. There are reports in the literature of greater stability of participation in smaller communities~\cite{barabasiEvo}, which is the reason why the smaller number of participants in MET was considered coherent with the stable activity of hubs.
-    \item Typically, the activity of hubs is trivial: they interact as much as possible, in every occasion with everyone. The activity of peripheral vertices also follows a simple pattern: they interact very rarely, in very few occasions. Thereafter, intermediary vertices seem responsible for the network structure. For example, intermediary vertices may exhibit preferential communication to peripheral, intermediary, or hub vertices; can be marked by stable communication partners; can involve stable or intermittent patterns of activity.
+    \item Typically, the activity of hubs is trivial: they interact as much as possible, in every occasion with everyone. The activity of peripheral vertices also follows a simple pattern: they interact very rarely, in very few occasions. Therefore, intermediary vertices seem responsible for the network structure. For example, intermediary vertices may exhibit preferential communication to peripheral, intermediary, or hub vertices; can be marked by stable communication partners; can involve stable or intermittent patterns of activity.
     \item Some of the most active participants receive many responses with relative few messages sent, and rarely are top hubs. These seem as authorities and contrast with participants that respond much more than receive responses.
     \item The most obvious community structure, as observed by high clustering coefficient, is found only in peripheral and intermediary sectors.
 \end{itemize}
@@ -417,8 +449,8 @@ Observance of attributes with greater contribution to principal components of LD
 
 Observed networks were coherent with literature in different aspects, such as concentration of activity, and clusterization versus connectivity patterns. Even so, analysis of data from other virtual environments, such as Facebook, Twitter and LinkedIn, might help understanding how general are these structures and what are convenient uses.
 
-A paired article  is dedicated to textual production of the network sectors~\cite{rcText}. Resulting knowledge purposes networks and participants typologies, and both topological and textual analysis should foster characterization of interaction networks and participation incidences.
-Stability reported in this article eases tipologization of outliers and more usual participation patterns. See Appendix~\ref{sec:fure} for further consideration of works related to presented results.
+A paired article is dedicated to textual production of the network sectors~\cite{rcText}. Resulting knowledge purposes networks and participants typologies, and both topological and textual analysis should foster characterization of interaction networks and participation incidences.
+Stability reported in this article eases tipologization of outliers and more usual participation patterns. See Section~\ref{sec:related} for the consideration of works related to presented results.
 
         \subsubsection{Results exploitation}
 On the technological trend, usage of such characteristics are taking place in linked data and electronic government technologies~\cite{ops,opa,ensaio}. Further steps involve elaboration and tests of social dynamics that takes advantages of these results. These results are also being used for anthropological physics experiments~\cite{anPhy} and knowledge acquisition~\cite{rcText}.
@@ -441,25 +473,6 @@ Be $\mathcal{N}$ a directed network without self-loops with $z$ edges and $N$ ve
        &=\frac{z}{2[(N-1)+(N-2)+...+1]}=\frac{z}{2\frac{N(N-1)}{2}} \nonumber \\
    p_e &=\frac{z}{N(N-1)}
 \end{align}
-
-\section{Work related to the results}\label{sec:fure}
-Unreciprocated edges often exceed 50\%, which matches empirical evidence~\cite{newmanEvolving}. Although no correlation of topological characteristics and geographical position was found in a pertinent study~\cite{barabasiGeo}, geographical incidences should be present in further refinement of the analysis.
-
-The seminal Nature Letter by Palla, Barab{\'a}si and Vicsek~\cite{barabasiEvo} has strong confluence with this work, suggesting that smaller size of MET community is responsible for the stronger hubs observed.
-
-Controllability of these networks is also an uncovered issue. These has unintuitive properties and might bring into forefront crucial differences between email interaction networks and interaction networks in Facebook or Twitter~\cite{barabasiControlCapacity,barabasiControlCentrality,barabasiControllability}.
-
-Gender related behavior in mobile phone datasets has been reported~\cite{barabasiSex} and can be further investigated in non-private email lists with hundreds or thousands of participants~\cite{GMANE}.
-
-\subsection{Paired article to analyse textual production}
-Significant differences in the textual production of each connective sector of the network (periphery, intermediary, hubs) is reported in an article by the same research group~\cite{rcText}. Most importantly, linguistic differences are more prominent between the sectors of a same network than between the same sector in different lists. 
-
-\subsection{The Versinus visualization method for evolving complex networks}
-To visualize network evolution, the Versinus method was developed. The method is simple and consists in the placement of each vertex along a sinusoid and a line. In the resulting fixed layout, the time evolution takes place.  Even so, fellow researchers repeatedly asked for an article describing Versinus, and it was written in 2013~\cite{versinus}.
-
-\subsection{Typology of online agents}
-A core purpose of the present article, dedicated to stability in interaction networks, and the article about textual production~\cite{rcText} is to derive a sound typology of online agents, with quantitative criteria driven from physics (to the extent possible). This is a work under construction, with preliminary elaborations in Section~\ref{sec:pty}, but should be published in near future.
-
 
 \section{Data and scripts}\label{scripts}
 Messages are downloaded from the GMANE database by RSS in the mbox email text format. 
