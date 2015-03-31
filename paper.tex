@@ -133,12 +133,17 @@ Centro de Ciências Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
 Human interaction networks have been studied long before modern computers.
 Antecedents can be found in nineteenth century works, while the foundation of
 the social network analysis field is generally attributed to the psychiatrist Jacob Moreno~\cite{newmanBook}.
-More recently, the continuous increase of stored data related to human interaction has stimulated research, and overall characterization is scattered in literature.
+More recently, the continuous increase of stored data related to human interaction has stimulated research,
+and overall characterization is scattered in literature.
 
-The present work is aimed at finding common and stable characteristics among (email) interaction networks. This includes observations along time, which imply network evolution, a field that has received attention from the research community
-for more than a decade~\cite{barabasiEvo,newmanEvolving}.
+Reports on complex networks are usually focused on a particular measure or functionality, such
+as accessibility measure or detecting communities~\cite{access,newmanModularity}. Although there are research on networks arisen from specific phenomena, such as social or protein networks, there are few attempts for a general characterization and even less endeavors that take in account the temporal dynamic.
+
+The present work is aimed at finding common and stable characteristics among (email) interaction networks. This is achieved through observations along time, which imply network evolution, a field that has received attention from the research community
+for more than a decade~\cite{barabasiEvo,newmanEvolving}. The evolution is represented herein by a timeline of activity snapshots with a constant number of contiguous messages. These snapshots yield a succession of networks. This approach, albeit coherent and intuitive, seems not to be explored to date~\cite{netWindowEvo}.
+
 We consider only directed, weighted and human interaction networks. Undirected and unweighted representations of such networks are also found in the literature and can be obtained by simplification~\cite{GMANE2}.
-Meaningful measures depend heavily on the model and system characteristics~\cite{newmanStru, newmanWeight}, therefore the characterization is restricted to most basic metrics of centrality, clustering and symmetry.
+Meaningful measures depend heavily on the model and system characteristics~\cite{newmanStru, newmanWeight}, therefore the most basic (and ubiquitous, and fundamental) metrics of centrality, clustering and symmetry are analyzed altogether in principal components formation.
 
 Although all networks considered originated from email lists,
  coherence with literature suggests that results hold for a more general class of interaction networks,
@@ -148,9 +153,6 @@ Indeed, text mining routines and typologies of online participants benefit from 
  Next subsection exposes related work. Section~\ref{sec:data} details data while Section~\ref{sec:carac} is dedicated to the characterization methods. Section~\ref{sec:results} holds results and discussions, leading to Section~\ref{sec:conc} for conclusions and further work. Appendix~\ref{ap:ded} develops simple graph results used in the methods, Appendix~\ref{scripts} exposes access to data and scripts, and Appendix~\ref{ap:circular} presents the circular statistics (or directional statistics) used in characterizing time activity. Detailed tables and plots are bundled in Support Information, and are cited upon need.
 
 \subsection{Related work}\label{sec:related}
-
-This work approaches network stability through temporal evolution observation.
-The evolution is represented by a timeline of activity snapshots with a constant number of contiguous messages. These snapshots yield a succession of networks. This approach, although coherent and intuitive, seems not to be explored to date~\cite{netWindowEvo}.
 
 Works on network evolution often consider solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Exceptions are reported in this section, specially those more closely related to the present article.
 
