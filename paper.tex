@@ -37,7 +37,6 @@
         urlcolor={blue!80!black}
 }
 
-
 \maxdeadcycles=1000
 
 \begin{document}
@@ -97,18 +96,23 @@ Centro de Ciências Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
              %  but any date may be explicitly specified
 
 \begin{abstract}
- This article reports interaction networks stability by means of three quantitative criteria: activity distribution in time and among participants; a sound classification of vertices in peripheral, intermediary and hub sectors; the combination of basic measures into principal components with greater variance. We analyzed the temporal activity and topology evolution of networks in four email lists by considering  window sizes from 50 to 10,000 messages, which were made to slide to generate snapshots of the network along a timeline. Activity in terms of seconds, minutes, days and months was remarkably similar for all the networks. Participant activity follows concentrations expected in scale-free networks.  We compare these networks to Erd\"os-R\'enyi networks in order to assign members to three distinct sectors, namely hubs, intermediary and periphery. The fractions of members in these sectors were essentially the same for all networks and, most importantly, stable over time. If strength is used as the criterion for classification, for instance, ca. 5\% of the vertices are hubs, 15-20\% are intermediary and the remainder compose periphery. The metrics  most representative for  data dispersion were found to be centrality-related  (degree, strength and betweenness), followed by symmetry-related,  and then clustering coefficient. Degree, strength and clustering cope with different symmetry measures to bear secondary components. Again, the importance of these metrics to network topology dispersion was practically the same for all email lists examined, and stable over time. The research also resulted on a sketch of a physics-based typology of agents, with proper social and psychological speculations. Because the network properties reported did not depend on the email list and were stable over time, and because observed structure is in accordance with expectations driven from literature for human interaction networks, we believe that the properties observed  holds for general human interaction networks, and the approach can be applied to other types of networks. Current unfoldings include governance and accountability proposals and implementations, anthropological physics experiments and the report of quantitative differences of textual production as connectivity of agents changes.
+ This article reports interaction networks stability by means of three quantitative criteria: activity distribution in time and among participants; a sound classification of vertices in peripheral, intermediary and hub sectors; the combination of basic measures into principal components with greater variance. 
+ We analyzed the temporal activity and topology evolution of networks in four email lists by considering window sizes from 50 to 10,000 messages, which were made to slide to generate snapshots of the network along a timeline. Activity in terms of seconds and minutes exhibit an uniform pattern, while hours, days and months exhibit stable concentrations.
+ Participant activity follows the expected distribution of scale-free networks. 
+ We compare these networks to Erd\"os-R\'enyi networks in order to assign members to three distinct sectors, namely hubs, intermediary and periphery.
+ Approximately 5\% of the vertices are hubs, 15-35\% are intermediary and the remainder belongs periphery. 
+ The metrics that most contribute to data dispersion were found to be centrality-related (degree, strength and betweenness), followed by symmetry-related, and then clustering coefficient. 
+ The results also embrace a sketch of a physics-based typology of agents, with proper social and psychological speculations.
+ Because the network properties reported did not depend on the email list and were stable over time, and because observed structure is in accordance with expectations driven from literature for human interaction networks, we believe that the properties observed are also present in general human interaction networks.
+ Current unfoldings include governance and accountability proposals and implementations, anthropological physics experiments, audiovisual reconnaissance, and the report of quantitative differences of textual production as connectivity of agents changes.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
-\keywords{complex networks, social network analysis, pattern recognition, statistics, anthropological physics}%Use showkeys class option if keyword
+\keywords{complex networks, social network analysis, pattern recognition, statistics, anthropological physics}
 \maketitle
-
-%Obs. Em geral não se incluem citações como esta abaixo nos artigos, e podemos %ter problema de aceitação se um referee não entender o porquê de colocá-la. 
 
 \begin{quotation}
 `The reason for the persistent plausibility of the typological approach, however, is not a static biological one, but just the opposite: dynamic and social. The fact that human society has been up to now divided into classes affects more than the external relations of men. The marks of social repression are left within the individual soul.' 
-
 % `The conception of personality structure is the
 %best safeguard against the
 % inclination to attribute persistent trends in the
@@ -125,18 +129,23 @@ Centro de Ciências Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
 \end{quotation}
 
 
-\section{\label{sec:into}Introduction}
-The present work is aimed at finding common characteristics among (email) interaction networks. This includes observations along time, which imply network evolution, a field that has received dedicated attention from the research community
+\section{Introduction}\label{sec:into}
+Human interaction networks have been studied long before modern computers.
+Antecedents can be found in nineteenth century works, while the foundation of
+the social network analysis field is generally attributed to the psychiatrist Jacob Moreno~\cite{newmanBook}.
+More recently, the continuous increase of stored data related to human interaction has stimulated research, and overall characterization is scattered in literature.
+
+The present work is aimed at finding common and stable characteristics among (email) interaction networks. This includes observations along time, which imply network evolution, a field that has received attention from the research community
 for more than a decade~\cite{barabasiEvo,newmanEvolving}.
+We consider only directed, weighted and human interaction networks. Undirected and unweighted representations of such networks are also found in the literature and can be obtained by simplification~\cite{GMANE2}.
+Meaningful measures depend heavily on the model and system characteristics~\cite{newmanStru, newmanWeight}, therefore the characterization is restricted to most basic metrics of centrality, clustering and symmetry.
 
-While significant measures will depend on the model and system characteristics~\cite{newmanStru, newmanWeight},
-this work considers only directed, weighted and human interaction networks. Undirected and unweighted representation of such networks is also found in the literature and can be obtained by simplification~\cite{GMANE2}.
-
-Text mining and typologies of online participants benefit from the results here presented~\cite{rcText,rcTipo}. 
 Although all networks considered originated from email lists,
  coherence with literature suggests that results hold for a more general class of interaction networks,
  such as observed in online platforms (e.g. LinkedIn, Facebook, Twitter).
+Indeed, text mining routines and typologies of online participants benefit from the results here presented~\cite{rcText,rcTipo}. 
 
+ Next subsection exposes related work. Section~\ref{sec:data} details data while Section~\ref{sec:carac} is dedicated to the characterization methods. Section~\ref{sec:results} holds results and discussions, leading to Section~\ref{sec:conc} for conclusions and further work. Appendix~\ref{ap:ded} develops simple graph results used in the methods, Appendix~\ref{scripts} exposes access to data and scripts, and Appendix~\ref{ap:circular} presents the circular statistics (or directional statistics) used in characterizing time activity. Detailed tables and plots are bundled in Support Information, and are cited upon need.
 
 \subsection{Related work}\label{sec:related}
 
@@ -165,7 +174,7 @@ To visualize network evolution, the Versinus method was developed. The method is
 A core purpose of the present article, dedicated to stability in interaction networks, and the article about textual production~\cite{rcText} is to derive a sound typology of online agents, with quantitative criteria driven from physics (to the extent possible). This is a work under construction, with preliminary elaborations in Section~\ref{sec:pty}, but should be extensively published in near future.
 
 
-\section{Data description}
+\section{Data description}\label{sec:data}
     \subsection{Email lists and messages}
 Email list messages were obtained from
 the GMANE email archive~\cite{GMANE}, which consists of more than 20,000 email lists and more than 130,000,000 messages~\cite{GMANEwikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus with metadata of its messages, including sent time, place, sender name, and sender email address.
@@ -200,7 +209,7 @@ CPP  & Mar/13/2002 & Aug/25/2009 & 1052 & 4506 & 7 \\ \hline
 \end{table}
 
 
-\section{Characterization methods}
+\section{Characterization methods}\label{sec:carac}
 The email lists and the networks generated from them were characterized by: 1) statistics of activity along time, with a detailed analysis for time durations from seconds to years; 2)  sectioning of the networks in hubs, intermediary and peripheral vertices; 3) prominence of topological measures, including their time dependence; 4) iterative visualization and data mining of networks; 5) typological elaborations of networks and participants.  Each of these procedures are described below with supporting structures.
 
 Distribution of activity among participants are in Table~\ref{autores} and indirectly through almost all results of this article, as degree and strength are highly correlated to activity.
@@ -285,9 +294,9 @@ Results from applying this classification method, i.e. the achievement of well d
 The topology of the networks was characterized with a small selection of the most standard measurements for each vertex, as follows:
 
 \begin{itemize}
-    \item Degree $k_i$: number edges linked to vertex $i$.
-    \item In-degree $k_i^{in}$: number of edges ending at vertex $i$.
-    \item Out-degree $k_i^{out}$: number of edges departing from vertex $i$.
+    \item Degree $d_i$: number edges linked to vertex $i$.
+    \item In-degree $d_i^{in}$: number of edges ending at vertex $i$.
+    \item Out-degree $d_i^{out}$: number of edges departing from vertex $i$.
     \item Strength $s$: sum of weights of all edges linked to vertex $i$.
     \item In-strength $s_i^{in}$: sum of weights of all edges ending at vertex $i$.
     \item Out-strength $s_i^{out}$: sum of weights of all edges departing from vertex $i$.
@@ -299,11 +308,11 @@ In order to capture symmetries in the activity of participants, the following me
 
 \begin{itemize}
     \item Asymmetry: $asy_i=\frac{d_i^{in}-d_i^{out}}{d_i}$.
-    \item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|}$. Where $e_{xy}$ is 1 if there is and edge from $x$ to $y$, $0$ otherwise. $|J_i|$ is the number of neighbors of vertex $i$.
-    \item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{|J_i|}  }$
+    \item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=d_i}$. Where $e_{xy}$ is 1 if there is and edge from $x$ to $y$, $0$ otherwise. $|J_i|=d_i$ is the number of neighbors of vertex $i$.
+    \item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{d_i}  }$
     \item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
-    \item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{|J_i|}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
-    \item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{|J_i|}}$
+    \item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{d_i}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
+    \item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{d_i}}$
 \end{itemize}
 
    \subsection{Evolution of the networks}
@@ -338,7 +347,7 @@ Indeed, this dynamic typological approach is so vital to secure an ethic study o
 %        \subsubsection{Textual content}
 %        \subsubsection{Geographical localization}
 
-\section{Results and discussion}
+\section{Results and discussion}\label{sec:results}
 
 Remarkable features from the analysis of the four email lists are:
 \begin{itemize}
@@ -434,7 +443,7 @@ This ``primitive typology'', characterized by peripheral, intermediary and hub t
 
 Another typology suggested by results is about the networks themselves. In accordance with previous research results~\cite{barabasiEvo}, this and paired articles~\cite{rcText,versinus} reports a dipole in human interaction network types: networks with few and stable agents, and (relative) many threads per amount of messages contrasts with networks with many agents of intermittent activity and (relative) few threads per amount of messages.
  
-\section{Conclusions and further work}
+\section{Conclusions and further work}\label{sec:conc}
 The characterization of interaction networks resulted from stability observations. Along temporal activity statistics, this work reports the stability of the principal components (in the concentration of dispersion and composition) and of the ternary partitioning (periphery, intermediary, hubs) relative sizes, evident in the comparison with the Erd\"os-R\'enyi model. These results suggested typologies for both agents and the networks.
 
 
@@ -503,6 +512,7 @@ scientific tools. More specifically,
 scripts where written for 2.7.3 version of Python,
 with the following third party libraries: Numpy, Pylab/Matplotlib, NetworkX, IGraph.
 Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
+\section{Circular statistics}\label{ap:circular}
 \section{Tables}\label{sectables}
 \clearpage
 \subsection{PCA tables}\label{sec:pcat}
