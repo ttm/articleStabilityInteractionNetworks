@@ -16,7 +16,6 @@
 %author-year,%
 %author-numerical,%
 ]{revtex4-1}
-
 \usepackage{graphicx}% Include figure files
 \usepackage{grffile}
 \usepackage{dcolumn}% Align table columns on decimal point
@@ -30,6 +29,7 @@
 \usepackage{morefloats}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{amsmath}
 \hypersetup{
         colorlinks,
         linkcolor={red!50!black},
@@ -272,10 +272,10 @@ If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ 
 
 In other words, let $\sigma$ and $\phi$ be integers in the intervals $1 \leq \sigma \leq 6$, $1 \leq \phi \leq 3$, and the basic six Erd\"os sectioning possibilities $\{E_{\sigma}\}$ have Erd\"os sectors $E_{\sigma}= \{e_{\sigma, \phi} \}$ defined as:
 
-\begin{alignat}{3}
-e_{\sigma,1}&=\{\;i\;|\;\overline{k}_{\sigma,\Leftarrow}\geq&&\overline{k}_{\sigma,i}\} \\
+\begin{alignat}{3}\label{eq:part}
+e_{\sigma,1}&=\{\;i\;|\;\overline{k}_{\sigma,\Leftarrow}\geq&&\overline{k}_{\sigma,i}\} \nonumber \\
 e_{\sigma,2}&=\{\;i\;|\;\overline{k}_{\sigma,\Leftarrow}<\;&&\overline{k}_{\sigma,i}\leq\overline{k}_{\sigma,\Rightarrow}\} \\ 
-e_{\sigma,3}&=\{\;i\;|\;&&\overline{k}_{\sigma,i}<\overline{k}_{\sigma,\Rightarrow}\}
+e_{\sigma,3}&=\{\;i\;|\;&&\overline{k}_{\sigma,i}<\overline{k}_{\sigma,\Rightarrow}\} \nonumber
 \end{alignat}
 
 \noindent where $\{\overline{k}_{\sigma,i}\}$ is defined as:
@@ -305,7 +305,27 @@ Since different metrics can be used to identify the three types of vertices, com
     \item Inclusivist externals: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
 \end{itemize}
 
-These compound criteria, and the simplification of all the compound possibilities as listed above (into exclusivist/inclusivist criterion/cascade/externals), can be formalized in strict mathematical terms, but this was considered out of the scope of the present article. Notice that the exclusivist cascade is the same sectioning that an inclusivist cascade from periphery to hubs (inverted order of precedence). Important here is to notice that compound criteria can be used to examine network sections in the case of a low number of messages, such as in the last figures of Appendix~\ref{figures}.
+Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$ integer in the interval $1<\delta<6$ can be described as:
+
+%\begin{alignat}{3}
+\begin{equation}
+\begin{split}
+%\begin{multline}
+C_1&=\{c_{1,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi}, \;\forall\; \sigma\}\right\} \\
+C_2&=\{c_{2,\phi}=\left\{i\mid \exists \;\;\sigma : i \in e_{\sigma,\phi}\}\right\} \\
+C_3&=\{c_{3,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi'}, \;\forall\; \sigma,\;\forall\;\phi'\geq \phi\}\right\} \\
+C_4&=\{c_{4,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi'}, \;\forall\; \sigma,\;\forall\;\phi'\leq \phi\}\right\} \\
+C_5&=\{c_{5,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi'}, \;\forall\; \sigma,\right.\\
+	  &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\leq (\phi+1)\%4\}\right\} \\
+C_6&=\{c_{6,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi'}, \;\forall\; \sigma,\right.\\
+	  &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\geq (\phi+1)\%4\}\right\} \\
+%\end{multline}
+\end{split}
+\end{equation}
+%\end{alignat}
+
+
+These compound criteria, and the simplification of all the compound possibilities as listed above (into exclusivist/inclusivist criterion/cascade/externals), can be formalized in strict mathematical terms, but this was considered out of the scope of the present article. Notice that the exclusivist cascade is the same sectioning that an inclusivist cascade from periphery to hubs (inverted order of precedence). Compound criteria can be used to examine network sections in the case of a low number of messages, such as in the last figures of Appendix~\ref{figures}.
 
 Results from applying the Erd\"os sectioning, i.e. the achievement of well defined sectors by comparison of the real network with the Erd\"os R\'enyi model, are reported in Section~\ref{subsec:pih} and Appendix~\ref{figures}.
 
