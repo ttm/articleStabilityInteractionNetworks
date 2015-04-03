@@ -263,12 +263,12 @@ To ensure statistical validity of the histograms, bins can be chosen to contain 
     \sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i is intermediary}
 \end{equation}
 
-If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used for comparison, with $\overline{w}=2\frac{z}{\sum_is_i}$ the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees and strengths, comparison of the real network should be made with:
+If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used for comparison, with $\overline{w}=2\frac{z}{\sum_is_i}$ the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees ($k^{in}$, $k^{out}$) comparison of the real network should be made with:
 \begin{equation}
 \hat{P}(k^{way})=\binom{N-1}{k^{way}}p_e^k(1-p_e)^{N-1-k^{way}}
 \end{equation}
 
-\noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths are divided by $\overline{w}$ and compared also using $\hat{P}$. Notice that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$.
+\noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths ($s^{in}$, $s^{out}$) are divided by $\overline{w}$ and compared also using $\hat{P}$. Notice that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$ as with total degree.
 
 In other words, let $\sigma$ and $\phi$ be integers in the intervals $1 \leq \sigma \leq 6$, $1 \leq \phi \leq 3$, and the basic six Erd\"os sectioning possibilities $\{E_{\sigma}\}$ have Erd\"os sectors $E_{\sigma}= \{e_{\sigma, \phi} \}$ defined as:
 
@@ -291,18 +291,17 @@ e_{\sigma,3}&=\{\;i\;|\;&&\overline{k}_{\sigma,i}<\overline{k}_{\sigma,\Rightarr
 \end{split}
 \end{equation}
 
+\noindent and both $\overline{k}_{\sigma,\Leftarrow}$ and $\overline{k}_{\sigma,\Rightarrow}$ are found using $P(\overline{k})$ or $\hat{P}(\overline{k})$ as described above.
 
-Results of these criteria for network segmentation are discussed in Section~\ref{subsec:pih} and exhibited in Figures~\ref{fig:cpp10000} to~\ref{fig:lad50_} of Appendix~\ref{figures}.
-
-Since different metrics can be used to identify the three types of vertices, compound criteria can be defined. For example, a very stringent criterion can be used, according to which a vertex will only be regarded as pertaining to a sector if it is so for all the metrics. After a careful consideration of possible combinations, these were reduced to six:
+Since different metrics can be used to identify the three types of vertices, compound criteria can be defined. For example, a very stringent criterion can be used, according to which a vertex is only regarded as pertaining to a sector if it is so for all the metrics. After a careful consideration of possible combinations, these were reduced to six:
 
 \begin{itemize}
-    \item Exclusivist criterion:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified (usually) does not reach 100\%, which is indicated by a black line in the figures of Appendix~\ref{figures}.
-    \item Inclusivist criterion: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and total members may add more than 100\%, which is indicated by a black line in the figures of Appendix~\ref{figures}.
-    \item Exclusivist cascade: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
-    \item Inclusivist cascade: vertices are hubs if they are classified as so according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
-    \item Exclusivist externals: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes by any metric. The rest of the nodes are classified as intermediary.
-    \item Inclusivist externals: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
+    \item Exclusivist criterion $C_1$:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified (usually) does not reach 100\%, which is indicated by a black line in the figures of Appendix~\ref{figures}.
+    \item Inclusivist criterion $C_2$: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and total members may add more than 100\%, which is indicated by a black line in the figures of Appendix~\ref{figures}.
+    \item Exclusivist cascade $C_3$: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
+    \item Inclusivist cascade $C_4$: vertices are hubs if they are classified as so according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
+    \item Exclusivist externals $C_5$: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes by any metric. The rest of the nodes are classified as intermediary.
+    \item Inclusivist externals $C_6$: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
 \end{itemize}
 
 Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$ integer in the interval $1<\delta<6$ can be described as:
@@ -324,8 +323,7 @@ C_6&=\{c_{6,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi'}, \;\forall\; \sigma,\righ
 \end{equation}
 %\end{alignat}
 
-
-These compound criteria, and the simplification of all the compound possibilities as listed above (into exclusivist/inclusivist criterion/cascade/externals), can be formalized in strict mathematical terms, but this was considered out of the scope of the present article. Notice that the exclusivist cascade is the same sectioning that an inclusivist cascade from periphery to hubs (inverted order of precedence). Compound criteria can be used to examine network sections in the case of a low number of messages, such as in the last figures of Appendix~\ref{figures}.
+The simplification of all the compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of the scope of the present article. Notice that the exclusivist cascade is the same sectioning that an inclusivist cascade from periphery to hubs (with inverted order of sectors precedence). Compound criteria can be used to examine network sections in the case of a low number of messages, such as in the last figures of Appendix~\ref{figures}.
 
 Results from applying the Erd\"os sectioning, i.e. the achievement of well defined sectors by comparison of the real network with the Erd\"os R\'enyi model, are reported in Section~\ref{subsec:pih} and Appendix~\ref{figures}.
 
