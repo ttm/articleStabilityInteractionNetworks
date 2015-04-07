@@ -439,23 +439,22 @@ For the histograms used in the classification process (see Section~\ref{sectioni
 That was understood as a consequence of the observation scale (see Appendix~\ref{ap:ded}).
 
 
+\subsection{Prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
+We have analyzed the topology of the email networks using standard, well-established metrics based on centrality and clustering.
+We also introduced metrics related to symmetry because there is evidence that such metrics are relevant in a social context~\cite{newmanEvolving}.
+The contribution from the distinct metrics to network topology is very similar for all the networks considered, and did not vary with time.
+This stability in network behavior is remarkable, as can be noticed by the small standard deviations of the contribution of each metric to principal components (from usual Principal Component Analysis~\cite{pca}) along time of Tables~\ref{compPCA0}-\ref{compPCA2}.
 
-    \subsection{Prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
-The contribution from the distinct metrics to network topology 
-is very similar for all the networks considered, and did not vary with time.
- This stability in network behavior is remarkable, as can be noticed by the very 
-small standard deviations of the contributions from the metrics along time (Tables~\ref{compPCA0}-\ref{compPCA2}).
-
-The principal component (PCA~\cite{pca}) exhibited a ponderation of centrality measures: degrees, strengths and betweenness centrality. Clustering coefficient is presented in almost perfect orthogonality.
-Symmetry of edges have been reported as bonded to different roles played by participants and relations~\cite{newmanEvolving}, and dispersion was more prevalent in symmetry related measures than clustering coefficient.
+The principal component exhibited a pondered sum of centrality measures: degrees, strengths and betweenness centrality.
 This composition of the principal component suggests that all six degree and strength measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics.
-The contribution from the distinct metrics to network topology variance is very similar for all the networks considered, and did not vary with time. This stability in network behavior is remarkable, as shown by the very small standard deviations of the contributions from the metrics along time in Appendix~\ref{sec:pcat}.
+Clustering coefficient is presented in almost perfect orthogonality.
+Dispersion was more prevalent in symmetry related measures than clustering coefficient.
 
-The dispersion is mostly presented by degree, strength and betweenness centrality, as indicated in Tables~\ref{compPCA0} and~\ref{compPCA} for the LAU list (similar results are obtained for the other lists and omitted here for simplicity). The standard deviations are small, which means that the first and second components varies little with time.
- Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The corresponding PCA plot for the two first components is shown in Figure~\ref{PCA}, where each vertex is colored according to the sector they belong. As expected, peripheral vertices have very low values in the first component and greater dispersion in the second component. 
-The plot of clustering coefficient versus degree in Figure~\ref{clust} is similar to the PCA in Figure~\ref{PCA}.
-
-The PCA plot in Figure~\ref{PCA2}, where all metrics are considered, reflects symmetry-related relevance for the variance. This is shown in Table~\ref{compPCA2}  where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength). It is concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices, which are more dispersed in Figure~\ref{PCA2} than in Figure~\ref{PCA}. 
+Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The corresponding PCA plot for the two first components of the PCA exhibited in Table~\ref{compPCA1} is shown in Figure~\ref{PCA}, where each vertex is colored according to the sector they belong. As expected, peripheral vertices have very low values in the first component and greater dispersion in the second component. 
+The plot of clustering coefficient versus degree in Figure~\ref{clust} is very similar to the PCA in Figure~\ref{PCA}.
+The PCA plot in Figure~\ref{PCA2}, where all metrics are considered, reflects symmetry metrics relevance for the variance. 
+This is shown in Table~\ref{compPCA2}  where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength). 
+It is concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices, which are more dispersed in Figure~\ref{PCA2} than in Figure~\ref{PCA}. 
 
 
 \begin{figure} 
