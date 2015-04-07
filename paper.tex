@@ -365,7 +365,7 @@ The evolution of the networks was visualized with animations, image galleries an
 Qualitative, typological speculations were the result of all the methodology. More specifically, the Erd\"os sectors was regarded as yielding a \emph{primitive typology} of human agents in social contexts with at least dozens of participants. 
 Visualization and data mining were efficient in fueling speculations about the qualities of each type. 
 The stability found in principal components of topological measures suggested that this primitive typology is general for (practically) all human contexts.
-Also, the first author is a developer with cultural interests and has been directly and indirectly part of these communities for more than a decade, which gave further safety about assumptions. Care was taken not to regard this acquaintanceship as primary source or as definitive evidence.
+Also, the first author is a developer with cultural interests and has been directly and indirectly part of these communities for more than a decade.  This gave further safety about assumptions although care was taken not to regard this acquaintanceship as primary source or as definitive evidence.
 The interested reader should see Appendix~\ref{ap:typ} for further context, 
 as it might be considered audacious to bridge from a physics-based, 
 quantitative classification to a qualitative and speculative approach.
@@ -374,7 +374,7 @@ quantitative classification to a qualitative and speculative approach.
 
 Remarkable features from the analysis of the four email lists are:
 \begin{itemize}
-    \item The activity along time is practically the same for all lists (Section~\ref{constDisc}) and exhibited noticeable patterns.
+    \item The activity along time is practically the same for all lists (Section~\ref{constDisc}) and suggests stable patterns.
     \item The fraction of participants in each Erd\"os sector is stable and can be observed even with very few messages (Section~\ref{subsec:pih}).
     \item The measures combine into principal components in the same way for all lists and all snapshots. 
 	    Furthermore, symmetry related measures, defined in this article, present more dispersion than the usual clustering coefficient (Section~\ref{prevalence}).
@@ -400,35 +400,43 @@ seconds & - & - \\ \hline
 minutes & - & - \\ \hline
     \end{tabular}
 \end{center}
-\label{ano}
+\label{tab:circ}
 \end{table*}
 
 
 
 \subsubsection{Seconds and minutes}
 Messages were slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}: for both seconds and minutes $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$ in the lists, while Simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
-Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected and the pattern is the uniformity.
+Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected and the pattern is the uniformity. Circular dispersion is maximized and mean has little meaning.
 
 \subsubsection{Hours of the day}
-Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight, as can be seen in Table~\ref{dia}. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.
+Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon. See Table~\ref{dia} for the fraction of activity in 1h, 6h and 12h periods along the day.
 
 \subsubsection{Days of the week}
 Higher activity was observed during weekdays, specially for the CPP and MET lists (see Table~\ref{semana}). The decrease of activity on weekends reaches at least one third, and two thirds in extreme cases.
 
 \subsubsection{Days along the month}
-Table~\ref{mes} shows activity along the month. Variation of activity in the days along the month is less prominent, one cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity. Last days of the month (29, 30 and 31) are not present in every month, and observed activity is proportional to incidence rates.
+Variation of activity in the days along the month is less prominent, one cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity. Last days of the month (29, 30 and 31) are not present in every month, and observed activity is proportional to incidence rates. See Table~\ref{mes} for further insights. 
 
 \subsubsection{Months and larger divisions of the year}
  Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Table~\ref{ano}). These observations fit academic calendars, vacations and end-of-year holidays.
 
-\subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
-There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} is dedicated to exposing this well known and expected distribution of activity among participants.
+\subsubsection{Activity long years}
+Literature reports relation of number of participants and hubs stability to community longevity~\cite{barabasiEvo}. Also, activity should follow trends such as economic, climate and technological. Periodicity should be observed to some extent. Nevertheless, the time period examined was not sufficient for the analysis of activity along the years (see Section~\ref{sec:further}). 
 
-The distribution of vertices in the three sectors defined in Section~\ref{sectioning} (hubs, intermediary, periphery) is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. Moreover, the same distribution applies to the networks of all the four email lists, to which are dedicated the various figures in Appendix~\ref{figures}. If, for instance, strength is taken as the criterion to define the sectors, $\approx 5\%$ of the vertices are found to be hubs, $\approx [15-20]\%$ are intermediary and $\approx [75-80]\%$ are peripheral, which is consistent with the literature~\cite{secFree}. If the degree is used for classification, hubs can reach $10\%$ of all vertices, i.e. classification with strength yields half the number of hubs as plain degree. These results hold for in and out degrees and strengths. Stable distributions can also be obtained for 200 of less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. In fact, a minimum window size for observation of more general properties can be inferred by monitoring the giant component and the degeneration of the hub, intermediary and peripheral sections. This degeneration is critical in the span of 50-100 messages. Even so, using a compound criterion, such as exclusive cascade of Figure~\ref{fig:cpp250_}, the networks seem to hold their basic structure with as few as 20-50 messages. This indicates that concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of Appendix~\ref{figures}.
+\subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
+There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} exposes this expected distribution of activity among participants in a scale-free context.
+
+The distribution of vertices in the  hubs, intermediary, periphery Erd\"os sectors defined in Section~\ref{sectioning} is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. 
+Moreover, the same distribution applies to the networks of all the four email lists, to which are dedicated the various figures in Appendix~\ref{figures}. 
+Typically, $\approx 5\%$ of the vertices are found to be hubs, $\approx [15-35]\%$ are intermediary and $\approx [60-80]\%$ are peripheral, which is consistent with the literature~\cite{secFree}.
+These results hold for total, in and out degrees and strengths.
+Stable distributions can also be obtained for 100 of less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. 
+The networks hold their basic structure with as few as 10-50 messages, concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of Appendix~\ref{figures}.
+A minimum window size for observation of more general properties might be inferred by monitoring the giant component and the degeneration of the hub, intermediary and peripheral sections.
 
 For the histograms used in the classification process (see Section~\ref{sectioning}), the use of at least $\eta$ vertices for each bin did not yield significant differences.
-That was understood as a consequence of the observation scale:
-\emph{There are between 20 and 200 participants in the message window sizes used to derive most of the results ($ws \in [200,1500]$ messages). As peripheral vertices are abundant and span few degrees, there are more than $\eta$ vertices with each low degree value. For the case of higher degrees, one should consider that with the $ws$ used, each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Erd\"os R\'enyi network (less than $p$, the probability that a single participant represents when the histogram is normalized to the density function), than it is not an intermediary connectivity, but a hub. Therefore, using at least $\eta$ vertices for each bin did not impact the results.}
+That was understood as a consequence of the observation scale (see Appendix~\ref{ap:ded}).
 
 
 
@@ -531,13 +539,17 @@ used on the epigraph~\cite{adorno}. Authors thank GMANE creators and maintainers
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
-\section{Edge existence probability in a directed network without self-loops}\label{ap:ded}
+\section{More graph-related results}
+\subsection{Edge existence probability in a directed network without self-loops}\label{ap:ded}
 Be $\mathcal{N}$ a directed network without self-loops with $z$ edges and $N$ vertices. The probability that an edge exists between two arbitrary vertex is $p_e=\frac{z}{max( \text{number of edges} |\ \text{N vertices})}$, where $max( \text{number of edges} |\ \text{N vertices})=2[(N-1)+(N-2)+...+1]=2[\sum_1^{N-1}i]=2[\frac{N(N-1)}{2}]$ is the maximum number of edges for a network with $N$ vertices. Therefore:
 \begin{align}
     p_e&=\frac{z}{max( \text{number of edges} |\ \text{N vertices})} \nonumber \\
        &=\frac{z}{2[(N-1)+(N-2)+...+1]}=\frac{z}{2\frac{N(N-1)}{2}} \nonumber \\
    p_e &=\frac{z}{N(N-1)}
 \end{align}
+
+\subsection{Effect of scale in histogram smoothing}\label{ap:ded}
+There are between 20 and 200 participants in the message window sizes used to derive most of the results ($ws \in [200,1500]$ messages). As peripheral vertices are abundant and span few degrees, there are more than $\eta$ vertices with each low degree value. For the case of higher degrees, one should consider that with the $ws$ used, each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Erd\"os R\'enyi network (less than $p$, the probability that a single participant represents when the histogram is normalized to the density function), than it is not an intermediary connectivity, but a hub. Therefore, using at least $\eta$ vertices for each bin did not impact the results.
 
 \section{Data and scripts}\label{scripts}
 Messages are downloaded from the GMANE database by RSS in the mbox email text format. 
