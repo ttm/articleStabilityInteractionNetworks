@@ -439,9 +439,9 @@ For the histograms used in the classification process (see Section~\ref{sectioni
 That was understood as a consequence of the observation scale (see Appendix~\ref{ap:ded}).
 
 
-\subsection{Prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
-We have analyzed the topology of the email networks using standard, well-established metrics based on centrality and clustering.
-We also introduced metrics related to symmetry because there is evidence that such metrics are relevant in a social context~\cite{newmanEvolving}.
+\subsection{Variance prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
+We have analyzed the topology of the email networks using standard, well-established metrics of centrality and clustering.
+We also introduced symmetry measures because there is evidence that they are relevant in social contexts~\cite{newmanEvolving}.
 The contribution from the distinct metrics to network topology is very similar for all the networks considered, and did not vary with time.
 This stability in network behavior is remarkable, as can be noticed by the small standard deviations of the contribution of each metric to principal components (from usual Principal Component Analysis~\cite{pca}) along time of Tables~\ref{compPCA0}-\ref{compPCA2}.
 
@@ -450,7 +450,7 @@ This composition of the principal component suggests that all six degree and str
 Clustering coefficient is presented in almost perfect orthogonality.
 Dispersion was more prevalent in symmetry related measures than clustering coefficient.
 
-Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The corresponding PCA plot for the two first components of the PCA exhibited in Table~\ref{compPCA1} is shown in Figure~\ref{PCA}, where each vertex is colored according to the sector they belong. As expected, peripheral vertices have very low values in the first component and greater dispersion in the second component. 
+Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The corresponding PCA plot for the two first components of the PCA exhibited in Table~\ref{compPCA} is shown in Figure~\ref{PCA}, where each vertex is colored according to the sector they belong. As expected, peripheral vertices have very low values in the first component and greater dispersion in the second component. 
 The plot of clustering coefficient versus degree in Figure~\ref{clust} is very similar to the PCA in Figure~\ref{PCA}.
 The PCA plot in Figure~\ref{PCA2}, where all metrics are considered, reflects symmetry metrics relevance for the variance. 
 This is shown in Table~\ref{compPCA2}  where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength). 
@@ -460,7 +460,7 @@ It is concluded that the symmetry-related measurements can be more meaningful in
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
-    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Table~\ref{compPCA} shows the composition of principal components.  Similar plots were obtained for all window sizes  $ws\;\in\;[500,10000]$, and for the networks of the other email lists, which exposes a common relation held by degree, strength and betweenness measures to clustering coefficient.}
+    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Table~\ref{compPCA} shows the composition of principal components. Similar plots were obtained for all window sizes $ws\;\in\;[500,10000]$, and for the networks of the other email lists, which exposes a common relation held by degree, strength and betweenness measures to clustering coefficient.}
     \label{PCA}
 \end{figure}
 
@@ -480,9 +480,9 @@ It is concluded that the symmetry-related measurements can be more meaningful in
     \label{PCA2}
 \end{figure}
 
-    \subsection{Primitive typology: the activity of participants from different sectors}\label{sec:pty}
+    \subsection{Primitive typology: the activity of participants from Erd\"os sectors}\label{sec:pty}
 
-This work is aimed at finding common characteristics among (email) interaction networks. Analysis involved primary measures observance and a formal criteria for coherent ratios of hub, intermediary and hub sectors. In this process, inspection done by visualizations and raw data manipulations suggests agents typological peculiarities. These are initial observations, which inspired this article and other ongoing research:
+Visualizations and raw data manipulations suggests agents typological peculiarities. These are initial observations, which inspired this article and other ongoing research~\cite{rcText,versinus}:
 
 \begin{itemize}
     \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. There are reports in the literature of greater stability of participation in smaller communities~\cite{barabasiEvo}, which is the reason why the smaller number of participants in MET was considered coherent with the stable activity of hubs.
@@ -491,11 +491,10 @@ This work is aimed at finding common characteristics among (email) interaction n
     \item The most obvious community structure, as observed by high clustering coefficient, is found only in peripheral and intermediary sectors.
 \end{itemize}
 
+This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts from other typologies, such Meyer-Briggs, Pavlov or F-Scale. This has no pretension of being a direct result of numeric analysis, it is a description refinement of the found structure, in typological terms, and coherent with complex networks literature. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
 
-This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts involved in other typologies, such Meyer-Briggs, Pavlov or F-Scale. This has no pretension of being a direct result of numeric analysis, it is a description refinement of the found structure, in typological terms, and coherent with complex networks literature. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
-
-Another typology suggested by results is about the networks themselves. In accordance with previous research results~\cite{barabasiEvo}, this and paired articles~\cite{rcText,versinus} reports a dipole in human interaction network types: networks with few and stable agents, and (relative) many threads per amount of messages contrasts with networks with many agents of intermittent activity and (relative) few threads per amount of messages.
-The seminal Nature Letter by Palla, Barab{\'a}si and Vicsek~\cite{barabasiEvo} has strong confluence with this work, suggesting that the smaller size of MET community is responsible for the stronger hubs observed.
+Another typology suggested by results is about the networks themselves. This and paired articles~\cite{rcText,versinus} reports a dipole in human interaction network types: networks with few and stable agents, and (relative) many threads per amount of messages contrasts with networks with many agents of intermittent activity and (relative) few threads per amount of messages.
+This network typology is endorsed by the seminal Nature Letter by Palla, Barab{\'a}si and Vicsek~\cite{barabasiEvo}, which suggests that the smaller size of MET community is responsible for the stronger hubs observed.
 
  
 \section{Conclusions and further work}\label{sec:conc}
