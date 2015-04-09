@@ -225,7 +225,7 @@ Edges can be created from all antecedent message authors on the message-response
 We only linked the immediate antecedent to the new message author, both for simplicity and for the valid objection that in adding two edges, $x\rightarrow y$ and $y\rightarrow z$, there is also a weaker connection between $x$ and $z$. Potential interpretations for this weaker connection are: double length, half weight or with one more ``obstacles''. This suggests pertinence of centrality measures that account for the connectivity with all nodes, such as betweenness centrality and accessibility~\cite{luMeasures,access}.
 
 %\subsubsection{Sectioning of networks in periphery, intermediary and hubs sectors}\label{sectioning}
-\subsubsection{Erd\"os sectioning}\label{sectioning}
+\subsection{Erd\"os sectioning}\label{sectioning}
 In scale-free networks, the periphery, intermediary and hubs sectors can be derived from comparison with an Erd\"os-R\'enyi network with the same number of edges and vertices~\cite{3setores}, as depicted in Figure~\ref{fig:setores}. As a shorthand, this procedure is from now on called \emph{Erd\"os sectioning}, and the resulting sectors the \emph{Erd\"os sectors} or \emph{primitive sectors}.
 
 The degree distribution $\widetilde{P}(k)$ of an ideal
@@ -270,7 +270,7 @@ If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ 
 
 \noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths ($s^{in}$, $s^{out}$) are divided by $\overline{w}$ and compared also using $\hat{P}$. Notice that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$ as with total degree.
 
-In other words, let $\sigma$ and $\phi$ be integers in the intervals $1 \leq \sigma \leq 6$, $1 \leq \phi \leq 3$, and the basic six Erd\"os sectioning possibilities $\{E_{\sigma}\}$ have Erd\"os sectors $E_{\sigma}= \{e_{\sigma, \phi} \}$ defined as:
+In other words, let $\sigma$ and $\phi$ be integers in the intervals $1 \leq \sigma \leq 6$, $1 \leq \phi \leq 3$, and the basic six Erd\"os sectioning possibilities $\{E_{\sigma}\}$ have three Erd\"os sectors $E_{\sigma}= \{e_{\sigma, \phi} \}$ defined as:
 
 \begin{alignat}{3}\label{eq:part}
 e_{\sigma,1}&=\{\;i\;|\;\overline{k}_{\sigma,\Leftarrow}\geq&&\overline{k}_{\sigma,i}\} \nonumber \\
@@ -327,7 +327,7 @@ The simplification of all the compound possibilities to the small set listed abo
 
 Results from applying the Erd\"os sectioning, i.e. the achievement of well defined sectors by comparison of the real network with the Erd\"os R\'enyi model, are reported in Section~\ref{subsec:pih} and Appendix~\ref{figures}.
 
-\subsubsection{Topology metrics for Principal Component Analysis}\label{measures}
+\subsection{Topology metrics for Principal Component Analysis}\label{measures}
 
 The topology of the networks was observed by Principal Component Analysis (PCA~\cite{pca}) outcomes
 with a small selection of the most basic and fundamental measurements for each vertex:
@@ -355,8 +355,8 @@ In order to capture symmetries in the activity of participants, the following me
 \end{itemize}
 
 \subsection{Evolution of the networks}
-   The evolution of the networks was observed within a fixed number of messages, the window size $ws$. This same number of contiguous messages is considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used to both do the Erd\"os sectioning (see Section~\ref{sectioning}) and to perform PCA with topological measures (see Section~\ref{measures}). Furthermore, this approach to evolution was used for visualization (see Section~\ref{sec:viz}) and for typological thinking (see Section~\ref{subsec:typ}).
-The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics. 
+   The evolution of the networks was observed within a fixed number of messages, the window size $ws$. This same number of contiguous messages is considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used to both do the Erd\"os sectioning (see Section~\ref{sectioning}) and to perform PCA with topological measures (see Section~\ref{measures}). Furthermore, this approach to evolution was used for visualization (see Section~\ref{sec:viz}) and for typological speculations (see Section~\ref{subsec:typ}).
+The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics.
 
 \subsection{Visualization of network evolution}\label{sec:viz}
 The evolution of the networks was visualized with animations, image galleries and online gadgets made for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations (see Section~\ref{measures} and Appendix~\ref{sec:pcat}), in addition to the size of the three sectors in a timeline fashion (Appendix~\ref{figures}). Visualization of network structure was specially useful as part of the email lists data mining, from which parts of relevant structures and results were driven. See Appendix~\ref{sec:related} for further directions about visualization and text mining concerning the results herein presented, with dedicated articles.
@@ -440,9 +440,9 @@ That was understood as a consequence of the observation scale (see Appendix~\ref
 
 
 \subsection{Variance prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
-We have analyzed the topology of the email networks using standard, well-established metrics of centrality and clustering.
+The topology was analyzed using standard, well-established metrics of centrality and clustering.
 We also introduced symmetry measures because there is evidence that they are relevant in social contexts~\cite{newmanEvolving}.
-The contribution from the distinct metrics to network topology is very similar for all the networks considered, and did not vary with time.
+The contribution from the distinct metrics to network topology is very similar for all the networks, and did not vary with time.
 This stability in network behavior is remarkable, as can be noticed by the small standard deviations of the contribution of each metric to principal components (from usual Principal Component Analysis~\cite{pca}) along time of Tables~\ref{compPCA0}-\ref{compPCA2}.
 
 The principal component exhibited a pondered sum of centrality measures: degrees, strengths and betweenness centrality.
@@ -476,11 +476,11 @@ It is concluded that the symmetry-related measurements can be more meaningful in
 \begin{figure} 
    \centering
         \includegraphics[width=\columnwidth]{figs/ev0pr1PCA}
-    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of (in-,  out- and total) degree, (in-,  out- and total) strength, betweenness centrality, clustering coefficient and symmetry-related measurements. The composition of the first three components are shown in Table~\ref{compPCA2} and measure details in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertices.}
+    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of (in-,  out- and total) degree, (in-,  out- and total) strength, betweenness centrality, clustering coefficient and symmetry-related measurements. The composition of the first three components are shown in Table~\ref{compPCA2} and metrics details are given in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertices.}
     \label{PCA2}
 \end{figure}
 
-    \subsection{Primitive typology: the activity of participants from Erd\"os sectors}\label{sec:pty}
+    \subsection{Primitive typology from Erd\"os sectors}\label{sec:pty}
 
 Visualizations and raw data manipulations suggests agents typological peculiarities. These are initial observations, which inspired this article and other ongoing research~\cite{rcText,versinus}:
 
@@ -488,43 +488,30 @@ Visualizations and raw data manipulations suggests agents typological peculiarit
     \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. There are reports in the literature of greater stability of participation in smaller communities~\cite{barabasiEvo}, which is the reason why the smaller number of participants in MET was considered coherent with the stable activity of hubs.
     \item Typically, the activity of hubs is trivial: they interact as much as possible, in every occasion with everyone. The activity of peripheral vertices also follows a simple pattern: they interact very rarely, in very few occasions. Therefore, intermediary vertices seem responsible for the network structure. For example, intermediary vertices may exhibit preferential communication to peripheral, intermediary, or hub vertices; can be marked by stable communication partners; can involve stable or intermittent patterns of activity.
     \item Some of the most active participants receive many responses with relative few messages sent, and rarely are top hubs. These seem as authorities and contrast with participants that respond much more than receive responses.
-    \item The most obvious community structure, as observed by high clustering coefficient, is found only in peripheral and intermediary sectors.
+    \item The most obvious community structure, as observed by a high clustering coefficient, is found only in peripheral and intermediary sectors.
 \end{itemize}
 
-This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts from other typologies, such Meyer-Briggs, Pavlov or F-Scale. This has no pretension of being a direct result of numeric analysis, it is a description refinement of the found structure, in typological terms, and coherent with complex networks literature. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
+This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts from other typologies, such Meyer-Briggs, Pavlov or F-Scale. This is not a direct result of numeric analysis, it is a description refinement of the found structure, in typological terms, and coherent with complex networks literature. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
 
 Another typology suggested by results is about the networks themselves. This and paired articles~\cite{rcText,versinus} reports a dipole in human interaction network types: networks with few and stable agents, and (relative) many threads per amount of messages contrasts with networks with many agents of intermittent activity and (relative) few threads per amount of messages.
 This network typology is endorsed by the seminal Nature Letter by Palla, Barab{\'a}si and Vicsek~\cite{barabasiEvo}, which suggests that the smaller size of MET community is responsible for the stronger hubs observed.
 
  
 \section{Conclusions and further work}\label{sec:conc}
-The characterization of interaction networks resulted from stability observations. Along temporal activity statistics, this work reports the stability of the principal components (in the concentration of dispersion and composition) and of the ternary partitioning (periphery, intermediary, hubs) relative sizes, evident in the comparison with the Erd\"os-R\'enyi model. These results suggested typologies for both agents and the networks.
+The characterization of interaction networks resulted from stability observations. Along temporal activity statistics, this work reports the stability of the formation of principal components and of the relative sizes of periphery, intermediary and hubs Erd\"os sectors. These results suggested typologies for both agents and the networks.
 
-The task of delivering a first and general characterization of chosen interaction networks involved a larger effort. The different aspects covered requires not only different analytical background, but also considerations about textual production and social psychology. These are receiving attention within dedicated works and are summarized in Section~\ref{sec:related}.
+Observed systems were coherent with literature in different aspects, such as concentration of activity or such as the clusterization versus connectivity pattern.
+Even so, analysis of data from other virtual environments, such as Facebook, Twitter and LinkedIn, might help understanding how general are these structures and what are proper uses.
 
-Regarding topological aspects of interaction networks, further work should inspect other measures in each of the three connective sectors: hubs, intermediary and periphery.
-Observance of attributes with greater contribution to principal components of LDA should reveal best chances to present these three sections as clusters in the network measurements space. Another possibility, specially for a brute-force characterization of such sectors, is to remove vertices with degree close to $k_\Leftarrow$ or $k_\Rightarrow$ depicted in figure~\ref{fig:setores}. The subtraction $\widetilde{P}(k)-P(k)$ (see Section~\ref{subsec:typ}) results in two positive clusters for periphery and hubs, and a negative cluster for intermediary vertices. This might support classification of the three sectors by clustering, a more traditional approach to classification.
+Further work should inspect other topological measures in each sector.
+The subtraction $\widetilde{P}(k)-P(k)$ (see Section~\ref{subsec:typ}) results in two positive clusters for periphery and hubs, and a negative cluster for intermediary vertices. This might support classification of the three sectors by clustering, a more traditional approach to classification.
+Observance of attributes with greater contribution to principal components of LDA should reveal best chances to present these three sections as clusters in the network measurements space. 
+Another possibility, specially for a brute-force characterization of such sectors, is to remove vertices with degree close to $k_\Leftarrow$ or $k_\Rightarrow$ depicted in figure~\ref{fig:setores}.
 
-Observed networks were coherent with literature in different aspects, such as concentration of activity, and clusterization versus connectivity patterns. Even so, analysis of data from other virtual environments, such as Facebook, Twitter and LinkedIn, might help understanding how general are these structures and what are proper uses.
-
-
-\subsection{Further work}\label{sec:further}
-A paired article is dedicated to textual production of the network sectors~\cite{rcText}. Resulting knowledge purposes networks and participants typologies, and both topological and textual analysis should foster characterization of interaction networks and participation incidences.
-Stability reported in this article eases tipologization of outliers and more usual participation patterns (see Sections~\ref{sec:related} and~\ref{sec:pty}).
-
-On the technological trend, usage of such characteristics are taking place in linked data and electronic government technologies~\cite{ops,opa,ensaio}. Further steps involve elaboration and tests of social dynamics. These results are also being used for anthropological physics experiments~\cite{anPhy}.
-
-Controllability of these networks have unintuitive properties and might bring into forefront crucial properties~\cite{barabasiControlCapacity,barabasiControlCentrality,barabasiControllability}, and might be the subject of subsequent research.
-
-Significant differences in the textual production of each connective sector of the network (periphery, intermediary, hubs) is reported in an article by the same research group~\cite{rcText}. Most importantly, linguistic differences are more prominent between the sectors of a same network than between the same sector in different lists. 
-
-To visualize network evolution, the Versinus method was developed. The method is simple and consists in the placement of each vertex along a sinusoid and a line. In the resulting fixed layout, the time evolution takes place.  Even so, fellow researchers repeatedly asked for an article describing Versinus, and therefore it was written in 2013~\cite{versinus}.
-
-A core purpose of the present article, dedicated to stability in interaction networks, and the article about textual production~\cite{rcText} is to derive a sound typology of online agents, with quantitative criteria driven from physics (to the extent possible). This is a work under construction, with preliminary elaborations in Section~\ref{sec:pty}, but should be extensively published in near future.
-
-
-
-
+Stability here reported eases tipologization of both outliers and usual participation patterns (see Sections~\ref{sec:related} and~\ref{sec:pty}).
+A paired article with this one is reports significant differences in the textual production of each Ed\"os sector~\cite{rcText}. Resulting knowledge purposes networks and participant typologies.
+Another paired article describes a network time evolution visualization method~\cite{versinus}.
+The usage of such results are taking place in software packages, linked data, electronic government technologies, and anthropological physics experiments~\cite{gmanePack,ops,opa,ensaio,anPhy}.
 
 \begin{acknowledgments}
 Renato Fabbri is grateful to CNPq (process: 140860/2013-4,
