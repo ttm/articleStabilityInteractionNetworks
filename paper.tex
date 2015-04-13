@@ -162,7 +162,7 @@ The evolution of human interaction networks was addressed with a community focus
 Unreciprocated edges often exceed 50\% in the networks analyzed, which matches empirical evidence from literature~\cite{newmanEvolving}. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were discarded in the present article.
 On the other hand, gender related behavior in mobile phone datasets has been reported~\cite{barabasiSex} and was not considered in this article as the email messages and addresses have no gender related metadata~\cite{GMANE}.
 
-There are research reports based on the results presented in this article, which are exposed in Section~\ref{sec:further}.
+There are research reports based on the results presented in this article, which are exposed in Section~\ref{sec:conc}.
 
 \section{Data description: email lists and messages}\label{sec:data}
 
@@ -191,10 +191,7 @@ This underpins a typology sketch of networks, as exposed in Section~\ref{sec:pty
   \label{tab:genLists}
   \begin{tabular}{|l|c|c|c|c|c|}\hline
 list & $date_1$ & $date_{M}$    & $N$  & $\Gamma$ & $\overline{M}$ \\\hline
-LAU  & Jun/29/2003 & Jul/23/2005 & 1183 & 3373 & 5 \\
-LAD  & Jun/30/2003 & Oct/07/2009 & 1268 & 3113 & 4 \\
-MET  & Ago/01/2005 & Mar/07/2008 & 492  & 4607 & 23 \\
-CPP  & Mar/13/2002 & Aug/25/2009 & 1052 & 4506 & 7 \\ \hline
+	  \input{tables/tab1Geral}
   \end{tabular}
 \end{table}
 
@@ -390,14 +387,12 @@ along time is practically the same for all lists. Circular mean and standard dev
 for each time scale is given in Table~\ref{tab:circ}.
 
 \begin{table*}[t]
-\scriptsize
-\caption{Circular mean and standard deviation of sent messages for each time scale. The Appendix~\ref{ap:circular} exposes the theoretical background considered.}
+	\caption{Circular mean, standard deviation, variance, circular dispersion and the relation of maximum and minimum incidence at each time unit. The Appendix~\ref{ap:circular} exposes the theoretical background considered of directional (or circular) statistics.}
 \begin{center}
-    \begin{tabular}{ |l|| c|c|}
+    \begin{tabular}{ |l|| c|c|c|c|c| }
         \hline
-scale & mean & standard deviation \\ \hline
-seconds & - & - \\ \hline
-minutes & - & - \\ \hline
+	scale & mean & standard deviation & variance & circular dispersion & $\frac{max(incidence)}{min(incidence)}$ \\ \hline\hline
+	\input{tables/tab2TimeLAU}
     \end{tabular}
 \end{center}
 \label{tab:circ}
@@ -422,9 +417,11 @@ Variation of activity in the days along the month is less prominent, one cannot 
  Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Table~\ref{ano}). These observations fit academic calendars, vacations and end-of-year holidays.
 
 \subsubsection{Activity long years}
-Literature reports relation of number of participants and hubs stability to community longevity~\cite{barabasiEvo}. Also, activity should follow trends such as economic, climate and technological. Periodicity should be observed to some extent. Nevertheless, the time period examined was not sufficient for the analysis of activity along the years (see Section~\ref{sec:further}). 
+Literature reports relation of number of participants and hubs stability to community longevity~\cite{barabasiEvo}. Also, activity should follow trends such as economic, climate and technological. Periodicity should be observed to some extent. Nevertheless, the time period examined was not sufficient for the analysis of activity along the years (see Section~\ref{sec:conc}). 
 
 \subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
+
+
 There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} exposes this expected distribution of activity among participants in a scale-free context.
 
 The distribution of vertices in the  hubs, intermediary, periphery Erd\"os sectors defined in Section~\ref{sectioning} is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. 
@@ -434,6 +431,16 @@ These results hold for total, in and out degrees and strengths.
 Stable distributions can also be obtained for 100 of less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. 
 The networks hold their basic structure with as few as 10-50 messages, concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of Appendix~\ref{figures}.
 A minimum window size for observation of more general properties might be inferred by monitoring the giant component and the degeneration of the hub, intermediary and peripheral sections.
+
+
+\begin{figure*} 
+   \centering
+        \includegraphics[width=\textwidth]{figs/InText-WLAU-S1000}
+	\caption{Fraction of agents in each Erd\"os sector. Hubs, intermediary and periphery fractions are represented in red, green and blue. In this figure, simple criteria employed using degree and strength. Exclusivist and inclusivist compound criteria have black lines for fraction of vertices without class and with more than one class, respectively. See Appendix~\ref{figures} for a collection of such timeline figures with all simple and compound criteria and selected measures.}
+    \label{tab:sectIL}
+\end{figure*}
+
+
 
 For the histograms used in the classification process (see Section~\ref{sectioning}), the use of at least $\eta$ vertices for each bin did not yield significant differences.
 That was understood as a consequence of the observation scale (see Appendix~\ref{ap:ded}).
@@ -450,39 +457,56 @@ This composition of the principal component suggests that all six degree and str
 Clustering coefficient is presented in almost perfect orthogonality.
 Dispersion was more prevalent in symmetry related measures than clustering coefficient.
 
-Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The corresponding PCA plot for the two first components of the PCA exhibited in Table~\ref{compPCA} is shown in Figure~\ref{PCA}, where each vertex is colored according to the sector they belong. As expected, peripheral vertices have very low values in the first component and greater dispersion in the second component. 
-The plot of clustering coefficient versus degree in Figure~\ref{clust} is very similar to the PCA in Figure~\ref{PCA}.
-The PCA plot in Figure~\ref{PCA2}, where all metrics are considered, reflects symmetry metrics relevance for the variance. 
-This is shown in Table~\ref{compPCA2}  where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength). 
-It is concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices, which are more dispersed in Figure~\ref{PCA2} than in Figure~\ref{PCA}. 
+Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The typical PCA plot for the two first components exhibited in Table~\ref{compPCA} is shown in the second system of Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the second component (clustering related).
+The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects symmetry metrics relevance for the variance. 
+This can be observed in Table~\ref{compPCA2} where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength). 
+We concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
 
+%\begin{figure} 
+%   \centering
+%        \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
+%    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Table~\ref{compPCA} shows the composition of principal components. Similar plots were obtained for all window sizes $ws\;\in\;[500,10000]$, and for the networks of the other email lists, which exposes a common relation held by degree, strength and betweenness measures to clustering coefficient.}
+%    \label{PCA}
+%\end{figure}
 
-\begin{figure} 
+\begin{figure*} 
    \centering
-        \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
-    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. Principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. Second component is mostly clustering coefficient. Table~\ref{compPCA} shows the composition of principal components. Similar plots were obtained for all window sizes $ws\;\in\;[500,10000]$, and for the networks of the other email lists, which exposes a common relation held by degree, strength and betweenness measures to clustering coefficient.}
-    \label{PCA}
-\end{figure}
+        \includegraphics[width=\textwidth,height=12cm]{figs/im13PCAPLOT}
+	\caption{Prevalence of symmetry measures over clustering for data dispersion. This was considered an important result of PCA analysis, together with stability on component formation. First plot holds the usual degree versus clustering coefficient layout. Second plot is similar, but the first component is an average of centrality measures (see Table~\ref{compPCA}). Third plot resulted from applying PCA with symmetry measures (see Table~\ref{compPCA2}), where greater dispersion can be observed in all sectors, although more pronounced in intermediary and hubs sectors.
+    For this figure, a window size of $ws = 1000$ messages was used from LAU list. The general layout is recurrent and consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.
+Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which exposes a common relation held by degree, strength and betweenness measures to clustering coefficient.
+    In the third plot, clustering coefficient is omitted as it is only relevant for third component. In this case, second component is representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertices.
+    }
+    \label{fig:sym}
+\end{figure*}
 
+%\begin{figure} 
+%   \centering
+%        \includegraphics[width=\columnwidth]{figs/ev0pr11CC}
+%    \caption{Clustering coefficient versus degree of vertices with a window size of $ws = 1000$ email messages, LAU list. The general layout is consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.}
+%    \label{clust}
+%\end{figure}
 
-
-\begin{figure} 
-   \centering
-        \includegraphics[width=\columnwidth]{figs/ev0pr11CC}
-    \caption{Clustering coefficient versus degree of vertices with a window size of $ws = 1000$ email messages, LAU list. The general layout is consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.}
-    \label{clust}
-\end{figure}
-
-\begin{figure} 
-   \centering
-        \includegraphics[width=\columnwidth]{figs/ev0pr1PCA}
-    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of (in-,  out- and total) degree, (in-,  out- and total) strength, betweenness centrality, clustering coefficient and symmetry-related measurements. The composition of the first three components are shown in Table~\ref{compPCA2} and metrics details are given in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertices.}
-    \label{PCA2}
-\end{figure}
+%\begin{figure} 
+%   \centering
+%        \includegraphics[width=\columnwidth]{figs/ev0pr1PCA}
+%    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of (in-,  out- and total) degree, (in-,  out- and total) strength, betweenness centrality, clustering coefficient and symmetry-related measurements. The composition of the first three components are shown in Table~\ref{compPCA2} and metrics details are given in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertices.}
+%    \label{PCA2}
+%\end{figure}
 
     \subsection{Primitive typology from Erd\"os sectors}\label{sec:pty}
+Consider the sector to which a participant belongs as her/his type. General considerations of this typology are:
+\begin{itemize}
+	\item A participant belongs to many networks (his family, family of a friend, the email list to which he belongs, work friends, etc.).
+	\item A participant might belong to all three sectors at the same time. Actually, it is reasonable to assume that almost every person belongs to all three sectors for some of the networks.
+	\item It is given by construction that a participant is of just one type at a network in a given snapshot (exception for inclusive compound criteria given in Section~\ref{sectioning}).
+	\item The participant often transitions from one sector to another within a network.
+	\item Reported stability of network structure arises from activity with continuous change of the participant types.
+	\item Type often changes with the scale of the activity window. For example, two snapshots of 200 and 10000 messages will probably reveal participants with more than one type. 
+\end{itemize}
 
-Visualizations and raw data manipulations suggests agents typological peculiarities. These are initial observations, which inspired this article and other ongoing research~\cite{rcText,versinus}:
+This ephemerality of the human type is in accordance with canonical literature on psychological types. The observance of often transitions between types is even though of as an argument against prejudice~\cite{adorno}.
+Visualizations and raw data manipulations suggests further typological peculiarities. These are initial observations, which inspired this article and other ongoing research~\cite{rcText,versinus}:
 
 \begin{itemize}
     \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. There are reports in the literature of greater stability of participation in smaller communities~\cite{barabasiEvo}, which is the reason why the smaller number of participants in MET was considered coherent with the stable activity of hubs.
@@ -491,7 +515,7 @@ Visualizations and raw data manipulations suggests agents typological peculiarit
     \item The most obvious community structure, as observed by a high clustering coefficient, is found only in peripheral and intermediary sectors.
 \end{itemize}
 
-This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts from other typologies, such Meyer-Briggs, Pavlov or F-Scale. This is not a direct result of numeric analysis, it is a description refinement of the found structure, in typological terms, and coherent with complex networks literature. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
+This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts from other typologies, such as Meyer-Briggs, Pavlov or F-Scale. This is not a direct result of numeric analysis, it is a description refinement of the found structure, in typological terms, and coherent with complex networks literature. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
 
 Another typology suggested by results is about the networks themselves. This and paired articles~\cite{rcText,versinus} reports a dipole in human interaction network types: networks with few and stable agents, and (relative) many threads per amount of messages contrasts with networks with many agents of intermittent activity and (relative) few threads per amount of messages.
 This network typology is endorsed by the seminal Nature Letter by Palla, Barab{\'a}si and Vicsek~\cite{barabasiEvo}, which suggests that the smaller size of MET community is responsible for the stronger hubs observed.
