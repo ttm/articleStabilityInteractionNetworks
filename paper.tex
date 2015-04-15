@@ -152,7 +152,7 @@ Although all networks considered originated from email lists,
  such as observed in online platforms (e.g. LinkedIn, Facebook, Twitter).
 Indeed, text mining routines and typologies of online participants benefit from the results here presented~\cite{rcText,rcTipo}.
 
-Next subsection exposes related work. Section~\ref{sec:data} details data while Section~\ref{sec:carac} is dedicated to the characterization methods. Section~\ref{sec:results} holds results and discussions, leading to Section~\ref{sec:conc} for conclusions and further work. Appendix~\ref{ap:ded} develops simple graph results used in the methods, Appendix~\ref{scripts} exposes access to data and scripts, Appendix~\ref{ap:circular} presents the circular statistics (or directional statistics) used in characterizing time activity, and Appendix~\ref{ap:typ} further introduces the typological approach. Detailed tables and figures are bundled in Support Information, and are cited upon need.
+Next subsection exposes related work. Section~\ref{sec:data} details data while Section~\ref{sec:carac} is dedicated to the characterization methods. Section~\ref{sec:results} holds results and discussions, leading to Section~\ref{sec:conc} for conclusions and further work. Appendix~\ref{ap:ded} develops simple graph results used in the methods, Appendix~\ref{scripts} exposes access to data and scripts, and Appendix~\ref{ap:typ} further introduces the typological approach. Detailed tables and figures are bundled in Support Information, and are cited upon need.
 
 \subsection{Related work}\label{sec:related}
 Works on network evolution often consider solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Exceptions are reported in this section, with emphasis on those more closely related to the present article.
@@ -202,8 +202,27 @@ Each of these procedures are described below.
 
 Distribution of activity among participants received little dedicated attention, but is considered through almost all results of this article, as degree and strength are highly correlated to activity.
 
-  \subsection{Time activity statistics}                          
-  Messages were counted along time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. This resulted in histograms from which obvious patterns can be observed. Furthermore, the ration $\frac{b_h}{b_l}$ of the highest and lowest incidences on the histograms served as a hint of how the distribution relates to the uniform distribution. Mean and standard deviations in time were taken using circular statistics, as described in Appendix~\ref{ap:circular}.
+\subsection{Time activity statistics}\label{sec:mtime}
+  Messages were counted along time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. This resulted in histograms from which obvious patterns can be observed. Furthermore, the ration $\frac{b_h}{b_l}$ of the highest and lowest incidences on the histograms served as a hint of how the distribution relates to the uniform distribution.
+  
+  Measures of mean and dispersion were taken using circular statistics. For such, each $measure$ (data point) is represented as a complex number of unit magnitude $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measure\frac{2\pi}{period}$. Moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
+
+\begin{align}\label{eq:cmom}
+	m_n&=\frac{1}{N}\sum_{i=1}^N z_i^n \nonumber\\
+	R_n&=|m_n|\\
+	\theta_\mu&=Arg(m_1) \nonumber \\
+	\theta_\mu'&=\frac{period}{2\pi} \theta_\mu \nonumber
+\end{align}
+
+The $\theta_\mu'$ is used as the measure of location. Dispersion is measured using the circular variance $Var(z)$, the circular standard deviation $S(z)$, and the circular dispersion $\delta(z)$:
+
+\begin{align}\label{eq:cmd}
+	Var(z)&=1 - R_1 \nonumber\\
+	S(z)&= \sqrt{-2\ln(R_1)}\\
+	\delta(z)&=\frac{1-R_2}{2 R_1^2} \nonumber
+\end{align}
+
+Although very simple, such measures enables both comparison of the email networks exposed in this article, and the deliverance of a benchmark to which other interaction networks can be compared.
 
 \subsection{Interaction network}\label{intNet}
 Interaction networks can be modeled both weighted or unweighted, both directed or undirected~\cite{bird,newmanCommunityDirected,newmanCommunity2013}.
@@ -267,15 +286,15 @@ If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ 
 
 \noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths ($s^{in}$, $s^{out}$) are divided by $\overline{w}$ and compared also using $\hat{P}$. Notice that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$ as with total degree.
 
-In other words, let $\sigma$ and $\phi$ be integers in the intervals $1 \leq \sigma \leq 6$, $1 \leq \phi \leq 3$, and the basic six Erd\"os sectioning possibilities $\{E_{\sigma}\}$ have three Erd\"os sectors $E_{\sigma}= \{e_{\sigma, \phi} \}$ defined as:
+In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$, and the basic six Erd\"os sectioning possibilities $\{E_{\gamma}\}$ have three Erd\"os sectors $E_{\gamma}= \{e_{\gamma, \phi} \}$ defined as:
 
 \begin{alignat}{3}\label{eq:part}
-e_{\sigma,1}&=\{\;i\;|\;\overline{k}_{\sigma,\Leftarrow}\geq&&\overline{k}_{\sigma,i}\} \nonumber \\
-e_{\sigma,2}&=\{\;i\;|\;\overline{k}_{\sigma,\Leftarrow}<\;&&\overline{k}_{\sigma,i}\leq\overline{k}_{\sigma,\Rightarrow}\} \\ 
-e_{\sigma,3}&=\{\;i\;|\;&&\overline{k}_{\sigma,i}<\overline{k}_{\sigma,\Rightarrow}\} \nonumber
+e_{\gamma,1}&=\{\;i\;|\;\overline{k}_{\gamma,L}\geq&&\overline{k}_{\gamma,i}\} \nonumber \\
+e_{\gamma,2}&=\{\;i\;|\;\overline{k}_{\gamma,L}<\;&&\overline{k}_{\gamma,i}\leq\overline{k}_{\gamma,R}\} \\ 
+e_{\gamma,3}&=\{\;i\;|\;&&\overline{k}_{\gamma,i}<\overline{k}_{\gamma,R}\} \nonumber
 \end{alignat}
 
-\noindent where $\{\overline{k}_{\sigma,i}\}$ is:
+\noindent where $\{\overline{k}_{\gamma,i}\}$ is:
 
 \begin{equation}
 \begin{split}
@@ -288,7 +307,7 @@ e_{\sigma,3}&=\{\;i\;|\;&&\overline{k}_{\sigma,i}<\overline{k}_{\sigma,\Rightarr
 \end{split}
 \end{equation}
 
-\noindent and both $\overline{k}_{\sigma,\Leftarrow}$ and $\overline{k}_{\sigma,\Rightarrow}$ are found using $P(\overline{k})$ or $\hat{P}(\overline{k})$ as described above.
+\noindent and both $\overline{k}_{\gamma,L}$ and $\overline{k}_{\gamma,R}$ are found using $P(\overline{k})$ or $\hat{P}(\overline{k})$ as described above.
 
 Since different metrics can be used to identify the three types of vertices, compound criteria can be defined. For example, a very stringent criterion can be used, according to which a vertex is only regarded as pertaining to a sector if it is so for all the metrics. After a careful consideration of possible combinations, these were reduced to six:
 
@@ -307,13 +326,13 @@ Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$
 \begin{equation}
 \begin{split}
 %\begin{multline}
-C_1&=\{c_{1,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi}, \;\forall\; \sigma\}\right\} \\
-C_2&=\{c_{2,\phi}=\left\{i\mid \exists \;\;\sigma : i \in e_{\sigma,\phi}\}\right\} \\
-C_3&=\{c_{3,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi'}, \;\forall\; \sigma,\;\forall\;\phi'\geq \phi\}\right\} \\
-C_4&=\{c_{4,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi'}, \;\forall\; \sigma,\;\forall\;\phi'\leq \phi\}\right\} \\
-C_5&=\{c_{5,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi'}, \;\forall\; \sigma,\right.\\
+C_1&=\{c_{1,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi}, \;\forall\; \gamma\}\right\} \\
+C_2&=\{c_{2,\phi}=\left\{i\mid \exists \;\;\gamma: i \in e_{\gamma,\phi}\}\right\} \\
+C_3&=\{c_{3,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\;\forall\;\phi'\geq \phi\}\right\} \\
+C_4&=\{c_{4,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\;\forall\;\phi'\leq \phi\}\right\} \\
+C_5&=\{c_{5,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\right.\\
 	  &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\leq (\phi+1)\%4\}\right\} \\
-C_6&=\{c_{6,\phi}=\left\{i\mid i\;\in e_{\sigma,\phi'}, \;\forall\; \sigma,\right.\\
+C_6&=\{c_{6,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\right.\\
 	  &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\geq (\phi+1)\%4\}\right\} \\
 %\end{multline}
 \end{split}
@@ -384,14 +403,14 @@ Support Information holds tables and figures from which such results can be obse
 \subsection{Constancy and discrepancy of activity along time}\label{constDisc}
 One remarkable feature from the analysis is that the activity 
 along time is practically the same for all lists. Circular mean and standard deviation
-for each time scale is given in Table~\ref{tab:circ}.
+for each time scale are given in Table~\ref{tab:circ}.
 
 \begin{table*}[t]
-	\caption{Circular mean, standard deviation, variance, circular dispersion and the relation of maximum and minimum incidence at each time unit. The Appendix~\ref{ap:circular} exposes the theoretical background considered of directional (or circular) statistics.}
+	\caption{The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. The Section~\ref{sec:mtime} exposes the theoretical background considered of directional (or circular) statistics.}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c| }
         \hline
-	scale & mean & standard deviation & variance & circular dispersion & $\frac{max(incidence)}{min(incidence)}$ \\ \hline\hline
+	scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ \\ \hline\hline
 	\input{tables/tab2TimeLAU}
     \end{tabular}
 \end{center}
@@ -471,7 +490,7 @@ We concluded that the symmetry-related measurements can be more meaningful in ch
 
 \begin{figure*} 
    \centering
-        \includegraphics[width=\textwidth,height=12cm]{figs/im13PCAPLOT}
+        \includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT}
 	\caption{Prevalence of symmetry measures over clustering for data dispersion. This was considered an important result of PCA analysis, together with stability on component formation. First plot holds the usual degree versus clustering coefficient layout. Second plot is similar, but the first component is an average of centrality measures (see Table~\ref{compPCA}). Third plot resulted from applying PCA with symmetry measures (see Table~\ref{compPCA2}), where greater dispersion can be observed in all sectors, although more pronounced in intermediary and hubs sectors.
     For this figure, a window size of $ws = 1000$ messages was used from LAU list. The general layout is recurrent and consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.
 Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which exposes a common relation held by degree, strength and betweenness measures to clustering coefficient.
@@ -499,7 +518,7 @@ Consider the sector to which a participant belongs as her/his type. General cons
 \begin{itemize}
 	\item A participant belongs to many networks (his family, family of a friend, the email list to which he belongs, work friends, etc.).
 	\item A participant might belong to all three sectors at the same time. Actually, it is reasonable to assume that almost every person belongs to all three sectors for some of the networks.
-	\item It is given by construction that a participant is of just one type at a network in a given snapshot (exception for inclusive compound criteria given in Section~\ref{sectioning}).
+	\item It is given by construction that a participant is of just one type at a network in a given snapshot (exception for the compound inclusive and exclusive criterion given in Section~\ref{sectioning}).
 	\item The participant often transitions from one sector to another within a network.
 	\item Reported stability of network structure arises from activity with continuous change of the participant types.
 	\item Type often changes with the scale of the activity window. For example, two snapshots of 200 and 10000 messages will probably reveal participants with more than one type. 
@@ -560,6 +579,25 @@ Be $\mathcal{N}$ a directed network without self-loops with $z$ edges and $N$ ve
 \subsection{Effect of scale in histogram smoothing}\label{ap:ded}
 There are between 20 and 200 participants in the message window sizes used to derive most of the results ($ws \in [200,1500]$ messages). As peripheral vertices are abundant and span few degrees, there are more than $\eta$ vertices with each low degree value. For the case of higher degrees, one should consider that with the $ws$ used, each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Erd\"os R\'enyi network (less than $p$, the probability that a single participant represents when the histogram is normalized to the density function), than it is not an intermediary connectivity, but a hub. Therefore, using at least $\eta$ vertices for each bin did not impact the results.
 
+\section{Typologies}\label{ap:typ}
+There are other ways to split and characterize networks. To point a common example, the center of the network is defined as all the nodes whose maximum distance to any other node is the radius (the radius is the minimum maximum distance to all vertices , i.e. the radius is the minimum eccentricity). 
+In the same framework, the periphery (as opposed to the center) consists of the nodes whose maximum distance to any node is the diameter (diameter being the maximum geodesic on the network). Accordingly, the intermediary sector can be defined as the nodes that are not in the center or in the periphery. Interestingly, in the email networks analyzed, with such criteria, the center can often be a factor of 4 times larger than the periphery and the intermediary group often exceeds 90\% of the nodes~\cite{networkx}.
+
+Models of human dynamics can be used to predict and classify activity. In this case, human activity is commonly considered a Poisson process, as a consequence of the randomly distributed events in time. Even so, evidence-based models suggests that human activity patterns follow non-Poisson statistics, characterized by a long tail of inactivity with bursts of rapidly occurring events~\cite{barabasiHumanDyn,barabasiPhone}.
+
+Typologies can also be conveniently adapted from psychiatric, psychological and psychoanalytic theories.
+Concerning empirical research,
+Theodor Adorno is a core conceiver of an one-of-a-kind typology that resulted from observing authoritarian
+personality traces to detect Nazism adoption, antisemitism and potential fascists, depicted as an authoritarian syndrome~\cite{adorno}.
+
+Other classic typologies of interest include Jung's extroversion-introversion trait with four modes of orientation. This four modes are divided in two perceiving functions (sensation and intuition) and two judging functions (thinking and feeling), each individual manifesting one of these four modes as dominant, and each mode expressed primarily as introverted or extroverted~\cite{jung}. Myers-Briggs Type Indicator extrapolated Jungian theories into a questionnaire and added perceiving and judging as a fourth dipole~\cite{myers}. Even plain Freudian criteria, such as neurosis, psychosis, perversity and denegation, can be used directly for such categorization, as they have verbal and behavioral typical traces~\cite{freud,freud2}.
+
+It was considered central to benefit from key human typologies, both by describing types and by further characterizing classes in the terms encountered. A primitive physics-based typology is described in Section~\ref{sec:pty} as a consequence of the periphery, intermediary and hub sectors yielded by comparing the real networks with the Erd\"os R\'enyi model.
+Also, ethic and moral issues are developed by such legacy. For example, Adorno et al. conceptualized that personality is dynamic, not static or immutable, and that recognizing this was important for an ethic empirical study of human authoritarian traces~\cite{adorno}.
+Indeed, this dynamic typological approach is so vital to secure an ethic study of human systems that our epigraph is devoted to make this point explicit.
+
+
+
 \section{Data and scripts}\label{scripts}
 Messages are downloaded from the GMANE database by RSS in the mbox email text format. 
 They are requested one by one to avoid reaching maximum size of the requests accepted by
@@ -590,29 +628,10 @@ scientific tools. More specifically,
 scripts where written for 2.7.3 version of Python,
 with the following third party libraries: Numpy, Pylab/Matplotlib, NetworkX, IGraph.
 Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
-\section{Circular statistics}\label{ap:circular}
-\section{Typologies}\label{ap:typ}
-There are other ways to split and characterize networks. To point a common example, the center of the network is defined as all the nodes whose maximum distance to any other node is the radius (the radius is the minimum maximum distance to all vertices , i.e. the radius is the minimum eccentricity). 
-In the same framework, the periphery (as opposed to the center) consists of the nodes whose maximum distance to any node is the diameter (diameter being the maximum geodesic on the network). Accordingly, the intermediary sector can be defined as the nodes that are not in the center or in the periphery. Interestingly, in the email networks analyzed, with such criteria, the center can often be a factor of 4 times larger than the periphery and the intermediary group often exceeds 90\% of the nodes~\cite{networkx}.
-
-Models of human dynamics can be used to predict and classify activity. In this case, human activity is commonly considered a Poisson process, as a consequence of the randomly distributed events in time. Even so, evidence-based models suggests that human activity patterns follow non-Poisson statistics, characterized by a long tail of inactivity with bursts of rapidly occurring events~\cite{barabasiHumanDyn,barabasiPhone}.
-
-Typologies can also be conveniently adapted from psychiatric, psychological and psychoanalytic theories.
-Concerning empirical research,
-Theodor Adorno is a core conceiver of an one-of-a-kind typology that resulted from observing authoritarian
-personality traces to detect Nazism adoption, antisemitism and potential fascists, depicted as an authoritarian syndrome~\cite{adorno}.
-
-Other classic typologies of interest include Jung's extroversion-introversion trait with four modes of orientation. This four modes are divided in two perceiving functions (sensation and intuition) and two judging functions (thinking and feeling), each individual manifesting one of these four modes as dominant, and each mode expressed primarily as introverted or extroverted~\cite{jung}. Myers-Briggs Type Indicator extrapolated Jungian theories into a questionnaire and added perceiving and judging as a fourth dipole~\cite{myers}. Even plain Freudian criteria, such as neurosis, psychosis, perversity and denegation, can be used directly for such categorization, as they have verbal and behavioral typical traces~\cite{freud,freud2}.
-
-It was considered central to benefit from key human typologies, both by describing types and by further characterizing classes in the terms encountered. A primitive physics-based typology is described in Section~\ref{sec:pty} as a consequence of the periphery, intermediary and hub sectors yielded by comparing the real networks with the Erd\"os R\'enyi model.
-Also, ethic and moral issues are developed by such legacy. For example, Adorno et al. conceptualized that personality is dynamic, not static or immutable, and that recognizing this was important for an ethic empirical study of human authoritarian traces~\cite{adorno}.
-Indeed, this dynamic typological approach is so vital to secure an ethic study of human systems that our epigraph is devoted to make this point explicit.
-
-\section{Tables}\label{sectables}
 \clearpage
+\section{Tables}\label{sectables}
 \subsection{PCA tables}\label{sec:pcat}
-
-\begin{table}[H]
+\begin{table}[!h]
   \centering
   \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a weighted average of degree and betweenness centrality. The second component is mostly clustering coefficient. The first and second components represent more than 95\% of total variance. The $\lambda$ bottom line holds the percentage of total variance attributed to each component.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
@@ -626,11 +645,7 @@ $\lambda$ & 64.67         & 0.52     & 33.26         & 0.23     & 2.08  & 0.40 \
   \label{compPCA0}
 \end{table}
 
-
-
-
-
-\begin{table}
+\begin{table}[!h]
   \centering
   \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a weighted average of degree and strength and betweenness centrality. The second component is mostly related to the  clustering coefficient. The first and second components represent more than 90\% of the variance.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
@@ -650,7 +665,7 @@ $\lambda$ & 81.80 & 0.83 & 12.53 & 0.09  & 3.24 & 0.62 \\ \hline
 \end{table}
 
 
-\begin{table}
+\begin{table}[!h]
   \centering
   \caption{Principal components formation with symmetry-related metrics (see Section~\ref{measures}). LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to the third principal component. The second component is primarily derived from symmetry measurements, but also out-degree and out-strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. The clusterization component combines with disequilibrium, while asymmetry is combined to out-degree and out-strength. The three components have in average 80.36\% of the variance.}
   \begin{tabular}{|l|c|c| c|c| c|c|}\hline
@@ -675,11 +690,9 @@ $\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
   \label{compPCA2}
 \end{table}
 
-\clearpage
-
 \subsection{Tables for activity along time and among participants}\label{tabTime}
 
-\begin{table}
+\begin{table}[!h]
     \caption{Distribution of activity among agents. First column is dedicated to percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $10D$ column has maximum percentage of participants responsible for 10\% of messages.}
 \begin{center}
     \begin{tabular}{ | l ||  c | c | c | c | }

@@ -44,7 +44,7 @@ x1=3.7; y=-41.16-5
 p.plot((x1,x1),(-1000,y),"r--")
 x2=5.4951; y=-60.-5
 p.plot((x2,x2),(-1000,y),"r--")
-p.xticks((x1,x2),(r"$(k_\Leftarrow)$",r"$(k_\Rightarrow)$"),size=25)
+p.xticks((x1,x2),(r"$(k_L)$",r"$(k_R)$"),size=25)
 
 p.savefig("../figs/fser_.png")
 #p.show()
