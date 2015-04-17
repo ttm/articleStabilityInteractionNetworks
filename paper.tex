@@ -392,33 +392,13 @@ quantitative classification to a qualitative and speculative approach.
 Remarkable features from the analysis of the four email lists are:
 \begin{itemize}
     \item The activity along time is practically the same for all lists (Section~\ref{constDisc}) and suggests stable patterns.
-    \item The fraction of participants in each Erd\"os sector is stable and can be observed even with very few messages (Section~\ref{subsec:pih}).
-    \item The measures combine into principal components in the same way for all lists and all snapshots. 
+    \item The fraction of participants in each Erd\"os sector is stable along time and can be observed even with very few messages (Section~\ref{subsec:pih}).
+    \item The topological measures (regarded as most basic and still representative for a first analysis) combine into principal components in the same way for all lists and all snapshots. 
 	    Furthermore, symmetry related measures, defined in this article, present more dispersion than the usual clustering coefficient (Section~\ref{prevalence}).
     \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
 \end{itemize}
 
-
-
-
-\begin{table}[!h!]
-    \caption{Distribution of activity among agents. First column is dedicated to percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $-10D$ column has maximum percentage of participants responsible for 10\% of messages.}
-\begin{center}
-    \begin{tabular}{ | l ||  c | c | c | c | }
-        \hline
-        list & hub & $ 1Q $ & $ 1-3Q $ & $-10D$ \\ \hline
-	\input{tables/userTab}
-    \end{tabular}
-\end{center}
-\label{autores}
-\end{table}
-
-
-
-The reminder of this section contains a detailed discussion of these results and
-Support Information holds tables and figures from which such results can be observed.
-
-
+The reminder of this section contains a detailed discussion of these results and Support Information holds further tables and figures from which such results can be better observed. The user activity exhibited in Table~\ref{autores} is 
 
 \subsection{Constancy and discrepancy of activity along time}\label{constDisc}
 One remarkable feature from the analysis is that the activity 
@@ -500,7 +480,19 @@ Literature reports relation of number of participants and hubs stability to comm
 \subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
 
 
-There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} exposes this expected distribution of activity among participants in a scale-free context.
+There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} exposes this expected distribution of activity among participants in a scale-free context. As we have seen, one way to observe such distribution of participants is through a comparison of the real network with an Erd\"os R\'enyi model.
+
+\begin{table}[!h!]
+    \caption{Distribution of activity among agents. First column presents the percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $-10D$ column has maximum percentage of participants responsible for 10\% of messages.}
+\begin{center}
+    \begin{tabular}{ | l ||  c | c | c | c | }
+        \hline
+        list & hub & $ 1Q $ & $ 1-3Q $ & $-10D$ \\ \hline
+	\input{tables/userTab}
+    \end{tabular}
+\end{center}
+\label{autores}
+\end{table}
 
 The distribution of vertices in the  hubs, intermediary, periphery Erd\"os sectors defined in Section~\ref{sectioning} is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. 
 Moreover, the same distribution applies to the networks of all the four email lists, to which are dedicated the various figures in Appendix~\ref{figures}. 
