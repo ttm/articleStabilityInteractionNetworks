@@ -388,6 +388,7 @@ quantitative classification to a qualitative and speculative approach.
 
 \section{Results and discussion}\label{sec:results}
 
+
 Remarkable features from the analysis of the four email lists are:
 \begin{itemize}
     \item The activity along time is practically the same for all lists (Section~\ref{constDisc}) and suggests stable patterns.
@@ -397,8 +398,27 @@ Remarkable features from the analysis of the four email lists are:
     \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
 \end{itemize}
 
+
+
+
+\begin{table}[!h!]
+    \caption{Distribution of activity among agents. First column is dedicated to percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $-10D$ column has maximum percentage of participants responsible for 10\% of messages.}
+\begin{center}
+    \begin{tabular}{ | l ||  c | c | c | c | }
+        \hline
+        list & hub & $ 1Q $ & $ 1-3Q $ & $-10D$ \\ \hline
+	\input{tables/userTab}
+    \end{tabular}
+\end{center}
+\label{autores}
+\end{table}
+
+
+
 The reminder of this section contains a detailed discussion of these results and
 Support Information holds tables and figures from which such results can be observed.
+
+
 
 \subsection{Constancy and discrepancy of activity along time}\label{constDisc}
 One remarkable feature from the analysis is that the activity 
@@ -439,11 +459,40 @@ Higher activity was observed between noon and 6pm, followed by the time period b
 \subsubsection{Days of the week}
 Higher activity was observed during weekdays, specially for the CPP and MET lists (see Table~\ref{semana}). The decrease of activity on weekends reaches at least one third, and two thirds in extreme cases.
 
+\begin{table}[h]
+	\caption{.}
+\begin{center}
+    \begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
+        \hline
+        & Mon & Tue & Wed & Thu & Fri & Sat & Sun  \\ \hline
+	\input{tables/tabWeekdays}
+    \end{tabular}
+\end{center}
+\label{tab:win}
+\end{table}
+
+
+
 \subsubsection{Days along the month}
 Variation of activity in the days along the month is less prominent, one cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity. Last days of the month (29, 30 and 31) are not present in every month, and observed activity is proportional to incidence rates. See Table~\ref{mes} for further insights. 
 
+\begin{table}[!h]
+	\caption{.}
+	\footnotesize
+	\input{tables/tabMonthdaysCPP}
+\label{tab:min}
+\end{table}
+
+
 \subsubsection{Months and larger divisions of the year}
  Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Table~\ref{ano}). These observations fit academic calendars, vacations and end-of-year holidays.
+
+\begin{table}[!h]
+	\caption{.}
+	\footnotesize
+	\input{tables/tabMonthsLAD}
+\label{tab:min}
+\end{table}
 
 \subsubsection{Activity long years}
 Literature reports relation of number of participants and hubs stability to community longevity~\cite{barabasiEvo}. Also, activity should follow trends such as economic, climate and technological. Periodicity should be observed to some extent. Nevertheless, the time period examined was not sufficient for the analysis of activity along the years (see Section~\ref{sec:conc}). 
@@ -479,7 +528,16 @@ That was understood as a consequence of the observation scale (see Appendix~\ref
 The topology was analyzed using standard, well-established metrics of centrality and clustering.
 We also introduced symmetry measures because there is evidence that they are relevant in social contexts~\cite{newmanEvolving}.
 The contribution from the distinct metrics to network topology is very similar for all the networks, and did not vary with time.
-This stability in network behavior is remarkable, as can be noticed by the small standard deviations of the contribution of each metric to principal components (from usual Principal Component Analysis~\cite{pca}) along time of Tables~\ref{compPCA0}-\ref{compPCA2}.
+This stability in network behavior is remarkable, with small standard deviations of the contribution of each metric to principal components in all lists analyzed. Table~\ref{fig:pcain} exemplifies the principal components formation with all measures considered, while Tables~\ref{compPCA0}-\ref{compPCA2} of Support Information gives further assistance to the interested reader.
+
+\begin{table}[!h]
+	\caption{.}
+	\footnotesize
+	\input{tables/tabPCA3MET}
+\label{tab:min}
+\end{table}
+
+
 
 The principal component exhibited a pondered sum of centrality measures: degrees, strengths and betweenness centrality.
 This composition of the principal component suggests that all six degree and strength measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics.
@@ -524,7 +582,8 @@ Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and 
 %\end{figure}
 
     \subsection{Primitive typology from Erd\"os sectors}\label{sec:pty}
-Consider the sector to which a participant belongs as her/his type. General considerations of this typology are:
+Such stability of activity along time, Erd\"os sector relative sizes, principal components formation and concentration of variance suggests that understanding types of networks and participants might benefit from a characterization within such framework.
+We considered the most trivial case, in which the sector to which a participant belongs is regarded as her/his type. This is useful in deriving more elaborate typologies, and yield a sketch of or a ``primitive'' typology. General considerations:
 \begin{itemize}
 	\item A participant belongs to many networks (his family, family of a friend, the email list to which he belongs, work friends, etc.).
 	\item A participant might belong to all three sectors at the same time. Actually, it is reasonable to assume that almost every person belongs to all three sectors for some of the networks.
