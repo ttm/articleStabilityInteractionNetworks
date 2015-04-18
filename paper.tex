@@ -403,7 +403,7 @@ The reminder of this section contains a detailed discussion of these results and
 \subsection{Constancy and discrepancy of activity along time}\label{constDisc}
 
 \begin{table*}[t]
-\caption{The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. Also, $ \mu_{\frac{max(incidence')}{min(incidence')}} $ and $ \sigma_{\frac{max(incidence')}{min(incidence')} }$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples.
+	\caption{The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. Also, $ \mu_{\frac{max(incidence')}{min(incidence')}} $ and $ \sigma_{\frac{max(incidence')}{min(incidence')} }$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples.
 Section~\ref{sec:mtime} exposes the theoretical background considered of directional (or circular) statistics.}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
@@ -421,9 +421,7 @@ One remarkable feature from the analysis is that the activity
 along time is practically the same for all lists. Circular mean and standard deviation
 for each time scale are given in Table~\ref{tab:circ}. 
 
-Each time scale also revealed patterns through histograms in Tables~\ref{tab:hin},~\ref{tab:win},~\ref{tab:min} and~\ref{tab:min2}. The exceptions of the seconds, minutes and years scales received dedicated Sections~\ref{sec:secmin} and~\ref{sec:years}.
-
-
+Time scale also revealed patterns through histograms as exposed in Tables~\ref{tab:hin},~\ref{tab:win},~\ref{tab:min} and~\ref{tab:min2}. Seconds, minutes and years scales received the dedicated Sections~\ref{sec:secmin} and~\ref{sec:years} instead of tables.
 
 \subsubsection{Seconds and minutes}\label{sec:secmin}
 Messages were slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}: for both seconds and minutes $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$ in the lists. Simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
@@ -515,7 +513,7 @@ In applying PCA to the snapshots, the contribution of each metric to principal c
 \begin{table}[!h]
 	\caption{Principal components formation with symmetry-related metrics (see Section~\ref{measures}). MET list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to the third principal component. The second component is primarily derived from symmetry measurements, but also out-degree and out-strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. The clusterization component combines with disequilibrium, while asymmetry is combined to out-degree and out-strength. The three components have in average 80.36\% of the variance.}
 	\footnotesize
-	\input{tables/tabPCA3LAU}
+	\input{tables/tabPCA3CPP}
 \label{tab:pcain}
 \end{table}
 
