@@ -26,7 +26,7 @@
 \usepackage{color} % for the notes
 \usepackage{etex}
 \reserveinserts{58}
-\usepackage{morefloats}
+%\usepackage{morefloats}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{amsmath}
@@ -398,20 +398,18 @@ Remarkable features from the analysis of the four email lists are:
     \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
 \end{itemize}
 
-The reminder of this section contains a detailed discussion of these results and Support Information holds further tables and figures from which such results can be better observed. The user activity exhibited in Table~\ref{autores} is 
+The reminder of this section contains a detailed discussion of these results and Support Information holds further tables and figures from which such results can be better observed.
 
 \subsection{Constancy and discrepancy of activity along time}\label{constDisc}
-One remarkable feature from the analysis is that the activity 
-along time is practically the same for all lists. Circular mean and standard deviation
-for each time scale are given in Table~\ref{tab:circ}.
 
 \begin{table*}[t]
-	\caption{The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. The Section~\ref{sec:mtime} exposes the theoretical background considered of directional (or circular) statistics.}
+\caption{The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. Also, $ \mu_{\frac{max(incidence')}{min(incidence')}} $ and $ \sigma_{\frac{max(incidence')}{min(incidence')} }$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples.
+Section~\ref{sec:mtime} exposes the theoretical background considered of directional (or circular) statistics.}
 \begin{center}
-    \begin{tabular}{ |l|| c|c|c|c|c| }
+    \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-	scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ \\ \hline\hline
-	\input{tables/tab2TimeCPP}
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+	\input{tables/tab2TimeLAD}
     \end{tabular}
 \end{center}
 \label{tab:circ}
@@ -419,28 +417,27 @@ for each time scale are given in Table~\ref{tab:circ}.
 
 
 
-\subsubsection{Seconds and minutes}
-Messages were slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}: for both seconds and minutes $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$ in the lists, while Simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
+One remarkable feature from the analysis is that the activity 
+along time is practically the same for all lists. Circular mean and standard deviation
+for each time scale are given in Table~\ref{tab:circ}. 
+
+Each time scale also revealed patterns through histograms in Tables~\ref{tab:hin},~\ref{tab:win},~\ref{tab:min} and~\ref{tab:min2}. The exceptions of the seconds, minutes and years scales received dedicated Sections~\ref{sec:secmin} and~\ref{sec:years}.
+
+
+
+\subsubsection{Seconds and minutes}\label{sec:secmin}
+Messages were slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}: for both seconds and minutes $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$ in the lists. Simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
 Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected and the pattern is the uniformity. Circular dispersion is maximized and mean has little meaning.
 
-\subsubsection{Hours of the day}
-Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon. See Table~\ref{dia} for the fraction of activity in 1h, 6h and 12h periods along the day.
-
-
 \begin{table}[!h]
-	\caption{.}
+	\caption{Example of activity percentages along the hours of the day. Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.}
 	\footnotesize
 	\input{tables/tabHoursCPP_}
 \label{tab:hin}
 \end{table}
 
-
-
-\subsubsection{Days of the week}
-Higher activity was observed during weekdays, specially for the CPP and MET lists (see Table~\ref{semana}). The decrease of activity on weekends reaches at least one third, and two thirds in extreme cases.
-
-\begin{table}[h]
-	\caption{.}
+\begin{table}[!h]
+	\caption{Example of activity percentages along the days of the week. Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.}
 \begin{center}
     \begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
         \hline
@@ -451,39 +448,32 @@ Higher activity was observed during weekdays, specially for the CPP and MET list
 \label{tab:win}
 \end{table}
 
-
-
-\subsubsection{Days along the month}
-Variation of activity in the days along the month is less prominent, one cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity. Last days of the month (29, 30 and 31) are not present in every month, and observed activity is proportional to incidence rates. See Table~\ref{mes} for further insights. 
-
 \begin{table}[!h]
-	\caption{.}
+	\caption{Variation of activity in the days along the month was not observed, one cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity.}
 	\footnotesize
 	\input{tables/tabMonthdaysCPP}
 \label{tab:min}
 \end{table}
 
-
-\subsubsection{Months and larger divisions of the year}
- Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Table~\ref{ano}). These observations fit academic calendars, vacations and end-of-year holidays.
-
 \begin{table}[!h]
-	\caption{.}
+	\caption{Example of activity percentages of the months along the year. Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Table~\ref{ano}). These observations fit academic calendars, vacations and end-of-year holidays.}
 	\footnotesize
 	\input{tables/tabMonthsLAD}
-\label{tab:min}
+\label{tab:min2}
 \end{table}
 
-\subsubsection{Activity long years}
-Literature reports relation of number of participants and hubs stability to community longevity~\cite{barabasiEvo}. Also, activity should follow trends such as economic, climate and technological. Periodicity should be observed to some extent. Nevertheless, the time period examined was not sufficient for the analysis of activity along the years (see Section~\ref{sec:conc}). 
+\subsubsection{Activity along years}\label{sec:years}
+Literature reports relation of number of participants and hubs stability to community longevity~\cite{barabasiEvo}. Also, activity should follow trends such as economic, climate and technological and periodicity should be observed to some extent. Nevertheless, the time period examined was not sufficient for the analysis of activity along the years (see Section~\ref{sec:conc}). 
+
+
 
 \subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
 
 
 There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} exposes this expected distribution of activity among participants in a scale-free context. As we have seen, one way to observe such distribution of participants is through a comparison of the real network with an Erd\"os R\'enyi model.
 
-\begin{table}[!h!]
-    \caption{Distribution of activity among agents. First column presents the percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $-10D$ column has maximum percentage of participants responsible for 10\% of messages.}
+\begin{table}[!h]
+    \caption{Distribution of activity among participants. First column presents the percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $-10D$ column has maximum percentage of participants responsible for 10\% of messages.}
 \begin{center}
     \begin{tabular}{ | l ||  c | c | c | c | }
         \hline
@@ -494,13 +484,13 @@ There is a concentration of hub activity and of vertex with few connections. Tab
 \label{autores}
 \end{table}
 
-The distribution of vertices in the  hubs, intermediary, periphery Erd\"os sectors defined in Section~\ref{sectioning} is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. 
-Moreover, the same distribution applies to the networks of all the four email lists, to which are dedicated the various figures in Appendix~\ref{figures}. 
+Accordingly, the distribution of vertices in the  hubs, intermediary, periphery Erd\"os sectors defined in Section~\ref{sectioning} is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. 
+Moreover, the same distribution applies to the networks of all the four email lists, to which are dedicated the various figures in Support Information. 
 Typically, $\approx 5\%$ of the vertices are found to be hubs, $\approx [15-35]\%$ are intermediary and $\approx [60-80]\%$ are peripheral, which is consistent with the literature~\cite{secFree}.
 These results hold for total, in and out degrees and strengths.
-Stable distributions can also be obtained for 100 of less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. 
-The networks hold their basic structure with as few as 10-50 messages, concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of Appendix~\ref{figures}.
-A minimum window size for observation of more general properties might be inferred by monitoring the giant component and the degeneration of the hub, intermediary and peripheral sections.
+Stable distributions can also be obtained for 100 or less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. 
+The networks hold their basic structure with as few as 10-50 messages, concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of Support Information.
+A minimum window size for observation of more general properties might be inferred by monitoring the giant component and the degeneration of the Erd\"os sectors.
 
 
 \begin{figure*} 
@@ -519,26 +509,24 @@ That was understood as a consequence of the observation scale (see Appendix~\ref
 \subsection{Variance prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
 The topology was analyzed using standard, well-established metrics of centrality and clustering.
 We also introduced symmetry measures because there is evidence that they are relevant in social contexts~\cite{newmanEvolving}.
-The contribution from the distinct metrics to network topology is very similar for all the networks, and did not vary with time.
-This stability in network behavior is remarkable, with small standard deviations of the contribution of each metric to principal components in all lists analyzed. Table~\ref{fig:pcain} exemplifies the principal components formation with all measures considered, while Tables~\ref{compPCA0}-\ref{compPCA2} of Support Information gives further assistance to the interested reader.
+The contribution of each metric to the variance is very similar for all the networks, and did not vary with time.
+In applying PCA to the snapshots, the contribution of each metric to principal components resulted in very small standard deviation. Table~\ref{tab:pcain} exemplifies the principal components formation with all measures considered, while Support Information gives further assistance to the interested reader.
 
 \begin{table}[!h]
-	\caption{.}
+	\caption{Principal components formation with symmetry-related metrics (see Section~\ref{measures}). MET list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to the third principal component. The second component is primarily derived from symmetry measurements, but also out-degree and out-strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. The clusterization component combines with disequilibrium, while asymmetry is combined to out-degree and out-strength. The three components have in average 80.36\% of the variance.}
 	\footnotesize
-	\input{tables/tabPCA3MET}
-\label{tab:min}
+	\input{tables/tabPCA3LAU}
+\label{tab:pcain}
 \end{table}
 
-
-
-The principal component exhibited a pondered sum of centrality measures: degrees, strengths and betweenness centrality.
-This composition of the principal component suggests that all six degree and strength measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics.
+The principal component is an average of centrality measures: degrees, strengths and betweenness centrality.
+This composition of the principal component suggests that all degree, strength and betweenness centrality measures are equally important for system characterization, although it is known that they do not relate to the same participation characteristics.
 Clustering coefficient is presented in almost perfect orthogonality.
 Dispersion was more prevalent in symmetry related measures than clustering coefficient.
 
-Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. The typical PCA plot for the two first components exhibited in Table~\ref{compPCA} is shown in the second system of Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the second component (clustering related).
-The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects symmetry metrics relevance for the variance. 
-This can be observed in Table~\ref{compPCA2} where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength). 
+Degree and strength are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. Plots of vertices in the components exhibited in Table~\ref{tab:pcain} are shown in the Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the third component (clustering related).
+The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects symmetry metrics relevance for the variance.
+This can be observed in Table~\ref{tab:pcain} where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength).
 We concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
 
 %\begin{figure} 
@@ -550,7 +538,7 @@ We concluded that the symmetry-related measurements can be more meaningful in ch
 
 \begin{figure*} 
    \centering
-        \includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT}
+        \includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
 	\caption{Prevalence of symmetry measures over clustering for data dispersion. This was considered an important result of PCA analysis, together with stability on component formation. First plot holds the usual degree versus clustering coefficient layout. Second plot is similar, but the first component is an average of centrality measures (see Table~\ref{compPCA}). Third plot resulted from applying PCA with symmetry measures (see Table~\ref{compPCA2}), where greater dispersion can be observed in all sectors, although more pronounced in intermediary and hubs sectors.
     For this figure, a window size of $ws = 1000$ messages was used from LAU list. The general layout is recurrent and consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.
 Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which exposes a common relation held by degree, strength and betweenness measures to clustering coefficient.
@@ -692,448 +680,448 @@ Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
 \clearpage
 \section{Tables}\label{sectables}
 \subsection{PCA tables}\label{sec:pcat}
-\begin{table}[!h]
-  \centering
-  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a weighted average of degree and betweenness centrality. The second component is mostly clustering coefficient. The first and second components represent more than 95\% of total variance. The $\lambda$ bottom line holds the percentage of total variance attributed to each component.}
-  \begin{tabular}{|l|c|c| c|c| c|c|}\hline
- & \multicolumn{2}{c|}{PC1}          & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
-       & $\mu$            & $\sigma$ & $\mu$         & $\sigma$ & $\mu$ & $\sigma$  \\\hline
-$d$       & {\bf 48.02}   & 1.39     & 2.82          & 1.74     & 48.09  & 0.32 \\
-$cc$      & 4.12          & 2.94     & {\bf 90.45}   & 3.98     & 3.98  & 0.77 \\ 
-$bt$      & {\bf 47.87}   & 1.55     & 6.74          & 4.08     & 47.93 & 0.46 \\ \hline
-$\lambda$ & 64.67         & 0.52     & 33.26         & 0.23     & 2.08  & 0.40 \\ \hline
-  \end{tabular}
-  \label{compPCA0}
-\end{table}
-
-\begin{table}[!h]
-  \centering
-  \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a weighted average of degree and strength and betweenness centrality. The second component is mostly related to the  clustering coefficient. The first and second components represent more than 90\% of the variance.}
-  \begin{tabular}{|l|c|c| c|c| c|c|}\hline
- & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
-       & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
-$d$       & {\bf 14.58} & 0.14 & 0.43  & 0.35 & 1.51  & 1.08 \\
-$d^{in}$  & {\bf 14.12} & 0.14 & 1.71  & 1.22 & 17.80 & 6.20 \\
-$d^{out}$ & {\bf 13.95} & 0.12 & 2.80  & 1.83 & 21.15 & 5.62 \\
-$s$       & {\bf 14.48} & 0.13 & 0.78  & 0.65 & 5.51  & 4.71 \\ 
-$s^{in}$  & {\bf 14.10} & 0.14 & 2.17  & 1.28 & 17.32 & 6.11 \\ 
-$s^{out}$ & {\bf 14.05} & 0.13 & 2.08  & 1.14 & 19.31 & 4.86 \\ \hline
-$cc$      & 0.99        & 0.70 & {\bf 83.38} & 4.83 & 2.75  & 1.62 \\ 
-$bt$      & {\bf 13.73} & 0.19 & 6.65  & 1.31 & 14.66 & 10.14 \\ \hline
-$\lambda$ & 81.80 & 0.83 & 12.53 & 0.09  & 3.24 & 0.62 \\ \hline
-  \end{tabular}
-  \label{compPCA}
-\end{table}
-
-
-\begin{table}[!h]
-  \centering
-  \caption{Principal components formation with symmetry-related metrics (see Section~\ref{measures}). LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to the third principal component. The second component is primarily derived from symmetry measurements, but also out-degree and out-strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. The clusterization component combines with disequilibrium, while asymmetry is combined to out-degree and out-strength. The three components have in average 80.36\% of the variance.}
-  \begin{tabular}{|l|c|c| c|c| c|c|}\hline
- & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
-       & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
-$d$            & {\bf 11.51} & 0.42 & 2.00  & 0.76 & 2.39  & 0.49 \\ 
-$d^{in}$       & {\bf 11.45} & 0.34 & 2.86  & 0.91 & 1.68  & 0.67 \\
-$d^{out}$      & {\bf 10.68} & 0.60 & {\bf 7.43}  & 1.00 & 3.00  & 1.02 \\
-$s$            & {\bf 11.37} & 0.42 & 1.75  & 0.71 & 4.31  & 0.63 \\ 
-$s^{in}$       & {\bf 11.33} & 0.35 & 2.39  & 1.10 & 3.69  & 0.86 \\ 
-$s^{out}$      & {\bf 10.74} & 0.55 & {\bf 6.14}  & 1.05 & 4.75  & 0.98 \\ \hline
-$cc$           & 0.91        & 0.64 & 2.68  & 1.67 & {\bf 22.27} & 6.43 \\ 
-$bt$           & {\bf 10.87} & 0.38 & 1.17  & 0.93 & 4.03  & 1.42 \\ \hline
-$asy$          & 3.99        & 1.45 & {\bf 18.13} & 1.67 & 2.55  & 1.77 \\
-$\mu_{asy}$    & 4.15        & 1.40 & {\bf 17.07} & 1.78 & 2.49  & 1.67 \\
-$\sigma_{asy}$ & 1.21        & 0.67 & {\bf 17.49} & 0.79 & 3.29  & 2.33 \\
-$dis$          & 5.78        & 0.51 & 1.94  & 1.28 & {\bf 24.75} & 3.73 \\
-$\mu_{dis}$    & 0.79        & 0.49 & {\bf 14.00} & 1.14 & 3.73  & 3.13 \\
-$\sigma_{dis}$ & 5.18        & 0.72 & 4.93  & 2.48 & {\bf 17.04} & 4.78 \\ \hline
-$\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
-  \end{tabular}
-  \label{compPCA2}
-\end{table}
-
-\subsection{Tables for activity along time and among participants}\label{tabTime}
-
-\begin{table}[!h]
-    \caption{Distribution of activity among agents. First column is dedicated to percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $10D$ column has maximum percentage of participants responsible for 10\% of messages.}
-\begin{center}
-    \begin{tabular}{ | l ||  c | c | c | c | }
-        \hline
-        list & hub & $ 1Q $ & $ 1-3Q $ & $10D$ \\ \hline
-    CPP & 14.41 & 0.19 (27.8\%) & 4.09 (75.13\%) & 83.65 (-10.04\%)   \\ 
-    MET & 11.14 & 0.81 (30.61\%) & 8.33 (75,11\%) & 80.49 (-10.02\%)  \\ 
-    LAU & 2.78 & 1.10 (25.16\%) & 13.02 (75,04\%) & 67.37 (-10.03\%) \\ 
-    LAD & 4.00 & 0.95 (25.50\%) & 11.83 (75,07\%) & 71.13 (-10.03\%) \\\hline
-    \end{tabular}
-\end{center}
-\label{autores}
-\end{table}
-
-
-\begin{table*}
-%\tiny
-    \caption{Percentage of activity ($100\frac{\text{counted messages}}{\text{total messages}}$) in each hour, 6 hours and 12 hours. Maximum activity rates are in bold. In 1h columns, minimum activity is also bold. The less active period of the day is around 4-6h. Maximum activity is between 10-13h. Afternoon is most active in 6h division of the day. The noon has $\approx \frac{2}{3}$ of 24h activity. }\label{dia}
-\begin{center}
-    \begin{tabular}{ |l|| c|c|c| c|c|c| c|c|c| c|c|c|}
-        \hline
-    & \multicolumn{3}{c|}{CPP} & \multicolumn{3}{c|}{MET} & \multicolumn{3}{c|}{LAU} & \multicolumn{3}{c|}{LAD}  \\ \hline
-    & 1h   & 6h & 12h &   1h & 6h & 12h &   1h & 6h & 12h &   1h & 6h & 12h \\ \hline\hline
-0h  & 3.66 & \multirow{6}{*}{10.67} & \multirow{12}{*}{33.76} & 2.87  & \multirow{6}{*}{7.15} & \multirow{12}{*}{29.33} & 3.58 & \multirow{6}{*}{10.14} &  \multirow{12}{*}{36.88} & 4.00 & \multirow{6}{*}{10.77} & \multirow{12}{*}{33.13} \\
-1h  & 2.76 &                        &                         & 1.77  & & &  2.22 & & & 2.52 & & \\
-2h  & 1.79 &                        &                         & 1.04  & & & 1.63 & & & 1.79 & & \\
-3h  & 1.10 &                        &                         & 0.64  & & & 1.06 & & & 1.06 & & \\
-4h  & {\bf 0.68} &                        &                         & 0.47  & & &  0.84 & & & 0.75 & & \\
-5h  & 0.69 &                        &                         & {\bf 0.38}  & & & {\bf 0.82} & & & {\bf 0.66} & & \\\cline{3-3}\cline{6-6}\cline{9-9}\cline{12-12}
-6h  & 0.83 & \multirow{6}{*}{23.09} &                         & 0.72  & \multirow{6}{*}{22.18} & & 1.17 & \multirow{6}{*}{26.74} & & 0.85 & \multirow{6}{*}{22.36} &  \\
-7h  & 1.24 &                        &                         & 1.33  & & & 2.37 & & & 1.56 & & \\
-8h  & 2.28 &                        &                         & 2.67  & & & 3.54 & & & 2.96 & & \\
-9h  & 4.52 &                        &                         & 4.40  & & & 6.04 & & & 4.68 & & \\
-10h & 6.62 &                        &                         & 6.29  & & & {\bf 6.83} & & & 5.93 & & \\
-11h & {\bf 7.61} &                        &                         & 6.78  & & & 6.79 & & & 6.40 & & \\\hline
-12h & 6.44 & \multirow{6}{*}{\bf 37.63} & \multirow{12}{*}{\bf 66.24} & {\bf 7.33}  & \multirow{6}{*}{\bf 42.22} & \multirow{12}{*}{ \bf 70.66} & 6.11 & \multirow{6}{*}{\bf 35.65} &  \multirow{12}{*}{ \bf 63.12} & {\bf 6.41} & \multirow{6}{*}{\bf 37.25} &  \multirow{12}{*}{\bf 66.87} \\
-13h & 6.04 &                        &                         & 7.08  & & & 6.26 & & & 6.12 & & \\
-14h & 6.47 &                        &                         & 7.09  & & & 6.38 & & & 6.33 & & \\
-15h & 6.10 &                        &                         & 7.14  & & & 5.93 & & & 5.98 & & \\
-16h & 6.22 &                        &                         & 6.68  & & & 5.52 & & & 6.40 & & \\
-17h & 6.36 &                        &                         & 6.89  & & & 5.46 & & & 6.02 & & \\\cline{3-3}\cline{6-6}\cline{9-9}\cline{12-12}
-
-
-18h & 6.01 & \multirow{6}{*}{28.61} &                         & 5.99  & \multirow{6}{*}{28.44} & & 5.24 & \multirow{6}{*}{27.46} & & 5.99 & \multirow{6}{*}{29.63} & \\
-19h & 5.02 &                        &                         & 5.23  & & & 4.52 & & & 5.03 & & \\
-20h & 4.85 &                        &                         & 4.98  & & & 4.55 & & & 4.63 & & \\
-21h & 4.38 &                        &                         & 4.37  & & & 4.42 & & & 4.59 & & \\
-22h & 4.06 &                        &                         & 4.24  & & & 4.51 & & & 4.88 & & \\
-23h & 4.30 &                        &                         & 3.64  & & & 4.23 & & & 4.53 & & \\\hline
-    \end{tabular}
-\end{center}
-\end{table*}
-
-
-
-\begin{table}[h]
-    \caption{Percentage of activity on days along the week. Weekend days are at least $\frac{1}{3}$ less active and can reach $\frac{1}{3}$ of activity. MET concentrates activity in weekdays the most, leaving only 13.98\% of total activity to Saturday and Sunday. LAU is the one that less concentrates activity in weekdays, reaching 20.94\% of total activity in weekends. These might suggest professional relation of CPP and MET participants to the topics of interest, or a hobby relation of LAU and LAD participants.}
-\begin{center}
-    \begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
-        \hline
-        & Mon & Tue & Wed & Thu & Fri & Sat & Sun  \\ \hline
-        CPP & 17.06 & 17.43 & 17.61 & 17.13 & 16.30 & 6.81 & 7.67 \\ \hline
-        MET & 17.53 & 17.54 & 16.43 & 17.06 & 17.46 & 7.92 & 6.06 \\ \hline
-        LAU & 15.71 & 15.80 & 15.88 & 16.43 & 15.13 & 10.13 & 10.91 \\ \hline
-        LAD & 14.91 & 17.73 & 17.01 & 15.40 & 14.25 & 10.39 & 10.30 \\\hline
-    \end{tabular}
-\end{center}
-\label{semana}
-\end{table}
-
-
-\begin{table*}
-%\tiny
-    \caption{Activity along the days of the month. The pattern is to have no clear prevalent period. One might point a slight tendency for the first two weeks to be more active, although this table does not present statistical foundation for such an assumption. For the scope of this study, differences of activity along the month is assumed to be inexistent.}
-\begin{center}
-    \begin{tabular}{ |l|| c|c|c| c|c|c| c|c|c| c|c|c|}
-        \hline
-    & \multicolumn{3}{c|}{CPP} & \multicolumn{3}{c|}{MET} & \multicolumn{3}{c|}{LAU} & \multicolumn{3}{c|}{LAD}  \\ \hline
-day    & 1 day & 7 days & 14 days &   1 day & 7 days & 14 days &   1 day & 7 days & 14 days &   1 day & 7 days & 14 days \\ \hline\hline
-1  & 3.19 & \multirow{7}{*}{23.05} & \multirow{14}{*}{45.63} & 3.01 & \multirow{7}{*}{25.16} & \multirow{14}{*}{48.08} & 3.34 & \multirow{7}{*}{23.06} &  \multirow{14}{*}{47.31} & 3.22 & \multirow{7}{*}{21.96} & \multirow{14}{*}{46.70} \\
-2  & 3.07 &                        &                         & 3.38  & & &  3.38 & & & 3.42 & & \\
-3  & 3.20 &                        &                         & 3.55  & & & 3.20 & & & 2.87 & & \\
-4  & 3.63 &                        &                         & 4.34  & & & 3.52 & & & 2.91 & & \\
-5  & 2.85 &                        &                         & 3.93  & & &  2.68 & & & 3.30 & & \\
-6  & 3.67 &                        &                         & 3.76  & & & 3.18 & & & 3.52 & & \\
-7  & 3.45 &                        &                         & 3.18  & & & 3.77 & & & 2.27 & & \\\cline{3-3}\cline{6-6}\cline{9-9}\cline{12-12}
-8  & 3.12 & \multirow{7}{*}{22.57} &                         & 3.36  & \multirow{7}{*}{22.92} & & 3.62 & \multirow{7}{*}{24.25} & & 3.72 & \multirow{7}{*}{24.73} &  \\
-9  & 2.57 &                        &                         & 3.44  & & & 3.82 & & & 3.97 & & \\
-10  & 2.92 &                        &                         & 3.17  & & & 3.06 & & & 3.77 & & \\
-11  & 3.54 &                        &                         & 3.88  & & & 3.11 & & & 3.27 & & \\
-12 & 3.23 &                        &                         & 2.94  & & & 3.40 & & & 2.75 & & \\
-13 & 3.39 &                        &                         & 3.29  & & & 3.55 & & & 3.34 & & \\
-14 & 3.81 &                        &                         & 2.83  & & & 3.69 & & & 3.93 & & \\\hline
-15 & 3.35 & \multirow{7}{*}{23.02} & \multirow{14}{*}{46.31} & 2.72  & \multirow{7}{*}{21.87} & \multirow{14}{*}{ 43.56} & 3.23 & \multirow{7}{*}{22.84} &  \multirow{14}{*}{ 44.01 } & 3.37 & \multirow{7}{*}{22.82} &  \multirow{14}{*}{46.00} \\
-16 & 3.77 &                        &                         & 2.96  & & & 2.94 & & & 3.37 & & \\
-17 & 3.45 &                        &                         & 3.01  & & & 3.02 & & & 2.95 & & \\
-18 & 3.47 &                        &                         & 3.39  & & & 3.63 & & & 3.22 & & \\
-19 & 2.90 &                        &                         & 3.42  & & & 3.16 & & & 3.59 & & \\
-20 & 2.80 &                        &                         & 3.09  & & & 3.25 & & & 3.21 & & \\
-21 & 3.29 &                        &                         & 3.27  & & & 3.61 & & & 3.13 & & \\\cline{3-3}\cline{6-6}\cline{9-9}\cline{12-12}
-
-22 & 2.88 & \multirow{7}{*}{23.29} &                         & 2.92  & \multirow{7}{*}{21.69} & & 3.80 & \multirow{7}{*}{21.17} & & 3.07 & \multirow{7}{*}{23.18} & \\
-23 & 4.01 &                        &                         & 3.27  & & & 3.03 & & & 3.06 & & \\
-24 & 3.13 &                        &                         & 2.92  & & & 2.31 & & & 2.72 & & \\
-25 & 3.57 &                        &                         & 2.83  & & & 2.38 & & & 3.16 & & \\
-26 & 3.27 &                        &                         & 2.97  & & & 3.49 & & & 3.57 & & \\
-27 & 3.27 &                        &                         & 3.41  & & & 2.92 & & & 3.92 & & \\
-28 & 3.17 &                        &                         & 3.36  & & & 3.26 & & & 3.69 & & \\\hline
-29 & 3.68 &  \multirow{3}{*}{8.06} &  \multirow{3}{*}{8.06}  & 2.93  & \multirow{3}{*}{8.36} & \multirow{3}{*}{8.36} & 3.34 & \multirow{3}{*}{8.68} & \multirow{3}{*}{8.68} & 3.15 & \multirow{3}{*}{7.30} & \multirow{3}{*}{7.30} \\
-30 & 2.76 &                        &                         & 3.14  & & & 3.75 & & & 2.71 & & \\
-31 & 1.63 &                        &                         & 2.29  & & & 1.60 & & & 1.45 & & \\\hline
-    \end{tabular}
-\end{center}
-\label{mes}
-\end{table*}
-
-
-\begin{table*}[t]
-\scriptsize
-    \caption{Activity along the year, in months, trimesters, quadrimesters and semesters. Engagement in list participation seem to concentrate in two periods: middle of the year (Jun-Aug, lists MET and LAD), and transition from years (Dec-Mar, lists CPP, LAU and LAD). Messages were considered as to complete 12 months slots, so every month has the same time of occurrences.}
-\begin{center}
-    \begin{tabular}{ |l|| c|c|c|c|c|  c|c|c|c|c| c|c|c|c|c| c|c|c|c|c|}
-        \hline
-    & \multicolumn{5}{c|}{CPP} & \multicolumn{5}{c|}{MET} & \multicolumn{5}{c|}{LAU} & \multicolumn{5}{c|}{LAD}  \\ \hline
-    & m. & b. & t. & q. & s. &   m. & b. & t. & q. & s. &   m. & b. & t. & q. & s. &   m. & b. & t. & q. & s. \\ \hline\hline
-Jan  & 8.70 & \multirow{2}{*}{17.00} & \multirow{3}{*}{\bf 27.23} &  \multirow{4}{*}{\bf 36.48} & \multirow{6}{*}{\bf 54.26} & 4.88 &  \multirow{2}{*}{11.01} & \multirow{3}{*}{16.90} & \multirow{4}{*}{23.32} & \multirow{6}{*}{47.74} & 10.22 & \multirow{2}{*}{\bf 19.56} & \multirow{3}{*}{\bf 28.23} & \multirow{4}{*}{\bf 35.09} & \multirow{6}{*}{49.17} & 11.23 & \multirow{2}{*}{18.49} & \multirow{3}{*}{26.43} & \multirow{4}{*}{36.04} & \multirow{6}{*}{\bf 57.95} \\
-Fev  & 8.29 &                        &                         & & & 6.13 & & & & & 9.34  & & & & & 7.26 & & & & \\\cline{3-3}\cline{8-8}\cline{13-13}\cline{18-18}
-Mar  & {\bf 10.23} & \multirow{2}{*}{\bf 19.49} &                         & & & 5.89 & \multirow{2}{*}{12.31} & & & & 8.67 & \multirow{2}{*}{15.52} & & & & 7.94 & \multirow{2}{*}{17.55} & & & \\\cline{4-4}\cline{9-9}\cline{14-14}\cline{19-19}
-Apr  & 9.26 &                        &  \multirow{3}{*}{27.03} & & & 6.42 & & \multirow{3}{*}{30.84} & & & 6.85 & & \multirow{3}{*}{20.94} & & & 9.61 & & \multirow{3}{*}{\bf 31.51} & & \\\cline{3-3}\cline{5-5}\cline{8-8}\cline{10-10}\cline{13-13}\cline{15-15}\cline{18-18}\cline{20-20}
-Mai  & 9.41 & \multirow{2}{*}{17.78} &                         & \multirow{4}{*}{33.46} & & 10.46 & \multirow{2}{*}{\bf 24.42} & & \multirow{4}{*}{\bf 47.83} & & 7.27 & \multirow{2}{*}{14.09} & & \multirow{4}{*}{30.37} &  & 8.94 & \multirow{2}{*}{\bf 21.91} & & \multirow{4}{*}{\bf 37.56} & \\
-Jun & 8.37 &                        &                         & & & {\bf 13.96} & & & & & 6.81 & & & & & {\bf 12.97} & & & & \\\cline{3-3}\cline{4-4}\cline{6-6}\cline{8-9}\cline{11-11}\cline{13-14}\cline{16-16}\cline{18-19}\cline{21-21}
-Jul & 8.70 &  \multirow{2}{*}{15.68} & \multirow{3}{*}{22.94} & & \multirow{6}{*}{45.73} & 13.23 & \multirow{2}{*}{23.41} & \multirow{3}{*}{\bf 31.16} & & \multirow{6}{*}{\bf 52.26} & 8.96 & \multirow{2}{*}{16.28} & \multirow{3}{*}{24.47} & & \multirow{6}{*}{\bf 50.82} & 9.02 & \multirow{2}{*}{15.65} & \multirow{3}{*}{22.29} & & \multirow{6}{*}{42.05} \\
-Ago  & 6.98 &                       &                         & & & 10.28 & & & & & 7.31 & & & & & 6.63 & & & & \\\cline{3-3}\cline{5-5}\cline{8-8}\cline{10-10}\cline{13-13}\cline{15-15}\cline{18-18}\cline{20-20}
-Set  & 7.26 & \multirow{2}{*}{15.36} &                         & \multirow{4}{*}{30.06} & & 7.75 & \multirow{2}{*}{16.80} & & \multirow{4}{*}{28.86} & & 8.18 & \multirow{2}{*}{16.24} & & \multirow{4}{*}{34.54} & & 6.63 & \multirow{2}{*}{12.38} & & \multirow{4}{*}{26.40} & \\\cline{4-4}\cline{9-9}\cline{14-14}\cline{19-19}
-Oct  & 8.10 &                        &  \multirow{3}{*}{22.80} & & & 9.05 & & \multirow{3}{*}{21.10} & & & 8.06 & & \multirow{3}{*}{26.36} & & & 5.74 & & \multirow{3}{*}{19.77} & & \\\cline{3-3}\cline{8-8}\cline{13-13}\cline{18-18}
-Nov  & 7.86 & \multirow{2}{*}{14.69} &                         & & & 7.46 & \multirow{2}{*}{12.06} & & & & 7.63 & \multirow{2}{*}{18.30} & & & & 7.63 & \multirow{2}{*}{14.02} & & & \\
-Dec & 6.81 &                        &                         &  & & 4.59 & & & & & {\bf 10.66} & & & & & 6.39 & & & & \\\hline
-    \end{tabular}
-\end{center}
-\label{ano}
-\end{table*}
-
-
-\clearpage
-\section{Figures of vertex classification fractions as the network evolves}\label{figures}
-
-Two lists are exhibited in this section, CPP and LAD. These structures are very similar in all
-four lists and laying extensively all figures is redundant. Window sizes of $ws =$ 10000, 5000,
-1000, 500, 250, 100 and 50 messages were used.
-
-\begin{figure*}[hb]
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/10000}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:cpp10000}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/10000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification is plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:cpp10000_}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/5000}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:cpp5000}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/5000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:cpp5000_}
-\end{figure*}
-
+%\begin{table}[!h]
+%  \centering
+%  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a weighted average of degree and betweenness centrality. The second component is mostly clustering coefficient. The first and second components represent more than 95\% of total variance. The $\lambda$ bottom line holds the percentage of total variance attributed to each component.}
+%  \begin{tabular}{|l|c|c| c|c| c|c|}\hline
+% & \multicolumn{2}{c|}{PC1}          & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
+%       & $\mu$            & $\sigma$ & $\mu$         & $\sigma$ & $\mu$ & $\sigma$  \\\hline
+%$d$       & {\bf 48.02}   & 1.39     & 2.82          & 1.74     & 48.09  & 0.32 \\
+%$cc$      & 4.12          & 2.94     & {\bf 90.45}   & 3.98     & 3.98  & 0.77 \\ 
+%$bt$      & {\bf 47.87}   & 1.55     & 6.74          & 4.08     & 47.93 & 0.46 \\ \hline
+%$\lambda$ & 64.67         & 0.52     & 33.26         & 0.23     & 2.08  & 0.40 \\ \hline
+%  \end{tabular}
+%  \label{compPCA0}
+%\end{table}
+%
+%\begin{table}[!h]
+%  \centering
+%  \caption{Principal components composition in percentages. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. First component is a weighted average of degree and strength and betweenness centrality. The second component is mostly related to the  clustering coefficient. The first and second components represent more than 90\% of the variance.}
+%  \begin{tabular}{|l|c|c| c|c| c|c|}\hline
+% & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
+%       & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
+%$d$       & {\bf 14.58} & 0.14 & 0.43  & 0.35 & 1.51  & 1.08 \\
+%$d^{in}$  & {\bf 14.12} & 0.14 & 1.71  & 1.22 & 17.80 & 6.20 \\
+%$d^{out}$ & {\bf 13.95} & 0.12 & 2.80  & 1.83 & 21.15 & 5.62 \\
+%$s$       & {\bf 14.48} & 0.13 & 0.78  & 0.65 & 5.51  & 4.71 \\ 
+%$s^{in}$  & {\bf 14.10} & 0.14 & 2.17  & 1.28 & 17.32 & 6.11 \\ 
+%$s^{out}$ & {\bf 14.05} & 0.13 & 2.08  & 1.14 & 19.31 & 4.86 \\ \hline
+%$cc$      & 0.99        & 0.70 & {\bf 83.38} & 4.83 & 2.75  & 1.62 \\ 
+%$bt$      & {\bf 13.73} & 0.19 & 6.65  & 1.31 & 14.66 & 10.14 \\ \hline
+%$\lambda$ & 81.80 & 0.83 & 12.53 & 0.09  & 3.24 & 0.62 \\ \hline
+%  \end{tabular}
+%  \label{compPCA}
+%\end{table}
+%
+%
+%\begin{table}[!h]
+%  \centering
+%  \caption{Principal components formation with symmetry-related metrics (see Section~\ref{measures}). LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. In this case, clusterization is pushed to the third principal component. The second component is primarily derived from symmetry measurements, but also out-degree and out-strength, and disequilibrium standard deviation. Betweenness centrality again has a role similar to degree, but weaker. The clusterization component combines with disequilibrium, while asymmetry is combined to out-degree and out-strength. The three components have in average 80.36\% of the variance.}
+%  \begin{tabular}{|l|c|c| c|c| c|c|}\hline
+% & \multicolumn{2}{c|}{PC1} & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\hline
+%       & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$  \\\hline
+%$d$            & {\bf 11.51} & 0.42 & 2.00  & 0.76 & 2.39  & 0.49 \\ 
+%$d^{in}$       & {\bf 11.45} & 0.34 & 2.86  & 0.91 & 1.68  & 0.67 \\
+%$d^{out}$      & {\bf 10.68} & 0.60 & {\bf 7.43}  & 1.00 & 3.00  & 1.02 \\
+%$s$            & {\bf 11.37} & 0.42 & 1.75  & 0.71 & 4.31  & 0.63 \\ 
+%$s^{in}$       & {\bf 11.33} & 0.35 & 2.39  & 1.10 & 3.69  & 0.86 \\ 
+%$s^{out}$      & {\bf 10.74} & 0.55 & {\bf 6.14}  & 1.05 & 4.75  & 0.98 \\ \hline
+%$cc$           & 0.91        & 0.64 & 2.68  & 1.67 & {\bf 22.27} & 6.43 \\ 
+%$bt$           & {\bf 10.87} & 0.38 & 1.17  & 0.93 & 4.03  & 1.42 \\ \hline
+%$asy$          & 3.99        & 1.45 & {\bf 18.13} & 1.67 & 2.55  & 1.77 \\
+%$\mu_{asy}$    & 4.15        & 1.40 & {\bf 17.07} & 1.78 & 2.49  & 1.67 \\
+%$\sigma_{asy}$ & 1.21        & 0.67 & {\bf 17.49} & 0.79 & 3.29  & 2.33 \\
+%$dis$          & 5.78        & 0.51 & 1.94  & 1.28 & {\bf 24.75} & 3.73 \\
+%$\mu_{dis}$    & 0.79        & 0.49 & {\bf 14.00} & 1.14 & 3.73  & 3.13 \\
+%$\sigma_{dis}$ & 5.18        & 0.72 & 4.93  & 2.48 & {\bf 17.04} & 4.78 \\ \hline
+%$\lambda$      & 51.09       & 1.07 & 20.04 & 1.31 & 9.23  & 6.63 \\ \hline
+%  \end{tabular}
+%  \label{compPCA2}
+%\end{table}
+%
+%\subsection{Tables for activity along time and among participants}\label{tabTime}
+%
+%\begin{table}[!h]
+%    \caption{Distribution of activity among agents. First column is dedicated to percentage of messages sent by the most active participant. Column for the first quartile ($1Q$) exhibits minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ exhibits minimum percentage of participants responsible for 75\% of total messages. The last decile $10D$ column has maximum percentage of participants responsible for 10\% of messages.}
+%\begin{center}
+%    \begin{tabular}{ | l ||  c | c | c | c | }
+%        \hline
+%        list & hub & $ 1Q $ & $ 1-3Q $ & $10D$ \\ \hline
+%    CPP & 14.41 & 0.19 (27.8\%) & 4.09 (75.13\%) & 83.65 (-10.04\%)   \\ 
+%    MET & 11.14 & 0.81 (30.61\%) & 8.33 (75,11\%) & 80.49 (-10.02\%)  \\ 
+%    LAU & 2.78 & 1.10 (25.16\%) & 13.02 (75,04\%) & 67.37 (-10.03\%) \\ 
+%    LAD & 4.00 & 0.95 (25.50\%) & 11.83 (75,07\%) & 71.13 (-10.03\%) \\\hline
+%    \end{tabular}
+%\end{center}
+%\label{autores}
+%\end{table}
+%
+%
+%\begin{table*}
+%%\tiny
+%    \caption{Percentage of activity ($100\frac{\text{counted messages}}{\text{total messages}}$) in each hour, 6 hours and 12 hours. Maximum activity rates are in bold. In 1h columns, minimum activity is also bold. The less active period of the day is around 4-6h. Maximum activity is between 10-13h. Afternoon is most active in 6h division of the day. The noon has $\approx \frac{2}{3}$ of 24h activity. }\label{dia}
+%\begin{center}
+%    \begin{tabular}{ |l|| c|c|c| c|c|c| c|c|c| c|c|c|}
+%        \hline
+%    & \multicolumn{3}{c|}{CPP} & \multicolumn{3}{c|}{MET} & \multicolumn{3}{c|}{LAU} & \multicolumn{3}{c|}{LAD}  \\ \hline
+%    & 1h   & 6h & 12h &   1h & 6h & 12h &   1h & 6h & 12h &   1h & 6h & 12h \\ \hline\hline
+%0h  & 3.66 & \multirow{6}{*}{10.67} & \multirow{12}{*}{33.76} & 2.87  & \multirow{6}{*}{7.15} & \multirow{12}{*}{29.33} & 3.58 & \multirow{6}{*}{10.14} &  \multirow{12}{*}{36.88} & 4.00 & \multirow{6}{*}{10.77} & \multirow{12}{*}{33.13} \\
+%1h  & 2.76 &                        &                         & 1.77  & & &  2.22 & & & 2.52 & & \\
+%2h  & 1.79 &                        &                         & 1.04  & & & 1.63 & & & 1.79 & & \\
+%3h  & 1.10 &                        &                         & 0.64  & & & 1.06 & & & 1.06 & & \\
+%4h  & {\bf 0.68} &                        &                         & 0.47  & & &  0.84 & & & 0.75 & & \\
+%5h  & 0.69 &                        &                         & {\bf 0.38}  & & & {\bf 0.82} & & & {\bf 0.66} & & \\\cline{3-3}\cline{6-6}\cline{9-9}\cline{12-12}
+%6h  & 0.83 & \multirow{6}{*}{23.09} &                         & 0.72  & \multirow{6}{*}{22.18} & & 1.17 & \multirow{6}{*}{26.74} & & 0.85 & \multirow{6}{*}{22.36} &  \\
+%7h  & 1.24 &                        &                         & 1.33  & & & 2.37 & & & 1.56 & & \\
+%8h  & 2.28 &                        &                         & 2.67  & & & 3.54 & & & 2.96 & & \\
+%9h  & 4.52 &                        &                         & 4.40  & & & 6.04 & & & 4.68 & & \\
+%10h & 6.62 &                        &                         & 6.29  & & & {\bf 6.83} & & & 5.93 & & \\
+%11h & {\bf 7.61} &                        &                         & 6.78  & & & 6.79 & & & 6.40 & & \\\hline
+%12h & 6.44 & \multirow{6}{*}{\bf 37.63} & \multirow{12}{*}{\bf 66.24} & {\bf 7.33}  & \multirow{6}{*}{\bf 42.22} & \multirow{12}{*}{ \bf 70.66} & 6.11 & \multirow{6}{*}{\bf 35.65} &  \multirow{12}{*}{ \bf 63.12} & {\bf 6.41} & \multirow{6}{*}{\bf 37.25} &  \multirow{12}{*}{\bf 66.87} \\
+%13h & 6.04 &                        &                         & 7.08  & & & 6.26 & & & 6.12 & & \\
+%14h & 6.47 &                        &                         & 7.09  & & & 6.38 & & & 6.33 & & \\
+%15h & 6.10 &                        &                         & 7.14  & & & 5.93 & & & 5.98 & & \\
+%16h & 6.22 &                        &                         & 6.68  & & & 5.52 & & & 6.40 & & \\
+%17h & 6.36 &                        &                         & 6.89  & & & 5.46 & & & 6.02 & & \\\cline{3-3}\cline{6-6}\cline{9-9}\cline{12-12}
+%
+%
+%18h & 6.01 & \multirow{6}{*}{28.61} &                         & 5.99  & \multirow{6}{*}{28.44} & & 5.24 & \multirow{6}{*}{27.46} & & 5.99 & \multirow{6}{*}{29.63} & \\
+%19h & 5.02 &                        &                         & 5.23  & & & 4.52 & & & 5.03 & & \\
+%20h & 4.85 &                        &                         & 4.98  & & & 4.55 & & & 4.63 & & \\
+%21h & 4.38 &                        &                         & 4.37  & & & 4.42 & & & 4.59 & & \\
+%22h & 4.06 &                        &                         & 4.24  & & & 4.51 & & & 4.88 & & \\
+%23h & 4.30 &                        &                         & 3.64  & & & 4.23 & & & 4.53 & & \\\hline
+%    \end{tabular}
+%\end{center}
+%\end{table*}
+%
+%
+%
+%\begin{table}[h]
+%    \caption{Percentage of activity on days along the week. Weekend days are at least $\frac{1}{3}$ less active and can reach $\frac{1}{3}$ of activity. MET concentrates activity in weekdays the most, leaving only 13.98\% of total activity to Saturday and Sunday. LAU is the one that less concentrates activity in weekdays, reaching 20.94\% of total activity in weekends. These might suggest professional relation of CPP and MET participants to the topics of interest, or a hobby relation of LAU and LAD participants.}
+%\begin{center}
+%    \begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
+%        \hline
+%        & Mon & Tue & Wed & Thu & Fri & Sat & Sun  \\ \hline
+%        CPP & 17.06 & 17.43 & 17.61 & 17.13 & 16.30 & 6.81 & 7.67 \\ \hline
+%        MET & 17.53 & 17.54 & 16.43 & 17.06 & 17.46 & 7.92 & 6.06 \\ \hline
+%        LAU & 15.71 & 15.80 & 15.88 & 16.43 & 15.13 & 10.13 & 10.91 \\ \hline
+%        LAD & 14.91 & 17.73 & 17.01 & 15.40 & 14.25 & 10.39 & 10.30 \\\hline
+%    \end{tabular}
+%\end{center}
+%\label{semana}
+%\end{table}
+%
+%
+%\begin{table*}
+%%\tiny
+%    \caption{Activity along the days of the month. The pattern is to have no clear prevalent period. One might point a slight tendency for the first two weeks to be more active, although this table does not present statistical foundation for such an assumption. For the scope of this study, differences of activity along the month is assumed to be inexistent.}
+%\begin{center}
+%    \begin{tabular}{ |l|| c|c|c| c|c|c| c|c|c| c|c|c|}
+%        \hline
+%    & \multicolumn{3}{c|}{CPP} & \multicolumn{3}{c|}{MET} & \multicolumn{3}{c|}{LAU} & \multicolumn{3}{c|}{LAD}  \\ \hline
+%day    & 1 day & 7 days & 14 days &   1 day & 7 days & 14 days &   1 day & 7 days & 14 days &   1 day & 7 days & 14 days \\ \hline\hline
+%1  & 3.19 & \multirow{7}{*}{23.05} & \multirow{14}{*}{45.63} & 3.01 & \multirow{7}{*}{25.16} & \multirow{14}{*}{48.08} & 3.34 & \multirow{7}{*}{23.06} &  \multirow{14}{*}{47.31} & 3.22 & \multirow{7}{*}{21.96} & \multirow{14}{*}{46.70} \\
+%2  & 3.07 &                        &                         & 3.38  & & &  3.38 & & & 3.42 & & \\
+%3  & 3.20 &                        &                         & 3.55  & & & 3.20 & & & 2.87 & & \\
+%4  & 3.63 &                        &                         & 4.34  & & & 3.52 & & & 2.91 & & \\
+%5  & 2.85 &                        &                         & 3.93  & & &  2.68 & & & 3.30 & & \\
+%6  & 3.67 &                        &                         & 3.76  & & & 3.18 & & & 3.52 & & \\
+%7  & 3.45 &                        &                         & 3.18  & & & 3.77 & & & 2.27 & & \\\cline{3-3}\cline{6-6}\cline{9-9}\cline{12-12}
+%8  & 3.12 & \multirow{7}{*}{22.57} &                         & 3.36  & \multirow{7}{*}{22.92} & & 3.62 & \multirow{7}{*}{24.25} & & 3.72 & \multirow{7}{*}{24.73} &  \\
+%9  & 2.57 &                        &                         & 3.44  & & & 3.82 & & & 3.97 & & \\
+%10  & 2.92 &                        &                         & 3.17  & & & 3.06 & & & 3.77 & & \\
+%11  & 3.54 &                        &                         & 3.88  & & & 3.11 & & & 3.27 & & \\
+%12 & 3.23 &                        &                         & 2.94  & & & 3.40 & & & 2.75 & & \\
+%13 & 3.39 &                        &                         & 3.29  & & & 3.55 & & & 3.34 & & \\
+%14 & 3.81 &                        &                         & 2.83  & & & 3.69 & & & 3.93 & & \\\hline
+%15 & 3.35 & \multirow{7}{*}{23.02} & \multirow{14}{*}{46.31} & 2.72  & \multirow{7}{*}{21.87} & \multirow{14}{*}{ 43.56} & 3.23 & \multirow{7}{*}{22.84} &  \multirow{14}{*}{ 44.01 } & 3.37 & \multirow{7}{*}{22.82} &  \multirow{14}{*}{46.00} \\
+%16 & 3.77 &                        &                         & 2.96  & & & 2.94 & & & 3.37 & & \\
+%17 & 3.45 &                        &                         & 3.01  & & & 3.02 & & & 2.95 & & \\
+%18 & 3.47 &                        &                         & 3.39  & & & 3.63 & & & 3.22 & & \\
+%19 & 2.90 &                        &                         & 3.42  & & & 3.16 & & & 3.59 & & \\
+%20 & 2.80 &                        &                         & 3.09  & & & 3.25 & & & 3.21 & & \\
+%21 & 3.29 &                        &                         & 3.27  & & & 3.61 & & & 3.13 & & \\\cline{3-3}\cline{6-6}\cline{9-9}\cline{12-12}
+%
+%22 & 2.88 & \multirow{7}{*}{23.29} &                         & 2.92  & \multirow{7}{*}{21.69} & & 3.80 & \multirow{7}{*}{21.17} & & 3.07 & \multirow{7}{*}{23.18} & \\
+%23 & 4.01 &                        &                         & 3.27  & & & 3.03 & & & 3.06 & & \\
+%24 & 3.13 &                        &                         & 2.92  & & & 2.31 & & & 2.72 & & \\
+%25 & 3.57 &                        &                         & 2.83  & & & 2.38 & & & 3.16 & & \\
+%26 & 3.27 &                        &                         & 2.97  & & & 3.49 & & & 3.57 & & \\
+%27 & 3.27 &                        &                         & 3.41  & & & 2.92 & & & 3.92 & & \\
+%28 & 3.17 &                        &                         & 3.36  & & & 3.26 & & & 3.69 & & \\\hline
+%29 & 3.68 &  \multirow{3}{*}{8.06} &  \multirow{3}{*}{8.06}  & 2.93  & \multirow{3}{*}{8.36} & \multirow{3}{*}{8.36} & 3.34 & \multirow{3}{*}{8.68} & \multirow{3}{*}{8.68} & 3.15 & \multirow{3}{*}{7.30} & \multirow{3}{*}{7.30} \\
+%30 & 2.76 &                        &                         & 3.14  & & & 3.75 & & & 2.71 & & \\
+%31 & 1.63 &                        &                         & 2.29  & & & 1.60 & & & 1.45 & & \\\hline
+%    \end{tabular}
+%\end{center}
+%\label{mes}
+%\end{table*}
+%
+%
+%\begin{table*}[t]
+%\scriptsize
+%    \caption{Activity along the year, in months, trimesters, quadrimesters and semesters. Engagement in list participation seem to concentrate in two periods: middle of the year (Jun-Aug, lists MET and LAD), and transition from years (Dec-Mar, lists CPP, LAU and LAD). Messages were considered as to complete 12 months slots, so every month has the same time of occurrences.}
+%\begin{center}
+%    \begin{tabular}{ |l|| c|c|c|c|c|  c|c|c|c|c| c|c|c|c|c| c|c|c|c|c|}
+%        \hline
+%    & \multicolumn{5}{c|}{CPP} & \multicolumn{5}{c|}{MET} & \multicolumn{5}{c|}{LAU} & \multicolumn{5}{c|}{LAD}  \\ \hline
+%    & m. & b. & t. & q. & s. &   m. & b. & t. & q. & s. &   m. & b. & t. & q. & s. &   m. & b. & t. & q. & s. \\ \hline\hline
+%Jan  & 8.70 & \multirow{2}{*}{17.00} & \multirow{3}{*}{\bf 27.23} &  \multirow{4}{*}{\bf 36.48} & \multirow{6}{*}{\bf 54.26} & 4.88 &  \multirow{2}{*}{11.01} & \multirow{3}{*}{16.90} & \multirow{4}{*}{23.32} & \multirow{6}{*}{47.74} & 10.22 & \multirow{2}{*}{\bf 19.56} & \multirow{3}{*}{\bf 28.23} & \multirow{4}{*}{\bf 35.09} & \multirow{6}{*}{49.17} & 11.23 & \multirow{2}{*}{18.49} & \multirow{3}{*}{26.43} & \multirow{4}{*}{36.04} & \multirow{6}{*}{\bf 57.95} \\
+%Fev  & 8.29 &                        &                         & & & 6.13 & & & & & 9.34  & & & & & 7.26 & & & & \\\cline{3-3}\cline{8-8}\cline{13-13}\cline{18-18}
+%Mar  & {\bf 10.23} & \multirow{2}{*}{\bf 19.49} &                         & & & 5.89 & \multirow{2}{*}{12.31} & & & & 8.67 & \multirow{2}{*}{15.52} & & & & 7.94 & \multirow{2}{*}{17.55} & & & \\\cline{4-4}\cline{9-9}\cline{14-14}\cline{19-19}
+%Apr  & 9.26 &                        &  \multirow{3}{*}{27.03} & & & 6.42 & & \multirow{3}{*}{30.84} & & & 6.85 & & \multirow{3}{*}{20.94} & & & 9.61 & & \multirow{3}{*}{\bf 31.51} & & \\\cline{3-3}\cline{5-5}\cline{8-8}\cline{10-10}\cline{13-13}\cline{15-15}\cline{18-18}\cline{20-20}
+%Mai  & 9.41 & \multirow{2}{*}{17.78} &                         & \multirow{4}{*}{33.46} & & 10.46 & \multirow{2}{*}{\bf 24.42} & & \multirow{4}{*}{\bf 47.83} & & 7.27 & \multirow{2}{*}{14.09} & & \multirow{4}{*}{30.37} &  & 8.94 & \multirow{2}{*}{\bf 21.91} & & \multirow{4}{*}{\bf 37.56} & \\
+%Jun & 8.37 &                        &                         & & & {\bf 13.96} & & & & & 6.81 & & & & & {\bf 12.97} & & & & \\\cline{3-3}\cline{4-4}\cline{6-6}\cline{8-9}\cline{11-11}\cline{13-14}\cline{16-16}\cline{18-19}\cline{21-21}
+%Jul & 8.70 &  \multirow{2}{*}{15.68} & \multirow{3}{*}{22.94} & & \multirow{6}{*}{45.73} & 13.23 & \multirow{2}{*}{23.41} & \multirow{3}{*}{\bf 31.16} & & \multirow{6}{*}{\bf 52.26} & 8.96 & \multirow{2}{*}{16.28} & \multirow{3}{*}{24.47} & & \multirow{6}{*}{\bf 50.82} & 9.02 & \multirow{2}{*}{15.65} & \multirow{3}{*}{22.29} & & \multirow{6}{*}{42.05} \\
+%Ago  & 6.98 &                       &                         & & & 10.28 & & & & & 7.31 & & & & & 6.63 & & & & \\\cline{3-3}\cline{5-5}\cline{8-8}\cline{10-10}\cline{13-13}\cline{15-15}\cline{18-18}\cline{20-20}
+%Set  & 7.26 & \multirow{2}{*}{15.36} &                         & \multirow{4}{*}{30.06} & & 7.75 & \multirow{2}{*}{16.80} & & \multirow{4}{*}{28.86} & & 8.18 & \multirow{2}{*}{16.24} & & \multirow{4}{*}{34.54} & & 6.63 & \multirow{2}{*}{12.38} & & \multirow{4}{*}{26.40} & \\\cline{4-4}\cline{9-9}\cline{14-14}\cline{19-19}
+%Oct  & 8.10 &                        &  \multirow{3}{*}{22.80} & & & 9.05 & & \multirow{3}{*}{21.10} & & & 8.06 & & \multirow{3}{*}{26.36} & & & 5.74 & & \multirow{3}{*}{19.77} & & \\\cline{3-3}\cline{8-8}\cline{13-13}\cline{18-18}
+%Nov  & 7.86 & \multirow{2}{*}{14.69} &                         & & & 7.46 & \multirow{2}{*}{12.06} & & & & 7.63 & \multirow{2}{*}{18.30} & & & & 7.63 & \multirow{2}{*}{14.02} & & & \\
+%Dec & 6.81 &                        &                         &  & & 4.59 & & & & & {\bf 10.66} & & & & & 6.39 & & & & \\\hline
+%    \end{tabular}
+%\end{center}
+%\label{ano}
+%\end{table*}
+%
+%
+%\clearpage
+%\section{Figures of vertex classification fractions as the network evolves}\label{figures}
+%
+%Two lists are exhibited in this section, CPP and LAD. These structures are very similar in all
+%four lists and laying extensively all figures is redundant. Window sizes of $ws =$ 10000, 5000,
+%1000, 500, 250, 100 and 50 messages were used.
+%
+%\begin{figure*}[hb]
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/10000}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:cpp10000}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/10000_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification is plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:cpp10000_}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/5000}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:cpp5000}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/5000_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:cpp5000_}
+%\end{figure*}
+%
+%%%%%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/1000}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:cpp1000}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/1000_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:cpp1000_}
+%\end{figure*}
+%
+%
 %%%%
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/1000}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:cpp1000}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/1000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:cpp1000_}
-\end{figure*}
-
-
-%%%
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/500}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:cpp500}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/500_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:cpp500_}
-\end{figure*}
-
-
-%%%%%%%%%
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/250}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:cpp250}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/250_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:cpp250_}
-\end{figure*}
-
-
-%%%%%%%
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/100}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:cpp100}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/100_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:cpp100_}
-\end{figure*}
-
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/500}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:cpp500}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/500_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:cpp500_}
+%\end{figure*}
+%
+%
 %%%%%%%%%%
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/50}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:cpp50}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/CPP/50_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:cpp50_}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/10000}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:lad10000}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/10000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:lad10000_}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/5000}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:lad5000}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/5000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:lad5000_}
-\end{figure*}
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/1000}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:lad1000}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/1000_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:lad1000_}
-\end{figure*}
-
-
-%%%
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/500}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:lad500}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/500_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:lad500_}
-\end{figure*}
-
-
-%%%%%%%%%
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/250}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:lad250}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/250_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:lad250_}
-\end{figure*}
-
-
-%%%%%%%
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/100}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:lad100}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/100_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:lad100_}
-\end{figure*}
-
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/250}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:cpp250}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/250_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:cpp250_}
+%\end{figure*}
+%
+%
+%%%%%%%%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/100}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:cpp100}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/100_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:cpp100_}
+%\end{figure*}
+%
+%%%%%%%%%%%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/50}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. CPP Std library official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:cpp50}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/CPP/50_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:cpp50_}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/10000}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:lad10000}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/10000_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:lad10000_}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/5000}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:lad5000}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/5000_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:lad5000_}
+%\end{figure*}
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/1000}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:lad1000}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/1000_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:lad1000_}
+%\end{figure*}
+%
+%
+%%%%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/500}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:lad500}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/500_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:lad500_}
+%\end{figure*}
+%
+%
 %%%%%%%%%%
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/50}
-    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
-    \label{fig:lad50}
-\end{figure*}
-
-
-\begin{figure*}[hbtp] 
-   \centering
-        \includegraphics[width=\textwidth]{figs/LAD/50_2}
-    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
-    \label{fig:lad50_}
-\end{figure*}
-
-
-
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/250}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:lad250}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/250_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:lad250_}
+%\end{figure*}
+%
+%
+%%%%%%%%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/100}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:lad100}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/100_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:lad100_}
+%\end{figure*}
+%
+%%%%%%%%%%%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/50}
+%    \caption{Distribution of vertices with respect to each centrality measure: in and out degrees and strengths. Linux Audio Users (LAD) official mailing list. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.}
+%    \label{fig:lad50}
+%\end{figure*}
+%
+%
+%\begin{figure*}[hbtp] 
+%   \centering
+%        \includegraphics[width=\textwidth]{figs/LAD/50_2}
+%    \caption{Distribution of vertex with respect to compound criteria. Red, green and blue designate hubs, intermediary and border (peripheral) vertex fractions. The first two plots exhibit classifications that are not functions. Thus, in the first plot, the fraction of vertices with unique classification in plotted in black. On the second plot, black represents the fraction of vertices that has more than one class: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$. Compound criteria is described in Section~\ref{sectioning}.}
+%    \label{fig:lad50_}
+%\end{figure*}
+%
+%
+%
 
 
 %
