@@ -1,0 +1,149 @@
+% ****** Start of file aipsamp.tex ******
+%
+%   This file is part of the AIP files in the AIP distribution for REVTeX 4.
+%   Version 4.1 of REVTeX, October 2009
+%
+%   Copyright (c) 2009 American Institute of Physics.
+
+% Use this file as a source of example code for your aip document.
+% Use the file aiptemplate.tex as a template for your document.
+\documentclass[%
+ aip,
+ jmp,%
+ amsmath,amssymb,
+%preprint,%
+ reprint,%
+%author-year,%
+%author-numerical,%
+]{revtex4-1}
+\usepackage{graphicx}% Include figure files
+\usepackage{grffile}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+\usepackage{multirow}
+\usepackage{color} % for the notes
+\usepackage{etex}
+\reserveinserts{58}
+%\usepackage{morefloats}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\hypersetup{
+        colorlinks,
+        linkcolor={red!50!black},
+        citecolor={blue!50!black},
+        urlcolor={blue!80!black}
+}
+\usepackage{xr}
+\externaldocument{paper}
+
+\maxdeadcycles=1000
+
+\begin{document}
+
+\preprint{XXXXX (preprint)}
+
+%\title[Evolution of interaction networks]{On the evolution of interaction networks: primitive typology of vertex, prominence of measures and activity statistics}% Force line breaks with \\
+%\title[Evolution of interaction networks]{On the evolution of interaction networks: a primitive typology of vertex}% Force line breaks with \\
+\title[Stability of interaction networks, SUPPORTING INFORMATION]{Stability in human interaction networks: primitive typology of vertex, prominence of measures and time activity statistics, SUPPORTING INFORMATION}% Force line breaks with \\
+
+\author{Renato Fabbri}%
+ \homepage{http://ifsc.usp.br/~fabbri/}
+ \email{fabbri@usp.br}
+  \affiliation{ 
+S\~ao Carlos Institute of Physics, University of S\~ao Paulo (IFSC/USP)%\\This line break forced with \textbackslash\textbackslash
+}
+
+\author{Vilson V. da Silva Jr.}
+  \homepage{http://automata.cc/}
+  \email{vilson@void.cc}
+  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+
+\author{Ricardo Fabbri}
+  \homepage{http://www.lems.brown.edu/~rfabbri/}
+  \email{rfabbri@iprj.uerj.br}
+ \altaffiliation{
+Instituto Polit\'ecnico, Universidade Estadual do Rio de Janeiro (IPRJ)
+}%Lines break automatically or can be forced with \\
+
+\author{Deborah C. Antunes}
+  \homepage{http://lattes.cnpq.br/1065956470701739}
+  \email{deborahantunes@gmail.com}
+  \altaffiliation{
+Curso de Psicologia, Universidade Federal do Cer\'a (UFC)
+}%Lines break automatically or can be forced with \\
+
+\author{Marilia M. Pisani}
+  \homepage{http://lattes.cnpq.br/6738980149860322}
+  \email{marilia.m.pisani@gmail.com}
+ \altaffiliation{
+Centro de CiÃªncias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
+}%Lines break automatically or can be forced with \\
+
+%
+%%\author{Luciano da Fontoura Costa}
+%%  \homepage{http://cyvision.ifsc.usp.br/~luciano/}
+%%  \email{ldfcosta@gmail.com}
+%  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+
+%\author{Osvaldo N. Oliveira Jr.}
+%  \homepage{www.polimeros.ifsc.usp.br/professors/professor.php?id=4}
+%  \email{chu@ifsc.usp.br}
+% \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+ This is the supporting information of the article that reports interaction networks stability by means of three quantitative criteria: activity distribution in time and among participants; a sound classification of vertices in peripheral, intermediary and hub sectors; the combination of basic measures into principal components with greater variance. 
+\end{abstract}
+
+\pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
+\keywords{complex networks, social network analysis, pattern recognition, statistics, anthropological physics}
+\maketitle
+
+These results were produced with the Gmane public domain data and an open python package designed for attaining
+these, and related, results. The interested reader should follow Appendix~\ref{scripts} to access both data and rotines.
+Inline are results for 4 emails lists: LAD, LAU, MET and CPP, as described in Section~\ref{sec:data}.
+Similar results can be reproduced for any number of (Gmane) email lists.
+To avoid repeating text of each table for each list, the text is given inline.
+
+\section{Time tables in different scales}\label{sec:time}
+Theory presented in Section~\ref{sec:mtime} and results exposed in Section~\ref{constDisc} of the paper~\cite{tpaper}.
+\subsection{Circular measures}
+The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. Also, $ \mu_{\frac{max(incidence')}{min(incidence')}} $ and $ \sigma_{\frac{max(incidence')}{min(incidence')} }$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples. Section~\ref{sec:mtime} describes the theoretical background of directional (or circular) statistics.
+\begin{table*}[t]
+	\caption{LAD circular measures}
+\begin{center}
+    \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
+        \hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+	\input{tables/tab2TimeLAD}
+    \end{tabular}
+\end{center}
+\label{tab:circ}
+\end{table*}
+
+
+
+\subsection{Histograms}
+
+\section{Fraction of participants in each Erd\"os Sector along the timeline}\label{sec:frac}
+\subsection{LAD}
+\subsection{CPP}
+
+\section{Fraction of participants in each Erd\"os Sector along the timeline}\label{sec:pcat}
+\subsection{Betweenness, clustering and degree}
+\subsection{Betweenness, clustering, degrees and strengths}
+\subsection{Betweenness, clustering, degrees, strengths and symmetry measures}
+
+\nocite{*}
+\bibliography{supportingInformation}% Produces the bibliography via BibTeX.
+\end{document}
+%
+% ****** End of file aipsamp.tex ******
+
+
