@@ -36,6 +36,7 @@
         citecolor={blue!50!black},
         urlcolor={blue!80!black}
 }
+\usepackage{placeins}
 \usepackage{xr}
 \externaldocument{paper}
 
@@ -113,9 +114,20 @@ To avoid repeating text of each table for each list, the text is given inline.
 
 \section{Time tables in different scales}\label{sec:time}
 Theory presented in Section~\ref{sec:mtime} and results exposed in Section~\ref{constDisc} of the paper~\cite{tpaper}.
-\subsection{Circular measures}
+\subsection{Time circular measures}
 The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. Also, $ \mu_{\frac{max(incidence')}{min(incidence')}} $ and $ \sigma_{\frac{max(incidence')}{min(incidence')} }$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples. Section~\ref{sec:mtime} describes the theoretical background of directional (or circular) statistics.
-\begin{table*}[t]
+\begin{table*}[!h]
+	\caption{LAU circular measures}
+\begin{center}
+    \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
+        \hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+	\input{tables/tab2TimeLAU}
+    \end{tabular}
+\end{center}
+\label{tab:circ}
+\end{table*}
+\begin{table*}[!h]
 	\caption{LAD circular measures}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
@@ -126,14 +138,134 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}
 \end{center}
 \label{tab:circ}
 \end{table*}
+\begin{table*}[!h]
+	\caption{MET circular measures}
+\begin{center}
+    \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
+        \hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+	\input{tables/tab2TimeMET}
+    \end{tabular}
+\end{center}
+\label{tab:circ}
+\end{table*}
+\begin{table*}[!h]
+	\caption{CPP circular measures}
+\begin{center}
+    \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
+        \hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+	\input{tables/tab2TimeCPP}
+    \end{tabular}
+\end{center}
+\label{tab:circ}
+\end{table*}
 
+\FloatBarrier
+\subsection{Time histograms}
+\subsection{Histograms of activity along the hours of the day}
 
+Activity percentages along the hours of the day. Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.
+\begin{table}[!h]
+	\caption{LAU activity along the hours of the day}
+	\footnotesize
+	\input{tables/tabHoursLAU}
+\end{table}
 
-\subsection{Histograms}
+\begin{table}[!h]
+	\caption{LAD activity along the hours of the day}
+	\footnotesize
+	\input{tables/tabHoursLAD}
+\end{table}
+
+\begin{table}[!h]
+	\caption{MET activity along the hours of the day}
+	\footnotesize
+	\input{tables/tabHoursMET}
+\end{table}
+
+\begin{table}[!h]
+	\caption{CPP activity along the hours of the day}
+	\footnotesize
+	\input{tables/tabHoursCPP}
+\end{table}
+
+\FloatBarrier
+\subsection{Histograms of activity along the days of the week}
+
+Activity percentages along the days of the week. Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.
+
+\begin{table}[!h]
+\begin{center}
+    \begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
+        \hline
+        & Mon & Tue & Wed & Thu & Fri & Sat & Sun  \\ \hline
+	\input{tables/tabWeekdays}
+    \end{tabular}
+\end{center}
+\label{tab:win}
+\end{table}
+
+\FloatBarrier
+\subsection{Histograms of activity along the days of the month}
+	No significant variation of activity in the days along the month was observed. One cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity.
+\begin{table}[!h]
+	\caption{LAU activity along the days of the month.}
+	\footnotesize
+	\input{tables/tabMonthdaysLAU}
+\label{tab:min}
+\end{table}
+\begin{table}[!h]
+	\caption{LAD activity along the days of the month.}
+	\footnotesize
+	\input{tables/tabMonthdaysLAD}
+\label{tab:min}
+\end{table}
+\begin{table}[!h]
+	\caption{MET activity along the days of the month.}
+	\footnotesize
+	\input{tables/tabMonthdaysMET}
+\label{tab:min}
+\end{table}
+\begin{table}[!h]
+	\caption{CPP activity along the days of the month.}
+	\footnotesize
+	\input{tables/tabMonthdaysCPP}
+\label{tab:min}
+\end{table}
+
+\FloatBarrier
+\subsection{Histograms of activity along months of the year}
+	Activity percentages of the months along the year from LAD list messages. Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD. These observations fit academic calendars, vacations and end-of-year holidays.
+
+\begin{table}[!h]
+	\caption{LAU activity along the months of the year.}
+	\footnotesize
+	\input{tables/tabMonthsLAU}
+\label{tab:min2}
+\end{table}
+\begin{table}[!h]
+	\caption{LAD activity along the months of the year.}
+	\footnotesize
+	\input{tables/tabMonthsLAD}
+\label{tab:min2}
+\end{table}
+\begin{table}[!h]
+	\caption{MET activity along the months of the year.}
+	\footnotesize
+	\input{tables/tabMonthsMET}
+\label{tab:min2}
+\end{table}
+
+\begin{table}[!h]
+	\caption{CPP activity along the months of the year.}
+	\footnotesize
+	\input{tables/tabMonthsCPP}
+\label{tab:min2}
+\end{table}
+
 
 \section{Fraction of participants in each Erd\"os Sector along the timeline}\label{sec:frac}
-\subsection{LAD}
-\subsection{CPP}
 
 \section{Fraction of participants in each Erd\"os Sector along the timeline}\label{sec:pcat}
 \subsection{Betweenness, clustering and degree}
