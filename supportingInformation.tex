@@ -265,9 +265,74 @@ Activity percentages along the days of the week. Higher activity was observed du
 \end{table}
 
 
-\section{Fraction of participants in each Erd\"os Sector along the timeline}\label{sec:frac}
 
-\section{Fraction of participants in each Erd\"os Sector along the timeline}\label{sec:pcat}
+\section{Fraction of participants in each Erd\"os Sector along the timeline}\label{sec:frac}
+Here we present the fraction of participants in each Erd\"os sector with respect to each criteria defined in Section~\ref{sectioning}. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown bellow, first for CPP, than for  LAD list.
+
+Each step size takes two pages of plot. On the first page, the criteria are each centrality measure observed separately: in and out degrees and strengths. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.
+
+On the second page we show the fractions of participants with respect to each compound criteria for the Erd\"os sectioning. In the first plot, the fraction of vertices with unique classification is plotted in black: $\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$. On the second plot, black represents the exceeding classifications for the given vertices : $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
+
+
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-50/CPP-W50-S200}
+\end{figure*}
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-50/CPP-W50-S200_}
+\end{figure*}
+
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-100/CPP-W100-S200}
+\end{figure*}
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-100/CPP-W100-S200_}
+\end{figure*}
+
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-250/CPP-W250-S250}
+\end{figure*}
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-250/CPP-W250-S250_}
+\end{figure*}
+
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-500/CPP-W500-S500}
+\end{figure*}
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-500/CPP-W500-S500_}
+\end{figure*}
+
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-1000/CPP-W1000-S1000}
+\end{figure*}
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-1000/CPP-W1000-S1000_}
+\end{figure*}
+
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-5000/CPP-W5000-S5000}
+\end{figure*}
+\begin{figure*}
+   \centering
+        \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-5000/CPP-W5000-S5000_}
+\end{figure*}
+
+
+
+
+\FloatBarrier
+\section{PCA of measures along the timeline}\label{sec:pcat}
 \subsection{Betweenness, clustering and degree}
 \subsection{Betweenness, clustering, degrees and strengths}
 \subsection{Betweenness, clustering, degrees, strengths and symmetry measures}
