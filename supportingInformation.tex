@@ -273,7 +273,7 @@ Each step size takes two pages of plot. On the first page, the criteria are each
 
 On the second page we show the fractions of participants with respect to each compound criteria for the Erd\"os sectioning. In the first plot, the fraction of vertices with unique classification is plotted in black: $\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$. On the second plot, black represents the exceeding classifications for the given vertices : $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
 
-
+\subsection{CPP list}
 \begin{figure*}
    \centering
         \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-50/CPP-W50-S200}
@@ -328,6 +328,8 @@ On the second page we show the fractions of participants with respect to each co
         \includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-5000/CPP-W5000-S5000_}
 \end{figure*}
 
+\FloatBarrier
+\subsection{LAD list}
 
 \begin{figure*}
    \centering
@@ -347,7 +349,7 @@ On the second page we show the fractions of participants with respect to each co
         \includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-100/LAD-W100-S200_}
 \end{figure*}
 
-\begin{figure*}[!h]
+\begin{figure*}
    \centering
         \includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-250/LAD-W250-S250}
 \end{figure*}
@@ -391,9 +393,95 @@ On the second page we show the fractions of participants with respect to each co
 
 \FloatBarrier
 \section{PCA of measures along the timeline}\label{sec:pcat}
+Loadings for the 14 metrics into the principal components for the MET list, $ws=1000$ messages in 20 disjoint positioning. The clustering coefficient (cc) appears as the first metric in the Table, followed by 7 centrality metrics and 6 symmetry-related metrics. Note that the centrality measurements, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics. The clustering coefficient is only relevant for the third principal component. The three components have in average 80.36\% of the variance.
 \subsection{Betweenness, clustering and degree}
+
+\begin{table}[!h]
+	\caption{LAU principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA1LAU}
+\label{tab:pcain}
+\end{table}
+
+\begin{table}[!h]
+	\caption{LAD principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA1LAD}
+\label{tab:pcain}
+\end{table}
+
+\begin{table}[!h]
+	\caption{MET principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA1MET}
+\label{tab:pcain}
+\end{table}
+
+\begin{table}[!h]
+	\caption{CPP principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA1CPP}
+\label{tab:pcain}
+\end{table}
+
+\FloatBarrier
 \subsection{Betweenness, clustering, degrees and strengths}
+
+\begin{table}[!h]
+	\caption{LAU principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA2LAU}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{LAD principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA2LAD}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{MET principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA2MET}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{CPP principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA2CPP}
+\label{tab:pcain}
+\end{table}
+
+
+\FloatBarrier
 \subsection{Betweenness, clustering, degrees, strengths and symmetry measures}
+
+\begin{table}[!h]
+	\caption{LAU principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA3LAU}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{LAD principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA3LAD}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{MET principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA3MET}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{CPP principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA3CPP}
+\label{tab:pcain}
+\end{table}
+
+
 
 \nocite{*}
 \bibliography{supportingInformation}% Produces the bibliography via BibTeX.
