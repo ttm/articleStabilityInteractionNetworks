@@ -471,7 +471,7 @@ A minimum window size for observation of more general properties might be inferr
 
 
 For the histograms used in the classification process, the use of at least $\eta$ vertices for each bin did not yield significant differences.
-That was understood as a consequence of the observation scale (see Appendix~\ref{ap:ded}).
+That was understood as a consequence of the observation scale (see Appendix~\ref{ap:ded2}).
 
 
 \subsection{Variance prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
@@ -597,7 +597,7 @@ Be $\mathcal{N}$ a directed network without self-loops with $z$ edges and $N$ ve
    p_e &=\frac{z}{N(N-1)}
 \end{align}
 
-\subsection{Effect of scale in histogram smoothing}\label{ap:ded}
+\subsection{Effect of scale in histogram smoothing}\label{ap:ded2}
 There are between 20 and 200 participants in the message window sizes used to derive most of the results ($ws \in [200,1500]$ messages). As peripheral vertices are abundant and span few degrees, there are more than $\eta$ vertices with each low degree value. For the case of higher degrees, one should consider that with the $ws$ used, each participant is $p \in [0.1\%,0.5\%]$ of all participants. Therefore, if incident connectivity is very improbable in an Erd\"os R\'enyi network (less than $p$, the probability that a single participant represents when the histogram is normalized to the density function), than it is not an intermediary connectivity, but a hub. Therefore, using at least $\eta$ vertices for each bin did not impact the results.
 
 \section{Typologies}\label{ap:typ}
@@ -1094,6 +1094,7 @@ Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
 %
 %
 %
+
 
 \nocite{*}
 \bibliography{paper}% Produces the bibliography via BibTeX.
