@@ -415,6 +415,8 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 \label{tab:hin}
 \end{table}
 
+
+\FloatBarrier
 \begin{table}
 	\caption{Example of activity percentages along the days of the week. Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.}
 \begin{center}
@@ -426,7 +428,6 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 \end{center}
 \label{tab:win}
 \end{table}
-
 \begin{table}
 	\caption{No significant variation of activity in the days along the month was observed. One cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity.}
 	\footnotesize
@@ -441,7 +442,6 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 \label{tab:min2}
 \end{table}
 
-\FloatBarrier
 
 \subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
 
@@ -492,20 +492,6 @@ In applying PCA to the snapshots, the contribution of each metric to the princip
 The first principal component is an average of centrality metrics: degrees, strengths and betweenness centrality. Therefore, all of these centrality measurements are equally important for characterizing the networks. On one hand, the relevance of all centrality metrics is not surprising since they may be highly correlated. The degree and strength, for instance, are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$.
 On the other hand, each measure relates to a different participation characteristic, and their equal relevance is noticeable.
 The clustering coefficient is presented in almost perfect orthogonality to centrality measures.
-
-Dispersion was more prevalent in symmetry-related metrics than the clustering coefficient. These relations are presented in Figure~\ref{fig:sym} and Table~\ref{tab:pcain}.
-Plots of vertices in the components exhibited in Table~\ref{tab:pcain} are shown in Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong to. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the third component (clustering related).
-The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects symmetry metrics relevance for the variance.
-We concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
-
-
-%\begin{figure} 
-%   \centering
-%        \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
-%    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. The principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. The second component is mostly clustering coefficient Table~\ref{compPCA} shows the composition of principal components. Similar plots were obtained for all window sizes $ws\;\in\;[500,10000]$, and for the networks of the other email lists, which demonstrates a common relation held by degree, strength and betweenness measures to clustering coefficient.}
-%    \label{PCA}
-%\end{figure}
-
 \begin{figure*} 
    \centering
         \includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
@@ -521,6 +507,20 @@ We concluded that the symmetry-related measurements can be more meaningful in ch
     }
     \label{fig:sym}
 \end{figure*}
+
+
+Dispersion was more prevalent in symmetry-related metrics than the clustering coefficient. These relations are presented in Figure~\ref{fig:sym} and Table~\ref{tab:pcain}.
+Plots of vertices in the components exhibited in Table~\ref{tab:pcain} are shown in Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong to. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the third component (clustering related).
+The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects symmetry metrics relevance for the variance.
+We concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
+
+
+%\begin{figure} 
+%   \centering
+%        \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
+%    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. The principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. The second component is mostly clustering coefficient Table~\ref{compPCA} shows the composition of principal components. Similar plots were obtained for all window sizes $ws\;\in\;[500,10000]$, and for the networks of the other email lists, which demonstrates a common relation held by degree, strength and betweenness measures to clustering coefficient.}
+%    \label{PCA}
+%\end{figure}
 
 %\begin{figure} 
 %   \centering
