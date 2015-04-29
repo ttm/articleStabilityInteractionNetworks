@@ -377,7 +377,17 @@ Networks were visualized with animations, image galleries and online gadgets dev
 
 \subsection{Activity along time}\label{constDisc}
 
-The activity statistics in each time scale (from seconds to semesters) exhibited a specific pattern and is practically the same for all lists analyzed. Values are exemplified with Tables~\ref{tab:circ}-\ref{tab:min2} and Support information. The pattern is the homogeneity for seconds and minutes. Hours of the day revealed an abrupt peak around 11am with most active period being the afternoon. Days of the week revealed a decrease of at least one third and at most two thirds of activity on weekends. Days of the month were regarded as homogeneous with an inconclusive slight tendency of first week to be more active. Months of the year revealed patterns matching usual work and academic calendars.
+The activity along time, in terms of seconds, minutes, hours, days and months,  is practically the same for all lists.
+Using circular statistics we calculated average values and their dispersion for activity in all time scales, and found that both average and dispersion were very similar in all the lists.
+Table II shows the …….. 
+We chose to give detailed values in Table~\ref{tab:circ}-\ref{tab:min2} because these numbers can actually be used for characterizing nodes (participants) in other networks, as they are independent of the network under analysis. For example, they may serve for identification of outliers in a community.
+
+Values are exemplified with Tables and Support information.
+The pattern is the homogeneity for seconds and minutes.
+Hours of the day revealed an abrupt peak around 11am with most active period being the afternoon.
+Days of the week revealed a decrease of at least one third and at most two thirds of activity on weekends.
+Days of the month were regarded as homogeneous with an inconclusive slight tendency of first week to be more active.
+Months of the year revealed patterns matching usual work and academic calendars.
 The time period examined here was not sufficient for the analysis of activity along the years.
 
 Messages were slightly more evenly distributed in all lists than in simulations\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.} using uniform distribution for both seconds and minutes: $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$. Simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
@@ -531,23 +541,20 @@ We concluded that the symmetry-related measurements can be more meaningful in ch
 %    \label{PCA2}
 %\end{figure}
 
-    \subsection{Primitive typology from Erd\"os sectors}\label{sec:pty}
+    \subsection{Primitive typology with Erd\"os sectors}\label{sec:pty}
 
-Não entendi as mensagens que você queria passar com a parte inicial desta seção, e queria discutir depois.
-
-Such stability of activity along time, Erd\"os sector relative sizes, principal components formation and concentration of variance suggests that understanding types of networks and participants might benefit from a characterization within such framework.
-We considered the most trivial case, in which the sector to which a participant belongs is regarded as her/his type. This is useful in deriving more elaborate typologies, and yield a sketch of or a ``primitive'' typology. General considerations:
+Let a sector to which a vertex belongs yield a type for the corresponding participant. Accordingly, a participant may be considered peripheral, intermediary or a hub. This trivial consideration raises important questions: is this typology stigmatizing or prejudice inclined in any way? What do we know about each type and about the typology itself?
+These general considerations about this ``primitive'' typology will help us answer the first questions:
 \begin{itemize}
 	\item A participant belongs to many networks (his family, family of a friend, the email list to which he belongs, work friends, etc.).
 	\item A participant might belong to all three sectors at the same time. Actually, it is reasonable to assume that almost every person belongs to all three sectors for some of the networks.
-	\item It is given by construction that a participant is of just one type at a network in a given snapshot (exception for the compound inclusive and exclusive criterion given in Section~\ref{sectioning}).
 	\item The participant often transitions from one sector to another within a network.
 	\item Reported stability of network structure arises from activity with continuous change of the participant types.
-	\item Type often changes with the scale of the activity window. For example, two snapshots of 200 and 10000 messages will probably reveal participants with more than one type. 
 \end{itemize}
 
-This ephemerality of the human type is in accordance with canonical literature on psychological types. The observance of often transitions between types is even though of as an argument against prejudice~\cite{adorno}.
-Visualizations and raw data manipulations suggests further typological peculiarities. These are initial observations, which inspired this article and other ongoing research~\cite{rcText,versinus}:
+From these, we can assume that the typology is not stigmatizing because the type of an individual changes constantly~\cite{adorno}. That is to say, an individual is a hub in a number of network and peripheral in other networks, and even within a network he/she probably changes type along time.
+
+Our approach to the second question was the inspection of network evolution from the raw data and using the tools for visualization~\cite{rcText,versinus}. This allowed us to infer relevant characteristics of each type, summarized as follows.
 
 \begin{itemize}
     \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to this work. There are reports in the literature of greater stability of participation in smaller communities~\cite{barabasiEvo}, which is the reason why the smaller number of participants in MET was considered coherent with the stable activity of hubs.
@@ -556,12 +563,9 @@ Visualizations and raw data manipulations suggests further typological peculiari
     \item The most obvious community structure, as observed by a high clustering coefficient, is found only in peripheral and intermediary sectors.
 \end{itemize}
 
-This ``primitive typology'', characterized by peripheral, intermediary and hub types, can be further scrutinized using concepts from other typologies, such as Meyer-Briggs, Pavlov or F-Scale. This is not a direct result of numeric analysis, it is a description refinement of the found structure, in typological terms, and coherent with complex networks literature. Although initial, this bridges human and exact sciences in the most pertinent way authors were able to, as is herein considered a result.
+This typology, derived entirely from objective metrics, is a bridge from exact to human sciences. Obviously, the analysis may be enriched by using concepts from other typologies, such as Meyer-Briggs, Pavlov or the authoritarian types of the F-Scale~\cite{adorno}.
 
-Another typology suggested by the results is about the networks themselves. This and paired articles~\cite{rcText,versinus} reports a dipole in human interaction network types: networks with few and stable agents, and (relative) many threads per number of messages contrasts with networks with many agents of intermittent activity and (relative) few threads per number of messages.
-
-This network typology is endorsed by the seminal Nature Letter by Palla, Barab{\'a}si and Vicsek~\cite{barabasiEvo}, which suggests that the smaller size of MET community is responsible for the stronger hubs observed.
-
+With regard to the networks as the whole objects of analysis, we observed that there are two contrasting types of network: i) those with few and stable agents, where the number of threads per message is large; ii) others with many agents displaying intermittent activity, for which the number of threads per message is considerably lower than for the other type of network. This result is exemplified in Table~\ref{tab:genLists} and is also consistent with the literature~\cite{barabasiEvo}, which reports that the smaller size of communities is responsible for the stronger hubs observed.
  
 \section{Conclusions and further work}\label{sec:conc}
 The characterization of interaction networks resulted from stability observations. Along temporal activity statistics, this work reports the stability of the formation of principal components and of the relative sizes of periphery, intermediary and hubs Erd\"os sectors. These results suggested typologies for both agents and the networks.
