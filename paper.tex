@@ -39,6 +39,7 @@
 
 \maxdeadcycles=1000
 
+\usepackage{placeins}
 \begin{document}
 
 \preprint{XXXXX (preprint)}
@@ -347,67 +348,65 @@ In order to capture symmetries in the activity of participants, the following me
     \item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
 \end{itemize}
 
-\subsection{Evolution of the networks}
-   The evolution of the networks was observed within a fixed number of messages, which we refer to as the window size $ws$. This same number of contiguous messages is considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used both to perform the Erd\"os sectioning and apply PCA for the topological metrics.  
+\subsection{Evolution and visualization of the networks}\label{sec:viz}
+   The evolution of the networks was observed within a fixed number of messages, which we refer to as the window size $ws$. This same number of contiguous messages $ws$ was considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used both to perform the Erd\"os sectioning and apply PCA for the topological metrics.  
 The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics. Such changes could be visualized with the tools described below. 
 
-\subsection{Visualization of network evolution}\label{sec:viz}
-The evolution of the networks was visualized with animations, image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations. Furthermore, the size of three sectors could be visualized in a timeline fashion (Figure~\ref{fig:sectIL}). Visualization of network structure was especially useful as part of the email lists data mining, from which parts of relevant structures and results were driven. 
+Networks were visualized with animations, image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations. Furthermore, the size of three sectors could be visualized in a timeline fashion (Figure~\ref{fig:sectIL}). Visualization of network structure was especially useful as part of the email lists data mining, from which parts of relevant structures and results were driven.
 
-\subsection{Typology speculation}\label{subsec:typ}
-(queria discutir pessoalmente este ponto)
-Qualitative, typological speculations were the result of all the methodology. More specifically, the Erd\"os sectors was regarded as yielding a \emph{primitive typology} of human agents in social contexts with at least dozens of participants. 
-Visualization and data mining were efficient in fueling speculations about the qualities of each type. 
-The stability found in principal components of topological measures suggested that this primitive typology is general for (practically) all human contexts.
-Also, the first author is a developer with cultural interests and has been directly and indirectly part of these communities for more than a decade.  This gave further safety about assumptions although care was taken not to regard this acquaintanceship as primary source or as definitive evidence.
-The interested reader should see Appendix~\ref{ap:typ} for further context, 
-as it might be considered audacious to bridge from a physics-based, 
-quantitative classification to a qualitative and speculative approach.
+%\subsection{Typology speculation}\label{subsec:typ}
+%Qualitative, typological speculations were the result of all the methodology. More specifically, the Erd\"os sectors was regarded as yielding a \emph{primitive typology} of human agents in social contexts with at least dozens of participants. 
+%Visualization and data mining were efficient in fueling speculations about the qualities of each type. 
+%The stability found in principal components of topological measures suggested that this primitive typology is general for (practically) all human contexts.
+%Also, the first author is a developer with cultural interests and has been directly and indirectly part of these communities for more than a decade.  This gave further safety about assumptions although care was taken not to regard this acquaintanceship as primary source or as definitive evidence.
+%The interested reader should see Appendix~\ref{ap:typ} for further context, 
+%as it might be considered audacious to bridge from a physics-based, 
+%quantitative classification to a qualitative and speculative approach.
 
 \section{Results and discussion}\label{sec:results}
 
 
-Remarkable features from the analysis of the four email lists are:
-\begin{itemize}
-    \item The activity along time is practically the same for all lists, thus suggesting stable patterns.
-    \item The fraction of participants in each Erd\"os sector is stable along time and can be determined even with very few messages 
-    \item The topological metrics combine into principal components in PCA in the same way for all lists and all snapshots (). 
-        \item Symmetry measures of the topology, as defined in this article, present more dispersion than the usual clustering coefficient (Section~\ref{prevalence}).
-    \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
-\end{itemize}
-	 
+%Remarkable features from the analysis of the four email lists are:
+%\begin{itemize}
+%    \item The activity along time is practically the same for all lists, thus suggesting stable patterns.
+%    \item The fraction of participants in each Erd\"os sector is stable along time and can be determined even with very few messages 
+%    \item The topological metrics combine into principal components in PCA in the same way for all lists and all snapshots (). 
+%        \item Symmetry measures of the topology, as defined in this article, present more dispersion than the usual clustering coefficient (Section~\ref{prevalence}).
+%    \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
+%\end{itemize}
 
 \subsection{Activity along time}\label{constDisc}
 
-\begin{table*}[t]
-	\caption{The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. Also, $ \mu_{\frac{max(incidence')}{min(incidence')}} $ and $ \sigma_{\frac{max(incidence')}{min(incidence')} }$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples. Section~\ref{sec:mtime} describes the theoretical background of directional (or circular) statistics. This typical table was made using LAD list messages.}
-\begin{center}
+The activity statistics in each time scale (from seconds to semesters) exhibited a specific pattern and is practically the same for all lists analyzed. Values are exemplified with Tables~\ref{tab:circ}-\ref{tab:min2} and Support information. The pattern is the homogeneity for seconds and minutes. Hours of the day revealed an abrupt peak around 11am with most active period being the afternoon. Days of the week revealed a decrease of at least one third and at most two thirds of activity on weekends. Days of the month were regarded as homogeneous with an inconclusive slight tendency of first week to be more active. Months of the year revealed patterns matching usual work and academic calendars.
+The time period examined here was not sufficient for the analysis of activity along the years.
+
+Messages were slightly more evenly distributed in all lists than in simulations\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.} using uniform distribution for both seconds and minutes: $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$. Simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
+Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected and the pattern is the uniformity. Circular dispersion is maximized and the mean has little meaning as exposed in Table~\ref{tab:circ}. Patterns in each of the other time scales are detailed in histogram Tables~\ref{tab:hin}-\ref{tab:min2} and further exemplified in Supporting Information.
+
+\begin{table}
+	\caption{The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$ and the circular dispersion $\delta(z)$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples. Section~\ref{sec:mtime} describes the theoretical background of directional (or circular) statistics. This typical table was made using LAD list messages, and the results are about the same for other lists, as exposed in Supporting Information. Most homogeneous activity was found in seconds and minutes, where the mean is has no real meaning. Hours of the day exhibited the most concentrated activity (lowest $S(z)$, $Var(z)$ and $\delta(z)$), with mean between 14h and 15h ($\theta'=-9.61$). Weekdays, months and month days have mean very near zero, and considerable dispersion.}
+	\begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
-	\input{tables/tab2TimeLAD}
+%scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+& $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$  \\ \hline\hline
+	\input{tables/tab2TimeLAD__}
     \end{tabular}
 \end{center}
 \label{tab:circ}
-\end{table*}
+\end{table}
 
 
-The activity along time is practically the same for all lists, as exemplified with the circular statistics in Table~\ref{tab:circ} and Support information.
 
-
-\subsubsection{Seconds and minutes}\label{sec:secmin}
-Messages were slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}: for both seconds and minutes $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$ in the lists. Simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
-Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected and the pattern is the uniformity. Circular dispersion is maximized and the mean has little meaning.
-
-
-\begin{table}[!h]
+\begin{table}[h]
 	\caption{Example of activity percentages along the hours of the day. Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.}
 	\footnotesize
 	\input{tables/tabHoursCPP_}
 \label{tab:hin}
 \end{table}
 
-\begin{table}[!h]
+\FloatBarrier
+\begin{table}
 	\caption{Example of activity percentages along the days of the week. Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.}
 \begin{center}
     \begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
@@ -419,22 +418,20 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 \label{tab:win}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}
 	\caption{No significant variation of activity in the days along the month was observed. One cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity.}
 	\footnotesize
 	\input{tables/tabMonthdaysCPP}
 \label{tab:min}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}
 	\caption{Example of activity percentages of the months along the year from LAD list messages. Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Support Information). These observations fit academic calendars, vacations and end-of-year holidays.}
 	\footnotesize
 	\input{tables/tabMonthsLAD}
 \label{tab:min2}
 \end{table}
 
-\subsubsection{Activity along years}\label{sec:years}
-Literature reports that big communities have greater longevity when hubs are changed all the time, while smaller communities have greater longevity when hubs are stable~\cite{barabasiEvo}. Also, activity should follow trends such as economic, climate and technological and periodicity should be observed to some extent. Nevertheless, the time period examined here was not sufficient for the analysis of activity along the years. 
 
 \subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
 
@@ -474,7 +471,7 @@ For the histograms used in the classification process, the use of at least $\eta
 That was understood as a consequence of the observation scale (see Appendix~\ref{ap:ded2}).
 
 
-\subsection{Variance prevalence of centrality over symmetry and symmetry over clusterization}\label{prevalence}
+\subsection{Stability of principal components and the prevalence of symmetry over clusterization for dispersion}\label{prevalence}
 The topology was analyzed using standard, well-established metrics of centrality and clustering.
 We also introduced symmetry metrics because of evidence of their importance in social contexts~\cite{newmanEvolving}.
 The contribution of each metric to the variance is very similar for all the networks, and did not vary with time.
@@ -488,13 +485,12 @@ In applying PCA to the snapshots, the contribution of each metric to the princip
 \end{table}
 
 The first principal component is an average of centrality metrics: degrees, strengths and betweenness centrality. Therefore, all of these centrality measurements are equally important for characterizing the networks. On one hand, the relevance of all centrality metrics is not surprising since they may be highly correlated. The degree and strength, for instance, are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$.
-On the other hand, each measure relate to a different participation characteristic, and their equal relevance is noticeable.
+On the other hand, each measure relates to a different participation characteristic, and their equal relevance is noticeable.
 The clustering coefficient is presented in almost perfect orthogonality to centrality measures.
-Dispersion was more prevalent in symmetry-related metrics than the clustering coefficient. These relations are presented in Figure~\ref{fig:sym} and Table~\ref{tab:pcain}.
 
+Dispersion was more prevalent in symmetry-related metrics than the clustering coefficient. These relations are presented in Figure~\ref{fig:sym} and Table~\ref{tab:pcain}.
 Plots of vertices in the components exhibited in Table~\ref{tab:pcain} are shown in Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong to. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the third component (clustering related).
 The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects symmetry metrics relevance for the variance.
-This can be observed in Table~\ref{tab:pcain} where the clustering coefficient is only relevant for the third principal component (with contributions from out-degree and out-strength).
 We concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
 
 
@@ -508,9 +504,15 @@ We concluded that the symmetry-related measurements can be more meaningful in ch
 \begin{figure*} 
    \centering
         \includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
-	\caption{Prevalence of the symmetry-related metrics over clustering for data dispersion, which was an important result from the PCA analysis, together with stability on component formation. The first plot shows degree versus clustering coefficient. The second plot is similar, but the first component is an average of centrality metrics (see Table~\ref{tab:pcain}). The third plot resulted from applying PCA with symmetry-related metrics (also Table~\ref{tab:pcain}), where greater dispersion can be observed in all sectors, although more pronounced in intermediary and hubs sectors.
-    For this figure, a window size of $ws = 1000$ messages was used from LAU list. The general layout is recurrent and consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.
-Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which points to a common relationship between degree, strength and betweenness metrics and clustering coefficient. In the third plot, the clustering coefficient was omitted as it is only relevant for the third component. In this case, the second component is representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry-related metrics as being more powerful for characterizing interaction networks than clustering coefficient, especially for hubs and intermediary vertices.
+	\caption{Prevalence of the symmetry-related metrics over clustering for data dispersion, which was an important result from the PCA analysis, together with stability of component formation, and can be observed in Table~\ref{tab:pcain}.
+		The first plot shows degree versus clustering coefficient.
+		The second plot is similar, but the first component is an average of centrality metrics.
+		The third plot resulted from applying PCA with symmetry-related metrics, where greater dispersion in the second component can be observed among all sectors.
+		In this case, the second component is representative of symmetry measurements of vertex interactions and clustering coefficient is only relevant for the third component.
+		Greater dispersion suggests symmetry-related metrics as being more powerful for characterizing interaction networks than clustering coefficient, especially for hubs and intermediary vertices.
+		This figure was done with a snapshot of the LAU list in a window size of $ws = 1000$ messages.
+		The general layout is recurrent and consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.
+		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which points to a common relationship between the measures of degree, strength and betweenness centrality, the measures of symmetry and the measure of clustering coefficient described in Section~\ref{measures}.
     }
     \label{fig:sym}
 \end{figure*}
