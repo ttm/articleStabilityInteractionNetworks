@@ -408,14 +408,13 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 
 
 
-\begin{table}[h]
+\begin{table}
 	\caption{Example of activity percentages along the hours of the day. Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.}
 	\footnotesize
 	\input{tables/tabHoursCPP_}
 \label{tab:hin}
 \end{table}
 
-\FloatBarrier
 \begin{table}
 	\caption{Example of activity percentages along the days of the week. Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.}
 \begin{center}
@@ -442,12 +441,13 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 \label{tab:min2}
 \end{table}
 
+\FloatBarrier
 
 \subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
 
 There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} shows this expected distribution of activity among participants in a scale-free context.
 
-\begin{table}[!h]
+\begin{table}[h]
     \caption{Distribution of activity among participants. The first column presents the percentage of messages sent by the most active participant. The column for the first quartile ($1Q$) shows the minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ gives the minimum percentage of participants responsible for 75\% of total messages. The last decile $-10D$ column brings the maximum percentage of participants responsible for 10\% of messages.}
 \begin{center}
     \begin{tabular}{ | l ||  c | c | c | c | }
@@ -574,7 +574,7 @@ Observed systems were coherent with literature in different aspects, such as con
 Even so, analysis of data from other virtual environments, such as Facebook, Twitter and LinkedIn, might help understanding how general are these structures and what are proper uses.
 
 Further work should inspect other topological measures in each sector.
-The subtraction $\widetilde{P}(k)-P(k)$ (see Section~\ref{subsec:typ}) results in two positive clusters for periphery and hubs, and a negative cluster for intermediary vertices. This might support classification of the three sectors by clustering, a more traditional approach to classification.
+The subtraction $\widetilde{P}(k)-P(k)$ results in two positive clusters for periphery and hubs, and a negative cluster for intermediary vertices. This might support classification of the three sectors by clustering, a more traditional approach to classification.
 Observance of attributes with greater contribution to principal components of LDA should reveal best chances to present these three sections as clusters in the network measurements space. 
 Another possibility, especially for a brute-force characterization of such sectors, is to remove vertices with degree close to $k_\Leftarrow$ or $k_\Rightarrow$ depicted in figure~\ref{fig:setores}.
 
@@ -656,8 +656,8 @@ scripts where written for 2.7.3 version of Python,
 with the following third party libraries: Numpy, Pylab/Matplotlib, NetworkX, IGraph.
 Behind the scenes, Graphviz is accessed via PyGraphviz to make network drawings.
 \clearpage
-\section{Tables}\label{sectables}
-\subsection{PCA tables}\label{sec:pcat}
+%\section{Tables}\label{sectables}
+%\subsection{PCA tables}\label{sec:pcat}
 %\begin{table}[!h]
 %  \centering
 %  \caption{Principal components composition in the simplest case: with degree, clustering coefficient and betweenness centrality. LAU list, $ws=1000$ messages in 20 disjoint positioning was used for statistics. The first component is a weighted average of degree and betweenness centrality. The second component is mostly clustering coefficient. The first and second components represent more than 95\% of total variance. The $\lambda$ bottom line holds the percentage of total variance attributed to each component.}
