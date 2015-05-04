@@ -395,13 +395,14 @@ Messages were slightly more evenly distributed in all lists than in simulations\
 Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected and the pattern is the uniformity. Circular dispersion is maximized and the mean has little meaning as exposed in Table~\ref{tab:circ}. Patterns in each of the other time scales are detailed in histogram Tables~\ref{tab:hin}-\ref{tab:min2} and further exemplified in Supporting Information.
 
 \begin{table}
-	\caption{The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$ and the circular dispersion $\delta(z)$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples. Section~\ref{sec:mtime} describes the theoretical background of directional (or circular) statistics. This typical table was made using LAD list messages, and the results are about the same for other lists, as exposed in Supporting Information. Most homogeneous activity was found in seconds and minutes, where the mean is has no real meaning. Hours of the day exhibited the most concentrated activity (lowest $S(z)$, $Var(z)$ and $\delta(z)$), with mean between 14h and 15h ($\theta'=-9.61$). Weekdays, months and month days have mean very near zero, and considerable dispersion.}
+	\caption{The rescaled circular mean $\theta_\mu'$ and the circular dispersion $\delta(z)$ described in Section~\ref{sec:mtime}. This typical table was made using all LAD list messages, and the results are the same for other lists, as exposed in Supporting Information. Most uniform distribution of activity was found in seconds and minutes, where the mean has little meaning. Hours of the day exhibited the most concentrated activity (lowest $\delta(z)$), with mean between 14h and 15h ($\theta'=-9.61$). Weekdays, month days and months have mean near zero (i.e. near the beginning of the week, month and year) and high dispersion.}
 	\begin{center}
-    \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
+    \begin{tabular}{ |l|| c|c| }
         \hline
 %scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
-& $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$  \\ \hline\hline
-	\input{tables/tab2TimeLAD__}
+%& $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$  \\ \hline\hline
+& $\theta_\mu'$ & $\delta(z)$  \\ \hline\hline
+	\input{tables/tab2TimeLAD___}
     \end{tabular}
 \end{center}
 \label{tab:circ}
@@ -446,7 +447,7 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 
 \subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
 
-There is a concentration of hub activity and of vertex with few connections. Table~\ref{autores} shows this expected distribution of activity among participants in a scale-free context.
+There is a concentration of hub activity and an abundance of vertex with few connections. Table~\ref{autores} shows this expected distribution of activity among participants in a scale-free context.
 
 \begin{table}[h]
     \caption{Distribution of activity among participants. The first column presents the percentage of messages sent by the most active participant. The column for the first quartile ($1Q$) shows the minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ gives the minimum percentage of participants responsible for 75\% of total messages. The last decile $-10D$ column brings the maximum percentage of participants responsible for 10\% of messages.}
@@ -461,7 +462,7 @@ There is a concentration of hub activity and of vertex with few connections. Tab
 \end{table}
 
 The distribution of vertices in the hubs, intermediary, periphery Erd\"os sectors defined in Section~\ref{sectioning} is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. 
-Moreover, the same distribution applies to the networks of all the four email lists, as demonstrated in the various figures in the Support Information. 
+Moreover, the same distribution applies to the networks of all the four email lists, as demonstrated in Figure~\ref{fig:sectIL} and the Support Information. 
 Typically, $\approx [3-12]\%$ of the vertices are found to be hubs, $\approx [15-44]\%$ are intermediary and $\approx [44-82]\%$ are peripheral, which is consistent with the literature~\cite{secFree}.
 These results hold for the total, in and out degrees and strengths.
 Stable distributions can also be obtained for 100 or less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. 
@@ -496,14 +497,14 @@ The clustering coefficient is presented in almost perfect orthogonality to centr
 \begin{figure*} 
    \centering
         \includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
-	\caption{Prevalence of the symmetry-related measures over clustering for dispersion of participants in the space of topological measures. This is an important result from the PCA analysis, together with stability of component formation, and can be observed in Table~\ref{tab:pcain}.
-		The first plot shows degree versus clustering coefficient.
-		The second plot is similar, but the first component is an average of centrality metrics.
-		The third plot resulted from applying PCA with symmetry-related metrics, where greater dispersion in the second component can be observed among all sectors.
-		In this case, the second component is representative of symmetry measurements of vertex interactions and clustering coefficient is only relevant for the third component.
-		Greater dispersion suggests symmetry-related metrics as being more powerful for characterizing interaction networks than clustering coefficient, especially for hubs and intermediary vertices.
+	\caption{The first plot shows degree versus clustering coefficient.
+		In the second plots, the first component is an average of centrality metrics, but the second component is still clustering coefficient.
+		The third plot exhibits the greater dispersion in the symmetry-related second component.
+		In this case, clustering coefficient is only relevant for the third component.
+		Greater dispersion suggests that symmetry-related metrics are more powerful for characterizing interaction networks than clustering coefficient, especially for hubs and intermediary vertices.
+		This general layout is recurrent and consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.
+		This prevalence of the symmetry-related measures over clustering coefficient for the dispersion of participants in the space of topological measures is an important result from the PCA analysis, together with temporal stability of component formation, and can be observed in Table~\ref{tab:pcain}.
 		This figure was done with a snapshot of the LAU list in a window size of $ws = 1000$ messages.
-		The general layout is recurrent and consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.
 		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which points to a common relationship between the measures of degree, strength and betweenness centrality, the measures of symmetry and the measure of clustering coefficient described in Section~\ref{measures}.
     }
     \label{fig:sym}
@@ -539,7 +540,7 @@ We concluded that the symmetry-related measurements can be more meaningful in ch
 
     \subsection{Primitive types from Erd\"os sectors}\label{sec:pty}
 
-Let a sector to which a vertex belongs yield a type for the corresponding participant. Accordingly, a participant may be considered peripheral, intermediary or a hub. This trivial consideration raises important questions: is this typology stigmatizing or prejudice inclined in any way? What do we know about each type and about the typology itself?
+Let a sector to which a vertex belongs yield a type for the corresponding participant. Accordingly, a participant may be considered peripheral, intermediary or a hub. This trivial consideration raises important questions: is this typology stigmatizing or prejudice inclined in any way? What else do we know about each type and about the typology itself?
 These general considerations about this primitive typology will help us answer the first questions:
 \begin{itemize}
 	\item A participant belongs to many networks (his family, family of a friend, the email list to which he belongs, work friends, etc.).
@@ -559,7 +560,7 @@ Our approach to the second question was the inspection of network evolution from
     \item The most obvious community structure, as observed by a high clustering coefficient, is found only in peripheral and intermediary sectors.
 \end{itemize}
 
-This typology, derived entirely from objective metrics, is a bridge from exact to human sciences. Obviously, the analysis may be enriched by using concepts from other typologies, such as Meyer-Briggs, Pavlov or the authoritarian types of the F-Scale~\cite{adorno}.
+This typology is a bridge from exact to human sciences and may be enriched with concepts from other typologies, such as Meyer-Briggs, Pavlov or the authoritarian types of the F-Scale~\cite{adorno}.
 
 With regard to the networks as the whole objects of analysis, we observed that there are two contrasting types of network: i) those with few and stable agents, where the number of threads per message is large; ii) others with many agents displaying intermittent activity, for which the number of threads per message is considerably lower than for the other type of network. This result is exemplified in Table~\ref{tab:genLists} and is also consistent with the literature~\cite{barabasiEvo}, which reports that the smaller size of communities is responsible for the stronger hubs observed.
  
