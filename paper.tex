@@ -97,15 +97,15 @@ Centro de CiÃªncias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFAB
              %  but any date may be explicitly specified
 
 \begin{abstract}
- This article reports interaction networks stability by means of three quantitative criteria: activity distribution in time and among participants; a sound classification of vertices in peripheral, intermediary and hub sectors; the combination of basic measures into principal components with greater variance. 
- We analyzed the temporal activity and topology evolution of networks in four email lists by considering window sizes from 50 to 10,000 messages, which were made to slide to generate snapshots of the network along a timeline. Activity in terms of seconds and minutes exhibit an uniform pattern, while hours, days and months exhibit stable concentrations.
+ This article reports human interaction networks stability by means of three criteria: activity distribution in time and among participants; the relative sizes of peripheral, intermediary and hub sectors established through comparison with the Erd\"os-R\'enyi model; the combination of basic topological measures into principal components with greater variance. 
+ We analyzed the temporal activity and topology evolution of networks in email lists by considering window sizes from 50 to 10,000 messages, which were made to slide to generate snapshots of the network along a timeline. Activity in terms of seconds and minutes exhibit an uniform pattern, while hours, days and months exhibit concentrations.
  Participant activity follows the expected distribution of scale-free networks. 
- We compare these networks to Erd\"os-R\'enyi networks in order to assign members to three distinct sectors, namely hubs, intermediary and periphery.
- Approximately 5\% of the vertices are hubs, 15-35\% are intermediary and the remainder belongs periphery. 
+ Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder belongs to periphery. 
  The metrics that most contribute to the dispersion of participants in the topological measures space were found to be centrality-related (degree, strength and betweenness), followed by symmetry-related, and then clustering coefficient. 
- The results also embrace a sketch of a physics-based typology of agents.
- Because the network properties reported did not depend on the email list and were stable over time, and because observed structure is in accordance with expectations driven from literature for human interaction networks, we believe that the properties observed are also present in general human interaction networks.
- Current unfoldings include governance and accountability proposals and implementations, anthropological physics experiments, audiovisual reconnaissance, and the report of quantitative differences of textual production as connectivity of agents changes.
+ The discussion of results holds considerations about network and participant types, mostly derived from the hub, intermediary and peripheral sectors.
+ The properties might be general for human interaction networks
+ because observed structure is in accordance with expectations driven from complex network literature.
+ Current unfoldings include governance and accountability proposals and implementations, anthropological physics experiments, audiovisual representations, and the report of quantitative differences of textual production in each connective sector.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
@@ -463,7 +463,7 @@ There is a concentration of hub activity and an abundance of vertex with few con
 
 The distribution of vertices in the hubs, intermediary, periphery Erd\"os sectors defined in Section~\ref{sectioning} is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. 
 Moreover, the same distribution applies to the networks of all the four email lists, as demonstrated in Figure~\ref{fig:sectIL} and the Support Information. 
-Typically, $\approx [3-12]\%$ of the vertices are found to be hubs, $\approx [15-44]\%$ are intermediary and $\approx [44-82]\%$ are peripheral, which is consistent with the literature~\cite{secFree}.
+Typically, $\approx [3-12]\%$ of the vertices are found to be hubs, $\approx [15-45]\%$ are intermediary and $\approx [44-81]\%$ are peripheral, which is consistent with the literature~\cite{secFree}.
 These results hold for the total, in and out degrees and strengths.
 Stable distributions can also be obtained for 100 or less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. 
 The networks hold their basic structure with as few as 10-50 messages; concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of the Support Information.
@@ -497,13 +497,12 @@ The clustering coefficient is presented in almost perfect orthogonality to centr
 \begin{figure*} 
    \centering
         \includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
-	\caption{The first plot shows degree versus clustering coefficient.
-		In the second plots, the first component is an average of centrality metrics, but the second component is still clustering coefficient.
+	\caption{The first plot shows degree versus clustering coefficient. This typical pattern is well known and presented in basic text books: high clustering is more incident in vertices with lower degrees.
+		The second plot is very similar but the first component is an average of centrality metrics. The second component remains related to clustering coefficient.
 		The third plot exhibits the greater dispersion in the symmetry-related second component.
 		In this case, clustering coefficient is only relevant for the third component.
 		Greater dispersion suggests that symmetry-related metrics are more powerful for characterizing interaction networks than clustering coefficient, especially for hubs and intermediary vertices.
-		This general layout is recurrent and consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.
-		This prevalence of the symmetry-related measures over clustering coefficient for the dispersion of participants in the space of topological measures is an important result from the PCA analysis, together with temporal stability of component formation, and can be observed in Table~\ref{tab:pcain}.
+		This prevalence of the symmetry-related measures over clustering coefficient for the dispersion of participants in the space of topological measures is an important result from the PCA analysis, together with temporal stability of components formation, and can be observed in Table~\ref{tab:pcain}.
 		This figure was done with a snapshot of the LAU list in a window size of $ws = 1000$ messages.
 		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which points to a common relationship between the measures of degree, strength and betweenness centrality, the measures of symmetry and the measure of clustering coefficient described in Section~\ref{measures}.
     }
@@ -567,17 +566,32 @@ With regard to the networks as the whole objects of analysis, we observed that t
 This result is exemplified in Table~\ref{tab:genLists} and is also consistent with the literature~\cite{barabasiEvo}, which reports that the smaller size of communities is responsible for the stronger hubs observed.
  
 \section{Conclusions and further work}\label{sec:conc}
-The characterization of interaction networks resulted from stability observations. 
-Along temporal activity statistics, this work reports the stability of the formation of principal components and of the relative sizes of periphery, intermediary and hubs Erd\"os sectors.
-These results suggest and ease the observance of types in both agents and the networks.
+This work reports the stability of temporal activity, of the formation of principal components and of the relative sizes of periphery, intermediary and hubs Erd\"os sectors.
+These results suggest and ease the observance of types in both agents and the networks, and initial considerations reported for completeness of exposition and as a bridge between the physical approach and the standard legacy for the observation of human types.
 
-Observed systems were coherent with literature in different aspects, such as concentration of activity or such as the clusterization versus connectivity pattern.
-Even so, analysis of data from other virtual environments, such as Facebook, Twitter and LinkedIn, might help understanding how general are these structures and what are proper uses.
-
-Using the results here presented, significant differences were found in the textual production of each Ed\"os sector~\cite{rcText}.
-Another article describes the network time evolution visualization method used here~\cite{versinus}.
+Significant differences were found in the textual production of each Ed\"os sector~\cite{rcText}.
+Also, the network time evolution visualization used here has received dedicated technologies and literature~\cite{gmanePack,versinus}.
 Implementations and consequences of these results are taking place in software packages, linked data, 
 electronic government technologies, and anthropological physics experiments~\cite{gmanePack,ops,opa,ensaio,anPhy}.
+
+Observed stability is coherent with literature in different aspects, 
+such as the concentration of activity and as the clusterization versus connectivity pattern.
+From our experience, the analysis of data from other virtual environments (e.g. Facebook, Twitter and LinkedIn),
+exhibited the same patterns.
+A systematic inclusion of such networks to the presented analysis should help bounding or generalizing results.
+
+Other future work envisioned include:
+\begin{itemize}
+	\item a mathematical characterization of the Erd\"os sectioning in terms of $N$, $z$, $p$, $\gamma$ (scale-free exponent),
+minimum and maximum degrees and strengths, and the fraction of participants in each sector. 
+	\item Enhancement of the characterization with PCA with the addition of topological measures and separated analysis of each Erd\"os sector. 
+	\item Further inspection of participation and network types by means of virtual traces of activity.
+	\item Observe activity in larger timescale, such as decades. Maybe considering literature output in other media.
+	\item Visualization and sonification of social networks~\cite{gmanePack}.
+	\item Feedback of the results to the communities whose data was studied. Enriching the results with collective maturing.
+	\item Anthropological considerations of physics research involving human social systems (anthropological physics?).
+\end{itemize}
+
 
 \begin{acknowledgments}
 Renato Fabbri is grateful to CNPq (process: 140860/2013-4,
