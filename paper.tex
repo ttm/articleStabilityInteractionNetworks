@@ -8,13 +8,13 @@
 % Use this file as a source of example code for your aip document.
 % Use the file aiptemplate.tex as a template for your document.
 \documentclass[%
- aip,
- jmp,%
- amsmath,amssymb,
-%preprint,%
- reprint,%
-%author-year,%
-%author-numerical,%
+	aip,
+	jmp,%
+	amsmath,amssymb,
+	%preprint,%
+	reprint,%
+	%author-year,%
+	%author-numerical,%
 ]{revtex4-1}
 \usepackage{graphicx}% Include figure files
 \usepackage{grffile}
@@ -31,10 +31,10 @@
 \usepackage{xcolor}
 \usepackage{amsmath}
 \hypersetup{
-        colorlinks,
-        linkcolor={red!50!black},
-        citecolor={blue!50!black},
-        urlcolor={blue!80!black}
+	colorlinks,
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
 }
 
 \maxdeadcycles=1000
@@ -49,36 +49,36 @@
 \title[Stability of interaction networks]{Stability in human interaction networks: sector relative sizes, prominence of topological measures and time activity statistics.}% Force line breaks with \\
 
 \author{Renato Fabbri}%
- \homepage{http://ifsc.usp.br/~fabbri/}
- \email{fabbri@usp.br}
-  \affiliation{ 
-S\~ao Carlos Institute of Physics, University of S\~ao Paulo (IFSC/USP)%\\This line break forced with \textbackslash\textbackslash
+\homepage{http://ifsc.usp.br/~fabbri/}
+\email{fabbri@usp.br}
+\affiliation{ 
+	S\~ao Carlos Institute of Physics, University of S\~ao Paulo (IFSC/USP)%\\This line break forced with \textbackslash\textbackslash
 }
 
 \author{Vilson V. da Silva Jr.}
-  \homepage{http://automata.cc/}
-  \email{vilson@void.cc}
-  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+\homepage{http://automata.cc/}
+\email{vilson@void.cc}
+\altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 
 \author{Ricardo Fabbri}
-  \homepage{http://www.lems.brown.edu/~rfabbri/}
-  \email{rfabbri@iprj.uerj.br}
- \altaffiliation{
-Instituto Polit\'ecnico, Universidade Estadual do Rio de Janeiro (IPRJ)
+\homepage{http://www.lems.brown.edu/~rfabbri/}
+\email{rfabbri@iprj.uerj.br}
+\altaffiliation{
+	Instituto Polit\'ecnico, Universidade Estadual do Rio de Janeiro (IPRJ)
 }%Lines break automatically or can be forced with \\
 
 \author{Deborah C. Antunes}
-  \homepage{http://lattes.cnpq.br/1065956470701739}
-  \email{deborahantunes@gmail.com}
-  \altaffiliation{
-Curso de Psicologia, Universidade Federal do Cer\'a (UFC)
+\homepage{http://lattes.cnpq.br/1065956470701739}
+\email{deborahantunes@gmail.com}
+\altaffiliation{
+	Curso de Psicologia, Universidade Federal do Cer\'a (UFC)
 }%Lines break automatically or can be forced with \\
 
 \author{Marilia M. Pisani}
-  \homepage{http://lattes.cnpq.br/6738980149860322}
-  \email{marilia.m.pisani@gmail.com}
- \altaffiliation{
-Centro de CiÃªncias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
+\homepage{http://lattes.cnpq.br/6738980149860322}
+\email{marilia.m.pisani@gmail.com}
+\altaffiliation{
+	Centro de CiÃƒÂªncias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
 }%Lines break automatically or can be forced with \\
 
 %
@@ -94,18 +94,10 @@ Centro de CiÃªncias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFAB
 
 
 \date{\today}% It is always \today, today,
-             %  but any date may be explicitly specified
+%  but any date may be explicitly specified
 
 \begin{abstract}
- This article reports human interaction networks stability by means of three criteria: activity distribution in time and among participants; the relative sizes of peripheral, intermediary and hub sectors established through comparison with the Erd\"os-R\'enyi model; the combination of basic topological measures into principal components with greater variance. 
- We analyzed the temporal activity and topology evolution of networks in email lists by considering window sizes from 50 to 10,000 messages, which were made to slide to generate snapshots of the network along a timeline. Activity in terms of seconds and minutes exhibit an uniform pattern, while hours, days and months exhibit concentrations.
- Participant activity follows the expected distribution of scale-free networks. 
- Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder belongs to periphery. 
- The metrics that most contribute to the dispersion of participants in the topological measures space were found to be centrality-related (degree, strength and betweenness), followed by symmetry-related, and then clustering coefficient. 
- The discussion of results holds considerations about network and participant types, mostly derived from the hub, intermediary and peripheral sectors.
- The properties might be general for human interaction networks
- because observed structure is in accordance with expectations driven from complex network literature.
- Current unfoldings include governance and accountability proposals and implementations, anthropological physics experiments, audiovisual representations, and the report of quantitative differences of textual production in each connective sector.
+	In this study, we demonstrate a remarkably stable activity in networks derived from e-mail lists. The activity along time and topology evolution were investigated in four e-mail lists by considering window sizes from 50 to 10,000 messages, which were made to slide and generate snapshots of the network in a timeline. The activity of participants followed the expected scale-free behavior, thus allowing us to establish three classes of vertices by comparying with the Erd\"os-R\'enyi model, namely hubs, intermediary and peripheral vertices. The relative size of these three sectors did not vary with time and was essentially the same for all e-mail lists. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder are peripheral vertices. The metrics that contribute most to the dispersion of participants in the topological measures space were centrality measurements (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient. A clear distinction could be made of networks with few, stable agents, which possess a large number of threads per message, from others with many agents exhibiting intermittent activity and lower number of threads per message. Also important was the observation that the activity along time, in terms of seconds, minutes, hours, days and months, is practically the same for all lists. These results are coherent with literature and were found also in the analysis of other networks from other emails lists and from Facebook and Twitter. Therefore, we infer that the properties observed may be general for human interaction networks, which has important implications in establishing a typology based on objective, quantitative criteria.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
@@ -113,26 +105,26 @@ Centro de CiÃªncias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFAB
 \maketitle
 
 \begin{quotation}
-`The reason for the persistent plausibility of the typological approach, however, is not a static biological one, but just the opposite: dynamic and social.' 
-% `The conception of personality structure is the
-%best safeguard against the
-% inclination to attribute persistent trends in the
-% individual to something
-% "innate" or "basic" or "racial" within him. The
-% Nazi allegation that natural, biological traits decide the total being of a % person
-% would not have been such
-% a successful political device
-% had it not been possible to point to numerous
-% instances of relative fixity in human behavior and to
-% challenge those who
-% thought to explain them on any basis other than a biological one.'
-\emph{- Adorno et al, 1969, p. 747}
+	`The reason for the persistent plausibility of the typological approach, however, is not a static biological one, but just the opposite: dynamic and social.' 
+	% `The conception of personality structure is the
+	%best safeguard against the
+	% inclination to attribute persistent trends in the
+	% individual to something
+	% "innate" or "basic" or "racial" within him. The
+	% Nazi allegation that natural, biological traits decide the total being of a % person
+	% would not have been such
+	% a successful political device
+	% had it not been possible to point to numerous
+	% instances of relative fixity in human behavior and to
+	% challenge those who
+	% thought to explain them on any basis other than a biological one.'
+	\emph{- Adorno et al, 1969, p. 747}
 \end{quotation}
 
 
 \section{Introduction}\label{sec:into}
 Studies on human interaction networks have started long before modern computers, dating back to the nineteenth century, while the foundation of
-social network analysis is generally attributed to the psychiatrist Jacob Moreno~\cite{newmanBook}. With the increasing availability of data related to human interactions, research on these networks has grown continuously. Contributions can now be found in a variety of fields in the literature, from social sciences and humanities~\cite{latour2013} to computer science~\cite{bird} and physics~\cite{barabasiHumanDyn,newmanFriendship}, given the multidisciplinary nature of the topic. One of the approaches from an exact science perspective is to represent interaction networks as complex networks [gmane,barabasiHumanDyn,newmanFriendship], with which 
+social network analysis is generally attributed to the psychiatrist Jacob Moreno~\cite{newmanBook}. With the increasing availability of data related to human interactions, research on these networks has grown continuously. Contributions can now be found in a variety of fields in the literature, from social sciences and humanities~\cite{latour2013} to computer science~\cite{bird} and physics~\cite{barabasiHumanDyn,newmanFriendship}, given the multidisciplinary nature of the topic. One of the approaches from an exact science perspective is to represent interaction networks as complex networks [ref.?][gmane,barabasiHumanDyn,newmanFriendship], with which 
 several features of human interaction have been revealed. For example, the topology of human interaction networks exhibits a scale-free trace, which points to the existence of a small number of highly connected hubs and a large number of poorly connected nodes. The dynamics of complex networks representing human interaction has also been addressed ~\cite{barabasiEvo,newmanEvolving}, but only to a limited extent, since research is normally focused on a particular metric or functionality, such as accessibility or community detection~\cite{access,newmanModularity}. 
 
 In this paper we analyze the evolution of human interaction networks, by considering interaction in email lists as their representative. Using a timeline of activity snapshots with a constant number of contiguous messages in email lists, we found a remarkable stability for several of the network properties. Because this stability was shared by all email lists, we advocate that some of the conclusions can be valid for more general classes of interaction networks. In particular, this allows us to discuss typologies in the context of such networks, in an attempt to bridge the gap between approaches based solely on data analysis (i.e. from a hard sciences perspective) and those relevant to the social sciences. This is important insofar as typologies are the canon of scientific literature for classification of human agents~\cite{typCanon}. 
@@ -140,12 +132,10 @@ In this paper we analyze the evolution of human interaction networks, by conside
 The paper is organized as follows. Section~\ref{sec:related} describes related work, while details of the data and methods of analysis are given in  Section~\ref{sec:data} and Section~\ref{sec:carac}. Section~\ref{sec:results} brings the results and discussion, leading to Section~\ref{sec:conc} for conclusions and further work. 
 
 \subsection{Related work}\label{sec:related}
-Works on network evolution often consider solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Exceptions are reported in this section, with emphasis on those more closely related to the present article.
+Research on network evolution often considers solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Exceptions are reported in this section, with emphasis on those more closely related to the present article. Network types have been discussed with regard to the number of participants, intermittence of their activity and network longevity
+~\cite{barabasiEvo}. Two topologically different networks emerged from human interaction networks, depending on the frequency of interactions, which can either be a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were reported with $\alpha=1$~\cite{bird} (as are web browsing and library loans~\cite{barabasiHumanDyn}), and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
 
-Network types have been reported relating number of participants, intermittence of them and network longevity~\cite{barabasiEvo}. Such results are confluent and endorsed by results of Section~\ref{sec:pty}. 
-Two topologically different networks are reported to emerge from human interaction networks, depending on the frequency of interactions, which can either be a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were reported with $\alpha=1$~\cite{bird} (as are web browsing and library loans~\cite{barabasiHumanDyn}), and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
-
-Unreciprocated edges often exceed 50\% in the networks analyzed, which matches empirical evidence from the literature~\cite{newmanEvolving}. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were not considered in our study. Gender related behavior in mobile phone datasets has been reported~\cite{barabasiSex}, but this was not considered in the present article because email messages and addresses have no gender related metadata~\cite{GMANE}.
+Unreciprocated edges often exceed 50\% in the networks analyzed, which matches empirical evidence from the literature~\cite{newmanEvolving}. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were not considered in our study. Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}, but this was not considered in the present article because email messages and addresses have no gender related metadata~\cite{GMANE}.
 
 
 \section{Data description: email lists and messages}\label{sec:data}
@@ -156,27 +146,26 @@ The GMANE usage in scientific research is reported in studies of isolated lists 
 
 We analyzed many email lists, but selected only four in order to make a thorough analysis, from which general properties can be inferred. These lists, selected as representing both a diverse set and ordinary lists, are:
 \begin{itemize}
-    \item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE.}, with participants holding hybrid artistic and technological interests, from different countries. English is the language used the most. Abbreviated as LAU from now on.
-    \item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE.}, with participants from different countries, and English is the language used the most. A more technical and less active version of LAU. Abbreviated LAD from now on.
-    \item Development list for the standard C++ library\footnote{gmane.comp.gcc.libstdc++.devel is list ID in GMANE.}, with computer programmers from different countries. English is the language used the most. Abbreviated as CPP from now on.
-    \item List of the MetaReciclagem project\footnote{gmane.politics.organizations.metareciclagem is list ID in GMANE.}, with Brazilian activists holding digital culture interests. Portuguese is the most used language, although Spanish and English are also incident. Abbreviated MET from now on.
+	\item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE.}, with participants holding hybrid artistic and technological interests, from different countries. English is the language used the most. Abbreviated as LAU from now on.
+	\item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE.}, with participants from different countries, and English is the language used the most. A more technical and less active version of LAU. Abbreviated LAD from now on.
+	\item Development list for the standard C++ library\footnote{gmane.comp.gcc.libstdc++.devel is list ID in GMANE.}, with computer programmers from different countries. English is the language used the most. Abbreviated as CPP from now on.
+	\item List of the MetaReciclagem project\footnote{gmane.politics.organizations.metareciclagem is list ID in GMANE.}, with Brazilian activists holding digital culture interests. Portuguese is the most used language, although Spanish and English are also incident. Abbreviated MET from now on.
 \end{itemize} 
 
- The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages indicated in Table~\ref{tab:genLists}.
+The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages indicated in Table~\ref{tab:genLists}.
 
 \begin{table}
-  \centering
-  \caption{Columns $date_1$ and $date_M$ have dates of first and last messages from the 20,000 messages considered in each email list.
-$N$ is the number of participants (number of different email addresses).
-$\Gamma$ is the number of threads (count of messages without antecedent).
-$\overline{M}$ is the number of messages missing in the 20,000 collection, $100\frac{23}{20000}=0.115$ percent in the worst case.
-A relation holds for all lists carefully considered: as the number of participants increases, the number of threads decreases.
-This underpins a typology sketch of networks, as discussed in Section~\ref{sec:pty}.}
-  \label{tab:genLists}
-  \begin{tabular}{|l|c|c|c|c|c|}\hline
-list & $date_1$ & $date_{M}$    & $N$  & $\Gamma$ & $\overline{M}$ \\\hline
-	  \input{tables/tab1Geral}
-  \end{tabular}
+	\centering
+	\caption{Columns $date_1$ and $date_M$ have dates of first and last messages from the 20,000 messages considered in each email list.
+		$N$ is the number of participants (number of different email addresses).
+		$\Gamma$ is the number of threads (count of messages without antecedent).
+		$\overline{M}$ is the number of messages missing in the 20,000 collection, $100\frac{23}{20000}=0.115$ percent in the worst case.
+	A relation holds for all lists carefully considered: as the number of participants increases, the number of threads decreases.}
+	\label{tab:genLists}
+	\begin{tabular}{|l|c|c|c|c|c|}\hline
+		list & $date_1$ & $date_{M}$    & $N$  & $\Gamma$ & $\overline{M}$ \\\hline
+		\input{tables/tab1Geral}
+	\end{tabular}
 \end{table}
 
 
@@ -186,9 +175,9 @@ Each of these procedures are described below.
 
 
 \subsection{Time activity statistics}\label{sec:mtime}
-  Messages were counted along time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. This resulted in histograms from which patterns could be drawn. The ratio $\frac{b_h}{b_l}$ between the highest and lowest incidences on the histograms served as a hint of how the observed distribution is compared to a uniform distribution.
-  
-  The average and the dispersion were taken using circular statistics, in which each $measurement$ (data point) is represented as a complex number with modulus equal to one, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measurement\frac{2\pi}{period}$. The moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
+Messages were counted along time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. This resulted in histograms from which patterns could be drawn. The ratio $\frac{b_h}{b_l}$ between the highest and lowest incidences on the histograms served as a hint of how the observed distribution is compared to a uniform distribution.
+
+The average and the dispersion were taken using circular statistics, in which each $measurement$ (data point) is represented as a complex number with modulus equal to one, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measurement\frac{2\pi}{period}$. The moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
 
 \begin{align}\label{eq:cmom}
 	m_n&=\frac{1}{N}\sum_{i=1}^N z_i^n \nonumber\\
@@ -213,10 +202,10 @@ Networks in this article are directed and weighted, the more informative of triv
 The networks were obtained as follows: a direct response from participant B to a message from participant A yields an edge from A to B, as information went from A to B. The reasoning is: if B wrote a response to a message from A, he/she read what A wrote and formulated a response, so B assimilated information from A, thus $A \rightarrow B$. Inverting edge direction yields the status network: B read the message and considered what A wrote worth responding, giving status to A, thus $B\rightarrow A$. This article uses the information network as described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, one is added to the edge weight. Self-loops were regarded as non-informative and discarded. These human social interaction networks are reported in the literature as exhibiting scale-free and small world properties, as expected for (some) social networks~\cite{bird,newmanBook}.
 
 \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/criaRede_}
-    \caption{Formation of interaction network from email messages. Each vertex represents a participant. A reply message from participant B to a message from participant A is regarded as evidence that B received information from A and yields a directed edge. Multiple messages add ``weight'' to a directed edge. Further details are given in Section~\ref{intNet}.}
-    \label{formationNetwork}
+	\centering
+	\includegraphics[width=0.5\textwidth]{figs/criaRede_}
+	\caption{Formation of interaction network from email messages. Each vertex represents a participant. A reply message from participant B to a message from participant A is regarded as evidence that B received information from A and yields a directed edge. Multiple messages add ``weight'' to a directed edge. Further details are given in Section~\ref{intNet}.}
+	\label{formationNetwork}
 \end{figure}
 
 
@@ -233,7 +222,7 @@ average degree nodes than the distribution $P(k)$ of an Erd\"os-R\'enyi
 network with the same number of vertices and edges. Indeed, we define in this work the intermediary sector of a network to be the set of all the nodes whose degree is less abundant in the real network than on the Erd\"os-R\'enyi model:
 
 \begin{equation}\label{criterio}
-    \widetilde{P}(k)<P(k) \Rightarrow \text{k is intermediary degree}
+	\widetilde{P}(k)<P(k) \Rightarrow \text{k is intermediary degree}
 \end{equation}
 
 If $\mathcal{N}_f$ is directed and has no self-loops, the probability
@@ -241,379 +230,330 @@ of an edge between two arbitrary vertices is $p_e=\frac{z}{N(N-1)}$.
 A vertex in the ideal Erd\"os-R\'enyi digraph with the same number of vertices and edges, and thus the same probability $p_e$ for the presence of an edge, will have degree $k$ with probability:
 
 \begin{equation}
-    P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
+	P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
 \end{equation}
 
 The lower degree fat tail represents the border vertices, i.e. the peripheral sector or periphery where $\widetilde{P}(k)>P(k)$ and $k$ is lower than any intermediary sector value of $k$. The higher degree fat tail is the hub sector, i.e. $\widetilde{P}(k)>P(k)$ and $k$ is higher than any intermediary sector value of $k$. The reasoning for this classification is: 1) vertices so connected that they are virtually inexistent in networks connected at pure chance (e.g. without preferential attachment) are correctly associated to the hubs sector. Vertices with very few connections, which are way more abundant than expected by pure chance, are assigned to the periphery. Vertices with degree values predicted as the most abundant if connections are created by pure chance, near the average, and less frequent in scale-free phenomena, are classified as intermediary.
 
 \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/fser_}
-    \caption{Degree distribution of scale-free and Erd\"os-R\'enyi ideal networks. The latter has more
-        intermediary vertices, while the former has more peripheral and hub vertices. The sector borders are defined by the two intersections $k_\Leftarrow$ and $k_\Rightarrow$ of the connectivity distributions. Characteristic degrees
-    are in compact intervals of degree: $[0,k_\Leftarrow]$, $(k_\Leftarrow,k_\Rightarrow]$, $(k_\Rightarrow,k_{max}]$ for the Erd\"os sectors (periphery, intermediary and hubs).}
-    \label{fig:setores}
-\end{figure}
-
-To ensure statistical validity of the histograms, bins can be chosen to contain at least $\eta$ vertices of the real network. Thus, each bin, starting at degree $k_i$, spans $\Delta_i=[k_{i},k_{j}]$ degree values, where $j$ is the smallest integer with which there are at least $\eta$ vertices with degree larger than or equal $k_i$, and less than or equal $k_{j}$. This changes equation~\ref{criterio} to:
-
-\begin{equation}\label{criterio2}
-    \sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i is intermediary}
-\end{equation}
-
-If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used for comparison, with $\overline{w}=2\frac{z}{\sum_is_i}$ the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees ($k^{in}$, $k^{out}$) comparison of the real network should be made with:
-\begin{equation}
-\hat{P}(k^{way})=\binom{N-1}{k^{way}}p_e^k(1-p_e)^{N-1-k^{way}}
-\end{equation}
-
-\noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths ($s^{in}$, $s^{out}$) are divided by $\overline{w}$ and compared also using $\hat{P}$. Note that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$ as with the total degree.
-
-In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$, and the basic six Erd\"os sectioning possibilities $\{E_{\gamma}\}$ have three Erd\"os sectors $E_{\gamma}= \{e_{\gamma, \phi} \}$ defined as:
-
-\begin{alignat}{3}\label{eq:part}
-e_{\gamma,1}&=\{\;i\;|\;\overline{k}_{\gamma,L}\geq&&\overline{k}_{\gamma,i}\} \nonumber \\
-e_{\gamma,2}&=\{\;i\;|\;\overline{k}_{\gamma,L}<\;&&\overline{k}_{\gamma,i}\leq\overline{k}_{\gamma,R}\} \\ 
-e_{\gamma,3}&=\{\;i\;|\;&&\overline{k}_{\gamma,i}<\overline{k}_{\gamma,R}\} \nonumber
-\end{alignat}
-
-\noindent where $\{\overline{k}_{\gamma,i}\}$ is:
-
-\begin{equation}
-\begin{split}
-\overline{k}_{1,i}&=k_i \\
-\overline{k}_{2,i}&=k_i^{in} \\
-\overline{k}_{3,i}&=k_i^{out} \\
-\overline{k}_{4,i}&=\frac{s_i}{\overline{w}} \\
-\overline{k}_{5,i}&=\frac{s_i^{in}}{\overline{w}} \\
-\overline{k}_{6,i}&=\frac{s_i^{out}}{\overline{w}} \\
-\end{split}
-\end{equation}
-
-\noindent and both $\overline{k}_{\gamma,L}$ and $\overline{k}_{\gamma,R}$ are found using $P(\overline{k})$ or $\hat{P}(\overline{k})$ as described above.
-
-Since different metrics can be used to identify the three types of vertices, compound criteria can be defined. For example, a very stringent criterion can be used, according to which a vertex is only regarded as pertaining to a sector if it is so for all the metrics. After a careful consideration of possible combinations, these were reduced to six:
-
-\begin{itemize}
-    \item Exclusivist criterion $C_1$:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified (usually) do not reach 100\%, which is indicated by a black line in Figures~\ref{fig:sectIL}.
-    \item Inclusivist criterion $C_2$: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and total members may add more than 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
-    \item Exclusivist cascade $C_3$: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
-    \item Inclusivist cascade $C_4$: vertices are hubs if they are classified as so according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
-    \item Exclusivist externals $C_5$: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes by any metric. The rest of the nodes are classified as intermediary.
-    \item Inclusivist externals $C_6$: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
-\end{itemize}
-
-Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$ integer in the interval $1<\delta<6$ can be described as:
-
-%\begin{alignat}{3}
-\begin{equation}
-\begin{split}
-%\begin{multline}
-C_1&=\{c_{1,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi}, \;\forall\; \gamma\}\right\} \\
-C_2&=\{c_{2,\phi}=\left\{i\mid \exists \;\;\gamma: i \in e_{\gamma,\phi}\}\right\} \\
-C_3&=\{c_{3,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\;\forall\;\phi'\geq \phi\}\right\} \\
-C_4&=\{c_{4,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\;\forall\;\phi'\leq \phi\}\right\} \\
-C_5&=\{c_{5,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\right.\\
-	  &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\leq (\phi+1)\%4\}\right\} \\
-C_6&=\{c_{6,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\right.\\
-	  &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\geq (\phi+1)\%4\}\right\} \\
-%\end{multline}
-\end{split}
-\end{equation}
-%\end{alignat}
-
-The simplification of all the compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of the scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors precedence. These compound criteria can be used to examine network sections in the case of a low number of messages, such as in the last figures of Support Information.
-
-
-\subsection{Topological metrics for Principal Component Analysis}\label{measures}
-
-The topology of the networks was studied using Principal Component Analysis (PCA~\cite{pca}) with a small selection of the most basic and fundamental measurements for each vertex, as follows:
-
-\begin{itemize}
-    \item Degree     $k_i$: number of edges linked to vertex $i$.
-    \item In-degree  $k_i^{in}$: number of edges ending at vertex $i$.
-    \item Out-degree $k_i^{out}$: number of edges departing from vertex $i$.
-    \item Strength $s$: sum of weights of all edges linked to vertex $i$.
-    \item In-strength $s_i^{in}$: sum of weights of all edges ending at vertex $i$.
-    \item Out-strength $s_i^{out}$: sum of weights of all edges departing from vertex $i$.
-    \item Clustering coefficient $cc_i$: fraction of pairs of neighbors of $i$ that are linked.  The standard clustering coefficient for undirected graphs was used.
-    \item Betweenness centrality $bt_i$: fraction of geodesics that contain vertex $i$. The betweenness centrality index considered directions and weight, as specified in~\cite{faster}.
-\end{itemize}
-
-In order to capture symmetries in the activity of participants, the following metrics were introduced for a vertex $i$: 
-
-\begin{itemize}
-    \item Asymmetry: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
-    \item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$. Where $e_{xy}$ is 1 if there is and edge from $x$ to $y$, $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|=k_i$ is the number of neighbors of vertex $i$.
-    \item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
-    \item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
-    \item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
-    \item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
-\end{itemize}
-
-\subsection{Evolution and visualization of the networks}\label{sec:viz}
-   The evolution of the networks was observed within a fixed number of messages, which we refer to as the window size $ws$. This same number of contiguous messages $ws$ was considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used both to perform the Erd\"os sectioning and apply PCA for the topological metrics.  
-The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics. Such changes could be visualized with the tools described below. 
-
-Networks were visualized with animations, image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations. Furthermore, the size of three sectors could be visualized in a timeline fashion (Figure~\ref{fig:sectIL}). Visualization of network structure was especially useful as part of the email lists data mining, from which parts of relevant structures and results were driven.
-
-%\subsection{Typology speculation}\label{subsec:typ}
-%Qualitative, typological speculations were the result of all the methodology. More specifically, the Erd\"os sectors was regarded as yielding a \emph{primitive typology} of human agents in social contexts with at least dozens of participants. 
-%Visualization and data mining were efficient in fueling speculations about the qualities of each type. 
-%The stability found in principal components of topological measures suggested that this primitive typology is general for (practically) all human contexts.
-%Also, the first author is a developer with cultural interests and has been directly and indirectly part of these communities for more than a decade.  This gave further safety about assumptions although care was taken not to regard this acquaintanceship as primary source or as definitive evidence.
-%The interested reader should see Appendix~\ref{ap:typ} for further context, 
-%as it might be considered audacious to bridge from a physics-based, 
-%quantitative classification to a qualitative and speculative approach.
-
-\section{Results and discussion}\label{sec:results}
-
-
-%Remarkable features from the analysis of the four email lists are:
-%\begin{itemize}
-%    \item The activity along time is practically the same for all lists, thus suggesting stable patterns.
-%    \item The fraction of participants in each Erd\"os sector is stable along time and can be determined even with very few messages 
-%    \item The topological metrics combine into principal components in PCA in the same way for all lists and all snapshots (). 
-%        \item Symmetry measures of the topology, as defined in this article, present more dispersion than the usual clustering coefficient (Section~\ref{prevalence}).
-%    \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
-%\end{itemize}
-
-\subsection{Activity along time}\label{constDisc}
-
-The activity along time, in terms of seconds, minutes, hours, days and months,  is practically the same for all lists.
-Using circular statistics we calculated average values and their dispersion for activity in all time scales, and found that both average and dispersion were very similar in all the lists.
-Table II shows the …….. 
-We chose to give detailed values in Table~\ref{tab:circ}-\ref{tab:min2} because these numbers can actually be used for characterizing nodes (participants) in other networks, as they are independent of the network under analysis. For example, they may serve for identification of outliers in a community.
-
-Values are exemplified with Tables and Support information.
-The pattern is the homogeneity for seconds and minutes.
-Hours of the day revealed an abrupt peak around 11am with most active period being the afternoon.
-Days of the week revealed a decrease of at least one third and at most two thirds of activity on weekends.
-Days of the month were regarded as homogeneous with an inconclusive slight tendency of first week to be more active.
-Months of the year revealed patterns matching usual work and academic calendars.
-The time period examined here was not sufficient for the analysis of activity along the years.
-
-Messages were slightly more evenly distributed in all lists than in simulations\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.} using uniform distribution for both seconds and minutes: $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$. Simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
-Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected and the pattern is the uniformity. Circular dispersion is maximized and the mean has little meaning as exposed in Table~\ref{tab:circ}. Patterns in each of the other time scales are detailed in histogram Tables~\ref{tab:hin}-\ref{tab:min2} and further exemplified in Supporting Information.
-
-\begin{table}
-	\caption{The rescaled circular mean $\theta_\mu'$ and the circular dispersion $\delta(z)$ described in Section~\ref{sec:mtime}. This typical table was made using all LAD list messages, and the results are the same for other lists, as exposed in Supporting Information. Most uniform distribution of activity was found in seconds and minutes, where the mean has little meaning. Hours of the day exhibited the most concentrated activity (lowest $\delta(z)$), with mean between 14h and 15h ($\theta'=-9.61$). Weekdays, month days and months have mean near zero (i.e. near the beginning of the week, month and year) and high dispersion.}
-	\begin{center}
-    \begin{tabular}{ |l|| c|c| }
-        \hline
-%scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
-%& $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$  \\ \hline\hline
-& $\theta_\mu'$ & $\delta(z)$  \\ \hline\hline
-	\input{tables/tab2TimeLAD___}
-    \end{tabular}
-\end{center}
-\label{tab:circ}
-\end{table}
-
-
-
-\begin{table}
-	\caption{Activity percentages along the hours of the day for the CPP list. Nearly identical distributions are found on other lists as exposed in Supporting Information. Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.}
-	\footnotesize
-	\input{tables/tabHoursCPP_}
-\label{tab:hin}
-\end{table}
-
-
-\FloatBarrier
-\begin{table}
-	\caption{Activity percentages along the days of the week for all four example lists. Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.}
-\begin{center}
-    \begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
-        \hline
-        & Mon & Tue & Wed & Thu & Fri & Sat & Sun  \\ \hline
-	\input{tables/tabWeekdays}
-    \end{tabular}
-\end{center}
-\label{tab:win}
-\end{table}
-\begin{table}
-	\caption{Activity in the days along the month for MET list. Nearly identical distributions are found on other lists as exposed in Supporting Information. Although slightly higher activity rates are found in the beginning of the month, the most important trait seems to be the homogeneity made explicit by the high circular dispersion on Table~\ref{tab:circ}.}
-	\footnotesize
-	\input{tables/tabMonthdaysMET}
-\label{tab:min}
-\end{table}
-
-\begin{table}
-	\caption{Activity percentages of the months along the year from LAU list. Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Support Information). These observations fit academic calendars, vacations and end-of-year holidays.}
-	\footnotesize
-	\input{tables/tabMonthsLAU}
-\label{tab:min2}
-\end{table}
-
-%\vspace*{.5cm}
-\subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
-
-There is a concentration of hub activity and an abundance of vertex with few connections. Table~\ref{autores} shows this expected distribution of activity among participants in a scale-free context.
-
-\begin{table}[h]
-    \caption{Distribution of activity among participants. The first column presents the percentage of messages sent by the most active participant. The column for the first quartile ($1Q$) shows the minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ gives the minimum percentage of participants responsible for 75\% of total messages. The last decile $-10D$ column brings the maximum percentage of participants responsible for 10\% of messages.}
-\begin{center}
-    \begin{tabular}{ | l ||  c | c | c | c | }
-        \hline
-        list & hub & $ 1Q $ & $ 1-3Q $ & $-10D$ \\ \hline
-	\input{tables/userTab}
-    \end{tabular}
-\end{center}
-\label{autores}
-\end{table}
-
-The distribution of vertices in the hubs, intermediary, periphery Erd\"os sectors defined in Section~\ref{sectioning} is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. 
-Moreover, the same distribution applies to the networks of all the four email lists, as demonstrated in Figure~\ref{fig:sectIL} and the Support Information. 
-Typically, $\approx [3-12]\%$ of the vertices are found to be hubs, $\approx [15-45]\%$ are intermediary and $\approx [44-81]\%$ are peripheral, which is consistent with the literature~\cite{secFree}.
-These results hold for the total, in and out degrees and strengths.
-Stable distributions can also be obtained for 100 or less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. 
-The networks hold their basic structure with as few as 10-50 messages; concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of the Support Information.
-A minimum window size for observation of more general properties might be inferred by monitoring the giant component and the degeneration of the Erd\"os sectors.
-
-
-\begin{figure*} 
-   \centering
-        \includegraphics[width=\textwidth]{figs/InText-WLAU-S1000}
-	\caption{Fraction of agents in each Erd\"os sector. Hubs, intermediary and periphery fractions are represented in red, green and blue. For this figure, we used two simple criteria, namely degree and strength, for the graphics on the left. For the graphs on the right we employed the Exclusivist and inclusivist compound criteria, with black lines representing the fraction of vertices without class and with more than one class, respectively. See Support Information for a collection of such timeline figures with all simple and compound criteria and metrics.}
-    \label{fig:sectIL}
-\end{figure*}
-
-
-\subsection{Stability of principal components and the prevalence of symmetry over clusterization for dispersion}\label{prevalence}
-The topology was analyzed using standard, well-established metrics of centrality and clustering.
-We also introduced symmetry metrics because of evidence of their importance in social contexts~\cite{newmanEvolving}.
-The contribution of each metric to the variance is very similar for all the networks, and did not vary with time.
-In applying PCA to the snapshots, the contribution of each metric to the principal components resulted in very small standard deviation. Table~\ref{tab:pcain} exemplifies the principal components formation with all the metrics considered for the MET email list. Similar results are presented in the Support Information for the other lists, and considering only a few metrics.
-
-\begin{table}[!h]
-	\caption{Loadings for the 14 metrics into the principal components for the MET list, $ws=1000$ messages in 20 disjoint positioning. The clustering coefficient (cc) appears as the first metric in the Table, followed by 7 centrality metrics and 6 symmetry-related metrics. Note that the centrality measurements, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics. The clustering coefficient is only relevant for the third principal component. The three components have in average 80.36\% of the variance.}
-	\footnotesize
-	\input{tables/tabPCA3CPP}
-\label{tab:pcain}
-\end{table}
-
-The first principal component is an average of centrality metrics: degrees, strengths and betweenness centrality. Therefore, all of these centrality measurements are equally important for characterizing the networks. On one hand, the relevance of all centrality metrics is not surprising since they may be highly correlated. The degree and strength, for instance, are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$.
-On the other hand, each measure relates to a different participation characteristic, and their equal relevance is noticeable.
-The clustering coefficient is presented in almost perfect orthogonality to centrality measures.
-\begin{figure*} 
-   \centering
-        \includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
-	\caption{The first plot shows degree versus clustering coefficient. This typical pattern is well known and presented in basic text books: high clustering is more incident in vertices with lower degrees.
-		The second plot is very similar but the first component is an average of centrality metrics. The second component remains related to clustering coefficient.
-		The third plot exhibits the greater dispersion in the symmetry-related second component.
-		In this case, clustering coefficient is only relevant for the third component.
-		Greater dispersion suggests that symmetry-related metrics are more powerful for characterizing interaction networks than clustering coefficient, especially for hubs and intermediary vertices.
-		This prevalence of the symmetry-related measures over clustering coefficient for the dispersion of participants in the space of topological measures is an important result from the PCA analysis, together with temporal stability of components formation, and can be observed in Table~\ref{tab:pcain}.
-		This figure was done with a snapshot of the LAU list in a window size of $ws = 1000$ messages.
-		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which points to a common relationship between the measures of degree, strength and betweenness centrality, the measures of symmetry and the measure of clustering coefficient described in Section~\ref{measures}.
-    }
-    \label{fig:sym}
-\end{figure*}
-
-
-Dispersion was more prevalent in symmetry-related metrics than the clustering coefficient. These relations are presented in Figure~\ref{fig:sym} and Table~\ref{tab:pcain}.
-Plots of vertices in the components exhibited in Table~\ref{tab:pcain} are shown in Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong to. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the third component (clustering related).
-The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects symmetry metrics relevance for the variance.
-We concluded that the symmetry-related measurements can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
-
-
-%\begin{figure} 
-%   \centering
-%        \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
-%    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. The principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. The second component is mostly clustering coefficient Table~\ref{compPCA} shows the composition of principal components. Similar plots were obtained for all window sizes $ws\;\in\;[500,10000]$, and for the networks of the other email lists, which demonstrates a common relation held by degree, strength and betweenness measures to clustering coefficient.}
-%    \label{PCA}
-%\end{figure}
-
-%\begin{figure} 
-%   \centering
-%        \includegraphics[width=\columnwidth]{figs/ev0pr11CC}
-%    \caption{Clustering coefficient versus degree of vertices with a window size of $ws = 1000$ email messages, LAU list. The general layout is consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.}
-%    \label{clust}
-%\end{figure}
-
-%\begin{figure} 
-%   \centering
-%        \includegraphics[width=\columnwidth]{figs/ev0pr1PCA}
-%    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of (in-,  out- and total) degree, (in-,  out- and total) strength, betweenness centrality, clustering coefficient and symmetry-related measurements. The composition of the first three components are shown in Table~\ref{compPCA2} and metrics details are given in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertices.}
-%    \label{PCA2}
-%\end{figure}
-
-    \subsection{Primitive types from Erd\"os sectors}\label{sec:pty}
-
-Let a sector to which a vertex belongs yield a type for the corresponding participant. Accordingly, a participant may be considered peripheral, intermediary or a hub. This trivial consideration raises important questions:  what do we know about each type and about the typology itself? Is this typology stigmatizing or prejudice inclined in any way?
-
-These general considerations will help us answer such questions:
-\begin{itemize}
-	\item A participant belongs to many networks (his family, family of a friend, the email list to which he belongs, work friends, etc.).
-	\item A participant might belong to all three sectors at the same time. Actually, it is reasonable to assume that almost every person belongs to all three sectors for some of the networks.
-	\item The participant often transitions from one sector to another within a network.
-	\item Reported stability of network structure is concomitant with the continuous change of participants and the type of each participant.
-\end{itemize}
-
-We can assume that the typology is not stigmatizing because the type of an individual changes constantly~\cite{adorno}. That is to say, an individual is a hub in a number of networks and peripheral in other networks, and even within a network he/she probably changes type along time.
-
-To further insights we inspected raw data and visualized the evolving networks~\cite{rcText,versinus}. This allowed us to infer relevant characteristics of each type:
-
-\begin{itemize}
-    \item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which motivated its integration to Supporting Information. There are reports in the literature of greater stability of activity in smaller communities~\cite{barabasiEvo}, which is the reason why the smaller number of participants in MET was considered coherent with the stable activity of MET hubs.
-    \item Typically, the activity of hubs is trivial: they interact as much as possible, in every occasion with everyone. The activity of peripheral vertices also follows a simple pattern: they interact very rarely, in very few occasions. Therefore, intermediary vertices seem responsible for the network structure. Intermediary vertices may exhibit preferential communication to peripheral, intermediary, or hub vertices; can be marked by stable communication partners; can involve stable or intermittent patterns of activity.
-    \item Some of the most active participants receive many responses with relative few messages sent, and rarely are top hubs. These seem as authorities and contrast with participants that respond much more than receive responses.
-    \item The most obvious community structure, as observed by a high clustering coefficient, is found only in peripheral and intermediary sectors.
-\end{itemize}
-
-This typology bridges exact and human sciences and may be enriched with concepts from other typologies, such as Meyer-Briggs, Pavlov or the authoritarian types of the F-Scale~\cite{adorno}.
-
-With regard to the networks as the whole objects of analysis, we observed that there are two contrasting types of network: i) those with few and stable agents, where the number of threads per message is large; ii) others with many agents displaying intermittent activity, for which the number of threads per message is considerably lower than for the other type of network.
-This result is exemplified in Table~\ref{tab:genLists} and is also consistent with the literature~\cite{barabasiEvo}, which reports that the smaller size of communities is responsible for the stronger hubs observed.
- 
-\section{Conclusions and further work}\label{sec:conc}
-This work reports the stability of temporal activity, of the formation of principal components and of the relative sizes of periphery, intermediary and hubs Erd\"os sectors.
-These results suggest and ease the observance of types in both agents and the networks, and initial considerations reported for completeness of exposition and as a bridge between the physical approach and the standard legacy for the observation of human types.
-
-Significant differences were found in the textual production of each Ed\"os sector~\cite{rcText}.
-Also, the network time evolution visualization used here has received dedicated technologies and literature~\cite{gmanePack,versinus}.
-Implementations and consequences of these results are taking place in software packages, linked data, 
-electronic government technologies, and anthropological physics experiments~\cite{gmanePack,ops,opa,ensaio,anPhy}.
-
-Observed stability is coherent with literature in different aspects, 
-such as the concentration of activity and as the clusterization versus connectivity pattern.
-From our experience, the analysis of data from other virtual environments (e.g. Facebook, Twitter and LinkedIn),
-exhibited the same patterns.
-A systematic inclusion of such networks to the presented analysis should help bounding or generalizing results.
-
-Other future work envisioned include:
-\begin{itemize}
-	\item a mathematical characterization of the Erd\"os sectioning in terms of $N$, $z$, $p$, $\gamma$ (scale-free exponent),
-minimum and maximum degrees and strengths, and the fraction of participants in each sector. 
-	\item Enhancement of the characterization with PCA with the addition of topological measures and separated analysis of each Erd\"os sector. 
-	\item Further inspection of participation and network types by means of virtual traces of activity.
-	\item Observe activity in larger timescale, such as decades. Maybe considering literature output in other media.
-	\item Visualization and sonification of social networks~\cite{gmanePack}.
-	\item Feedback of the results to the communities whose data was studied. Enriching the results with collective maturing.
-	\item Anthropological considerations of physics research involving human social systems (anthropological physics?).
-\end{itemize}
-
-
-\begin{acknowledgments}
-Renato Fabbri is grateful to CNPq (process: 140860/2013-4,
-project 870336/1997-5), United Nations Development Program (PNUD/ONU, contract: 2013/000566; project BRA/12/018)  and 
-the Postgraduate Committee of the IFSC/USP. This author is also grateful for
-the American Jewish Committee for maintaining an online copy of the Adorno book
-used on the epigraph~\cite{adorno}. Authors thank Gmane creators and maintainers. Authors thank referred email lists communities and welcome feedback as core contribution to this, and similar, research. Finally, authors thank the developers and users of Python scientific tools.
-\end{acknowledgments}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\appendix
-\section{Data and scripts}\label{scripts}
-Messages were downloaded from the Gmane public database~\cite{GMANEwikipedia}.
-All routines necessary to achieve the results reported in this article, including tables and figures of Supporting information, are available through a public domain Python package and an open Git repository~\cite{gmanePack}.
-
-%\nocite{*}
-\bibliography{paper}% Produces the bibliography via BibTeX.
-
-\end{document}
-%
-% ****** End of file aipsamp.tex ******
+	\centering
+	\includegraphics[width=0.5\textwidth]{figs/fser_}
+	\caption{Degree distribution of scale-free and Erd\"os-R\'enyi ideal networks. The latter has more
+		intermediary vertices, while the former has more peripheral and hub vertices. The sector borders are defined by the two intersections $k_\Leftarrow$ and $k_\Rightarrow$ of the connectivity distributions. Characteristic degrees
+																											are in compact intervals of degree: $[0,k_\Leftarrow]$, $(k_\Leftarrow,k_\Rightarrow]$, $(k_\Rightarrow,k_{max}]$ for the Erd\"os sectors (periphery, intermediary and hubs).}
+																											\label{fig:setores}
+																										\end{figure}
+
+																										To ensure statistical validity of the histograms, bins can be chosen to contain at least $\eta$ vertices of the real network. Thus, each bin, starting at degree $k_i$, spans $\Delta_i=[k_{i},k_{j}]$ degree values, where $j$ is the smallest integer with which there are at least $\eta$ vertices with degree larger than or equal $k_i$, and less than or equal $k_{j}$. This changes equation~\ref{criterio} to:
+
+																										\begin{equation}\label{criterio2}
+																											\sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i is intermediary}
+																										\end{equation}
+
+																										If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used for comparison, with $\overline{w}=2\frac{z}{\sum_is_i}$ the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees ($k^{in}$, $k^{out}$) comparison of the real network should be made with:
+																										\begin{equation}
+																											\hat{P}(k^{way})=\binom{N-1}{k^{way}}p_e^k(1-p_e)^{N-1-k^{way}}
+																										\end{equation}
+
+																										\noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths ($s^{in}$, $s^{out}$) are divided by $\overline{w}$ and compared also using $\hat{P}$. Note that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$ as with the total degree.
+
+																										In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$, and the basic six Erd\"os sectioning possibilities $\{E_{\gamma}\}$ have three Erd\"os sectors $E_{\gamma}= \{e_{\gamma, \phi} \}$ defined as:
+
+																										\begin{alignat}{3}\label{eq:part}
+																											e_{\gamma,1}&=\{\;i\;|\;\overline{k}_{\gamma,L}\geq&&\overline{k}_{\gamma,i}\} \nonumber \\
+																											e_{\gamma,2}&=\{\;i\;|\;\overline{k}_{\gamma,L}<\;&&\overline{k}_{\gamma,i}\leq\overline{k}_{\gamma,R}\} \\ 
+																											e_{\gamma,3}&=\{\;i\;|\;&&\overline{k}_{\gamma,i}<\overline{k}_{\gamma,R}\} \nonumber
+																										\end{alignat}
+
+																										\noindent where $\{\overline{k}_{\gamma,i}\}$ is:
+
+																										\begin{equation}
+																											\begin{split}
+																												\overline{k}_{1,i}&=k_i \\
+																												\overline{k}_{2,i}&=k_i^{in} \\
+																												\overline{k}_{3,i}&=k_i^{out} \\
+																												\overline{k}_{4,i}&=\frac{s_i}{\overline{w}} \\
+																												\overline{k}_{5,i}&=\frac{s_i^{in}}{\overline{w}} \\
+																												\overline{k}_{6,i}&=\frac{s_i^{out}}{\overline{w}} \\
+																											\end{split}
+																										\end{equation}
+
+																										\noindent and both $\overline{k}_{\gamma,L}$ and $\overline{k}_{\gamma,R}$ are found using $P(\overline{k})$ or $\hat{P}(\overline{k})$ as described above.
+
+																										Since different metrics can be used to identify the three types of vertices, compound criteria can be defined. For example, a very stringent criterion can be used, according to which a vertex is only regarded as pertaining to a sector if it is so for all the metrics. After a careful consideration of possible combinations, these were reduced to six:
+
+																										\begin{itemize}
+																											\item Exclusivist criterion $C_1$:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified (usually) do not reach 100\%, which is indicated by a black line in Figures~\ref{fig:sectIL}.
+																											\item Inclusivist criterion $C_2$: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and total members may add more than 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
+																											\item Exclusivist cascade $C_3$: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
+																											\item Inclusivist cascade $C_4$: vertices are hubs if they are classified as so according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
+																											\item Exclusivist externals $C_5$: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes by any metric. The rest of the nodes are classified as intermediary.
+																											\item Inclusivist externals $C_6$: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
+																										\end{itemize}
+
+																										Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$ integer in the interval $1<\delta<6$ can be described as:
+
+																										%\begin{alignat}{3}
+																										\begin{equation}
+																											\begin{split}
+																												%\begin{multline}
+																												C_1&=\{c_{1,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi}, \;\forall\; \gamma\}\right\} \\
+																												C_2&=\{c_{2,\phi}=\left\{i\mid \exists \;\;\gamma: i \in e_{\gamma,\phi}\}\right\} \\
+																												C_3&=\{c_{3,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\;\forall\;\phi'\geq \phi\}\right\} \\
+																												C_4&=\{c_{4,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\;\forall\;\phi'\leq \phi\}\right\} \\
+																												C_5&=\{c_{5,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\right.\\
+																																					 &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\leq (\phi+1)\%4\}\right\} \\
+																												C_6&=\{c_{6,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\right.\\
+																																					 &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\geq (\phi+1)\%4\}\right\} \\
+																												%\end{multline}
+																											\end{split}
+																										\end{equation}
+																										%\end{alignat}
+
+																										The simplification of all the compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of the scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors precedence. These compound criteria can be used to examine network sections in the case of a low number of messages, such as in the last figures of Support Information.
+
+
+																										\subsection{Topological metrics for Principal Component Analysis}\label{measures}
+
+																										The topology of the networks was studied using Principal Component Analysis (PCA~\cite{pca}) with a small selection of the most basic and fundamental measurements for each vertex, as follows:
+
+																										\begin{itemize}
+																											\item Degree     $k_i$: number of edges linked to vertex $i$.
+																											\item In-degree  $k_i^{in}$: number of edges ending at vertex $i$.
+																											\item Out-degree $k_i^{out}$: number of edges departing from vertex $i$.
+																											\item Strength $s$: sum of weights of all edges linked to vertex $i$.
+																											\item In-strength $s_i^{in}$: sum of weights of all edges ending at vertex $i$.
+																											\item Out-strength $s_i^{out}$: sum of weights of all edges departing from vertex $i$.
+																											\item Clustering coefficient $cc_i$: fraction of pairs of neighbors of $i$ that are linked.  The standard clustering coefficient for undirected graphs was used.
+																											\item Betweenness centrality $bt_i$: fraction of geodesics that contain vertex $i$. The betweenness centrality index considered directions and weight, as specified in~\cite{faster}.
+																										\end{itemize}
+
+																										In order to capture symmetries in the activity of participants, the following metrics were introduced for a vertex $i$: 
+
+																										\begin{itemize}
+																											\item Asymmetry: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
+																											\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$. Where $e_{xy}$ is 1 if there is and edge from $x$ to $y$, $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|=k_i$ is the number of neighbors of vertex $i$.
+																											\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
+																											\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
+																											\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
+																											\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
+																										\end{itemize}
+
+																										\subsection{Evolution and visualization of the networks}\label{sec:viz}
+																										The evolution of the networks was observed within a fixed number of messages, which we refer to as the window size $ws$. This same number of contiguous messages $ws$ was considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used both to perform the Erd\"os sectioning and apply PCA for the topological metrics.  
+																										The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics. Such changes could be visualized with the tools described below. 
+
+																										Networks were visualized with animations, image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution, and prompted us to capture the prominence of topological metrics along time using mean and standard deviations. Furthermore, the size of three sectors could be visualized in a timeline fashion. Visualization of network structure was especially useful as part of the email lists data mining, from which parts of relevant structures and results were driven.
+
+																										%\subsection{Typology speculation}\label{subsec:typ}
+																										%Qualitative, typological speculations were the result of all the methodology. More specifically, the Erd\"os sectors was regarded as yielding a \emph{primitive typology} of human agents in social contexts with at least dozens of participants. 
+																										%Visualization and data mining were efficient in fueling speculations about the qualities of each type. 
+																										%The stability found in principal components of topological measures suggested that this primitive typology is general for (practically) all human contexts.
+																										%Also, the first author is a developer with cultural interests and has been directly and indirectly part of these communities for more than a decade.  This gave further safety about assumptions although care was taken not to regard this acquaintanceship as primary source or as definitive evidence.
+																										%The interested reader should see Appendix~\ref{ap:typ} for further context, 
+																										%as it might be considered audacious to bridge from a physics-based, 
+																										%quantitative classification to a qualitative and speculative approach.
+
+																										\section{Results and discussion}\label{sec:results}
+
+
+																										%Remarkable features from the analysis of the four email lists are:
+																										%\begin{itemize}
+																										%    \item The activity along time is practically the same for all lists, thus suggesting stable patterns.
+																										%    \item The fraction of participants in each Erd\"os sector is stable along time and can be determined even with very few messages 
+																										%    \item The topological metrics combine into principal components in PCA in the same way for all lists and all snapshots (). 
+																										%        \item Symmetry measures of the topology, as defined in this article, present more dispersion than the usual clustering coefficient (Section~\ref{prevalence}).
+																										%    \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
+																										%\end{itemize}
+
+																										\subsection{Activity along time}\label{constDisc}
+
+																										The activity along time, in terms of seconds, minutes, hours, days and months,  is practically the same for all lists.
+																										Using circular statistics we calculated average values and their dispersion for activity in all time scales, and found that both average and dispersion were very similar in all the lists. We chose to give detailed values in Table~\ref{tab:circ}-\ref{tab:min2} because these numbers can actually be used for characterizing nodes (participants) in other networks, as they are independent of the network under analysis. For example, they may serve for identification of outliers in a community.
+
+																									In the scale of seconds and minutes, activity obeys a homogeneous pattern, with the messages being slightly more evenly distributed in all lists than in simulations\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.} using uniform distribution: $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$. Simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
+																									Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected. Circular dispersion is maximized and the mean has little meaning as indicated in Table~\ref{tab:circ}. As for the hours of the day, an abrupt peak appeared around 11am with the most active period being the afternoon. Days of the week revealed a decrease of at least one third and at most two thirds of activity on weekends. Days of the month were regarded as homogeneous with an inconclusive slight tendency of the first week being more active. Months of the year revealed patterns matching usual work and academic calendars. The time period examined here was not sufficient for the analysis of activity along the years. These patterns are exemplified in Tables~\ref{tab:hin}-\ref{tab:min2}.
+
+
+																									\begin{table}
+																										\caption{The rescaled circular mean $\theta_\mu'$ and the circular dispersion $\delta(z)$ described in Section~\ref{sec:mtime}. This typical table was made using all LAD list messages, and the results are the same for other lists, as shown in the Supporting Information. Most uniform distribution of activity was found in seconds and minutes, where the mean has little meaning. Hours of the day exhibited the most concentrated activity (lowest $\delta(z)$), with mean between 14h and 15h ($\theta'=-9.61$). Weekdays, month days and months have mean near zero (i.e. near the beginning of the week, month and year) and high dispersion.}
+																										\begin{center}
+																											\begin{tabular}{ |l|| c|c| }
+																												\hline
+																												%scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+																												%& $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$  \\ \hline\hline
+																												& $\theta_\mu'$ & $\delta(z)$  \\ \hline\hline
+																												\input{tables/tab2TimeLAD___}
+																											\end{tabular}
+																										\end{center}
+																										\label{tab:circ}
+																									\end{table}
+
+
+
+																									\begin{table}
+																										\caption{Activity percentages along the hours of the day for the CPP list. Nearly identical distributions are found on other lists as shown in the Supporting Information. Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.}
+																										\footnotesize
+																										\input{tables/tabHoursCPP_}
+																										\label{tab:hin}
+																									\end{table}
+
+
+																									\FloatBarrier
+																									\begin{table}
+																										\caption{Activity percentages along the days of the week for the four email lists. Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.}
+																										\begin{center}
+																											\begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
+																												\hline
+																												& Mon & Tue & Wed & Thu & Fri & Sat & Sun  \\ \hline
+																												\input{tables/tabWeekdays}
+																											\end{tabular}
+																										\end{center}
+																										\label{tab:win}
+																									\end{table}
+																									\begin{table}
+																										\caption{Activity in the days along the month for MET list. Nearly identical distributions are found on other lists as indicated in the Supporting Information. Although slightly higher activity rates are found in the beginning of the month, the most important feature seems to be the homogeneity made explicit by the high circular dispersion in Table~\ref{tab:circ}.}
+																										\footnotesize
+																										\input{tables/tabMonthdaysMET}
+																										\label{tab:min}
+																									\end{table}
+
+																									\begin{table}
+																										\caption{Activity percentages of the months along the year from LAU list. Activity is concentrated in Jun-Aug for MET and LAD, and in Dec-Mar for CPP, LAU and LAD (see Supporting Information). These observations fit academic calendars, vacations and end-of-year holidays.}
+																										\footnotesize
+																										\input{tables/tabMonthsLAU}
+																										\label{tab:min2}
+																									\end{table}
+
+																									%\vspace*{.5cm}
+																									\subsection{Scalable fat-tail structure: constancy of membership fractions in the Erd\"os sectors}\label{subsec:pih}
+
+
+																									The distribution of vertices in the hubs, intermediary, periphery Erd\"os sectors is remarkably stable along time, provided that a sufficiently large sample of 200 or more messages is considered. 
+																									Moreover, the same distribution applies to the networks of all the four email lists, as demonstrated in Figure~\ref{fig:sectIL} and the Supporting Information. 
+																									Typically, $\approx [3-12]\%$ of the vertices are found to be hubs, $\approx [15-45]\%$ are intermediary and $\approx [44-81]\%$ are peripheral, which is consistent with the literature~\cite{secFree}.
+																									These results hold for the total, in and out degrees and strengths.
+																									Stable distributions can also be obtained for 100 or less messages if classification of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. 
+																									The networks hold their basic structure with as few as 10-50 messages; concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of the Supporting Information.
+																									A minimum window size for observation of more general properties might be inferred by monitoring the giant component and the degeneration of the Erd\"os sectors.
+
+
+																									\begin{figure*} 
+																										\centering
+																										\includegraphics[width=\textwidth]{figs/InText-WLAU-S1000}
+																										\caption{Fractions of agents in each Erd\"os sector, where the fractions for hubs, intermediary and peripheral vertices are represented in red, green and blue, respectively. We used two simple criteria, namely degree and strength, for the graphics on the left. For the graphics on the right we employed the Exclusivist and Inclusivist compound criteria, with black lines representing the fraction of vertices without class and with more than one class, respectively. See Supporting Information for a collection of such timeline figures with all simple and compound criteria and metrics.}
+																										\label{fig:sectIL}
+																									\end{figure*}
+
+																									Activity is highly concentrated on the hubs, while a very large number of peripheral vertices contribute to only a fraction of the activity. This is expected for a system with scale-free behavior, as confirmed with the data in Table~\ref{autores} for the distribution of activity among participants. (certo?)
+
+																									\begin{table}[h]
+																										\caption{Distribution of activity among participants. The first column presents the percentage of messages sent by the most active participant. The column for the first quartile ($1Q$) shows the minimum percentage of participants responsible for at least 25\% of total messages. Similarly, the column for the first three quartiles $1-3Q$ gives the minimum percentage of participants responsible for 75\% of total messages. The last decile $-10D$ column brings the maximum percentage of participants responsible for 10\% of messages.}
+																											\begin{center}
+																												\begin{tabular}{ | l ||  c | c | c | c | }
+																													\hline
+																													list & hub & $ 1Q $ & $ 1-3Q $ & $-10D$ \\ \hline
+																													\input{tables/userTab}
+																												\end{tabular}
+																											\end{center}
+																											\label{autores}
+																										\end{table}
+
+
+																										\subsection{Stability of principal components and the prevalence of symmetry over clusterization for dispersion}\label{prevalence}
+																										The topology was analyzed using standard, well-established metrics of centrality and clustering.
+																										We also introduced symmetry metrics because of evidence of their importance in social contexts~\cite{newmanEvolving}.
+																										The contribution of each metric to the variance is very similar for all the networks, and did not vary with time.
+																										In applying PCA to the snapshots, the contribution of each metric to the principal components resulted in very small standard deviation. Table~\ref{tab:pcain} exemplifies the principal components formation with all the metrics considered for the MET email list. Similar results are presented in the Supporting Information for the other lists, and considering only a few metrics.
+
+																										\begin{table}[!h]
+																											\caption{Loadings for the 14 metrics into the principal components for the MET list, $ws=1000$ messages in 20 disjoint positioning. The clustering coefficient (cc) appears as the first metric in the Table, followed by 7 centrality metrics and 6 symmetry-related metrics. Note that the centrality measurements, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics. The clustering coefficient is only relevant for the third principal component. The three components have in average 80.36\% of the variance.}
+																												\footnotesize
+																												\input{tables/tabPCA3CPP}
+																												\label{tab:pcain}
+																											\end{table}
+
+																											The first principal component is an average of centrality metrics: degrees, strengths and betweenness centrality. Therefore, all of these centrality measurements are equally important for characterizing the networks. On one hand, the relevance of all centrality metrics is not surprising since they may be highly correlated. The degree and strength, for instance, are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. On the other hand, each metrics is related to a different participation characteristic, and their equal relevance is noticeable.
+																												The clustering coefficient is presented in almost perfect orthogonality to centrality metrics.
+																												\begin{figure*} 
+																													\centering
+																													\includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
+																													\caption{The first plot shows degree versus clustering coefficient. This typical pattern is well known, since high clustering is more incident in vertices with lower degrees. The second plot is analogous but the first component is an average of centrality metrics. The second component remains related to the clustering coefficient. The third plot exhibits the greater dispersion in the symmetry-related second component. In this case, the clustering coefficient is only relevant for the third component. This greater dispersion suggests that symmetry-related metrics are more powerful for characterizing interaction networks than the clustering coefficient, especially for hubs and intermediary vertices.
+																													This figure was obtained with a snapshot of the LAU list in a window size of $ws = 1000$ messages. Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which points to a common relationship between the metrics of degree, strength and betweenness centrality, the symmetry-related metrics and clustering coefficient.}
+																													\label{fig:sym}
+																												\end{figure*}
+
+
+																												Dispersion was more prevalent in symmetry-related metrics than for the clustering coefficient, as indicated in Table~\ref{tab:pcain}. This is also illustrated in Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong to. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the third component (clustering related).
+																												The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects the relevance of the symmetry-related metrics for the variance. We conclude that the latter metrics can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
+
+
+																												%\begin{figure} 
+																												%   \centering
+																												%        \includegraphics[width=\columnwidth]{figs/ev0pr3PCA}
+																												%    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of in- and out- degree and strength, betweenness centrality and clustering coefficient, as specified in Section~\ref{measures}. The principal component is a weighted average of centrality measures: degrees, strengths and betweenness centrality. The second component is mostly clustering coefficient Table~\ref{compPCA} shows the composition of principal components. Similar plots were obtained for all window sizes $ws\;\in\;[500,10000]$, and for the networks of the other email lists, which demonstrates a common relation held by degree, strength and betweenness measures to clustering coefficient.}
+																												%    \label{PCA}
+																												%\end{figure}
+
+																												%\begin{figure} 
+																												%   \centering
+																												%        \includegraphics[width=\columnwidth]{figs/ev0pr11CC}
+																												%    \caption{Clustering coefficient versus degree of vertices with a window size of $ws = 1000$ email messages, LAU list. The general layout is consistent with the literature: most connected vertices have low clusterization while higher clusterization is gradually more incident as the number of connections is lowered.}
+																												%    \label{clust}
+																												%\end{figure}
+
+																												%\begin{figure} 
+																												%   \centering
+																												%        \includegraphics[width=\columnwidth]{figs/ev0pr1PCA}
+																												%    \caption{Scatter plot of vertices for the LAU list using two principal components from a PCA in the metrics space of (in-,  out- and total) degree, (in-,  out- and total) strength, betweenness centrality, clustering coefficient and symmetry-related measurements. The composition of the first three components are shown in Table~\ref{compPCA2} and metrics details are given in Section~\ref{measures}. Most importantly, clustering coefficient is only relevant for third component, being second component representative of symmetry measurements of vertex interactions. Dispersion suggests symmetry related measures are more powerful for characterizing interaction networks than clustering coefficient, specially for hubs and intermediary vertices.}
+																												%    \label{PCA2}
+																												%\end{figure}
+
+																												\subsection{Primitive types from Erd\"os sectors}\label{sec:pty}
+
+																												We analyzed the time evolution of the networks using customized visualization tools~\cite{rcText,versinus} and inspected the raw data to infer the main characteristics of each type of participant in the email lists. Our main observations may be summarized as follows:
+
+																												\begin{itemize}
+																													\item Core hubs usually have intermittent activity. Very stable activity was found on MET hubs, which is consistent with the literature where greater stability occurs in smaller communities~\cite{barabasiEvo}.
+
+																													\item Typically, the activity of hubs is trivial: they interact as much as possible, in every occasion with everyone. The activity of peripheral vertices also follows a simple pattern: they interact very rarely, in very few occasions. Therefore, intermediary vertices seem responsible for the network structure. Intermediary vertices may exhibit preferential communication to peripheral, intermediary, or hub vertices; can be marked by stable communication partners; can involve stable or intermittent patterns of activity.
+																													\item Some of the most active participants receive many responses with relative few messages sent, and rarely are top hubs. These seem as authorities and contrast with participants that respond much more than receive responses.
+																													\item The most obvious community structure, as observed by a high clustering coefficient, is found only in peripheral and intermediary sectors.
+																												\end{itemize}
+
+																												Assigning a class to a participant inevitably raises an important question regarding the possible stigmatization of a typology. We take the view that the typology inherent in the Erd\"os sectors is not stigmatizing because the type of an individual changes constantly~\cite{adorno}. That is to say, an individual is a hub in a number of networks and peripheral in other networks, and even within a network he/she probably changes type along time. Indeed, we did observe participants transitioning from one sector to another within a network. Significantly, the typology proposed here bridges exact and human sciences and may be enriched with concepts from other typologies, such as Meyer-Briggs, Pavlov or the authoritarian types of the F-Scale~\cite{adorno}.
+
+																												With regard to the networks as the whole objects of analysis, we observed that there are two contrasting types of network: i) those with few and stable agents, where the number of threads per message is large; ii) others with many agents displaying intermittent activity, for which the number of threads per message is considerably lower than for the other type of network.
+																												This result is exemplified in Table~\ref{tab:genLists} and is also consistent with the literature~\cite{barabasiEvo}, which reports that the smaller size of communities is responsible for the stronger hubs observed.
+
+																												\section{Conclusions}\label{sec:conc}
+
+																												The most important result from the analysis of time evolution of the four email lists is certainly the time-independence observed not only for the activity but also for the properties of the networks themselves. For example, the relative fractions of participants classified as hubs, intermediary and peripheral vertices remained practically constant along time, and this applied to all the email lists studied. Furthermore, the PCA analysis of the topological metrics characterizing the networks also indicated that the contribution of each metric did not vary in time. Centrality metrics were found to be the most relevant to characterize the network topology, followed by symmetry-related metrics, which were more important than clustering. 
+
+																												A systematic study of the activity of participants belonging to the three distinct Erd\"os sectors indicated simple patterns for hubs and peripheral vertices, while the network structure was governed by the intermediary vertices. Because these properties were shared by all email lists and were time-independent, we may consider the classification into primitive Erd\"os sectors as leading to a typology which bridges exact sciences, with objective procedures for classifying agents, with human sciences, where there is a legacy in the observation of human types. 
+
+
+																												\begin{acknowledgments}
+																													Renato Fabbri is grateful to CNPq (process: 140860/2013-4,
+																													project 870336/1997-5), United Nations Development Program (PNUD/ONU, contract: 2013/000566; project BRA/12/018)  and 
+																													the Postgraduate Committee of the IFSC/USP. This author is also grateful for
+																													the American Jewish Committee for maintaining an online copy of the Adorno book
+																													used on the epigraph~\cite{adorno}. Authors thank Gmane creators and maintainers. Authors thank referred email lists communities and welcome feedback as core contribution to this, and similar, research. Finally, authors thank the developers and users of Python scientific tools.
+																												\end{acknowledgments}
+
+
+																												%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+																												\appendix
+																												\section{Data and scripts}\label{scripts}
+																												Messages were downloaded from the Gmane public database~\cite{GMANEwikipedia}.
+																												All routines necessary to achieve the results reported in this article, including tables and figures of Supporting information, are available through a public domain Python package and an open Git repository~\cite{gmanePack}.
+
+																												%\nocite{*}
+																												\bibliography{paper}% Produces the bibliography via BibTeX.
+
+																												\end{document}
+																												%
+																												% ****** End of file aipsamp.tex ******
+
 
 
