@@ -48,7 +48,7 @@
 
 %\title[Evolution of interaction networks]{On the evolution of interaction networks: primitive typology of vertex, prominence of measures and activity statistics}% Force line breaks with \\
 %\title[Evolution of interaction networks]{On the evolution of interaction networks: a primitive typology of vertex}% Force line breaks with \\
-\title[Stability of interaction networks, SUPPORTING INFORMATION]{Stability in human interaction networks: primitive typology of vertex, prominence of measures and time activity statistics, SUPPORTING INFORMATION}% Force line breaks with \\
+\title[Interaction networks stability: SUPPORTING INFORMATION]{Time stability in human interaction networks: primitive typology of vertex, prominence of measures and time activity statistics (SUPPORTING INFORMATION)}% Force line breaks with \\
 
 \author{Renato Fabbri}%
  \homepage{http://ifsc.usp.br/~fabbri/}
@@ -57,31 +57,31 @@
 S\~ao Carlos Institute of Physics, University of S\~ao Paulo (IFSC/USP)%\\This line break forced with \textbackslash\textbackslash
 }
 
-\author{Vilson V. da Silva Jr.}
-  \homepage{http://automata.cc/}
-  \email{vilson@void.cc}
-  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
-
-\author{Ricardo Fabbri}
-  \homepage{http://www.lems.brown.edu/~rfabbri/}
-  \email{rfabbri@iprj.uerj.br}
- \altaffiliation{
-Instituto Polit\'ecnico, Universidade Estadual do Rio de Janeiro (IPRJ)
-}%Lines break automatically or can be forced with \\
-
-\author{Deborah C. Antunes}
-  \homepage{http://lattes.cnpq.br/1065956470701739}
-  \email{deborahantunes@gmail.com}
-  \altaffiliation{
-Curso de Psicologia, Universidade Federal do Cer\'a (UFC)
-}%Lines break automatically or can be forced with \\
-
-\author{Marilia M. Pisani}
-  \homepage{http://lattes.cnpq.br/6738980149860322}
-  \email{marilia.m.pisani@gmail.com}
- \altaffiliation{
-Centro de Ci\^encias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
-}%Lines break automatically or can be forced with \\
+%\author{Vilson V. da Silva Jr.}
+%  \homepage{http://automata.cc/}
+%  \email{vilson@void.cc}
+%  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+%
+%\author{Ricardo Fabbri}
+%  \homepage{http://www.lems.brown.edu/~rfabbri/}
+%  \email{rfabbri@iprj.uerj.br}
+% \altaffiliation{
+%Instituto Polit\'ecnico, Universidade Estadual do Rio de Janeiro (IPRJ)
+%}%Lines break automatically or can be forced with \\
+%
+%\author{Deborah C. Antunes}
+%  \homepage{http://lattes.cnpq.br/1065956470701739}
+%  \email{deborahantunes@gmail.com}
+%  \altaffiliation{
+%Curso de Psicologia, Universidade Federal do Cer\'a (UFC)
+%}%Lines break automatically or can be forced with \\
+%
+%\author{Marilia M. Pisani}
+%  \homepage{http://lattes.cnpq.br/6738980149860322}
+%  \email{marilia.m.pisani@gmail.com}
+% \altaffiliation{
+%Centro de Ci\^encias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
+%}%Lines break automatically or can be forced with \\
 
 %
 %%\author{Luciano da Fontoura Costa}
@@ -99,23 +99,24 @@ Centro de Ci\^encias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC
              %  but any date may be explicitly specified
 
 \begin{abstract}
- This is the supporting information of the article that reports interaction networks stability by means of three quantitative criteria: activity distribution in time and among participants; a sound classification of vertices in peripheral, intermediary and hub sectors; the combination of basic measures into principal components with greater variance. 
+ This document presents supporting information for the article describing interaction networks stability. The sections exhibit activity distribution in time and among participants; the fraction of vertices in the peripheral, intermediary and hub sectors; the combination of basic measures into principal components with greater variance; the analysis of interaction networks from Facebook, Twitter and Participa.br. There is a focus on email list interaction networks for benchmarking.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
 \keywords{complex networks, social network analysis, pattern recognition, statistics, anthropological physics}
 \maketitle
 
-These results were produced with the Gmane public domain data and an open python package designed for attaining
-these, and related, results. The interested reader should follow Appendix~\ref{scripts} to access both data and rotines.
-Inline are results for 4 emails lists: LAD, LAU, MET and CPP, as described in Section~\ref{sec:data}.
+This documents exemplifies the stability of interaction networks by the observation of 4 emails lists (LAD, LAU, MET and CPP), described in Section~\ref{sec:data} of the main article.
+These results were produced with the Gmane public domain data and an open source python package designed for attaining
+these, and related, results. The interested reader should follow Appendix~\ref{scripts} of the main article to access both data and rotines.
 Similar results can be reproduced for any number of (Gmane) email lists.
-To avoid repeating text of each table for each list, the text is given inline.
+To avoid repeating text of each table for each list, the text is given inline, with the tables following the explanation.
 
 \section{Time tables in different scales}\label{sec:time}
 Theory presented in Section~\ref{sec:mtime} and results exposed in Section~\ref{constDisc} of the paper~\cite{tpaper}.
-\subsection{Time circular measures}
-The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. Also, $ \mu_{\frac{max(incidence')}{min(incidence')}} $ and $ \sigma_{\frac{max(incidence')}{min(incidence')} }$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples. Section~\ref{sec:mtime} describes the theoretical background of directional (or circular) statistics.
+
+\subsection{Time circular measures}\label{si:circ}
+The rescaled circular mean $\theta_\mu'$, the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$ and the relation of maximum and minimum incidence at each time unit $\frac{max(incidence}{min(incidence}$. Also, $ \mu_{\frac{max(incidence')}{min(incidence')}} $ and $ \sigma_{\frac{max(incidence')}{min(incidence')} }$ are given for 1000 uniform distribution simulations within the same number of bins and with the same number of samples. Section~\ref{sec:mtime} of the main document describes the theoretical background of directional (or circular) statistics.
 \begin{table*}[!h]
 	\caption{LAU circular measures}
 \begin{center}
@@ -208,7 +209,7 @@ Activity percentages along the days of the week. Higher activity was observed du
 
 \FloatBarrier
 \subsection{Histograms of activity along the days of the month}
-	No significant variation of activity in the days along the month was observed. One cannot point much more than a - probably not statistically relevant - tendency of first and second weeks to be more active. The most important trait seems to be homogeneity.
+Although slightly higher activity rates are found in the beginning of the month, the most important feature seems to be the homogeneity made explicit by the high circular dispersion in the tables of Section~\ref{si:circ}.
 \begin{table}[!h]
 	\caption{LAU activity along the days of the month.}
 	\footnotesize
@@ -267,9 +268,9 @@ Activity percentages along the days of the week. Higher activity was observed du
 
 
 \section{Fraction of participants in each Erd\"os Sector along the timeline}\label{sec:frac}
-Here we present the fraction of participants in each Erd\"os sector with respect to each criteria defined in Section~\ref{sectioning}. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown bellow, first for CPP, than for  LAD list.
+Here we present the fraction of participants in each Erd\"os sector with respect to each criteria defined in Section~\ref{sectioning} of the mais document. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown bellow, first for CPP, than for  LAD list.
 
-Each step size takes two pages of plot. On the first page, the criteria are each centrality measure observed separately: in and out degrees and strengths. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the giant component. On the same graph, green counts the disconnected vertices.
+Each step size takes two pages of plot. On the first page, the criteria are each centrality measure observed separately: in, out and total degrees and strengths. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the greatest component. On the same graph, green counts the disconnected vertices.
 
 On the second page we show the fractions of participants with respect to each compound criteria for the Erd\"os sectioning. In the first plot, the fraction of vertices with unique classification is plotted in black: $\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$. On the second plot, black represents the exceeding classifications for the given vertices : $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
 
@@ -507,7 +508,7 @@ Loadings for the 14 metrics into the principal components for the MET list, $ws=
 To further verify the hypothesis that such stability is a general property of human social networks,
 we analyzed networks driven from Twitter, Facebook and Participa.br. Selected networks are summarized in
 Table~\ref{tab:E}. Their Erd\"os sector relative sizes are given in Table~\ref{tab:secE}. PCA formations are given in
-Tables~\ref{tab:pcaE1I},~\ref{tab:pcaE1F},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. Friendship networks considered are undirected and unweighted,
+Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. Friendship networks considered are undirected and unweighted,
 therefore all measures of strength, in- and out- centralities, asymmetry and disequilibrium have little or no meaning, which is why F1, F2, F3, F4 and F5 are only present in Table~\ref{tab:pcaE1F}.
 
 \begin{table*}[!h]
@@ -524,7 +525,7 @@ therefore all measures of strength, in- and out- centralities, asymmetry and dis
 
 
 \begin{table*}[!h]
-	\caption{Percentage of agents in each Erd\"os sector in the friendship and interaction human networks of Table~\ref{tab:E}. The ratios found in email networks are preserved. Most notable exceptions are I1 and I4, which might be understood as outliers, A possible explanation for them is that they might be a system better characterized as a superposition of networks, rather than one coherent network.}
+	\caption{Percentage of agents in each Erd\"os sector in the friendship and interaction human networks of Table~\ref{tab:E}. The ratios found in email networks are preserved. Most notable exceptions are I1 and I4, which might be understood as outliers, with a possible explanation that they be a system better characterized as a superposition of networks, rather than one coherent network.}
 \begin{center}
 \begin{tabular}{| l | c | c | c |}\hline
 	 & periphery & intermediary & hubs \\ \hline\hline
@@ -635,7 +636,9 @@ therefore all measures of strength, in- and out- centralities, asymmetry and dis
 
 
 
-
+%\newpage
+%\pagebreak
+\clearpage
 \nocite{*}
 \bibliography{supportingInformation}% Produces the bibliography via BibTeX.
 \end{document}
