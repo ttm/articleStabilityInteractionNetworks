@@ -361,9 +361,6 @@ The activity along time, in terms of seconds, minutes, hours, days and months,  
 Histograms in each time scale were calculated as were circular average values and their dispersion.
 We chose to give detailed values in Table~\ref{tab:circ}-\ref{tab:min2} because these numbers can actually be used for characterizing nodes (participants) in other networks, and networks themselves, as they are independent of the network under analysis. For example, they may serve for identification of outliers in a community.
 
-In the scale of seconds and minutes, activity obeys a homogeneous pattern, with the messages being slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}. In the networks, $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$ while simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
-Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected. Circular dispersion is maximized and the mean has little meaning as indicated in Table~\ref{tab:circ}. As for the hours of the day, an abrupt peak appeared around 11am with the most active period being the afternoon. Days of the week revealed a decrease of at least one third and at most two thirds of activity on weekends. Days of the month were regarded as homogeneous with an inconclusive slight tendency of the first week being more active. Months of the year revealed patterns matching usual work and academic calendars. The time period examined here was not sufficient for the analysis of activity along the years. These patterns are exemplified in Tables~\ref{tab:hin}-\ref{tab:min2}.
-
 \begin{table}
 	\caption{The rescaled circular mean $\theta_\mu'$ and the circular dispersion $\delta(z)$ described in Section~\ref{sec:mtime}.
 	This typical table was made using all LAD list messages, and the results are the same for other lists, as shown in the Supporting Information.
@@ -382,8 +379,6 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 	\label{tab:circ}
 \end{table}
 
-
-
 \begin{table}
 	\caption{Activity percentages along the hours of the day for the CPP list. Nearly identical distributions are found on other lists as shown in the Supporting Information. Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.}
 	\footnotesize
@@ -392,7 +387,6 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 \end{table}
 
 
-\FloatBarrier
 \begin{table}
 	\caption{Activity percentages along the days of the week for the four email lists. Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.}
 	\begin{center}
@@ -404,6 +398,11 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 	\end{center}
 	\label{tab:win}
 \end{table}
+In the scale of seconds and minutes, activity obeys a homogeneous pattern, with the messages being slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}. In the networks, $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$ while simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
+Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected. Circular dispersion is maximized and the mean has little meaning as indicated in Table~\ref{tab:circ}. As for the hours of the day, an abrupt peak appeared around 11am with the most active period being the afternoon. Days of the week revealed a decrease of at least one third and at most two thirds of activity on weekends. Days of the month were regarded as homogeneous with an inconclusive slight tendency of the first week being more active. Months of the year revealed patterns matching usual work and academic calendars. The time period examined here was not sufficient for the analysis of activity along the years. These patterns are exemplified in Tables~\ref{tab:hin}-\ref{tab:min2}.
+
+
+\FloatBarrier
 
 \begin{table}
 	\caption{Activity in the days along the month for MET list. Nearly identical distributions are found on other lists as indicated in the Supporting Information. Although slightly higher activity rates are found in the beginning of the month, the most important feature seems to be the homogeneity made explicit by the high circular dispersion in Table~\ref{tab:circ}.}
@@ -503,8 +502,17 @@ With regard to the networks as the whole objects of analysis,
 we were able to observe a negative correlation between the number of threads and the number of participants.
 When the number of participants exceeds a threshold,
 the number of threads displays a positive correlation with the number of participants.
-This finding is illustrated with data from 140 email lists in the Figures~\ref{fig:nmgamma} and~\ref{fig:nmgamma3d} in the Supporting Information
-and can also be observed in Table~\ref{tab:genLists}. Network types can be derived from such results, which is left for the reader and future work. 
+This finding is illustrated in Figure~\ref{fig:nmgamma3d} and can also be observed in Table~\ref{tab:genLists}.
+Network types can be derived from such results, which is left for the reader and future work. 
+
+\begin{figure}
+   \centering
+        \includegraphics[width=\columnwidth]{figs/mpgamma____}
+	\caption{A 3D scatter plot of messages (M) versus participants (N) versus threads ($\Gamma$) 140 email lists. The highest number of threads are found in lists with few participants. The correlation between $N$ and $\Gamma$ is negative for low values of $N$ but positive otherwise.}
+	\label{fig:nmgamma3d}
+\end{figure}
+
+
 
 \section{Conclusions}\label{sec:conc}
 The most important result from the analysis of time evolution of the four email lists is certainly the time-independence observed not only for the activity but also for the properties of the networks themselves.
