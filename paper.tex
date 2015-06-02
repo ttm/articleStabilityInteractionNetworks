@@ -37,6 +37,8 @@
 	urlcolor={blue!80!black}
 }
 
+\usepackage{xr}
+\externaldocument{supportingInformation}
 \maxdeadcycles=1000
 
 \usepackage{placeins}
@@ -98,7 +100,7 @@
 %  but any date may be explicitly specified
 
 \begin{abstract}
-In this study, we demonstrate a remarkably stable activity in interaction networks. The activity along time and topology evolution were investigated in four e-mail lists by considering window sizes from 50 to 10,000 messages, which were made to slide and generate snapshots of the network in a timeline. The activity of participants followed the expected scale-free behavior, thus allowing us to establish three classes of vertices by comparying with the Erd\"os-R\'enyi model, namely hubs, intermediary and peripheral vertices. The relative size of these three sectors did not vary with time and was essentially the same for all e-mail lists. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder are peripheral vertices. The metrics that contribute most to the dispersion of participants in the topological measures space were centrality measurements (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient. A clear distinction could be made of networks with few, stable agents, which possess a large number of threads per message, from others with many agents exhibiting intermittent activity and lower number of threads per message. Also important was the observation that the activity along time, in terms of seconds, minutes, hours, days and months, is practically the same for all lists. These results are coherent with literature and were found also in the analysis of other networks from other emails lists and from Facebook, Twitter and Participa.br. Therefore, the properties observed may be general for human interaction networks, which has important implications in establishing a typology based on objective, quantitative criteria.
+In this study, we demonstrate a remarkably stable activity in interaction networks. The activity along time and topology evolution were investigated in four e-mail lists by considering window sizes from 50 to 10,000 messages, which were made to slide and generate snapshots of the network in a timeline. Furthermore, the activity in terms of seconds, minutes, hours, days and months, is practically the same for all lists. The activity of participants followed the expected scale-free behavior, thus allowing us to establish three classes of vertices by comparing with the Erd\"os-R\'enyi model, namely hubs, intermediary and peripheral vertices. The relative size of these three sectors did not vary with time and was essentially the same for all e-mail lists. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder are peripheral vertices. The metrics that contribute most to the dispersion of participants in the topological measures space were centrality measurements (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient. Similar results for the distribution of participants in the three categories and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participa.br. Consistent with expectations driven from the literature, these properties may be general for human interaction networks, which has important implications in establishing a typology based on objective, quantitative criteria.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
@@ -155,6 +157,7 @@ We analyzed many email lists (and data from Twitter, Facebook and Participa.br) 
 \end{itemize} 
 
 The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages indicated in Table~\ref{tab:genLists}.
+In subsidiary experiments we considered 140 additional email lists, also retrieved from the Gmane public database, to analyze the interdependence between the number of participants and the number of threads. Furthermore, we used 12 additional networks from Facebook (8), Twitter (2) and Participa.br (2) to grasp the generality of the results driven from email lists.
 
 \begin{table}
 	\centering
@@ -428,6 +431,8 @@ Stable distributions can also be obtained for 100 or less messages if classifica
 The networks hold their basic structure with as few as 10-50 messages; concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in the last figures of the Supporting Information.
 A minimum window size for observation of more general properties might be inferred by monitoring the giant component and the degeneration of the Erd\"os sectors.
 
+In order to verify the possible generality of these findings, we obtained the Erd\"os sectors of 12 networks from Facebook, Twitter and Participa.br. The results are given in Tables~\ref{tab:secE} in the Supporting Information, which indicate that the percentages of hubs, intermediary and peripheral nodes are essentially the same as for the email lists.
+
 \begin{figure*} 
 	\centering
 	\includegraphics[width=\textwidth]{figs/InText-WLAU-S1000}
@@ -476,10 +481,12 @@ Dispersion was more prevalent in symmetry-related metrics than for the clusterin
 The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects the relevance of the symmetry-related metrics for the variance.
 We conclude that the latter metrics can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
 
-\subsection{Primitive types from Erd\"os sectors}\label{sec:pty}
+The relative importance of the topological metrics was also observed for the additional 12 networks from Facebook, Twitter and Participa.br. With the exception of two of these networks, the overall behavior was maintained in that centrality measurements were found to be the most relevant to explain network topology, followed by symmetry-related metrics and then clustering coefficient. The results are given in Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2},~\ref{tab:pcaE3} in the Supporting Information. Significantly, there are larger differences between two of these networks than between two (Gmane) email networks, as the latter were much more regular.
+
+\subsection{Types from Erd\"os sectors}\label{sec:pty}
 A sector to which a vertex belongs can be regarded as yielding a type to the corresponding participant.
 Assigning a type to a participant inevitably raises an important question regarding the possible stigmatization. 
-We take the view that the typology inherent in the Erd\"os sectors is not stigmatizing because the type of an individual changes constantly~\cite{adorno}. 
+We take the view that the participation typology inherent in the Erd\"os sectors is not stigmatizing because the type of an individual changes constantly~\cite{adorno}. 
 That is to say, an individual is a hub in a number of networks and peripheral in other networks, and even within a network he/she probably changes type along time. 
 Indeed, we did observe often transitions of participants from one sector to another.
 The typology proposed here bridges exact and human sciences and may be enriched with concepts from other typologies, such as Meyer-Briggs, Pavlov or the authoritarian types of the F-Scale~\cite{adorno}.
@@ -492,8 +499,12 @@ We analyzed the time evolution of the networks using visualization tools develop
 	\item The most obvious community structure, as observed by a high clustering coefficient, is found only in peripheral and intermediary sectors.
 \end{itemize}
 
-With regard to the networks as the whole objects of analysis, we observed that there are two contrasting types of network: i) those with few and stable agents, where the number of threads per message is large; ii) others with many agents displaying intermittent activity, for which the number of threads per message is considerably lower than for the other type of network.
-This result is exemplified in Table~\ref{tab:genLists} and is also consistent with the literature~\cite{barabasiEvo}, which reports that the smaller size of communities is responsible for the stronger hubs observed.
+With regard to the networks as the whole objects of analysis,
+we were able to observe a negative correlation between the number of threads and the number of participants.
+When the number of participants exceeds a threshold,
+the number of threads displays a positive correlation with the number of participants.
+This finding is illustrated with data from 140 email lists in the Figures~\ref{fig:nmgamma} and~\ref{fig:nmgamma3d} in the Supporting Information
+and can also be observed in Table~\ref{tab:genLists}. Network types can be derived from such results, which is left for the reader and future work. 
 
 \section{Conclusions}\label{sec:conc}
 The most important result from the analysis of time evolution of the four email lists is certainly the time-independence observed not only for the activity but also for the properties of the networks themselves.
