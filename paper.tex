@@ -127,19 +127,19 @@ In this study, we demonstrate a remarkably stable activity in interaction networ
 
 \section{Introduction}\label{sec:into}
 Studies on human interaction networks have started long before modern computers, dating back to the nineteenth century, while the foundation of
-social network analysis is generally attributed to the psychiatrist Jacob Moreno in mid twentieth century~\cite{newmanBook}. With the increasing availability of data related to human interactions, research on these networks has grown continuously. Contributions can now be found in a variety of fields, from social sciences and humanities~\cite{latour2013} to computer science~\cite{bird} and physics~\cite{barabasiHumanDyn,newmanFriendship}, given the multidisciplinary nature of the topic. One of the approaches from an exact science perspective is to represent interaction networks as complex networks~\cite{gmane,barabasiHumanDyn,newmanFriendship}, with which 
+social network analysis is generally attributed to the psychiatrist Jacob Moreno in mid twentieth century~\cite{newmanBook}. With the increasing availability of data related to human interactions, research on these networks has grown continuously. Contributions can now be found in a variety of fields, from social sciences and humanities~\cite{latour2013} to computer science~\cite{bird} and physics~\cite{barabasiHumanDyn,newmanFriendship}, given the multidisciplinary nature of the topic. One of the approaches from an exact science perspective is to represent interaction networks as complex networks~\cite{barabasiHumanDyn,newmanFriendship}, with which 
 several features of human interaction have been revealed. For example, the topology of human interaction networks exhibits a scale-free trace, which points to the existence of a small number of highly connected hubs and a large number of poorly connected nodes. The dynamics of complex networks representing human interaction has also been addressed ~\cite{barabasiEvo,newmanEvolving}, but only to a limited extent, since research is normally focused on a particular metric or task, such as accessibility or community detection~\cite{access,newmanModularity}. 
 
-In this paper we analyze the evolution of human interaction networks, by considering interaction in email lists as their representative. Using a timeline of activity snapshots with a constant number of contiguous messages in email lists, we found a remarkable stability for several of the network properties. Because this stability was shared by all email lists, is coherent with literature, and has been observed in some networks from Twitter, Facebook and Participa.br, we advocate that some of the conclusions might be valid for more general classes of interaction networks. In particular, this allows us to discuss typologies in the context of such networks, in an attempt to bridge the gap between approaches based solely on data analysis (i.e. from a hard sciences perspective) and those relevant to the social sciences. This is important insofar as typologies are the canon of scientific literature for classification of human agents~\cite{typCanon}. 
+In this paper we analyze the evolution of human interaction networks, by considering interaction in email lists as their representative. Using a timeline of activity snapshots with a constant number of contiguous messages in email lists, we found a remarkable stability for several of the network properties. Because these properties were shared by networks from Twitter, Facebook and Participa.br, and are consistent with the literature, we advocate that some of the conclusions might be valid for more general classes of interaction networks. In particular, this allows us to discuss typologies in the context of such networks, in an attempt to bridge the gap between approaches based solely on data analysis (i.e. from a hard sciences perspective) and those relevant to the social sciences. This is important insofar as typologies are the canon of scientific literature for classification of human agents~\cite{typCanon}. 
 
-The paper is organized as follows. Section~\ref{sec:related} describes related work, while details of the data and methods of analysis are given in  Section~\ref{sec:data} and Section~\ref{sec:carac}. Section~\ref{sec:results} brings the results and discussion, leading to Section~\ref{sec:conc} for conclusions. Appendix has directions to access data and computer scripts to reproduce the analysis. Support Information document has a throughout exposition of measurements in networks from four email lists and a brief analysis of networks from Twitter, Facebook and Participa.br.
+The paper is organized as follows. Section~\ref{sec:related} describes related work, while details of the data and methods of analysis are given in  Section~\ref{sec:data} and Section~\ref{sec:carac}. Section~\ref{sec:results} brings the results and discussion, leading to Section~\ref{sec:conc} for conclusions. Details of how to access the data are given in the Appendix, while subsidiary results from the email lists and of networks from Twitter, Facebook and Participa.br are given in the Supporting Information.
 
 \subsection{Related work}\label{sec:related}
 Research on network evolution often considers solely network growth, in which there is a monotonic increase in the number of events considered~\cite{barabasiEvo}. Exceptions are reported in this section, with emphasis on those more closely related to the present article.
 
 Network types have been discussed with regard to the number of participants, intermittence of their activity and network longevity~\cite{barabasiEvo}. Two topologically different networks emerged from human interaction networks, depending on the frequency of interactions, which can either be a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were reported with $\alpha=1$~\cite{bird} (as are web browsing and library loans~\cite{barabasiHumanDyn}), and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
 
-Unreciprocated edges often exceed 50\% in the networks analyzed, which matches empirical evidence from the literature~\cite{newmanEvolving} and motivated the inclusion of symmetry metrics on our analysis. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were not considered in our study. Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}, but this was not considered in the present article because email messages and addresses have no gender related metadata~\cite{gmanePack}.
+Unreciprocated edges often exceed 50\% in the networks analyzed, which matches empirical evidence from the literature~\cite{newmanEvolving} and motivated the inclusion of symmetry metrics in our analysis. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were not considered in our study. Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}, but this was not considered in the present article because email messages and addresses have no gender related metadata~\cite{gmanePack}.
 
 
 \section{Data description: email lists and messages}\label{sec:data}
@@ -157,7 +157,7 @@ We analyzed many email lists (and data from Twitter, Facebook and Participa.br) 
 \end{itemize} 
 
 The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages indicated in Table~\ref{tab:genLists}.
-In subsidiary experiments we considered 140 additional email lists, also retrieved from the Gmane public database, to analyze the interdependence between the number of participants and the number of threads. Furthermore, we used 12 additional networks from Facebook (8), Twitter (2) and Participa.br (2) to grasp the generality of the results driven from email lists.
+In subsidiary experiments we considered 140 additional email lists, also retrieved from the GMANE public database, to analyze the interdependence between the number of participants and the number of threads. Furthermore, we used 12 additional networks from Facebook (8), Twitter (2) and Participa.br (2) to grasp the generality of the results driven from email lists.
 
 \begin{table}
 	\centering
@@ -165,7 +165,7 @@ In subsidiary experiments we considered 140 additional email lists, also retriev
 		$N$ is the number of participants (number of different email addresses).
 		$\Gamma$ is the number of threads (count of messages without antecedent).
 		$\overline{M}$ is the number of messages missing in the 20,000 collection, $100\frac{23}{20000}=0.115$ percent in the worst case.
-	A relation holds for all lists carefully considered: within a same number of messages, as the number of participants increases, the number of threads decreases.}
+	A relation holds for all these lists: within a same number of messages, as the number of participants increases, the number of threads decreases.}
 	\label{tab:genLists}
 	\begin{tabular}{|l|c|c|c|c|c|}\hline
 		list & $date_1$ & $date_{M}$    & $N$  & $\Gamma$ & $\overline{M}$ \\\hline
@@ -198,7 +198,7 @@ $\theta_\mu'$ is used as the measure of location. Dispersion is measured using t
 	\delta(z)&=\frac{1-R_2}{2 R_1^2} \nonumber
 \end{align}
 
-As expected, a positive correlation was found in all $Var(z)$, $S(z)$ and $\delta(z)$ dispersion measures (as can be noticed in Supporting Information) and $\delta(z)$ was preferred in the discussion of results.
+As expected, a positive correlation was found in all $Var(z)$, $S(z)$ and $\delta(z)$ dispersion measures (as can be noticed in the Supporting Information) and $\delta(z)$ was preferred in the discussion of results.
 
 \subsection{Interaction networks}\label{intNet}
 Interaction networks can be modeled both weighted or unweighted, both directed or undirected~\cite{bird,newmanCommunityDirected,newmanCommunity2013}.
@@ -287,7 +287,7 @@ Since different metrics can be used to identify the three types of vertices, com
 
 \begin{itemize}
 	\item Exclusivist criterion $C_1$:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified (usually) do not reach 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
-	\item Inclusivist criterion $C_2$: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and total members may add more than 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
+	\item Inclusivist criterion $C_2$: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and the total number of members may exceed 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
 	\item Exclusivist cascade $C_3$: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
 	\item Inclusivist cascade $C_4$: vertices are hubs if they are classified as so according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
 	\item Exclusivist externals $C_5$: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes by any metric. The rest of the nodes are classified as intermediary.
@@ -313,7 +313,7 @@ Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$
 \end{equation}
 %\end{alignat}
 
-The simplification of all the compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of the scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors precedence. These compound criteria can be used to examine network sections considering all degrees and strengths and are specially useful in the case of a low number of messages, such as in the last figures of Support Information.
+The simplification of all the compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of the scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors precedence. These compound criteria can be used to examine network sections considering all degrees and strengths and are specially useful in the case of a low number of messages, such as in the last figures of Supporting Information.
 
 \subsection{Topological metrics for Principal Component Analysis}\label{measures}
 
@@ -334,7 +334,7 @@ In order to capture symmetries in the activity of participants, the following me
 
 \begin{itemize}
 	\item Asymmetry: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
-	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$. Where $e_{xy}$ is 1 if there is and edge from $x$ to $y$, $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|=k_i$ is the number of neighbors of vertex $i$.
+	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|=k_i$ is the number of neighbors of vertex $i$.
 	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
 	\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
 	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
@@ -343,7 +343,7 @@ In order to capture symmetries in the activity of participants, the following me
 
 \subsection{Evolution and visualization of the networks}\label{sec:viz}
 The evolution of the networks was observed within a fixed number of messages, which we refer to as the window size $ws$. This same number of contiguous messages $ws$ was considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used both to perform the Erd\"os sectioning and to apply PCA for the topological metrics.  
-The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics, which is exhibited in the figures of Support Information. 
+The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics, which is exhibited in the figures of Supporting Information. 
 
 Networks were visualized with animations, image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution. Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion. Visualization of network structure was especially useful in the inspection of data and derived structures from the email lists.
 
@@ -480,7 +480,7 @@ Dispersion was more prevalent in symmetry-related metrics than for the clusterin
 The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects the relevance of the symmetry-related metrics for the variance.
 We conclude that the latter metrics can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
 
-The relative importance of the topological metrics was also observed for the additional 12 networks from Facebook, Twitter and Participa.br. With the exception of two of these networks, the overall behavior was maintained in that centrality measurements were found to be the most relevant to explain network topology, followed by symmetry-related metrics and then clustering coefficient. The results are given in Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2},~\ref{tab:pcaE3} in the Supporting Information. There are larger differences between two of these networks than between two (Gmane) email networks, as the latter were much more regular.
+The relative importance of the topological metrics was also observed for the additional 12 networks from Facebook, Twitter and Participa.br. With the exception of two of these networks, the overall behavior was maintained in that centrality measurements were found to be the most relevant to explain network topology, followed by symmetry-related metrics and then clustering coefficient. The results are given in Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2},~\ref{tab:pcaE3} of the Supporting Information. There are larger differences between two of these networks than between two (GMANE) email networks, as the latter were much more regular.
 
 \subsection{Types from Erd\"os sectors}\label{sec:pty}
 A sector to which a vertex belongs can be regarded as yielding a type to the corresponding participant.
@@ -503,12 +503,13 @@ we were able to observe a negative correlation between the number of threads and
 When the number of participants exceeds a threshold,
 the number of threads displays a positive correlation with the number of participants.
 This finding is illustrated in Figure~\ref{fig:nmgamma3d} and can also be observed in Table~\ref{tab:genLists}.
-Network types can be derived from such results, which is left for the reader and future work. 
+Obviously, network types can be derived from such results, which was not attempted here but 
+left for the reader and future work. 
 
 \begin{figure}
    \centering
         \includegraphics[width=\columnwidth]{figs/mpgamma____________}
-	\caption{A scatter plot of messages (M) versus participants (N) versus threads ($\Gamma$) of 140 email lists. The highest number of threads are found in lists with few participants. The correlation between $N$ and $\Gamma$ is negative for low values of $N$ but positive otherwise. This negative correlation between $N$ and $\Gamma$ can also be observed in Table~\ref{tab:genLists}. For $M=20000$ messages, positive correlation of $N$ and $\Gamma$ is present mostly above 1500 participants. All LAU, LAD, MET lists present smaller networks.}
+	\caption{A scatter plot of messages (M) versus participants (N) versus threads ($\Gamma$) for 140 email lists. The highest number of threads are found in lists with few participants. The correlation between $N$ and $\Gamma$ is negative for low values of $N$ but positive otherwise. This negative correlation between $N$ and $\Gamma$ can also be observed in Table~\ref{tab:genLists}. For $M=20000$ messages, positive correlation of $N$ and $\Gamma$ is present mostly above 1500 participants. All LAU, LAD, MET lists present smaller networks.}
 	\label{fig:nmgamma3d}
 \end{figure}
 
@@ -520,23 +521,20 @@ For example, the relative fractions of participants classified as hubs, intermed
 Furthermore, the PCA analysis of the topological metrics characterizing the networks also indicated that the contribution of each metric did not vary in time.
 Centrality metrics were found to be the most relevant to characterize the network topology, followed by symmetry-related metrics, which were more relevant, with respect to variance, than clustering. 
 
-A systematic study of the activity of participants belonging to the three distinct Erd\"os sectors indicated simple patterns for hubs and peripheral vertices, while the network structure was governed by the intermediary vertices. Because these properties were shared by all email lists and were time-independent, are coherent with literature, and was also found in networks from Facebook, Twitter and Participa.br, we may consider the classification of agents into Erd\"os sectors as leading to a human typology which bridges between exact sciences, with objective procedures for the classification, and human sciences, where there is a legacy in the observation of human types. 
+A systematic study of the activity of participants belonging to the three distinct Erd\"os sectors indicated simple patterns for hubs and peripheral vertices, while the network structure was governed by the intermediary vertices. These properties were shared by all email lists and were time-independent, being consistent with the literature. Moreover, both the distribution of Erd\"os sectors and the contribution from the metrics to the PCA were found to apply to networks from Facebook, Twitter and Participa.br. We may therefore consider the classification of agents into Erd\"os sectors as leading to a human typology which bridges between exact sciences, with objective procedures for the classification, and human sciences, where there is a legacy in the observation of human types. 
 
 
 \begin{acknowledgments}
-	Renato Fabbri is grateful to CNPq (process: 140860/2013-4,
-	project 870336/1997-5), United Nations Development Program (PNUD/ONU, contract: 2013/000566; project BRA/12/018)  and 
-	the Postgraduate Committee of the IFSC/USP. This author is also grateful for
-	the American Jewish Committee for maintaining an online copy of the Adorno book
-	used on the epigraph~\cite{adorno}. Authors thank Gmane creators and maintainers. Authors thank referred email lists communities and welcome feedback as core contribution to this, and similar, research. Finally, authors thank the developers and users of Python scientific tools.
+	Financial support was obtained from CNPq (140860/2013-4,
+	project 870336/1997-5), United Nations Development Program (PNUD/ONU, contract: 2013/000566; project BRA/12/018) and FAPESP. The authors are grateful to the American Jewish Committee for maintaining an online copy of the Adorno book used on the epigraph~\cite{adorno}, to GMANE creators and maintainers, and to the communities of the email lists used in the analysis. We are also grateful to developers and users of Python scientific tools.
 \end{acknowledgments}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 \section*{APPENDIX: Data and scripts}\label{scripts}
-Messages were downloaded from the Gmane public database~\cite{GMANEwikipedia}.
-All routines necessary to achieve the results reported in this article, including tables and figures of Supporting information, are available through a public domain Python package and an open Git repository~\cite{gmanePack}.
+Messages were downloaded from the GMANE public database~\cite{GMANEwikipedia}.
+All routines necessary to achieve the results reported in this article, including tables and figures of the Supporting information, are available through a public domain Python package and an open Git repository~\cite{gmanePack}.
 
 %\nocite{*}
 \bibliography{paper}% Produces the bibliography via BibTeX.
