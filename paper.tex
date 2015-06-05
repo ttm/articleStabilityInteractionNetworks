@@ -100,7 +100,7 @@
 %  but any date may be explicitly specified
 
 \begin{abstract}
-In this study, we demonstrate a remarkably stable activity in interaction networks. The activity along time and topology evolution were investigated in four e-mail lists by considering window sizes from 50 to 10,000 messages, which were made to slide and generate snapshots of the network in a timeline. Furthermore, the activity in terms of seconds, minutes, hours, days and months, is practically the same for all lists. The activity of participants followed the expected scale-free behavior, thus allowing us to establish three classes of vertices by comparing with the Erd\"os-R\'enyi model, namely hubs, intermediary and peripheral vertices. The relative size of these three sectors did not vary with time and was essentially the same for all e-mail lists. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder are peripheral vertices. The metrics that contribute most to the dispersion of participants in the topological measures space were centrality measurements (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient. Similar results for the distribution of participants in the three categories and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participa.br. Consistent with expectations driven from the literature, these properties may be general for human interaction networks, which has important implications in establishing a typology based on objective, quantitative criteria.
+In this study, we demonstrate a remarkably stable activity in human interaction networks. The activity along time and topology evolution were investigated in four e-mail lists by considering window sizes from 50 to 10,000 messages, which were made to slide and generate snapshots of the network in a timeline. Furthermore, the activity in terms of seconds, minutes, hours, days and months, is practically the same for all lists. The activity of participants followed the expected scale-free behavior, thus allowing us to establish three classes of vertices by comparing with the Erd\"os-R\'enyi model, namely hubs, intermediary and peripheral vertices. The relative size of these three sectors did not vary with time and was essentially the same for all e-mail lists. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder are peripheral vertices. The metrics that contribute most to the dispersion of participants in the topological measures space were centrality measurements (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient. Similar results for the distribution of participants in the three categories and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participa.br. Consistent with expectations driven from the literature, these properties may be general for human interaction networks, which has important implications in establishing a typology based on objective, quantitative criteria.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
@@ -526,14 +526,14 @@ A systematic study of the activity of participants belonging to the three distin
 
 \begin{acknowledgments}
 	Financial support was obtained from CNPq (140860/2013-4,
-	project 870336/1997-5), United Nations Development Program (PNUD/ONU, contract: 2013/000566; project BRA/12/018) and FAPESP. The authors are grateful to the American Jewish Committee for maintaining an online copy of the Adorno book used on the epigraph~\cite{adorno}, to GMANE creators and maintainers, and to the communities of the email lists used in the analysis. We are also grateful to developers and users of Python scientific tools.
+	project 870336/1997-5), United Nations Development Program (PNUD/ONU, contract: 2013/000566; project BRA/12/018) and FAPESP. The authors are grateful to the American Jewish Committee for maintaining an online copy of the Adorno book used on the epigraph~\cite{adorno}, to GMANE creators and maintainers, and to the communities of the email lists and other groups used in the analysis, and to the Brazilian Presidency for keeping Participa.br code and data open. We are also grateful to developers and users of Python scientific tools.
 \end{acknowledgments}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 \section*{APPENDIX: Data and scripts}\label{scripts}
-Messages were downloaded from the GMANE public database~\cite{GMANEwikipedia}.
+Messages were downloaded from the GMANE public database~\cite{GMANEwikipedia}. Data annotated from Facebook and Twitter are in a public repository~\ref{fbtwData}. Data from Participa.br was used from the linked data/semantic web RDF triples available in~\cite{rdfParticipa}.
 All routines necessary to achieve the results reported in this article, including tables and figures of the Supporting information, are available through a public domain Python package and an open Git repository~\cite{gmanePack}.
 
 %\nocite{*}
