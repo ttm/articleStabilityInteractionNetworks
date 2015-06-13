@@ -247,7 +247,7 @@ The lower degree fat tail consists on the border vertices, i.e. the peripheral s
 		Characteristic degrees are in the compact intervals: $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$ for the Erd\"os sectors (periphery, intermediary and hubs).}
 		\label{fig:setores}
 \end{figure}
-i	To ensure statistical validity of the histograms, bins can be chosen to contain at least $\eta$ vertices of the real network. Thus, each bin, starting at degree $k_i$, spans $\Delta_i=[k_{i},k_{j}]$ degree values, where $j$ is the smallest integer with which there are at least $\eta$ vertices with degree larger than or equal $k_i$, and less than or equal $k_{j}$. This changes equation~\ref{criterio} to:
+To ensure statistical validity of the histograms, bins can be chosen to contain at least $\eta$ vertices of the real network. Thus, each bin, starting at degree $k_i$, spans $\Delta_i=[k_{i},k_{j})$ degree values, where $j$ is the smallest integer with which there are at least $\eta$ vertices with degree larger than or equal $k_i$, and less than $k_{j}$. This changes equation~\ref{criterio} to:
 
 \begin{equation}\label{criterio2}
 	\sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i is intermediary}
@@ -294,7 +294,7 @@ Since different metrics can be used to identify the three types of vertices, com
 	\item Inclusivist externals $C_6$: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
 \end{itemize}
 
-Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$ integer in the interval $1<\delta<6$ can be described as:
+Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$ integer in the interval $1\leq\delta<6$ can be described as:
 
 %\begin{alignat}{3}
 \begin{equation}
