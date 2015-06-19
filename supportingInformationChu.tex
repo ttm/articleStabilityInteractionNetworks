@@ -1,0 +1,636 @@
+% ****** Start of file aipsamp.tex ******
+%
+%   This file is part of the AIP files in the AIP distribution for REVTeX 4.
+%   Version 4.1 of REVTeX, October 2009
+%
+%   Copyright (c) 2009 American Institute of Physics.
+
+% Use this file as a source of example code for your aip document.
+% Use the file aiptemplate.tex as a template for your document.
+\documentclass[%
+	aip,
+	jmp,%
+	amsmath,amssymb,
+	%preprint,%
+	reprint,%
+	floatfix,
+	%author-year,%
+	%author-numerical,%
+]{revtex4-1}
+\usepackage{graphicx}% Include figure files
+\usepackage{grffile}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+\usepackage{multirow}
+\usepackage{color} % for the notes
+\usepackage{etex}
+\reserveinserts{58}
+%\usepackage{morefloats}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\hypersetup{
+	colorlinks,
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
+%\usepackage{placeins}
+\usepackage{xr}
+\externaldocument{paper}
+\usepackage[section] {placeins}
+
+\newcommand{\beginsupplement}{%
+	\setcounter{table}{0}
+	\renewcommand{\thetable}{S\arabic{table}}%
+	\setcounter{figure}{0}
+	\renewcommand{\thefigure}{S\arabic{figure}}%
+}
+
+\beginsupplement
+
+\begin{document}
+
+\preprint{XXXXX (preprint)}
+
+%\title[Evolution of interaction networks]{On the evolution of interaction networks: primitive typology of vertex, prominence of measures and activity statistics}% Force line breaks with \\
+%\title[Evolution of interaction networks]{On the evolution of interaction networks: a primitive typology of vertex}% Force line breaks with \\
+
+\title[Interaction networks stability: Supporting Information]{Time stability in human interaction networks, Supporting Information)}% Force line breaks with \\
+
+							\author{Renato Fabbri}%
+							\homepage{http://ifsc.usp.br/~fabbri/}
+							\email{fabbri@usp.br}
+							\affiliation{ 
+								S\~ao Carlos Institute of Physics, University of S\~ao Paulo (IFSC/USP)%\\This line break forced with \textbackslash\textbackslash
+							}
+
+							%\author{Vilson V. da Silva Jr.}
+							%  \homepage{http://automata.cc/}
+							%  \email{vilson@void.cc}
+							%  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+							%
+							%\author{Ricardo Fabbri}
+							%  \homepage{http://www.lems.brown.edu/~rfabbri/}
+							%  \email{rfabbri@iprj.uerj.br}
+							% \altaffiliation{
+							%Instituto Polit\'ecnico, Universidade Estadual do Rio de Janeiro (IPRJ)
+							%}%Lines break automatically or can be forced with \\
+							%
+							%\author{Deborah C. Antunes}
+							%  \homepage{http://lattes.cnpq.br/1065956470701739}
+							%  \email{deborahantunes@gmail.com}
+							%  \altaffiliation{
+							%Curso de Psicologia, Universidade Federal do Cer\'a (UFC)
+							%}%Lines break automatically or can be forced with \\
+							%
+							%\author{Marilia M. Pisani}
+							%  \homepage{http://lattes.cnpq.br/6738980149860322}
+							%  \email{marilia.m.pisani@gmail.com}
+							% \altaffiliation{
+							%Centro de Ci\^encias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
+							%}%Lines break automatically or can be forced with \\
+
+							%
+							%%\author{Luciano da Fontoura Costa}
+							%%  \homepage{http://cyvision.ifsc.usp.br/~luciano/}
+							%%  \email{ldfcosta@gmail.com}
+							%  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+
+							%\author{Osvaldo N. Oliveira Jr.}
+							%  \homepage{www.polimeros.ifsc.usp.br/professors/professor.php?id=4}
+							%  \email{chu@ifsc.usp.br}
+							% \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+
+
+							\date{\today}% It is always \today, today,
+							%  but any date may be explicitly specified
+
+
+\maketitle
+
+							\section{Activity along time}\label{sec:time}
+
+							The activity along time obtained with circular statistics measurements is presented for the email lists. 
+
+							\begin{table*}[!h]
+								\caption{LAU circular measurements}
+								\begin{center}
+									\begin{tabular}{ |l|| c|c|c|c|c||c|c| }
+										\hline
+										scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+										\input{tables/tab2TimeLAU}
+									\end{tabular}
+								\end{center}
+								\label{tab:circLau}
+							\end{table*}
+							\begin{table*}[!h]
+								\caption{LAD circular measurements}
+								\begin{center}
+									\begin{tabular}{ |l|| c|c|c|c|c||c|c| }
+										\hline
+										scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+										\input{tables/tab2TimeLAD}
+									\end{tabular}
+								\end{center}
+								\label{tab:circLad}
+							\end{table*}
+							\begin{table*}[!h]
+								\caption{MET circular measurements}
+								\begin{center}
+									\begin{tabular}{ |l|| c|c|c|c|c||c|c| }
+										\hline
+										scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+										\input{tables/tab2TimeMET}
+									\end{tabular}
+								\end{center}
+								\label{tab:circMet}
+							\end{table*}
+							\begin{table*}[!h]
+								\caption{CPP circular measurements}
+								\begin{center}
+									\begin{tabular}{ |l|| c|c|c|c|c||c|c| }
+										\hline
+										scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
+										\input{tables/tab2TimeCPP}
+									\end{tabular}
+								\end{center}
+								\label{tab:circCPP}
+							\end{table*}
+
+							\begin{table}[!h]
+								\caption{LAU activity along the hours of the day}
+								\footnotesize
+								\input{tables/tabHoursLAU}
+							\end{table}
+
+							\begin{table}[!h]
+								\caption{LAD activity along the hours of the day}
+								\footnotesize
+								\input{tables/tabHoursLAD}
+							\end{table}
+
+							\begin{table}[!h]
+								\caption{MET activity along the hours of the day}
+								\footnotesize
+								\input{tables/tabHoursMET}
+							\end{table}
+
+							\begin{table}[!h]
+								\caption{CPP activity along the hours of the day}
+								\footnotesize
+								\input{tables/tabHoursCPP}
+							\end{table}
+
+
+							\begin{table}[!h]
+								\begin{center}
+									\begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
+										\hline
+										& Mon & Tue & Wed & Thu & Fri & Sat & Sun  \\ \hline
+										\input{tables/tabWeekdays}
+									\end{tabular}
+								\end{center}
+								\label{tab:win}
+							\end{table}
+
+							\begin{table}[!h]
+								\caption{LAU activity along the days of the month.}
+								\footnotesize
+								\input{tables/tabMonthdaysLAU}
+								\label{tab:min}
+							\end{table}
+							\begin{table}[!h]
+								\caption{LAD activity along the days of the month.}
+								\footnotesize
+								\input{tables/tabMonthdaysLAD}
+								\label{tab:min}
+							\end{table}
+							\begin{table}[!h]
+								\caption{MET activity along the days of the month.}
+								\footnotesize
+								\input{tables/tabMonthdaysMET}
+								\label{tab:min}
+							\end{table}
+							\begin{table}[!h]
+								\caption{CPP activity along the days of the month.}
+								\footnotesize
+								\input{tables/tabMonthdaysCPP}
+								\label{tab:min}
+							\end{table}
+
+
+							\begin{table}[!h]
+								\caption{LAU activity along the months of the year.}
+								\footnotesize
+								\input{tables/tabMonthsLAU}
+								\label{tab:min2}
+							\end{table}
+							\begin{table}[!h]
+								\caption{LAD activity along the months of the year.}
+								\footnotesize
+								\input{tables/tabMonthsLAD}
+								\label{tab:min2}
+							\end{table}
+							\begin{table}[!h]
+								\caption{MET activity along the months of the year.}
+								\footnotesize
+								\input{tables/tabMonthsMET}
+								\label{tab:min2}
+							\end{table}
+
+							\begin{table}[!h]
+								\caption{CPP activity along the months of the year.}
+								\footnotesize
+								\input{tables/tabMonthsCPP}
+								\label{tab:min2}
+							\end{table}
+
+
+
+							\section{Fraction of participants in each Erd\"os Sector along the timeline}\label{si:frac}
+							Here we present the fraction of participants in each Erd\"os sector with respect to each criterion defined in Section~\ref{sectioning}. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown below, first for CPP, than for the LAD list.
+
+							Each step size takes two pages of plot. On the first page, the criterion is based on each centrality metric observed separately: in, out and total degrees and strengths. In the first six plots, the code for the colors is as follows: red for hubs, green for the fraction of intermediary vertices and blue for the peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the greatest component. On the same graph, green represents the disconnected vertices.
+
+							On the second page we show the fractions of participants with respect to each compound criterion for the Erd\"os sectioning. In the first plot, the fraction of vertices with unique classification is plotted in black: $\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$. On the second plot, black represents the exceeding classifications for the given vertices: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
+
+							\subsection{CPP list}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-50/CPP-W50-S200}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-50/CPP-W50-S200_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-100/CPP-W100-S200}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-100/CPP-W100-S200_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-250/CPP-W250-S250}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-250/CPP-W250-S250_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-500/CPP-W500-S500}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-500/CPP-W500-S500_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-1000/CPP-W1000-S1000}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-1000/CPP-W1000-S1000_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-3300/CPP-W3300-S3300}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-3300/CPP-W3300-S3300_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-9900/CPP-W9900-S9900}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineCPP-9900/CPP-W9900-S9900_}
+							\end{figure*}
+
+
+
+							\FloatBarrier
+							\subsection{LAD list}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-50/LAD-W50-S200}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-50/LAD-W50-S200_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-100/LAD-W100-S200}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-100/LAD-W100-S200_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-250/LAD-W250-S250}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-250/LAD-W250-S250_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-500/LAD-W500-S500}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-500/LAD-W500-S500_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-1000/LAD-W1000-S1000}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-1000/LAD-W1000-S1000_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-3300/LAD-W3300-S3300}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-3300/LAD-W3300-S3300_}
+							\end{figure*}
+
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-9900/LAD-W9900-S9900}
+							\end{figure*}
+							\begin{figure*}
+								\centering
+								\includegraphics[width=\textwidth]{evoTimelines/evoTimelineLAD-9900/LAD-W9900-S9900_}
+							\end{figure*}
+
+
+
+
+
+
+
+
+							\FloatBarrier
+							\section{PCA for the metrics along the timeline}\label{si:pcat}
+							Loadings for the 14 metrics into the principal components are given for all LAD, LAU, MET, CPP, lists, $ws=1000$ messages in 20 disjoint positioning. The clustering coefficient (cc) appears as the first metric in the Table, followed by 7 centrality metrics and 6 symmetry-related metrics. Note that the centrality metrics, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics. The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of strengths and degrees. The three components have in average 80.36\% of the variance.
+							\subsection{Betweenness, clustering and degree}
+
+							\begin{table}[!h]
+								\caption{LAU principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA1LAU}
+								\label{tab:pcain}
+							\end{table}
+
+							\begin{table}[!h]
+								\caption{LAD principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA1LAD}
+								\label{tab:pcain}
+							\end{table}
+
+							\begin{table}[!h]
+								\caption{MET principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA1MET}
+								\label{tab:pcain}
+							\end{table}
+
+							\begin{table}[!h]
+								\caption{CPP principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA1CPP}
+								\label{tab:pcain}
+							\end{table}
+
+							\FloatBarrier
+							\subsection{Betweenness, clustering, degrees and strengths}
+
+							\begin{table}[!h]
+								\caption{LAU principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA2LAU}
+								\label{tab:pcain}
+							\end{table}
+							\begin{table}[!h]
+								\caption{LAD principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA2LAD}
+								\label{tab:pcain}
+							\end{table}
+							\begin{table}[!h]
+								\caption{MET principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA2MET}
+								\label{tab:pcain}
+							\end{table}
+							\begin{table}[!h]
+								\caption{CPP principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA2CPP}
+								\label{tab:pcain}
+							\end{table}
+
+
+							\FloatBarrier
+							\subsection{Betweenness, clustering, degrees, strengths and symmetry measures}
+
+							\begin{table}[!h]
+								\caption{LAU principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA3LAU}
+								\label{tab:pcain}
+							\end{table}
+							\begin{table}[!h]
+								\caption{LAD principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA3LAD}
+								\label{tab:pcain}
+							\end{table}
+							\begin{table}[!h]
+								\caption{MET principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA3MET}
+								\label{tab:pcain}
+							\end{table}
+							\begin{table}[!h]
+								\caption{CPP principal components formation and concentration of dispersion.}
+								\footnotesize
+								\input{tables/tabPCA3CPP}
+								\label{tab:pcain}
+							\end{table}
+
+							\section{Stability in other networks: Twitter, Facebook, Participa.br}\label{si:ext}
+							To further verify the hypothesis that such stability is a general property of human social networks,
+							we analyzed networks from Twitter, Facebook and Participa.br. Selected networks are summarized in
+							Table~\ref{tab:E}. Their Erd\"os sector relative sizes are given in Table~\ref{tab:secE}. PCA formations are given in
+							Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. The friendship networks considered are undirected and unweighted, therefore all measurements of strength, in- and out- centralities, asymmetry and disequilibrium have little or no meaning, which is why F1, F2, F3, F4 and F5 are only present in Table~\ref{tab:pcaE1F}.
+							The most important results from this analysis are:
+
+							\begin{itemize}
+								\item the stability reported for email interaction networks is also valid for a broader class of phenomena.
+								\item the stability in email interaction networks is higher than for the other networks, considering the same number of participants. This is especially important for benchmarking and probing general properties.
+							\end{itemize}
+
+							\begin{table*}[!h]
+								\caption{Overview of selected networks analyzed in addition to email interaction networks. Three social platforms were the sources of network structures: Facebook, Twitter and Participa.br. Both friendship and interaction networks were observed, yielding undirected and directed networks, respectively. The number of agents $N$ and the number of edges $z$ are given on the last columns. The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\ref{tab:pcaE1I},~\ref{tab:pcaE1F},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. All the data were collected in 2013 and 2014.}
+								\begin{center}
+									\begin{tabular}{| l | c | c | c | c | c | c | }\hline
+										acronym & provenance & edge & directed & description & $N$ & $z$ \\ \hline\hline
+										\input{tables/tabExtra}
+										\hline
+									\end{tabular}
+								\end{center}
+								\label{tab:E}
+							\end{table*}
+
+
+							\begin{table*}[!h]
+								\caption{Percentage of agents in each Erd\"os sector in the friendship and interaction human networks of Table~\ref{tab:E}. The ratios found in email networks are preserved. I1 and I4 are outliers, probably because they should be better characterized as a superposition of networks, rather than one coherent network. The degree was used for establishing the sectors.}
+								\begin{center}
+									\begin{tabular}{| l | c | c | c |}\hline
+										& periphery & intermediary & hubs \\ \hline\hline
+										\input{tables/tabSectorsExtra}
+										\hline
+									\end{tabular}
+								\end{center}
+								\label{tab:secE}
+							\end{table*}
+
+
+							\begin{table*}[!h]
+								\caption{First three principal components and variance concentration for each of the five friendship networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Participa.br yields the networks that most resemble the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. The friendship network of Renato Fabbri (F1) is the only network whose first component has more than 20\% of clustering coefficient and second component has more than 40\% of degree centrality.}
+									\footnotesize
+									\begin{center}
+										%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
+										\begin{tabular}{| l ||  c |c |c |c |c || c | c | c | c | c || c |c |c |c |c |	}\cline{2-16}
+											%	 & p. & i. & h. \\ \hline\hline
+											\multicolumn{1}{c|}{} & \multicolumn{5}{c||}{PC1}          & \multicolumn{5}{c||}{PC2} & \multicolumn{5}{c|}{PC3}  \\\cline{2-16}
+											\multicolumn{1}{c|}{} & 
+											F1 & F2 & F3 & F4 & F5 &	
+											F1 & F2 & F3 & F4 & F5 &	
+											F1 & F2 & F3 & F4 & F5 	\\\hline
+											\input{tables/tabPCA1ExtraF}
+											\hline
+										\end{tabular}
+									\end{center}
+									\label{tab:pcaE1F}
+								\end{table*}
+
+
+								\begin{table*}[!h]
+									\caption{First three principal components and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Twitter yields the networks that most resemble the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component.}
+									\footnotesize
+									\begin{center}
+										%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
+										\begin{tabular}{| l ||  c |c |c |c |c | c | c || c | c | c | c | c | c | c || c |c |c |c |c | c | c |	}\cline{2-22}
+											%	 & p. & i. & h. \\ \hline\hline
+											\multicolumn{1}{c|}{} & \multicolumn{7}{c||}{PC1}          & \multicolumn{7}{c||}{PC2} & \multicolumn{7}{c|}{PC3}  \\\cline{2-22}
+											\multicolumn{1}{c|}{} & 
+											I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+											I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+											I1 & I2 & I3 & I4 & I5 & TT1 & TT2 \\\hline
+											\input{tables/tabPCA1ExtraI}
+											\hline
+										\end{tabular}
+									\end{center}
+									\label{tab:pcaE1I}
+								\end{table*}
+
+
+								\begin{table*}[!h]
+									\caption{First three principal components and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} considering dimensions of in- and out- degrees and strengths, clustering coefficient and betweenness centrality. Twitter yields the networks that most resemble email networks. The general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. Important differences are: - the clustering coefficient was only important to the third component for two of the networks ($I2$, $I3$) and does not contribute significantly to any of the first three principal components in $I5$; - in the first component, I5 exhibited less contribution from in-strength, in-degree and betweenness, I4 exhibited less contribution from out-degree.}
+									\footnotesize
+									\begin{center}
+										%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
+										\begin{tabular}{| l ||  c |c |c |c |c | c | c || c | c | c | c | c | c | c || c |c |c |c |c | c | c |	}\cline{2-22}
+											%	 & p. & i. & h. \\ \hline\hline
+											\multicolumn{1}{c|}{} & \multicolumn{7}{c||}{PC1}          & \multicolumn{7}{c||}{PC2} & \multicolumn{7}{c|}{PC3}  \\\cline{2-22}
+											\multicolumn{1}{c|}{} & 
+											I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+											I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+											I1 & I2 & I3 & I4 & I5 & TT1 & TT2 \\\hline
+											\input{tables/tabPCA2Extra}
+											\hline
+										\end{tabular}
+									\end{center}
+									\label{tab:pcaE2}
+								\end{table*}
+
+
+								\begin{table*}[!h]
+									\caption{First three principal components and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} considering dimensions of in- and out- degrees and strengths, clustering coefficient, betweenness centrality and symmetry related metrics (see Section~\ref{measures}). The characteristics found in email interaction networks are preserved: the first component is an average of degree and betweenness, the second component is mostly governed by symmetry related metrics, and clustering coefficient is mostly relevant for the third component. Standard deviation of asymmetry and disequilibrium metrics are again coupled to clustering coefficient in the third component. Important differences are: - the first component is a less regular average of centrality measures and has a greater contribution of symmetry metrics; - The first component of I5 is formed mostly from symmetry, not centrality, metrics.}
+									\footnotesize
+									\begin{center}
+										%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
+										\begin{tabular}{| l ||  c |c |c |c |c | c | c || c | c | c | c | c | c | c || c |c |c |c |c | c | c |	}\cline{2-22}
+											%	 & p. & i. & h. \\ \hline\hline
+											\multicolumn{1}{c|}{} & \multicolumn{7}{c||}{PC1}          & \multicolumn{7}{c||}{PC2} & \multicolumn{7}{c|}{PC3}  \\\cline{2-22}
+											\multicolumn{1}{c|}{} & 
+											I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+											I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+											I1 & I2 & I3 & I4 & I5 & TT1 & TT2 \\\hline
+											\input{tables/tabPCA3Extra}
+											\hline
+										\end{tabular}
+									\end{center}
+									\label{tab:pcaE3}
+								\end{table*}
+
+
+
+
+
+								%\begin{table}[!h]
+								%	\caption{PCA2.}
+								%	\footnotesize
+								%	\input{tables/tabPCA2Extra}
+								%\label{tab:pcaE2}
+								%\end{table}
+								%\begin{table}[!h]
+								%	\caption{PCA3.}
+								%	\footnotesize
+								%	\input{tables/tabPCA3Extra}
+								%\label{tab:pcaE3}
+								%\end{table}
+
+
+
+
+								%\newpage
+								%\pagebreak
+								\clearpage
+								\nocite{*}
+								\bibliography{supportingInformation}% Produces the bibliography via BibTeX.
+								\end{document}
+								%
+								% ****** End of file aipsamp.tex ******
+
+
+
