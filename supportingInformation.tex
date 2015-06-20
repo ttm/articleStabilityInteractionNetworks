@@ -134,7 +134,7 @@ Also, $ \mu_{\frac{max(incidence')}{min(incidence')}} $ and $ \sigma_{\frac{max(
 by days of the month. Greater localization if found in the hours of the day, followed by weekdays and months.
 
 \begin{table*}[!h]
-	\caption{LAU circular measures}
+	\caption{LAU circular measurements.}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
@@ -145,7 +145,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}
 \label{tab:circLau}
 \end{table*}
 \begin{table*}[!h]
-	\caption{LAD circular measures}
+	\caption{LAD circular measurements.}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
@@ -156,7 +156,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}
 \label{tab:circLad}
 \end{table*}
 \begin{table*}[!h]
-	\caption{MET circular measures}
+	\caption{MET circular measurements.}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
@@ -167,7 +167,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}
 \label{tab:circMet}
 \end{table*}
 \begin{table*}[!h]
-	\caption{CPP circular measures}
+	\caption{CPP circular measurements.}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
@@ -184,25 +184,25 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}
 
 Activity percentages along the hours of the day. Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.
 \begin{table}[!h]
-	\caption{LAU activity along the hours of the day}
+	\caption{LAU activity along the hours of the day.}
 	\footnotesize
 	\input{tables/tabHoursLAU}
 \end{table}
 
 \begin{table}[!h]
-	\caption{LAD activity along the hours of the day}
+	\caption{LAD activity along the hours of the day.}
 	\footnotesize
 	\input{tables/tabHoursLAD}
 \end{table}
 
 \begin{table}[!h]
-	\caption{MET activity along the hours of the day}
+	\caption{MET activity along the hours of the day.}
 	\footnotesize
 	\input{tables/tabHoursMET}
 \end{table}
 
 \begin{table}[!h]
-	\caption{CPP activity along the hours of the day}
+	\caption{CPP activity along the hours of the day.}
 	\footnotesize
 	\input{tables/tabHoursCPP}
 \end{table}
@@ -288,9 +288,11 @@ Although slightly higher activity rates are found in the beginning of the month,
 \section{Fraction of participants in each Erd\"os Sector along the timeline}\label{si:frac}
 	Here we present the fraction of participants in each Erd\"os sector with respect to each criterion defined in Section~\ref{sectioning} of the main document~\cite{tpaper}. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown bellow, first for CPP, than for  LAD list.
 
-Each step size takes two pages of plot. On the first page, the criteria are each centrality measure observed separately: in, out and total degrees and strengths. In the first six plots, red is fraction of hubs, green is the fraction of intermediary and blue is for peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the greatest component. On the same graph, green counts the disconnected vertices.
+							Each step size takes two pages of plot. On the first page, the criterion is based on each centrality metric observed separately: in, out and total degrees and strengths. In the first six plots, the code for the colors is as follows: red for hubs, green for the fraction of intermediary vertices and blue for the peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the greatest component. On the same graph, green represents the disconnected vertices.
 
-On the second page we show the fractions of participants with respect to each compound criteria for the Erd\"os sectioning. In the first plot, the fraction of vertices with unique classification is plotted in black: $\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$. On the second plot, black represents the exceeding classifications for the given vertices : $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
+							On the second page we show the fractions of participants with respect to each compound criterion for the Erd\"os sectioning. In the first plot, the fraction of vertices with unique classification is plotted in black: $\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$. On the second plot, black represents the exceeding classifications for the given vertices: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
+
+
 
 \subsection{CPP list}
 \begin{figure*}
@@ -433,7 +435,13 @@ On the second page we show the fractions of participants with respect to each co
 
 \FloatBarrier
 \section{PCA of measures along the timeline}\label{si:pcat}
-Loadings for the 14 metrics into the principal components for all LAD, LAU, MET, CPP, lists, $ws=1000$ messages in 20 disjoint positioning. The clustering coefficient (cc) appears as the first metric in the Table, followed by 7 centrality metrics and 6 symmetry-related metrics, in accordance with the notation made of Section~\ref{measures} of the main document. Note that the centrality metrics, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics. The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of strengths and degrees. The three components have in average 80.36\% of the variance.
+Loadings for the 14 metrics into the principal components are given for all LAD, LAU, MET, CPP, lists, $ws=1000$ messages in 20 disjoint positioning.
+The clustering coefficient (cc) appears as the first metric in the tables, followed by 7 centrality metrics and 6 symmetry-related metrics.
+Note that the centrality metrics, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics.
+The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of strengths and degrees.
+The three components have in average 80.36\% of the variance.
+Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the main document~\cite{tpaper}.
+
 \subsection{Betweenness, clustering and degree}
 
 \begin{table}[!h]
@@ -523,19 +531,19 @@ Loadings for the 14 metrics into the principal components for all LAD, LAU, MET,
 
 \section{Stability in other networks: Twitter, Facebook, Participa.br}\label{si:ext}
 To further verify the hypothesis that such stability is a general property of human social networks,
-we analyzed networks driven from Twitter, Facebook and Participa.br. Selected networks are summarized in
+we analyzed networks from Twitter, Facebook and Participa.br. Selected networks are summarized in
 Table~\ref{tab:E}. Their Erd\"os sector relative sizes are given in Table~\ref{tab:secE}. PCA formations are given in
-Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. Friendship networks considered are undirected and unweighted,
-therefore all measures of strength, in- and out- centralities, asymmetry and disequilibrium have little or no meaning, which is why F1, F2, F3, F4 and F5 are only present in Table~\ref{tab:pcaE1F}.
-Most important results from the consideration herein of this analysis are:
+Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. The friendship networks considered are undirected and unweighted, therefore all measurements of strength, in- and out- centralities, asymmetry and disequilibrium have little or no meaning, which is why F1, F2, F3, F4 and F5 are only present in Table~\ref{tab:pcaE1F}.
+The most important results from this analysis are:
 
 \begin{itemize}
+%	\item the stability reported for email interaction networks is also valid for a broader class of phenomena.
 	\item a further indicative that the stability reported with a focus on email interaction networks is valid for a broader class of phenomena.
-	\item The greater stability of email interaction networks with the same number of participants. This is specially important for benchmarking and probing general properties.
+	\item The stability in email interaction networks is higher than for the other networks, considering the same number of participants. This is especially important for benchmarking and probing general properties.
 \end{itemize}
 
 \begin{table*}[!h]
-	\caption{Overview of selected networks analyzed in addition to email interaction networks. Three social platforms were the sources of network structures: Facebook, Twitter and Participa.br. Both friendship and interaction networks were observed, yielding undirected and directed networks, respectively. The number of agents $N$ and the number of edges $z$ are given on the last columns. The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\ref{tab:pcaE1I},~\ref{tab:pcaE1F},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. All data collected in 2013 and 2014.}
+	\caption{Overview of selected networks analyzed in addition to email interaction networks. Three social platforms were the sources of network structures: Facebook, Twitter and Participa.br. Both friendship and interaction networks were observed, yielding undirected and directed networks, respectively. The number of agents $N$ and the number of edges $z$ are given on the last columns. The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\ref{tab:pcaE1I},~\ref{tab:pcaE1F},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. All the data were collected in 2013 and 2014 within the anthropological physics framework~\cite{anPhy}.}
 \begin{center}
 \begin{tabular}{| l | c | c | c | c | c | c | }\hline
 	acronym & provenance & edge & directed & description & $N$ & $z$ \\ \hline\hline
@@ -548,7 +556,9 @@ Most important results from the consideration herein of this analysis are:
 
 
 \begin{table*}[!h]
-	\caption{Percentage of agents in each Erd\"os sector in the friendship and interaction human networks of Table~\ref{tab:E}. The ratios found in email networks are preserved. I1 and I4 are outliers, to which a possible explanation is that they are better characterized as a superposition of networks, rather than one coherent network. Degree was used for sectorializing criteria.}
+	\caption{
+	Percentage of agents in each Erd\"os sector in the friendship and interaction human networks of Table~\ref{tab:E}. The ratios found in email networks are preserved. I1 and I4 are outliers, probably because they should be better characterized as a superposition of networks, rather than one coherent network. The degree was used for establishing the sectors.
+	}
 \begin{center}
 \begin{tabular}{| l | c | c | c |}\hline
 	 & periphery & intermediary & hubs \\ \hline\hline
@@ -561,7 +571,7 @@ Most important results from the consideration herein of this analysis are:
 
 
 \begin{table*}[!h]
-	\caption{First three principal components formation and variance concentration for each of the five friendship networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Participa.br yields the networks that most resembles the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for second component. The friendship of Renato Fabbri (F1) is the only whose first component has more than 20\% of custering coefficient and second component has more than 40\% of degree centrality.}
+	\caption{First three principal components and variance concentration for each of the five friendship networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Participa.br yields the networks that most resemble the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. The friendship network of Renato Fabbri (F1) is the only network whose first component has more than 20\% of clustering coefficient and second component has more than 40\% of degree centrality.}
 	\footnotesize
 \begin{center}
 %\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
@@ -579,82 +589,64 @@ Most important results from the consideration herein of this analysis are:
 \label{tab:pcaE1F}
 \end{table*}
 
-
 \begin{table*}[!h]
-	\caption{First three principal components formation and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Twitter yields the networks that most resembles the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for second component.}
+	\caption{First three principal components and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Twitter yields the networks that most resemble the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component.}
 	\footnotesize
-\begin{center}
-%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
-\begin{tabular}{| l ||  c |c |c |c |c | c | c || c | c | c | c | c | c | c || c |c |c |c |c | c | c |	}\cline{2-22}
-%	 & p. & i. & h. \\ \hline\hline
-\multicolumn{1}{c|}{} & \multicolumn{7}{c||}{PC1}          & \multicolumn{7}{c||}{PC2} & \multicolumn{7}{c|}{PC3}  \\\cline{2-22}
-	\multicolumn{1}{c|}{} & 
-	I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
-	I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
-	I1 & I2 & I3 & I4 & I5 & TT1 & TT2 \\\hline
-	\input{tables/tabPCA1ExtraI}
-\hline
-\end{tabular}
-\end{center}
-\label{tab:pcaE1I}
+	\begin{center}
+		%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
+		\begin{tabular}{| l ||  c |c |c |c |c | c | c || c | c | c | c | c | c | c || c |c |c |c |c | c | c |	}\cline{2-22}
+			%	 & p. & i. & h. \\ \hline\hline
+			\multicolumn{1}{c|}{} & \multicolumn{7}{c||}{PC1}          & \multicolumn{7}{c||}{PC2} & \multicolumn{7}{c|}{PC3}  \\\cline{2-22}
+			\multicolumn{1}{c|}{} & 
+			I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+			I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+			I1 & I2 & I3 & I4 & I5 & TT1 & TT2 \\\hline
+			\input{tables/tabPCA1ExtraI}
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:pcaE1I}
 \end{table*}
 
 
 \begin{table*}[!h]
-	\caption{First three principal components formation and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} considering dimensions of in- and out- degrees and strengths, clustering coefficient and betweenness centrality. Twitter yields the networks that most resembles email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for second component. Important differences are: - the clustering coefficient was only important to the third component for two of the networks ($I2$, $I3$) and does not contribute significantly to any of the first three principal components in $I5$; - in the first component, I5 exhibited less contribution from in-strength, in-degree and betweenness, I4 exhibited less contribution from out-degree.}
+	\caption{First three principal components and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} considering dimensions of in- and out- degrees and strengths, clustering coefficient and betweenness centrality. Twitter yields the networks that most resemble email networks. The general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. Important differences are: - the clustering coefficient was only important to the third component for two of the networks ($I2$, $I3$) and does not contribute significantly to any of the first three principal components in $I5$; - in the first component, I5 exhibited less contribution from in-strength, in-degree and betweenness, I4 exhibited less contribution from out-degree.}
 	\footnotesize
-\begin{center}
-%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
-\begin{tabular}{| l ||  c |c |c |c |c | c | c || c | c | c | c | c | c | c || c |c |c |c |c | c | c |	}\cline{2-22}
-%	 & p. & i. & h. \\ \hline\hline
-\multicolumn{1}{c|}{} & \multicolumn{7}{c||}{PC1}          & \multicolumn{7}{c||}{PC2} & \multicolumn{7}{c|}{PC3}  \\\cline{2-22}
-	\multicolumn{1}{c|}{} & 
-	I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
-	I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
-	I1 & I2 & I3 & I4 & I5 & TT1 & TT2 \\\hline
-	\input{tables/tabPCA2Extra}
-\hline
-\end{tabular}
-\end{center}
-\label{tab:pcaE2}
+	\begin{center}
+		%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
+		\begin{tabular}{| l ||  c |c |c |c |c | c | c || c | c | c | c | c | c | c || c |c |c |c |c | c | c |	}\cline{2-22}
+			%	 & p. & i. & h. \\ \hline\hline
+			\multicolumn{1}{c|}{} & \multicolumn{7}{c||}{PC1}          & \multicolumn{7}{c||}{PC2} & \multicolumn{7}{c|}{PC3}  \\\cline{2-22}
+			\multicolumn{1}{c|}{} & 
+			I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+			I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+			I1 & I2 & I3 & I4 & I5 & TT1 & TT2 \\\hline
+			\input{tables/tabPCA2Extra}
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:pcaE2}
 \end{table*}
 
 
 \begin{table*}[!h]
-	\caption{First three principal components formation and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} considering dimensions of in- and out- degrees and strengths, clustering coefficient, betweenness centrality and symmetry related metrics (see Section~\ref{measures}). In comparison with the results found in email interaction networks, general characteristics are preserved: first component is an average of degree and betweenness, second component is mostly governed by symmetry related metrics, and clustering coefficient is mostly relevant for the third component. Standard deviation of asymmetry and disequilibrium metrics are again coupled to clustering coefficient in the third component. Important differences are: - the first component is a less regular average of centrality measures and has a greater contribution of symmetry metrics; - The first component of I5 is formed mostly from symmetry, not centrality, metrics.}
+	\caption{First three principal components and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} considering dimensions of in- and out- degrees and strengths, clustering coefficient, betweenness centrality and symmetry related metrics (see Section~\ref{measures}). The characteristics found in email interaction networks are preserved: the first component is an average of degree and betweenness, the second component is mostly governed by symmetry related metrics, and clustering coefficient is mostly relevant for the third component. Standard deviation of asymmetry and disequilibrium metrics are again coupled to clustering coefficient in the third component. Important differences are: - the first component is a less regular average of centrality measures and has a greater contribution of symmetry metrics; - The first component of I5 is formed mostly from symmetry, not centrality, metrics.}
 	\footnotesize
-\begin{center}
-%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
-\begin{tabular}{| l ||  c |c |c |c |c | c | c || c | c | c | c | c | c | c || c |c |c |c |c | c | c |	}\cline{2-22}
-%	 & p. & i. & h. \\ \hline\hline
-\multicolumn{1}{c|}{} & \multicolumn{7}{c||}{PC1}          & \multicolumn{7}{c||}{PC2} & \multicolumn{7}{c|}{PC3}  \\\cline{2-22}
-	\multicolumn{1}{c|}{} & 
-	I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
-	I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
-	I1 & I2 & I3 & I4 & I5 & TT1 & TT2 \\\hline
-	\input{tables/tabPCA3Extra}
-\hline
-\end{tabular}
-\end{center}
-\label{tab:pcaE3}
+	\begin{center}
+		%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
+		\begin{tabular}{| l ||  c |c |c |c |c | c | c || c | c | c | c | c | c | c || c |c |c |c |c | c | c |	}\cline{2-22}
+			%	 & p. & i. & h. \\ \hline\hline
+			\multicolumn{1}{c|}{} & \multicolumn{7}{c||}{PC1}          & \multicolumn{7}{c||}{PC2} & \multicolumn{7}{c|}{PC3}  \\\cline{2-22}
+			\multicolumn{1}{c|}{} & 
+			I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+			I1 & I2 & I3 & I4 & I5 & TT1 & TT2 &
+			I1 & I2 & I3 & I4 & I5 & TT1 & TT2 \\\hline
+			\input{tables/tabPCA3Extra}
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:pcaE3}
 \end{table*}
-
-
-
-
-
-%\begin{table}[!h]
-%	\caption{PCA2.}
-%	\footnotesize
-%	\input{tables/tabPCA2Extra}
-%\label{tab:pcaE2}
-%\end{table}
-%\begin{table}[!h]
-%	\caption{PCA3.}
-%	\footnotesize
-%	\input{tables/tabPCA3Extra}
-%\label{tab:pcaE3}
-%\end{table}
 
 
 
@@ -662,7 +654,7 @@ Most important results from the consideration herein of this analysis are:
 %\newpage
 %\pagebreak
 \clearpage
-\nocite{*}
+%\nocite{*}
 \bibliography{supportingInformation}% Produces the bibliography via BibTeX.
 \end{document}
 %
