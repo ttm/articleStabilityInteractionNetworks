@@ -317,9 +317,61 @@ Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$
 
 The simplification of all possible compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors. These compound criteria can be used to examine network sections considering all degrees and strengths and are especially useful in the case of a low number of messages, such as in Section~\ref{si:frac} of the Supporting Information.
 
-\subsection{Topological metrics for Principal Component Analysis}\label{measures}
+\subsection{Principal Component Analysis of topological metrics}\label{sec:pca}
+Principal Component Analysis (PCA) is a well documented technique~\cite{pca} and was used to to know: 1) what metrics contribute to each principal component and in which proportion; 2) how much of the dispersion is concentrated in each component; 3) expected values and dispersions for these quantities over various networks.
 
-The topology of the networks was studied using Principal Component Analysis (PCA)~\cite{pca} with a small selection of the most basic and fundamental measurements for each vertex, as follows:
+Be $\mathbf{X}=\{X[i,j]\}$ a matrix of all vertices $i$ and the respective
+values for each metric $j$, 
+$\mu_X [j]=\frac{\sum_i X[i,j]}{I}$ the mean of metric $j$ over all $I$ vertices, 
+$\sigma_X [j]=\sqrt{\frac{\sum_i (X[i,j]-\mu_X [j])^2}{I}}$ the standard deviation of metric $j$,
+and $\mathbf{X'}=X'[i,j]={\frac{X[i,j]-\mu_X[j]}{\sigma_X[j]}}$ 
+the matrix with the \emph{z-score} of each metric. 
+Be $\mathbf{V}=\{V[j,k]\}$ the matrix $J\times J$ of eigenvectors
+of the covariance matrix $\mathbf{C}$
+of $\mathbf{X'}$, one eigenvector per column.
+Each eigenvector combines the original measures into one principal component, therefore
+$V'[j,k]=100*\frac{|V[j,k]|}{\sum_{j'} |V[j',k]|}$
+delivers the percentage of the principal component $k$
+that is due to the measure $j$.
+With $k$ eigenvectors 
+$D[k]$,
+it is enough to observe $D'[k]=100*\frac{D[k]}{\sum_{k'}D[k']}$
+to know the percentage of dispersion that each principal component
+is responsible for.
+With the eigenvalues $k$ in ascending order
+we observe, in general, the three first eigenvalues and
+the respective eigenvectors in percentages:
+$\{(V'[j,k],\;D'[k])\}$.
+These usually reveal sufficient patterns for a sound analysis and sum between 60 and 95\% of the dispersion.
+Namely, given $L$ observations $l$, each with $k$ pairs of
+eigenvalues and eigenvectors, we observe
+the mean
+$\mu_{V'}[j,k]$
+and the standard deviation $\sigma_{V'}[j,k]$ 
+of the metric $j$ in the principal component $k$,
+and the mean
+$\mu_{D'}[k]$
+and the standard deviation 
+$\sigma_{D'}[k]$
+of the contribution of the component $k$ to the dispersion
+of the system:
+
+\begin{align}\label{eq:pca}
+\mu_{V'}[j,k]   &=\frac{\sum_{l=1}^L V'[j,k,l]}{L}\nonumber\\
+\sigma_{V'}[j,k]&=\sqrt{\frac{\sum_{l=1}^L (\mu_{V'}-V'[j,k,l])^2}{L}}\\\nonumber
+\mu_{D'}[k]&=\frac{\sum_{l=1}^L D'[k,l]}{L}\\\nonumber
+\sigma_{D'}[k]&=\sqrt{\frac{\sum_{l=1}^L (\mu_{D'}-D'[k,l])^2}{L}}
+\end{align}
+
+The covariance matrix 
+$\mathbf{C}$, is the correlation matrix because $\mathbf{X'}$ is normalized. Therefore, it is also directly observed as a first clue for patterns.
+This was accomplished with the most simple associations:
+low absolute values indicate low correlation (and a possible independence);
+high values indicate positive correlation; negative values with high absolute value indicate negative correlation.
+
+\subsubsection{Metrics considered}\label{measures}
+
+The topology of the networks was studied using PCA with a small selection of the most basic and fundamental measurements for each vertex, as follows:
 
 \begin{itemize}
 	\item Degree     $k_i$: number of edges linked to vertex $i$.
