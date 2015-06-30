@@ -1,0 +1,13 @@
+*) X é contrib não incorporada
+*) ? é contrib que não consegui entender ou não legível.
+*) Contribs não anotadas foram incorporadas.
+
+*) Colocar ao menos uma figura das animações que fizemos?
+Talvez no SI? No NJF pode mandar materiais em video como ṕarte do SI.
+
+*) escrever a parte de PCA como na quali:
+https://github.com/ttm/tese/raw/master/ApresentacoesArtigos/quali/quali.pdf
+(seção 3.4)
+
+*) As anotações com "ok" no começo não foram compreendidas (marcadas com interrogação)
+depois aceitei os "ok" foram pulados, pois entendi que significavam contribs descartadas.
