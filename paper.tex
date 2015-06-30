@@ -50,7 +50,7 @@
 %\title[Evolution of interaction networks]{On the evolution of interaction networks: a primitive typology of vertex}% Force line breaks with \\
 %\title[Stability of interaction networks]{Stability in human interaction networks: sector relative sizes, prominence of topological measures and time activity statistics.}% Force line breaks with \\
 %\title[Stability in human interaction networks]{Sector relative sizes and topological metrics time stability in human interaction networks}% Force line breaks with \\
-\title[Interaction networks stability]{Time stability in human interaction networks}% Force line breaks with \\
+\title[Stability in interaction networks]{Temporal stability in human interaction networks}% Force line breaks with \\
 \author{Renato Fabbri}%
 \homepage{http://ifsc.usp.br/~fabbri/}
 \email{fabbri@usp.br}
@@ -100,7 +100,7 @@
 %  but any date may be explicitly specified
 
 \begin{abstract}
-In this study, we demonstrate a remarkably stable activity in human interaction networks. The activity along time and topology evolution were investigated in four e-mail lists by considering window sizes from 50 to 10,000 messages, which were made to slide and generate snapshots of the network in a timeline. Furthermore, the activity in terms of seconds, minutes, hours, days and months, is practically the same for all lists. The activity of participants followed the expected scale-free behavior, thus allowing us to establish three classes of vertices by comparing with the Erd\"os-R\'enyi model, namely hubs, intermediary and peripheral vertices. The relative size of these three sectors did not vary with time and was essentially the same for all e-mail lists. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder are peripheral vertices. The metrics that contribute most to the dispersion of participants in the topological measures space were centrality measurements (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient. Similar results for the distribution of participants in the three categories and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participa.br. Consistent with expectations from the literature, these properties may be general for human interaction networks, which has important implications in establishing a typology based on objective, quantitative criteria.
+In this study, we demonstrate a remarkably stable activity in human interaction networks. The activity along time and topology evolution was investigated in four e-mail lists by considering window sizes from 50 to 10,000 messages, which were made to slide and generate snapshots of the network in a timeline. Notably, the activity in terms of seconds, minutes, hours, days and months, is practically the same for all lists. The activity of participants followed the expected scale-free behavior, thus allowing us to establish three classes of vertices by comparing against the Erd\"os-R\'enyi model, namely hubs, intermediary and peripheral vertices. The relative size of these three sectors did not vary with time and was essentially the same for all e-mail lists. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder are peripheral vertices. The metrics that contribute most to the dispersion of participants in the topological measures space were centrality measurements (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient. Similar results for the distribution of participants in the three categories and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participa.br. Consistent with expectations from the literature, these properties may be general for human interaction networks, which has important implications in establishing a typology based on objective, quantitative criteria.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
@@ -136,11 +136,11 @@ The paper is organized as follows. Section~\ref{sec:related} describes related w
 Subsidiary results from the email lists and of networks from Twitter, Facebook and Participa.br are given in the Supporting Information.
 
 \subsection{Related work}\label{sec:related}
-Research on network evolution often considers solely network growth, in which there is a monotonic increase in the number of events~\cite{barabasiEvo}. Exceptions are reported in this section, with emphasis on those more closely related to the present article.
+Research on network evolution is often restricted to network growth, in which there is a monotonic increase in the number of events~\cite{barabasiEvo}. Exceptions are reported in this section, with emphasis on those more closely related to the present article.
 
 Network types have been discussed with regard to the number of participants, intermittence of their activity and network longevity~\cite{barabasiEvo}. Two topologically different networks emerged from human interaction networks, depending on the frequency of interactions, which can either be a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were reported with $\alpha=1$~\cite{bird} (as are web browsing and library loans~\cite{barabasiHumanDyn}), and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
 
-Unreciprocated edges often exceed 50\% in the networks analyzed, which matches empirical evidence from the literature~\cite{newmanEvolving} and motivated the inclusion of symmetry metrics in our analysis. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were not considered in our study. Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}, but this was not considered in the present article because email messages and addresses have no gender related metadata~\cite{gmanePack}.
+Unreciprocated edges often exceed 50\% in the analyzed networks, which matches empirical evidence from the literature~\cite{newmanEvolving} and motivated the inclusion of symmetry metrics in our analysis. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were not considered in our study. Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}, but this was not considered in the present article because email messages and addresses have no gender related metadata~\cite{gmanePack}.
 
 
 \section{Data description: email lists and messages}\label{sec:data}
@@ -149,7 +149,7 @@ Email list messages were obtained from
 the GMANE email archive~\cite{gmanePack}, which consists of more than 20,000 email lists and more than 130,000,000 messages~\cite{GMANEwikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus with metadata of its messages, including sent time, place, sender name, and sender email address.
 The GMANE usage in scientific research is reported in studies of isolated lists and of lexical innovations~\cite{GMANE2,bird}. 
 
-We analyzed many email lists (and data from Twitter, Facebook and Participa.br) but selected only four in order to make a thorough analysis, from which general properties can be inferred. These lists, selected as representing both a diverse set and ordinary lists, are:
+We analyzed many email lists (and data from Twitter, Facebook and Participa.br) but selected only four in order to make a thorough analysis, from which general properties can be inferred. These lists, selected as representative of both a diverse set and ordinary lists, are:
 \begin{itemize}
 	\item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE.}, with participants holding hybrid artistic and technological interests, from different countries. English is the language used the most. Abbreviated as LAU from now on.
 	\item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE.}, with participants from different countries, and English is the language used the most. A more technical and less active version of LAU. Abbreviated LAD from now on.
@@ -158,13 +158,13 @@ We analyzed many email lists (and data from Twitter, Facebook and Participa.br) 
 \end{itemize} 
 
 The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages indicated in Table~\ref{tab:genLists}.
-In subsidiary experiments we considered 140 additional email lists, also retrieved from the GMANE public database, to analyze the interdependence between the number of participants and the number of threads. Furthermore, we used 12 additional networks from Facebook (8), Twitter (2) and Participa.br (2) to grasp the generality of the results driven from email lists.
+In subsidiary experiments we considered 140 additional email lists, also retrieved from the GMANE public database, to analyze the interdependence between the number of participants and the number of discussion threads. Furthermore, we used 12 additional networks from Facebook (8), Twitter (2) and Participa.br (2) to grasp the generality of the results driven from email lists.
 
 \begin{table}
 	\centering
 	\caption{Columns $date_1$ and $date_M$ have dates of first and last messages from the 20,000 messages considered in each email list.
 		$N$ is the number of participants (number of different email addresses).
-		$\Gamma$ is the number of threads (count of messages without antecedent).
+		$\Gamma$ is the number of discussion threads (count of messages without antecedent).
 		$\overline{M}$ is the number of messages missing in the 20,000 collection, $100\frac{23}{20000}=0.115$ percent in the worst case.
 	}
 	\label{tab:genLists}
@@ -175,14 +175,14 @@ In subsidiary experiments we considered 140 additional email lists, also retriev
 \end{table}
 
 
-\section{Characterization methods}\label{sec:carac}
+\section{Methods}\label{sec:carac}
 The email lists and the networks generated from them were characterized using five procedures, namely: 1) statistics of activity along time, in scales from seconds to years; 2) sectioning of the networks in hubs, intermediary and peripheral vertices; 3) dispersion of basic topological metrics; 4) iterative visualization and data inspection.
 Each of these procedures are described below.
 
 \subsection{Time activity statistics}\label{sec:mtime}
-Messages were counted along time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. This resulted in histograms from which patterns could be drawn. The ratio $\frac{b_h}{b_l}$ between the highest and lowest incidences on the histograms served as a hint of how close the observed distribution is to a uniform distribution.
+Messages were counted over time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. This resulted in histograms from which patterns could be drawn. The ratio $\frac{b_h}{b_l}$ between the highest and lowest incidences on the histograms served as a clue of how close the observed distribution is to a uniform distribution.
 
-The average and the dispersion were taken using circular statistics, in which each $measurement$ (data point) is represented as a complex number with modulus equal to one, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measurement\frac{2\pi}{period}$. The moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
+The average and the dispersion were taken using circular statistics, in which each $measurement$ (data point) is represented as a unit complex number, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measurement\frac{2\pi}{period}$. The moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
 
 \begin{align}\label{eq:cmom}
 	m_n&=\frac{1}{N}\sum_{i=1}^N z_i^n \nonumber\\
