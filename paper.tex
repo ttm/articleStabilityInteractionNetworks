@@ -199,29 +199,29 @@ $\theta_\mu'$ is used as the measure of location. Dispersion is measured using t
 	\delta(z)&=\frac{1-R_2}{2 R_1^2} \nonumber
 \end{align}
 
-As expected, a positive correlation was found in all $Var(z)$, $S(z)$ and $\delta(z)$ dispersion measures, as can be noticed in Section~\ref{si:circ} of the Supporting Information, and $\delta(z)$ was preferred in the discussion of results.
+\noindent As expected, a positive correlation was found in all $Var(z)$, $S(z)$ and $\delta(z)$ dispersion measures, as can be noticed in Section~\ref{si:circ} of the Supporting Information, and $\delta(z)$ was preferred in the discussion of results.
 
 \subsection{Interaction networks}\label{intNet}
 Interaction networks can be modeled both weighted or unweighted, both directed or undirected~\cite{bird,newmanCommunityDirected,newmanCommunity2013}.
-Networks in this article are directed and weighted, the more informative of trivial possibilities, i.e. we did not investigate directed unweighted, undirected weighted, and undirected unweighted representations of the interaction networks. 
-The networks were obtained as follows: a direct response from participant B to a message from participant A yields an edge from A to B, as information went from A to B. The reasoning is: if B wrote a response to a message from A, he/she read what A wrote and formulated a response, so B assimilated information from A, thus $A \rightarrow B$. Inverting edge direction yields the status network: B read the message and considered what A wrote worth responding, giving status to A, thus $B\rightarrow A$. This article uses the information network as described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, one is added to the edge weight. Selfloops were regarded as non-informative and discarded. These human social interaction networks are reported in the literature as exhibiting scale-free and small world properties, as expected for (some) social networks~\cite{bird,newmanBook}.
+Networks in this paper are directed and weighted, the most informative of trivial possibilities. We did not investigate directed unweighted, undirected weighted, and undirected unweighted representations of the interaction networks. 
+The networks were obtained as follows: a direct response from participant B to a message from participant A yields an edge from A to B, as information went from A to B. The reasoning is: if B wrote a response to a message from A, he/she read what A wrote and formulated a response, so B assimilated information from A, thus $A \rightarrow B$. Inverting edge direction yields the status network: B read the message and considered what A wrote worth responding, giving status to A, thus $B\rightarrow A$. This paper uses the information network as described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, the value of one is added to the edge weight. Selfloops were regarded as non-informative and discarded. These human social interaction networks are reported in the literature as exhibiting scale-free and small world properties, as expected for (some) social networks~\cite{bird,newmanBook}.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figs/criaRede__}
-	\caption{Formation of interaction network from email messages. Each vertex represents a participant. A reply message from participant B to a message from participant A is regarded as evidence that B received information from A and yields a directed edge. Multiple messages add ``weight'' to a directed edge. Further details are given in Section~\ref{intNet}.}
+	\caption{The formation of interaction networks from email messages. Each vertex represents a participant. A reply message from B to a message from A is regarded as evidence that B has received information from A and yields a directed edge. Multiple messages add ``weight'' to a directed edge. Further details are given in Section~\ref{intNet}.}
 	\label{formationNetwork}
 \end{figure}
 
 Edges can be created from all antecedent message authors on the message-response thread to each message author.
-We only linked the immediate antecedent to the new message author, both for simplicity and for the valid objection that in adding two edges, $x\rightarrow y$ and $y\rightarrow z$, there is also a weaker connection between $x$ and $z$. Potential interpretations for this weaker connection are: double length, half weight or with one more ``obstacles''. This suggests the adequacy of centrality measurements to account for the connectivity with all nodes, such as betweenness centrality, eigenvector centrality and accessibility~\cite{luMeasures,access}.
+We only linked the immediate antecedent to the new message author, both for simplicity and because in adding two edges, $x\rightarrow y$ and $y\rightarrow z$, there is also a weaker connection between $x$ and $z$. Potential interpretations for this weaker connection are: double length, half weight or with one more ``obstacles''. This suggests the adequacy of centrality measurements to account for the connectivity of a node with all other nodes, such as betweenness centrality, eigenvector centrality and accessibility~\cite{luMeasures,access}.
 
 %\subsubsection{Sectioning of networks in peripheral, intermediary and hubs sectors}\label{sectioning}
 \subsection{Erd\"os sectioning}\label{sectioning}
-In a scale-free network, the peripheral, intermediary and hubs sectors can be derived from a comparison with an Erd\"os-R\'enyi network with the same number of edges and vertices~\cite{3setores}, as depicted in Figure~\ref{fig:setores}. We shall refer to this procedure as \emph{Erd\"os sectioning}, with the resulting sectors being referred to as \emph{Erd\"os sectors} or \emph{primitive sectors}.
+In a scale-free network, the peripheral, intermediary and hubs sectors can be derived from a comparison against an Erd\"os-R\'enyi network with the same number of edges and vertices~\cite{3setores}, as depicted in Figure~\ref{fig:setores}. We shall refer to this procedure as \emph{Erd\"os sectioning}, with the resulting sectors being referred to as \emph{Erd\"os sectors} or \emph{primitive sectors}.
 
 The degree distribution $\widetilde{P}(k)$ of an ideal
-scale-free network $\mathcal{N}_f$ with $N$ vertices and $z$ edges has less
+scale-free network $\mathcal{N}_f(N,z)$ with $N$ vertices and $z$ edges has less
 average degree nodes than the distribution $P(k)$ of an Erd\"os-R\'enyi
 network with the same number of vertices and edges. Indeed, we define in this work the intermediary sector of a network to be the set of all the nodes whose degree is less abundant in the real network than on the Erd\"os-R\'enyi model:
 
@@ -229,47 +229,48 @@ network with the same number of vertices and edges. Indeed, we define in this wo
 	\widetilde{P}(k)<P(k) \Rightarrow \text{k is intermediary degree}
 \end{equation}
 
-If $\mathcal{N}_f$ is directed and has no self-loops, the probability
+If $\mathcal{N}_f(N,z)$ is directed and has no self-loops, the probability
 of an edge between two arbitrary vertices is $p_e=\frac{z}{N(N-1)}$.
-A vertex in the ideal Erd\"os-R\'enyi digraph with the same number of vertices and edges, and thus the same probability $p_e$ for the presence of an edge, will have degree $k$ with probability:
+A vertex in the ideal Erd\"os-R\'enyi digraph with the same number of vertices and edges, and thus the same probability $p_e$ for the presence of an edge, will have degree $k$ with probability
 
 \begin{equation}
 	P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
 \end{equation}
 
-The lower degree fat tail consists on the border vertices, i.e. the peripheral sector or periphery where $\widetilde{P}(k)>P(k)$ and $k$ is lower than any intermediary sector value of $k$. The higher degree fat tail is the hub sector, i.e. $\widetilde{P}(k)>P(k)$ and $k$ is higher than any intermediary sector value of $k$. The reasoning for this classification is: vertices so connected that they are virtually inexistent in networks connected at pure chance (e.g. without preferential attachment) are correctly associated to the hubs sector. Vertices with very few connections, which are way more abundant than expected by pure chance, are assigned to the periphery. Vertices with degree values predicted as the most abundant if connections are created by pure chance, near the average, and less frequent in the real network, are classified as intermediary.
+The lower degree fat tail corresponds to the border vertices, i.e. the peripheral sector or periphery where $\widetilde{P}(k)>P(k)$ and $k$ is lower than any intermediary sector value of $k$. The higher degree fat tail is the hub sector, i.e. $\widetilde{P}(k)>P(k)$ and $k$ is higher than any intermediary sector value of $k$. The reasoning for this classification is as follows: vertices so connected that they are virtually inexistent in networks connected at pure chance (e.g. without preferential attachment) are correctly associated to the hubs sector. Vertices with very few connections, which are way more abundant than expected by pure chance, are assigned to the periphery. Vertices with degree values predicted as the most abundant if connections are created by pure chance, near the average, and less frequent in the real network, are classified as intermediary.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figs/fser_}
-	\caption{Degree distributions of scale-free and Erd\"os-R\'enyi ideal networks.
+	\caption{Classification of the scale-free network vertices by comparing the degree
+		distribution against that of an Erd\"os-R\'enyi ideal network.
 		The latter has more intermediary vertices, while the former has more peripheral and hub vertices.
 		The sector borders are defined by the two intersections $k_L$ and $k_R$ of the connectivity distributions.
 		Characteristic degrees are in the compact intervals: $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$ for the Erd\"os sectors (periphery, intermediary and hubs).}
 		\label{fig:setores}
 \end{figure}
-To ensure statistical validity of the histograms, bins can be chosen to contain at least $\eta$ vertices of the real network. Thus, each bin, starting at degree $k_i$, spans $\Delta_i=[k_{i},k_{j})$ degree values, where $j$ is the smallest integer with which there are at least $\eta$ vertices with degree larger than or equal $k_i$, and less than $k_{j}$. This changes equation~\ref{criterio} to:
+To ensure statistical validity of the histograms, bins can be chosen to contain at least $\eta$ vertices of the real network. Thus, each bin, starting at degree $k_i$, spans $\Delta_i=[k_{i},k_{j})$ degree values, where $j$ is the smallest integer with which there are at least $\eta$ vertices with degree larger than or equal $k_i$, and less than $k_{j}$. This changes equation~\ref{criterio} to
 
 \begin{equation}\label{criterio2}
-	\sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i is intermediary}
+	\sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i is intermediary.}
 \end{equation}
 
-If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used for comparison, with $\overline{w}=2\frac{z}{\sum_is_i}$ the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees ($k^{in}$, $k^{out}$) comparison of the real network should be made with:
+If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used for comparison, with $\overline{w}=2\frac{z}{\sum_is_i}$ the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees ($k^{in}$, $k^{out}$) comparison of the real network should be made with
 \begin{equation}
-	\hat{P}(k^{way})=\binom{N-1}{k^{way}}p_e^k(1-p_e)^{N-1-k^{way}}
+	\hat{P}(k^{way})=\binom{N-1}{k^{way}}p_e^k(1-p_e)^{N-1-k^{way}},
 \end{equation}
 
 \noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths ($s^{in}$, $s^{out}$) are divided by $\overline{w}$ and compared also using $\hat{P}$. Note that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$ as with the total degree.
 
-In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$, and each of the basic six Erd\"os sectioning possibilities $\{E_{\gamma}\}$ have three Erd\"os sectors $E_{\gamma}= \{e_{\gamma, \phi} \}$ defined as:
+In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$, and each of the basic six Erd\"os sectioning possibilities $\{E_{\gamma}\}$ have three Erd\"os sectors $E_{\gamma}= \{e_{\gamma, \phi} \}$ defined as
 
 \begin{alignat}{3}\label{eq:part}
 	e_{\gamma,1}&=\{\;i\;|\;\overline{k}_{\gamma,L}\geq&&\overline{k}_{\gamma,i}\} \nonumber \\
 	e_{\gamma,2}&=\{\;i\;|\;\overline{k}_{\gamma,L}<\;&&\overline{k}_{\gamma,i}\leq\overline{k}_{\gamma,R}\} \\ 
-	e_{\gamma,3}&=\{\;i\;|\;&&\overline{k}_{\gamma,i}<\overline{k}_{\gamma,R}\} \nonumber
+	e_{\gamma,3}&=\{\;i\;|\;&&\overline{k}_{\gamma,i}<\overline{k}_{\gamma,R}\} \nonumber,
 \end{alignat}
 
-\noindent where $\{\overline{k}_{\gamma,i}\}$ is:
+\noindent where $\{\overline{k}_{\gamma,i}\}$ is
 
 \begin{equation}
 	\begin{split}
@@ -278,7 +279,7 @@ In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \ga
 		\overline{k}_{3,i}&=k_i^{out} \\
 		\overline{k}_{4,i}&=\frac{s_i}{\overline{w}} \\
 		\overline{k}_{5,i}&=\frac{s_i^{in}}{\overline{w}} \\
-		\overline{k}_{6,i}&=\frac{s_i^{out}}{\overline{w}} \\
+		\overline{k}_{6,i}&=\frac{s_i^{out}}{\overline{w}}
 	\end{split}
 \end{equation}
 
@@ -287,7 +288,7 @@ In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \ga
 Since different metrics can be used to identify the three types of vertices, compound criteria can be defined. For example, a very stringent criterion can be used, according to which a vertex is only regarded as pertaining to a sector if it is so for all the metrics. After a careful consideration of possible combinations, these were reduced to six:
 
 \begin{itemize}
-	\item Exclusivist criterion $C_1$:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified (usually) do not reach 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
+	\item Exclusivist criterion $C_1$:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified do not usually reach 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
 	\item Inclusivist criterion $C_2$: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and the total number of members may exceed 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
 	\item Exclusivist cascade $C_3$: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
 	\item Inclusivist cascade $C_4$: vertices are hubs if they are classified as so according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
@@ -295,7 +296,7 @@ Since different metrics can be used to identify the three types of vertices, com
 	\item Inclusivist externals $C_6$: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
 \end{itemize}
 
-Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$ integer in the interval $1\leq\delta<6$ can be described as:
+Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$ integer in the interval $1\leq\delta\leq6$, can be described as:
 
 %\begin{alignat}{3}
 \begin{equation}
@@ -314,11 +315,11 @@ Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$
 \end{equation}
 %\end{alignat}
 
-The simplification of all the compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of the scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors precedence. These compound criteria can be used to examine network sections considering all degrees and strengths and are especially useful in the case of a low number of messages, such as in Section~\ref{si:frac} of the Supporting Information.
+The simplification of all possible compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors. These compound criteria can be used to examine network sections considering all degrees and strengths and are especially useful in the case of a low number of messages, such as in Section~\ref{si:frac} of the Supporting Information.
 
 \subsection{Topological metrics for Principal Component Analysis}\label{measures}
 
-The topology of the networks was studied using Principal Component Analysis (PCA~\cite{pca}) with a small selection of the most basic and fundamental measurements for each vertex, as follows:
+The topology of the networks was studied using Principal Component Analysis (PCA)~\cite{pca} with a small selection of the most basic and fundamental measurements for each vertex, as follows:
 
 \begin{itemize}
 	\item Degree     $k_i$: number of edges linked to vertex $i$.
@@ -344,16 +345,15 @@ In order to capture symmetries in the activity of participants, the following me
 
 \subsection{Evolution and visualization of the networks}\label{sec:viz}
 The evolution of the networks was observed within a fixed number of messages, which we refer to as the window size $ws$. This same number of contiguous messages $ws$ was considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used both to perform the Erd\"os sectioning and to apply PCA for the topological metrics.  
-The $ws$ used were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics, which is exhibited in Section~\ref{si:frac} of the Supporting Information. 
+The values of $ws$ employed were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics, which is exhibited in Section~\ref{si:frac} of the Supporting Information. 
 
 Networks were visualized with animations, image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution. Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion. Visualization of network structure was especially useful in the inspection of data and derived structures from the email lists.
 
 \subsection{Availability data and scripts}\label{scripts}
 In order to share routines with the scientific community and the whole of the society,
-the software necessary to achieve the results reported in this article,
+all the required software to achieve the results reported in this article,
 including tables and figures in the Supporting Information,
 are available through a public domain Python package and an open Git repository~\cite{gmanePack}.
-
 
 Data from social networks used in this study were gathered and used within the anthropological physics framework~\cite{anPhy}.
 All data used are also publicly accessible, either because they were already in public domain or because
@@ -363,13 +363,13 @@ Data annotated from Facebook and Twitter are in a public repository~\cite{fbtwDa
 Data from Participa.br was used from the linked data/semantic web RDF triples
 reported in~\cite{opa} and available in~\cite{datahub}.
 
-This is a way to enhance the reliability of the methods,
+This open approach is a way to enhance the reliability of the methods,
 of algorithmic routines, of data consistency,
 and of the results themselves.
 Also,
-by handing not only the framework and the results,
+by handing not only the framework and results,
 but the exact data and processes that render them,
- this raises the scientific contribution of the work~\cite{openSci}.
+ this enriches the scientific nature of our contribution~\cite{openSci}.
 
 %This is a way to enhance the reliability of the methods,
 %of algorithmic routines, of data consistency,
@@ -387,14 +387,14 @@ but the exact data and processes that render them,
 %    \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
 %\end{itemize}
 \subsection{Activity along time}\label{constDisc}
-The activity along time, in terms of seconds, minutes, hours, days and months,  is practically the same for all lists.
-Histograms in each time scale were calculated as were circular average values and their dispersion.
-We chose to give detailed values in Table~\ref{tab:circ}-\ref{tab:min2} because these numbers can actually be used for characterizing nodes (participants) in other networks, and networks themselves, as they are independent of the network under analysis. For example, they may serve for identification of outliers in a community.
+The observed activity along time, in terms of seconds, minutes, hours, days and months,  is practically the same for all lists.
+Histograms in each time scale were computed as were circular average values and their dispersion.
+We chose to provide detailed values in Table~\ref{tab:circ}-\ref{tab:min2} because these numbers can actually be used for characterizing nodes (participants) in other networks, and networks themselves, as they are independent of the network under analysis. For example, they may serve for identification of outliers in a community.
 
 \begin{table}
 	\caption{The rescaled circular mean $\theta_\mu'$ and the circular dispersion $\delta(z)$ described in Section~\ref{sec:mtime}.
-		This typical table was made using all LAD list messages, and the results are the same for other lists, as shown in Section~\ref{si:circ} of the Supporting Information.
-	Most uniform distribution of activity was found in seconds and minutes, where the mean has little meaning.
+		This typical table was constructed using all LAD list messages, and the results are the same for other lists, as shown in Section~\ref{si:circ} of the Supporting Information.
+	The most uniform distribution of activity was found in seconds and minutes, where the mean has little meaning.
 	Hours of the day exhibited the most concentrated activity (lowest $\delta(z)$), with mean between 14h and 15h ($\theta'=-9.61$).
 	Weekdays, month days and months have mean near zero (i.e. near the beginning of the week, month and year) and high dispersion.}
 	\begin{center}
@@ -402,7 +402,7 @@ We chose to give detailed values in Table~\ref{tab:circ}-\ref{tab:min2} because 
 			\hline
 			%scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{max(incidence)}{min(incidence)}$ & $ \mu_{\frac{max(incidence')}{min(incidence')}} $ & $ \sigma_{\frac{max(incidence')}{min(incidence')} } $ \\ \hline\hline
 			%& $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$  \\ \hline\hline
-			& $\theta_\mu'$ & $\delta(z)$  \\ \hline\hline
+			{\bf scale} & {\bf mean} \boldsymbol{$\theta_\mu'$} & {\bf dispersion} \boldsymbol{$\delta(z)$ }  \\ \hline\hline
 			\input{tables/tab2TimeLAD___}
 		\end{tabular}
 	\end{center}
@@ -428,8 +428,8 @@ We chose to give detailed values in Table~\ref{tab:circ}-\ref{tab:min2} because 
 	\end{center}
 	\label{tab:win}
 \end{table}
-In the scale of seconds and minutes, activity obeys a homogeneous pattern, with the messages being slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}. In the networks, $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$ while simulations reach these values but have in average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
-Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected. Circular dispersion is maximized and the mean has little meaning as indicated in Table~\ref{tab:circ}. As for the hours of the day, an abrupt peak appeared around 11am with the most active period being the afternoon. Days of the week revealed a decrease of at least one third and at most two thirds of activity on weekends. Days of the month were regarded as homogeneous with an inconclusive slight tendency of the first week being more active. Months of the year revealed patterns matching usual work and academic calendars. The time period examined here was not sufficient for the analysis of activity along the years. These patterns are exemplified in Tables~\ref{tab:hin}-\ref{tab:min2}.
+In the scale of seconds and minutes, activity obeys a homogeneous pattern, with the messages being slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}. In the networks, $\frac{max(incidence)}{min(incidence)} \in (1.26,1.275]$ while simulations reach these values but have on average more discrepant higher and lower peaks $\xi=\frac{max(incidence')}{min(incidence')} \Rightarrow \mu_\xi=1.2918 \text{ and } \sigma_\xi=0.04619$.
+Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform, i.e. no trend was detected. Circular dispersion is maximized and the mean has little meaning as indicated in Table~\ref{tab:circ}. As for the hours of the day, an abrupt peak appeared around 11am with the most active period being the afternoon. Days of the week revealed a decrease between one third and two thirds of activity on weekends. Days of the month were regarded as homogeneous with an inconclusive slight tendency of the first week being more active. Months of the year revealed patterns matching usual work and academic calendars. The time period examined here was not sufficient for the analysis of activity along the years. These patterns are exemplified in Tables~\ref{tab:hin}-\ref{tab:min2}.
 
 
 \FloatBarrier
