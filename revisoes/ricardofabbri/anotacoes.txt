@@ -7,7 +7,9 @@ Talvez no SI? No NJF pode mandar materiais em video como ṕarte do SI.
 
 *) escrever a parte de PCA como na quali:
 https://github.com/ttm/tese/raw/master/ApresentacoesArtigos/quali/quali.pdf
-(seção 3.4)
+(seção 3.4) FEITO***
 
 *) As anotações com "ok" no começo não foram compreendidas (marcadas com interrogação)
 depois aceitei os "ok" foram pulados, pois entendi que significavam contribs descartadas.
+
+*) Diminuido tamanho da figura dado pedido do Ricardo para melhora dela. Para mim está bom, simples e direto.
