@@ -55,7 +55,8 @@
 \homepage{http://ifsc.usp.br/~fabbri/}
 \email{fabbri@usp.br}
 \affiliation{ 
-	S\~ao Carlos Institute of Physics, University of S\~ao Paulo (IFSC/USP)%\\This line break forced with \textbackslash\textbackslash
+	S\~ao Carlos Institute of Physics, University of S\~ao Paulo (IFSC/USP),
+	PO Box 369, 13560-970, S\~ao Carlos, SP, Brazil %\\This line break forced with \textbackslash\textbackslash
 }
 %
 %\author{Vilson V. da Silva Jr.}
@@ -188,7 +189,7 @@ Each of these procedures are described below.
 \subsection{Time activity statistics}\label{sec:mtime}
 Messages were counted over time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. This resulted in histograms from which patterns could be drawn. The ratio $\frac{b_h}{b_l}$ between the highest and lowest incidences on the histograms served as a clue of how close the observed distribution is to a uniform distribution.
 
-The average and the dispersion were taken using circular statistics, in which each $measurement$ (data point) is represented as a unit complex number, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measurement\frac{2\pi}{T}$, where T is the period in which the counting is repeated. E.g. $\theta=12\frac{2\pi}{24}=\pi$ for a message sent at $12h$ and given $T=24h$ for days. The moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
+The average and the dispersion were taken using circular statistics, in which each $measurement$ (data point) is represented as a unity complex number, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measurement\frac{2\pi}{T}$, T is the period in which the counting is repeated. For example, $\theta=12\frac{2\pi}{24}=\pi$ for a message sent at $12h$ and given $T=24h$ for days. The moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
 
 \begin{align}\label{eq:cmom}
 	m_n&=\frac{1}{N}\sum_{i=1}^N z_i^n \nonumber\\
@@ -300,7 +301,7 @@ Since different metrics can be used to identify the three types of vertices, com
 	\item Exclusivist criterion $C_1$:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified do not usually reach 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
 	\item Inclusivist criterion $C_2$: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and the total number of members may exceed 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
 	\item Exclusivist cascade $C_3$: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
-	\item Inclusivist cascade $C_4$: vertices are hubs if they are classified as so according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
+	\item Inclusivist cascade $C_4$: vertices are hubs if they are classified as such according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
 	\item Exclusivist externals $C_5$: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes by any metric. The rest of the nodes are classified as intermediary.
 	\item Inclusivist externals $C_6$: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
 \end{itemize}
@@ -327,15 +328,15 @@ Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$
 The simplification of all possible compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors. These compound criteria were used to examine network sections considering all degrees and strengths and are especially useful in the case of a low number of messages, such as in Section~\ref{si:frac} of the Supporting Information.
 
 \subsection{Principal Component Analysis of topological metrics}\label{sec:pca}
-Principal Component Analysis (PCA) is a well documented technique~\cite{pca} and was used to know: 1) what metrics contribute to each principal component and in which proportion; 2) how much of the dispersion is concentrated in each component; 3) expected values and dispersions for these quantities over various networks.
+Principal Component Analysis (PCA) is a well documented technique~\cite{pca} and was used to learn: 1) which metrics contribute to each principal component and in which proportion; 2) how much of the dispersion is concentrated in each component; 3) expected values and dispersions for these quantities over various networks.
 
-Be $\mathbf{X}=\{X[i,j]\}$ a matrix of all vertices $i$ and the respective
+Let $\mathbf{X}=\{X[i,j]\}$ be a matrix of all vertices $i$ and the respective
 values for each metric $j$, 
 $\mu_X [j]=\frac{\sum_i X[i,j]}{I}$ the mean of metric $j$ over all $I$ vertices, 
 $\sigma_X [j]=\sqrt{\frac{\sum_i (X[i,j]-\mu_X [j])^2}{I}}$ the standard deviation of metric $j$,
 and $\mathbf{X'}=X'[i,j]={\frac{X[i,j]-\mu_X[j]}{\sigma_X[j]}}$ 
 the matrix with the \emph{z-score} of each metric. 
-Be $\mathbf{V}=\{V[j,k]\}$ the matrix $J\times J$ of eigenvectors
+Let $\mathbf{V}=\{V[j,k]\}$ be the matrix $J\times J$ of eigenvectors
 of the covariance matrix $\mathbf{C}$
 of $\mathbf{X'}$, one eigenvector per column.
 Each eigenvector combines the original measures into one principal component, therefore
