@@ -59,7 +59,7 @@
 %\title[Evolution of interaction networks]{On the evolution of interaction networks: a primitive typology of vertex}% Force line breaks with \\
 %\title[Interaction networks stability: SUPPORTING INFORMATION]{Time stability in human interaction networks: primitive typology of vertex, prominence of measures and time activity statistics (SUPPORTING INFORMATION)}% Force line breaks with \\
 
-\title[Interaction networks stability (Supporting Information)]{Time stability in human interaction networks (Supporting Information)}% Force line breaks with \\
+\title[Interaction networks stability (Supporting Information)]{Temporal stability in human interaction networks: sector sizes, topological prominence and time activity (Supporting Information)}% Force line breaks with \\
 
 \author{Renato Fabbri}%
  \homepage{http://ifsc.usp.br/~fabbri/}
@@ -280,9 +280,106 @@ The most important feature seems to be the homogeneity made explicit by the high
 \end{table}
 
 
+\FloatBarrier
+\section{PCA of measures along the timeline}\label{si:pcat}
+Loadings for the 14 metrics into the principal components are given for all LAD, LAU, MET, CPP, lists, $ws=1000$ messages in 20 disjoint positioning.
+The clustering coefficient (cc) appears as the first metric in the tables, followed by 7 centrality metrics and 6 symmetry-related metrics.
+The centrality metrics, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics.
+The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of strengths and degrees.
+The three components have in average 80.36\% of the variance.
+Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the main document~\cite{tpaper}.
 
+\subsection{Betweenness, clustering and degree}
+
+\begin{table}[!h]
+	\caption{LAU principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA1LAU}
+\label{tab:pcain}
+\end{table}
+
+\begin{table}[!h]
+	\caption{LAD principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA1LAD}
+\label{tab:pcain}
+\end{table}
+
+\begin{table}[!h]
+	\caption{MET principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA1MET}
+\label{tab:pcain}
+\end{table}
+
+\begin{table}[!h]
+	\caption{CPP principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA1CPP}
+\label{tab:pcain}
+\end{table}
+
+\FloatBarrier
+\subsection{Betweenness, clustering, degrees and strengths}
+
+\begin{table}[!h]
+	\caption{LAU principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA2LAU}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{LAD principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA2LAD}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{MET principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA2MET}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{CPP principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA2CPP}
+\label{tab:pcain}
+\end{table}
+
+
+\FloatBarrier
+\subsection{Betweenness, clustering, degrees, strengths and symmetry measures}
+
+\begin{table}[!h]
+	\caption{LAU principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA3LAU}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{LAD principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA3LAD}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{MET principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA3MET}
+\label{tab:pcain}
+\end{table}
+\begin{table}[!h]
+	\caption{CPP principal components formation and concentration of dispersion.}
+	\footnotesize
+	\input{tables/tabPCA3CPP}
+\label{tab:pcain}
+\end{table}
+
+
+\FloatBarrier
 \section{Fraction of participants in each Erd\"os Sector along the timeline}\label{si:frac}
-	Here we present the fraction of participants in each Erd\"os sector with respect to each criterion defined in Section~\ref{sectioning} of the main document~\cite{tpaper}. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown bellow, first for CPP, than for  LAD list.
+	Here we present the fraction of participants in each Erd\"os sector with respect to each criterion defined in Section~\ref{sectioning} of the main document~\cite{tpaper}. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown below, first for CPP, then for  LAD list.
 
 							Each step size takes two pages of plot. On the first page, the criterion is based on each centrality metric observed separately: in, out and total degrees and strengths. In the first six plots, the code for the colors is as follows: red for hubs, green for the fraction of intermediary vertices and blue for the peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the greatest component. On the same graph, green represents the disconnected vertices.
 
@@ -423,108 +520,7 @@ The most important feature seems to be the homogeneity made explicit by the high
 \end{figure*}
 
 
-
-
-
-
-
-
 \FloatBarrier
-\section{PCA of measures along the timeline}\label{si:pcat}
-Loadings for the 14 metrics into the principal components are given for all LAD, LAU, MET, CPP, lists, $ws=1000$ messages in 20 disjoint positioning.
-The clustering coefficient (cc) appears as the first metric in the tables, followed by 7 centrality metrics and 6 symmetry-related metrics.
-The centrality metrics, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics.
-The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of strengths and degrees.
-The three components have in average 80.36\% of the variance.
-Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the main document~\cite{tpaper}.
-
-\subsection{Betweenness, clustering and degree}
-
-\begin{table}[!h]
-	\caption{LAU principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA1LAU}
-\label{tab:pcain}
-\end{table}
-
-\begin{table}[!h]
-	\caption{LAD principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA1LAD}
-\label{tab:pcain}
-\end{table}
-
-\begin{table}[!h]
-	\caption{MET principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA1MET}
-\label{tab:pcain}
-\end{table}
-
-\begin{table}[!h]
-	\caption{CPP principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA1CPP}
-\label{tab:pcain}
-\end{table}
-
-\FloatBarrier
-\subsection{Betweenness, clustering, degrees and strengths}
-
-\begin{table}[!h]
-	\caption{LAU principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA2LAU}
-\label{tab:pcain}
-\end{table}
-\begin{table}[!h]
-	\caption{LAD principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA2LAD}
-\label{tab:pcain}
-\end{table}
-\begin{table}[!h]
-	\caption{MET principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA2MET}
-\label{tab:pcain}
-\end{table}
-\begin{table}[!h]
-	\caption{CPP principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA2CPP}
-\label{tab:pcain}
-\end{table}
-
-
-\FloatBarrier
-\subsection{Betweenness, clustering, degrees, strengths and symmetry measures}
-
-\begin{table}[!h]
-	\caption{LAU principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA3LAU}
-\label{tab:pcain}
-\end{table}
-\begin{table}[!h]
-	\caption{LAD principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA3LAD}
-\label{tab:pcain}
-\end{table}
-\begin{table}[!h]
-	\caption{MET principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA3MET}
-\label{tab:pcain}
-\end{table}
-\begin{table}[!h]
-	\caption{CPP principal components formation and concentration of dispersion.}
-	\footnotesize
-	\input{tables/tabPCA3CPP}
-\label{tab:pcain}
-\end{table}
-
 \section{Stability in other networks: Twitter, Facebook, Participa.br}\label{si:ext}
 To further verify the hypothesis that such stability is a general property of human social networks,
 we analyzed networks from Twitter, Facebook and Participa.br. Selected networks are summarized in

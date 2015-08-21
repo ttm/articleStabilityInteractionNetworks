@@ -224,6 +224,84 @@ The networks were obtained as follows: a direct response from participant B to a
 %We only linked the immediate antecedent to the new message author, both for simplicity and because in adding two edges, $x\rightarrow y$ and $y\rightarrow z$, there is also a weaker connection between $x$ and $z$. Potential interpretations for this weaker connection are: double length, half weight or with one more ``obstacles''. This suggests the adequacy of centrality measurements to account for the connectivity of a node with all other nodes, such as betweenness centrality, eigenvector centrality and accessibility~\cite{luMeasures,access}.
 
 %\subsubsection{Sectioning of networks in peripheral, intermediary and hubs sectors}\label{sectioning}
+\subsection{Principal Component Analysis of topological metrics}\label{sec:pca}
+Principal Component Analysis (PCA) is a well documented technique~\cite{pca} and was used to learn: 1) which metrics contribute to each principal component and in which proportion; 2) how much of the dispersion is concentrated in each component; 3) expected values and dispersions for these quantities over various networks.
+
+Let $\mathbf{X}=\{X[i,j]\}$ be a matrix of all vertices $i$ and the respective
+values for each metric $j$, 
+$\mu_X [j]=\frac{\sum_i X[i,j]}{I}$ the mean of metric $j$ over all $I$ vertices, 
+$\sigma_X [j]=\sqrt{\frac{\sum_i (X[i,j]-\mu_X [j])^2}{I}}$ the standard deviation of metric $j$,
+and $\mathbf{X'}=X'[i,j]={\frac{X[i,j]-\mu_X[j]}{\sigma_X[j]}}$ 
+the matrix with the \emph{z-score} of each metric. 
+Let $\mathbf{V}=\{V[j,k]\}$ be the matrix $J\times J$ of eigenvectors
+of the covariance matrix $\mathbf{C}$
+of $\mathbf{X'}$, one eigenvector per column.
+Each eigenvector combines the original measures into one principal component, therefore
+$V'[j,k]=100*\frac{|V[j,k]|}{\sum_{j'} |V[j',k]|}$
+delivers the percentage of the principal component $k$
+that is due to the measure $j$.
+With $k$ eigenvectors 
+$D[k]$,
+it is enough to observe $D'[k]=100*\frac{D[k]}{\sum_{k'}D[k']}$
+to know the percentage of dispersion that each principal component
+is responsible for.
+With the eigenvalues $k$ in ascending order
+we observe, in general, the three first eigenvalues and
+the respective eigenvectors in percentages:
+$\{(V'[j,k],\;D'[k])\}$.
+These usually reveal sufficient patterns for a sound analysis and sum between 60 and 95\% of the dispersion.
+Namely, given $L$ observations $l$, each with $k$ pairs of
+eigenvalues and eigenvectors, we observe
+the mean
+$\mu_{V'}[j,k]$
+and the standard deviation $\sigma_{V'}[j,k]$ 
+of the metric $j$ in the principal component $k$,
+and the mean
+$\mu_{D'}[k]$
+and the standard deviation 
+$\sigma_{D'}[k]$
+of the contribution of the component $k$ to the dispersion
+of the system:
+
+\begin{align}\label{eq:pca}
+\mu_{V'}[j,k]   &=\frac{\sum_{l=1}^L V'[j,k,l]}{L}\nonumber\\
+\sigma_{V'}[j,k]&=\sqrt{\frac{\sum_{l=1}^L (\mu_{V'}-V'[j,k,l])^2}{L}}\\\nonumber
+\mu_{D'}[k]&=\frac{\sum_{l=1}^L D'[k,l]}{L}\\\nonumber
+\sigma_{D'}[k]&=\sqrt{\frac{\sum_{l=1}^L (\mu_{D'}-D'[k,l])^2}{L}}
+\end{align}
+
+The covariance matrix 
+$\mathbf{C}$ is the correlation matrix because $\mathbf{X'}$ is normalized. Therefore, it is also directly observed as a first clue for patterns.
+This was accomplished with the most simple associations:
+low absolute values indicate low correlation (and a possible independence);
+high values indicate positive correlation; negative values with high absolute value indicate negative correlation.
+
+\subsubsection{Metrics considered}\label{measures}
+
+The topology of the networks was studied using PCA with a small selection of the most basic and fundamental measurements for each vertex, as follows:
+
+\begin{itemize}
+	\item Degree     $k_i$: number of edges linked to vertex $i$.
+	\item In-degree  $k_i^{in}$: number of edges ending at vertex $i$.
+	\item Out-degree $k_i^{out}$: number of edges departing from vertex $i$.
+	\item Strength $s$: sum of weights of all edges linked to vertex $i$.
+	\item In-strength $s_i^{in}$: sum of weights of all edges ending at vertex $i$.
+	\item Out-strength $s_i^{out}$: sum of weights of all edges departing from vertex $i$.
+	\item Clustering coefficient $cc_i$: fraction of pairs of neighbors of $i$ that are linked.  The standard clustering coefficient for undirected graphs was used.
+	\item Betweenness centrality $bt_i$: fraction of geodesics that contain vertex $i$. The betweenness centrality index considered directions and weight, as specified in~\cite{faster}.
+\end{itemize}
+
+In order to capture symmetries in the activity of participants, the following metrics were introduced for a vertex $i$: 
+
+\begin{itemize}
+	\item Asymmetry: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
+	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|=k_i$ is the number of neighbors of vertex $i$.
+	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
+	\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
+	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
+	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
+\end{itemize}
+
 \subsection{Erd\"os sectioning}\label{sectioning}
 In a scale-free network, the peripheral, intermediary and hubs sectors can be derived from a comparison against an Erd\"os-R\'enyi network with the same number of edges and vertices~\cite{3setores}, as depicted in Figure~\ref{fig:setores}. We shall refer to this procedure as \emph{Erd\"os sectioning}, with the resulting sectors being referred to as \emph{Erd\"os sectors} or \emph{primitive sectors}.
 
@@ -327,83 +405,8 @@ Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$
 
 The simplification of all possible compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors. These compound criteria were used to examine network sections considering all degrees and strengths and are especially useful in the case of a low number of messages, such as in Section~\ref{si:frac} of the Supporting Information.
 
-\subsection{Principal Component Analysis of topological metrics}\label{sec:pca}
-Principal Component Analysis (PCA) is a well documented technique~\cite{pca} and was used to learn: 1) which metrics contribute to each principal component and in which proportion; 2) how much of the dispersion is concentrated in each component; 3) expected values and dispersions for these quantities over various networks.
 
-Let $\mathbf{X}=\{X[i,j]\}$ be a matrix of all vertices $i$ and the respective
-values for each metric $j$, 
-$\mu_X [j]=\frac{\sum_i X[i,j]}{I}$ the mean of metric $j$ over all $I$ vertices, 
-$\sigma_X [j]=\sqrt{\frac{\sum_i (X[i,j]-\mu_X [j])^2}{I}}$ the standard deviation of metric $j$,
-and $\mathbf{X'}=X'[i,j]={\frac{X[i,j]-\mu_X[j]}{\sigma_X[j]}}$ 
-the matrix with the \emph{z-score} of each metric. 
-Let $\mathbf{V}=\{V[j,k]\}$ be the matrix $J\times J$ of eigenvectors
-of the covariance matrix $\mathbf{C}$
-of $\mathbf{X'}$, one eigenvector per column.
-Each eigenvector combines the original measures into one principal component, therefore
-$V'[j,k]=100*\frac{|V[j,k]|}{\sum_{j'} |V[j',k]|}$
-delivers the percentage of the principal component $k$
-that is due to the measure $j$.
-With $k$ eigenvectors 
-$D[k]$,
-it is enough to observe $D'[k]=100*\frac{D[k]}{\sum_{k'}D[k']}$
-to know the percentage of dispersion that each principal component
-is responsible for.
-With the eigenvalues $k$ in ascending order
-we observe, in general, the three first eigenvalues and
-the respective eigenvectors in percentages:
-$\{(V'[j,k],\;D'[k])\}$.
-These usually reveal sufficient patterns for a sound analysis and sum between 60 and 95\% of the dispersion.
-Namely, given $L$ observations $l$, each with $k$ pairs of
-eigenvalues and eigenvectors, we observe
-the mean
-$\mu_{V'}[j,k]$
-and the standard deviation $\sigma_{V'}[j,k]$ 
-of the metric $j$ in the principal component $k$,
-and the mean
-$\mu_{D'}[k]$
-and the standard deviation 
-$\sigma_{D'}[k]$
-of the contribution of the component $k$ to the dispersion
-of the system:
 
-\begin{align}\label{eq:pca}
-\mu_{V'}[j,k]   &=\frac{\sum_{l=1}^L V'[j,k,l]}{L}\nonumber\\
-\sigma_{V'}[j,k]&=\sqrt{\frac{\sum_{l=1}^L (\mu_{V'}-V'[j,k,l])^2}{L}}\\\nonumber
-\mu_{D'}[k]&=\frac{\sum_{l=1}^L D'[k,l]}{L}\\\nonumber
-\sigma_{D'}[k]&=\sqrt{\frac{\sum_{l=1}^L (\mu_{D'}-D'[k,l])^2}{L}}
-\end{align}
-
-The covariance matrix 
-$\mathbf{C}$ is the correlation matrix because $\mathbf{X'}$ is normalized. Therefore, it is also directly observed as a first clue for patterns.
-This was accomplished with the most simple associations:
-low absolute values indicate low correlation (and a possible independence);
-high values indicate positive correlation; negative values with high absolute value indicate negative correlation.
-
-\subsubsection{Metrics considered}\label{measures}
-
-The topology of the networks was studied using PCA with a small selection of the most basic and fundamental measurements for each vertex, as follows:
-
-\begin{itemize}
-	\item Degree     $k_i$: number of edges linked to vertex $i$.
-	\item In-degree  $k_i^{in}$: number of edges ending at vertex $i$.
-	\item Out-degree $k_i^{out}$: number of edges departing from vertex $i$.
-	\item Strength $s$: sum of weights of all edges linked to vertex $i$.
-	\item In-strength $s_i^{in}$: sum of weights of all edges ending at vertex $i$.
-	\item Out-strength $s_i^{out}$: sum of weights of all edges departing from vertex $i$.
-	\item Clustering coefficient $cc_i$: fraction of pairs of neighbors of $i$ that are linked.  The standard clustering coefficient for undirected graphs was used.
-	\item Betweenness centrality $bt_i$: fraction of geodesics that contain vertex $i$. The betweenness centrality index considered directions and weight, as specified in~\cite{faster}.
-\end{itemize}
-
-In order to capture symmetries in the activity of participants, the following metrics were introduced for a vertex $i$: 
-
-\begin{itemize}
-	\item Asymmetry: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
-	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|=k_i$ is the number of neighbors of vertex $i$.
-	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
-	\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
-	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
-	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
-\end{itemize}
 
 \subsection{Evolution and visualization of the networks}\label{sec:viz}
 The evolution of the networks was observed within a fixed number of messages, which we refer to as the window size $ws$. This same number of contiguous messages $ws$ was considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used both to perform the Erd\"os sectioning and to apply PCA for the topological metrics.  
@@ -509,6 +512,34 @@ Therefore, the incidence of messages at each second of a minute and at each minu
 	\input{tables/tabMonthsLAU}
 	\label{tab:min2}
 \end{table}
+\subsection{Stability of principal components and the prevalence of symmetry over clusterization for dispersion}\label{prevalence}
+The topology was analyzed using standard, well-established metrics of centrality and clustering.
+We also introduced symmetry metrics given the evidence of their importance in social contexts~\cite{newmanEvolving}.
+The contribution of each metric to the variance is very similar for all the networks, and did not vary with time.
+In applying PCA to the snapshots, the contribution of each metric to the principal components presents very small standard deviation. Table~\ref{tab:pcain} exemplifies the principal components formation with all the metrics considered for the MET email list. Similar results are presented in Section~\ref{si:pcat} of the Supporting Information for the other lists, with separate consideration of strategic combinations of metrics.
+
+\begin{table}[!h]
+	\caption{Loadings for the 14 metrics into the principal components for the MET list, $ws=1000$ messages in 20 disjoint positioning. The clustering coefficient (cc) appears as the first metric in the Table, followed by 7 centrality metrics and 6 symmetry-related metrics. Note that the centrality measurements, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics. The clustering coefficient is only relevant for the third principal component. The three components have in average 80\% of the variance.}
+		\footnotesize
+		\input{tables/tabPCA3CPP}
+		\label{tab:pcain}
+	\end{table}
+
+The first principal component is an average of centrality metrics: degrees, strengths and betweenness centrality. Therefore, all of these centrality measurements are equally important for characterizing the networks. On one hand, the relevance of all centrality metrics is not surprising since they may be highly correlated. The degree and strength, for instance, are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. On the other hand, each of these metrics is related to a different participation characteristic, and their equal relevance is noticeable.
+The clustering coefficient is presented in almost perfect orthogonality to centrality metrics.
+\begin{figure*} 
+	\centering
+	\includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
+	\caption{The first plot shows degree versus clustering coefficient. This typical pattern is well known, since high clustering is more incident in vertices with lower degrees. The second plot is analogous but the first component is an average of centrality metrics. The second component remains related to the clustering coefficient. The third plot exhibits the greater dispersion in the symmetry-related second component. In this case, the clustering coefficient is only relevant for the third component. This greater dispersion suggests that symmetry-related metrics are more powerful for characterizing interaction networks than the clustering coefficient, especially for hubs and intermediary vertices.
+	This figure was obtained with a snapshot of the LAU list in a window size of $ws = 1000$ messages. Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which points to a common relationship between the metrics of degrees, strengths and betweenness centrality, the symmetry-related metrics and clustering coefficient.}
+	\label{fig:sym}
+\end{figure*}
+
+Dispersion was more prevalent in symmetry-related metrics than for the clustering coefficient, as indicated in Table~\ref{tab:pcain}. This is also illustrated in Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong to. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the third component (clustering related).
+The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects the relevance of the symmetry-related metrics for the variance.
+We conclude that the latter metrics can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
+
+The relative importance of the topological metrics was also observed for the additional 12 networks from Facebook, Twitter and Participa.br. With the exception of two of these networks, the overall behavior was maintained in that centrality measurements were found to be the most relevant to explain network topology, followed by symmetry-related metrics and then clustering coefficient. The results are given in Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2},~\ref{tab:pcaE3} of the Supporting Information. There are larger differences between two of these networks than between two (GMANE) email networks, as the latter were much more regular.
 
 \subsection{Scalable fat-tail structure: constancy of membership fractions in each Erd\"os sector}\label{subsec:pih}
 
@@ -543,36 +574,6 @@ In order to verify the possible generality of these findings, we obtained the Er
 	\end{center}
 	\label{autores}
 \end{table}
-
-
-\subsection{Stability of principal components and the prevalence of symmetry over clusterization for dispersion}\label{prevalence}
-The topology was analyzed using standard, well-established metrics of centrality and clustering.
-We also introduced symmetry metrics given the evidence of their importance in social contexts~\cite{newmanEvolving}.
-The contribution of each metric to the variance is very similar for all the networks, and did not vary with time.
-In applying PCA to the snapshots, the contribution of each metric to the principal components presents very small standard deviation. Table~\ref{tab:pcain} exemplifies the principal components formation with all the metrics considered for the MET email list. Similar results are presented in Section~\ref{si:pcat} of the Supporting Information for the other lists, with separate consideration of strategic combinations of metrics.
-
-\begin{table}[!h]
-	\caption{Loadings for the 14 metrics into the principal components for the MET list, $ws=1000$ messages in 20 disjoint positioning. The clustering coefficient (cc) appears as the first metric in the Table, followed by 7 centrality metrics and 6 symmetry-related metrics. Note that the centrality measurements, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics. The clustering coefficient is only relevant for the third principal component. The three components have in average 80\% of the variance.}
-		\footnotesize
-		\input{tables/tabPCA3CPP}
-		\label{tab:pcain}
-	\end{table}
-
-The first principal component is an average of centrality metrics: degrees, strengths and betweenness centrality. Therefore, all of these centrality measurements are equally important for characterizing the networks. On one hand, the relevance of all centrality metrics is not surprising since they may be highly correlated. The degree and strength, for instance, are highly correlated, with Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$. On the other hand, each of these metrics is related to a different participation characteristic, and their equal relevance is noticeable.
-The clustering coefficient is presented in almost perfect orthogonality to centrality metrics.
-\begin{figure*} 
-	\centering
-	\includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
-	\caption{The first plot shows degree versus clustering coefficient. This typical pattern is well known, since high clustering is more incident in vertices with lower degrees. The second plot is analogous but the first component is an average of centrality metrics. The second component remains related to the clustering coefficient. The third plot exhibits the greater dispersion in the symmetry-related second component. In this case, the clustering coefficient is only relevant for the third component. This greater dispersion suggests that symmetry-related metrics are more powerful for characterizing interaction networks than the clustering coefficient, especially for hubs and intermediary vertices.
-	This figure was obtained with a snapshot of the LAU list in a window size of $ws = 1000$ messages. Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$ and for networks of other email lists, which points to a common relationship between the metrics of degrees, strengths and betweenness centrality, the symmetry-related metrics and clustering coefficient.}
-	\label{fig:sym}
-\end{figure*}
-
-Dispersion was more prevalent in symmetry-related metrics than for the clustering coefficient, as indicated in Table~\ref{tab:pcain}. This is also illustrated in Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong to. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the third component (clustering related).
-The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects the relevance of the symmetry-related metrics for the variance.
-We conclude that the latter metrics can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
-
-The relative importance of the topological metrics was also observed for the additional 12 networks from Facebook, Twitter and Participa.br. With the exception of two of these networks, the overall behavior was maintained in that centrality measurements were found to be the most relevant to explain network topology, followed by symmetry-related metrics and then clustering coefficient. The results are given in Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2},~\ref{tab:pcaE3} of the Supporting Information. There are larger differences between two of these networks than between two (GMANE) email networks, as the latter were much more regular.
 
 \subsection{Types from Erd\"os sectors}\label{sec:pty}
 A sector to which a vertex belongs can be regarded as yielding a type to the corresponding participant.
