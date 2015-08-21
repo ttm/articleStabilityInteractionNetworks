@@ -50,7 +50,7 @@
 %\title[Evolution of interaction networks]{On the evolution of interaction networks: a primitive typology of vertex}% Force line breaks with \\
 %\title[Stability of interaction networks]{Stability in human interaction networks: sector relative sizes, prominence of topological measures and time activity statistics.}% Force line breaks with \\
 %\title[Stability in human interaction networks]{Sector relative sizes and topological metrics time stability in human interaction networks}% Force line breaks with \\
-\title[Stability of interaction networks]{Temporal stability in human interaction networks}% Force line breaks with \\
+\title[Stability of interaction networks]{Temporal stability in human interaction networks: sector sizes, topological prominence and time activity}% Force line breaks with \\
 \author{Renato Fabbri}%
 \homepage{http://ifsc.usp.br/~fabbri/}
 \email{fabbri@usp.br}
@@ -63,37 +63,43 @@
 %\email{vilson@void.cc}
 %\altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 %
-%\author{Ricardo Fabbri}
-%\homepage{http://www.lems.brown.edu/~rfabbri/}
-%\email{rfabbri@iprj.uerj.br}
-%\altaffiliation{
-%	Instituto Polit\'ecnico, Universidade Estadual do Rio de Janeiro (IPRJ)
-%}%Lines break automatically or can be forced with \\
-%
-%\author{Deborah C. Antunes}
-%\homepage{http://lattes.cnpq.br/1065956470701739}
-%\email{deborahantunes@gmail.com}
-%\altaffiliation{
-%	Curso de Psicologia, Universidade Federal do Cer\'a (UFC)
-%}%Lines break automatically or can be forced with \\
-%
-%\author{Marilia M. Pisani}
-%\homepage{http://lattes.cnpq.br/6738980149860322}
-%\email{marilia.m.pisani@gmail.com}
-%\altaffiliation{
-	%Centro de CiÃƒÂªncias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
-%}%Lines break automatically or can be forced with \\
+\author{Ricardo Fabbri}
+\homepage{http://www.lems.brown.edu/~rfabbri/}
+\email{rfabbri@iprj.uerj.br}
+\altaffiliation{
+	Instituto Polit\'ecnico, Universidade Estadual do Rio de Janeiro (IPRJ)
+}%Lines break automatically or can be forced with \\
+
+\author{Deborah C. Antunes}
+\homepage{http://lattes.cnpq.br/1065956470701739}
+\email{deborahantunes@gmail.com}
+\altaffiliation{
+	Curso de Psicologia, Universidade Federal do Cer\'a (UFC)
+}%Lines break automatically or can be forced with \\
+
+\author{Marilia M. Pisani}
+\homepage{http://lattes.cnpq.br/6738980149860322}
+\email{marilia.m.pisani@gmail.com}
+\altaffiliation{
+       %Centro de CiÃƒÂªncias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC)
+}%Lines break automatically or can be forced with \\
 
 %
 %%\author{Luciano da Fontoura Costa}
 %%  \homepage{http://cyvision.ifsc.usp.br/~luciano/}
 %%  \email{ldfcosta@gmail.com}
 %  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+%
+\author{Leonardo Paulo Maia}
+  \homepage{http://www.ifsc.usp.br/~lpmaia/}
+  \email{lpmaia@ifsc.usp.br }
+ \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 
-%\author{Osvaldo N. Oliveira Jr.}
-%  \homepage{www.polimeros.ifsc.usp.br/professors/professor.php?id=4}
-%  \email{chu@ifsc.usp.br}
-% \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+
+\author{Osvaldo N. Oliveira Jr.}
+  \homepage{www.polimeros.ifsc.usp.br/professors/professor.php?id=4}
+  \email{chu@ifsc.usp.br}
+ \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 
 
 \date{\today}% It is always \today, today,
@@ -104,7 +110,7 @@ In this study, we demonstrate a remarkably stable activity in human interaction 
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
-\keywords{complex networks, social network analysis, pattern recognition, statistics, anthropological physics}
+\keywords{complex networks, social network analysis, pattern recognition, statistics, anthropological physics, social psychology of big data}
 \maketitle
 
 \begin{quotation}
@@ -130,7 +136,7 @@ Studies on human interaction networks have started long before modern computers,
 social network analysis is generally attributed to the psychiatrist Jacob Moreno in mid twentieth century~\cite{moreno}. With the increasing availability of data related to human interactions, research on these networks has grown continuously. Contributions can now be found in a variety of fields, from social sciences and humanities~\cite{latour2013} to computer science~\cite{bird} and physics~\cite{barabasiHumanDyn,newmanFriendship}, given the multidisciplinary nature of the topic. One of the approaches from an exact science perspective is to represent interaction networks as complex networks~\cite{barabasiHumanDyn,newmanFriendship}, with which 
 several features of human interaction have been revealed. For example, the topology of human interaction networks exhibits a scale-free trace, which points to the existence of a small number of highly connected hubs and a large number of poorly connected nodes. The dynamics of complex networks representing human interaction has also been addressed~\cite{barabasiEvo,newmanEvolving}, but only to a limited extent, since research is normally focused on a particular metric or task, such as accessibility or community detection~\cite{access,newmanModularity}. 
 
-In this paper we analyze the evolution of human interaction networks, by considering interaction in email lists as their representative. Using a timeline of activity snapshots with a constant number of contiguous messages in email lists, we found a remarkable stability for several of the network properties. Because these properties were shared by networks from Twitter, Facebook and Participa.br, and are consistent with the literature, we advocate that some of the conclusions might be valid for more general classes of interaction networks. In particular, this allows us to discuss typologies in the context of such networks, in an attempt to bridge the gap between approaches based solely on data analysis (i.e. from a hard sciences perspective) and those relevant to the social sciences. This is important insofar as typologies are the canon of scientific literature for classification of human agents~\cite{typCanon}. 
+In this paper we analyze the evolution of human interaction networks, by considering interaction in email lists as their representative. Using a timeline of activity snapshots with a constant number of contiguous messages in email lists, we found a remarkable stability for several of the network properties. Because these properties were shared by networks from Twitter, Facebook and Participa.br, and are consistent with the complex networks literature, we advocate that some of the conclusions might be valid for more general classes of interaction networks. In particular, this allows us to discuss typologies in such contexts, in an attempt to bridge the gap between approaches based solely on data analysis (i.e. from a hard sciences perspective) and those relevant to the social sciences. This is important insofar as typologies are the canon of scientific literature for classification of human agents, with pragmatic standards~\cite{myers} and critical paradigms~\cite{adorno,typCanon}. 
 
 The paper is organized as follows. Section~\ref{sec:related} describes related work, while details of the data and methods of analysis are given in  Section~\ref{sec:data} and Section~\ref{sec:carac}. Section~\ref{sec:results} brings the results and discussion, leading to Section~\ref{sec:conc} for conclusions.
 Subsidiary results from the email lists and of networks from Twitter, Facebook and Participa.br are given in the Supporting Information.
@@ -606,7 +612,7 @@ For example, the relative fractions of participants classified as hubs, intermed
 Furthermore, the PCA analysis of the topological metrics characterizing the networks also indicated that the contribution of each metric did not vary in time.
 Centrality metrics were found to be the most relevant to characterize the network topology, followed by symmetry-related metrics, which were more relevant, with respect to variance, than clustering. 
 
-A systematic study of the activity of participants belonging to the three distinct Erd\"os sectors indicated simple patterns for hubs and peripheral vertices, while the network structure was governed by the intermediary vertices. These properties were shared by all email lists and were time-independent, being consistent with the literature. Moreover, both the distribution of Erd\"os sectors and the contribution from the metrics to the PCA were found to apply to networks from Facebook, Twitter and Participa.br. We may therefore consider the classification of agents into Erd\"os sectors as a first step leading to a human typology which bridges exact sciences, with objective procedures for the classification, and human sciences, where there is a legacy in the observation of human types. 
+A systematic study of the activity of participants belonging to the three distinct Erd\"os sectors indicated simple patterns for hubs and peripheral vertices, while the network structure was governed by the intermediary vertices. These properties were shared by all email lists and were time-independent, being consistent with the literature. Moreover, both the distribution of Erd\"os sectors and the contribution from the metrics to the PCA were found to apply to networks from Facebook, Twitter and Participa.br. We may therefore consider the classification of agents into Erd\"os sectors as a first step leading to a human typology which bridges exact sciences, with quantitative procedures for the classification, and human sciences, where there is a legacy in the observation of human types. 
 
 
 \begin{acknowledgments}
