@@ -1,0 +1,17 @@
+Please provide a description of content in your supplemental files
+The supporting information (this document) contains
+statistics for time activity (circular statistics and his-
+tograms) in Section I, the fraction of vertices in the pe-
+ripheral, intermediary and hub sectors in Section III and
+the combination of basic topological measures into princi-
+pal components with greater variance in Section II. There
+is a focus on email list interaction networks for bench-
+marking and Section IV reinforces the results with the
+analysis of networks from Facebook, Twitter and Partic-
+ipa.br. More context (e.g. methods, discussion, data and
+scripts) is given in the main document of the manuscript.
+
+Provide any special instructions a reader would need to access the files.
+Directions are given in the bibliography for online videos of evolving networks represented as animation and music.
+The data is open and mostly officially available as part of the GMANE project.
+the scripts for performing the analysis and that render images and videos are shared open Python PyPI packages. 
