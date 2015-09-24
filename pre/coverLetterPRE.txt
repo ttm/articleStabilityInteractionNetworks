@@ -1,0 +1,25 @@
+Please find attached the manuscript entitled "Temporal stability in human interaction networks",
+ which we submit for publication in the Physical Review E.
+The reasons why we chose NJP as the vehicle for our manuscript are as follows.
+In the manuscript we report on the temporal stability of social networks with benchmarks deriving from email lists.
+We were unable to find similar results in the literature,
+though the findings are consistent with predictions and qualitative characterization of such social structures.
+This stability was proven beyond doubt using three methods of analysis, namely:
+activity along different timescales; prominence of topological metrics;
+and fraction of participants in each connective sector (hubs, intermediary and peripheral).
+In addition to demonstrating the temporal stability and benchmarking,
+these results enable sound observation of both network and participant outliers
+and the consideration of the textual production of the networks, sectors and participants.
+Therefore, the document also presents a first consideration of typologies in such context,
+which bridges exact and human sciences.
+Indeed, the authors of the manuscript belong to different fields,
+and the principles adopted in the research comply with open science principles,
+as the email data are officially part of the GMANE database, scripts are official PyPI packages,
+data from other social networks and further scripts are in public Git repository. 
+Furthermore, all the details of the theoretical developments and the results generated
+are given in a supplementary Supporting Information file,
+which will serve as guidance for anyone  interested in the field.
+Because the methods applied belong to the realms of statistical physics (mainly)
+and since the subject is absolutely generic,
+ we take the view that the manuscript may be of interest to a very wide readership.
+ We believe that Physical Review E is therefore the ideal vehicle for this type of scientific contribution.
