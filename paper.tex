@@ -186,7 +186,7 @@ Network types have been discussed with regard to the number of participants, int
 Unreciprocated edges often exceed 50\% in the analyzed networks, which matches empirical evidence from the literature~\cite{newmanEvolving} and motivated the inclusion of symmetry metrics in our analysis. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were not considered in our study. Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}, but this was not considered in the present article because email messages and addresses have no gender related metadata~\cite{gmanePack}.
 
 
-\section{Data description}\label{sec:data}
+\section{Data and scripts}\label{sec:data}\label{scripts}
 
 Email list messages were obtained from
 the GMANE email archive~\cite{gmanePack}, which consists of more than $20\times 10^3$
@@ -197,10 +197,23 @@ We analyzed many email lists (and data from Twitter, Facebook and Participabr)
 and selected four of them in order to make a thorough analysis,
 from which general properties can be inferred. These lists are:
 \begin{itemize}
-	\item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE.}, with participants holding hybrid artistic and technological interests, from different countries. English is the language used the most. Abbreviated as LAU from now on.
-	\item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE.}, with participants from different countries, and English is the language used the most. A more technical and less active version of LAU. Abbreviated LAD from now on.
-	\item Development list for the standard C++ library\footnote{gmane.comp.gcc.libstdc++.devel is list ID in GMANE.}, with computer programmers from different countries. English is the language used the most. Abbreviated as CPP from now on.
-	\item List of the MetaReciclagem project\footnote{gmane.politics.organizations.metareciclagem is list ID in GMANE.}, with Brazilian activists holding digital culture interests. Portuguese is the most used language, although Spanish and English are also incident. Abbreviated MET from now on.
+	\item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE.},
+		with participants from different countries with artistic and technological interests.
+		English is the most used language. Abbreviated as LAU from now on.
+	\item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE.},
+		with participants from different countries,
+		a more technical and less active version of LAU.
+		English is the language used the most. 
+		Abbreviated as LAD from now on.
+	\item Development list for the standard C++ library\footnote{gmane.comp.gcc.libstdc++.devel is list ID in GMANE.},
+		with computer programmers from different countries.
+		English is the most used language.
+		Abbreviated as CPP from now on.
+	\item List of the MetaReciclagem project\footnote{gmane.politics.organizations.metareciclagem is list ID in GMANE.},
+		a Brazilian digital culture interested email list.
+		Portuguese is the most used language,
+		although Spanish and English are also incident.
+		Abbreviated as MET from now on.
 \end{itemize} 
 
 The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages indicated in Table~\ref{tab:genLists}.
@@ -208,7 +221,8 @@ We considered 140 additional email lists to
 report on the interdependence between the number of participants and 
 the number of discussion threads.
 Furthermore, 12 additional networks from Facebook (8), Twitter (2) and Participabr (2)
-are scrutinized as support for the generality of the results.
+are scrutinized in the Supporting Information document for better hypothesizing
+about the generality of the results.
 
 \begin{table}
 	\centering
@@ -224,31 +238,19 @@ are scrutinized as support for the generality of the results.
 	\end{tabular}
 \end{table}
 
-\subsection{Availability of data and scripts}\label{scripts}
-The required software to achieve the results reported in this article,
-including all tables and figures of the Supporting Information,
-are available through a public domain Python package and an open Git repository~\cite{gmanePack}.
-
-Data from social networks used in this study were gathered and used within the anthropological physics framework~\cite{anPhy,ccs15}.
-%All data used are also publicly accessible, either because they were already in public domain or because
-%we published our own annotations.
-Messages are downloadable from the GMANE public database~\cite{GMANEwikipedia}.
+All data and scripts needed to derive results, figures, tables and this article itself
+are publicly available.
+Email messages are downloadable from the GMANE public database~\cite{GMANEwikipedia}.
 Data annotated from Facebook and Twitter are in a public repository~\cite{fbtwData}.
 Data from Participabr was used from the linked data/semantic web RDF triples
 reported in~\cite{opa} and available in~\cite{datahub}.
-
-This open approach is a way to enhance the reliability of the methods,
-of algorithmic routines, of data consistency,
-and of the results themselves.
-Also,
-by handing not only the framework and results,
-but the exact data and processes that render them,
- this enriches the scientific nature of our contribution~\cite{openSci}.
-
-
-
-
-
+Script are delivered through a public domain Python PyPI package and
+an open Git repository~\cite{gmanePack}.
+This open approach to both data and scripts
+reinforces the scientific aspect of the contribution~\cite{openSci}
+and lightens ethical and moral issues of researching 
+systems constituted of
+human individuals~\cite{anPhy,ccs15}.
 
 \section{Methods}\label{sec:carac}
 The email lists and the networks generated from them were characterized using four procedures, namely: 1) statistics of activity along time, in scales from seconds to years; 2) sectioning of the networks in hubs, intermediary and peripheral vertices; 3) dispersion of basic topological metrics; 4) iterative visualization and data inspection.
