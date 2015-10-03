@@ -189,7 +189,10 @@ These procedures are described below.
 \subsection{Time activity statistics}\label{sec:mtime}
 Messages were counted over time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. This resulted in histograms from which patterns could be drawn. The ratio $\frac{b_h}{b_l}$ between the highest and lowest incidences on the histograms served as a clue of how close the observed distribution is to a uniform distribution.
 
-The average and the dispersion were taken using circular statistics, in which each $measurement$ (data point) is represented as a unity complex number, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measurement\frac{2\pi}{T}$, T is the period in which the counting is repeated. For example, $\theta=12\frac{2\pi}{24}=\pi$ for a message sent at $12h$ and given $T=24h$ for days. The moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
+Regular measures of location and dispersion, such as usual mean and
+standard deviation, hold little meaning when observations take
+place in a compact Riemannian manifold.
+Therefore, such measures were taken using circular statistics, in which each $measurement$ (data point) is represented as a unity complex number, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measurement\frac{2\pi}{T}$, T is the period in which the counting is repeated. For example, $\theta=12\frac{2\pi}{24}=\pi$ for a message sent at $12h$ and given $T=24h$ for days. The moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
 
 \begin{align}\label{eq:cmom}
 	m_n&=\frac{1}{N}\sum_{i=1}^N z_i^n \nonumber\\
@@ -296,10 +299,10 @@ In order to capture symmetries in the activity of participants, the following me
 \begin{itemize}
 	\item Asymmetry: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
 	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|=k_i$ is the number of neighbors of vertex $i$.
-	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
+	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{asy}_i -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
 	\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
 	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
-	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
+	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{dis}_i-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
 \end{itemize}
 
 \subsection{Erd\"os sectioning}\label{sectioning}
