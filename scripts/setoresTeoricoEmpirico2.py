@@ -53,10 +53,10 @@ nm=ne.networks_measures[-1]
 np=g.NetworkPartitioning(nm)
 #p.subplot(212)
 p.figure(figsize=(10.,3.))
-p.subplots_adjust(left=0.08,bottom=0.28,right=0.99,top=0.87)
+p.subplots_adjust(left=0.05,bottom=0.28,right=0.99,top=0.87)
 
 
-p.bar([i[0]-0.5 for i in np.bins],
+p.bar([i[0]-0.4 for i in np.bins],
         np.empirical_distribution,
         alpha=.4, label="empirical distribution")
 #p.bar(n.log([i[0]-0.5 for i in np.bins]),
@@ -81,14 +81,28 @@ p.title(u"Three sections of a scale-free network",size=25)
 p.xlabel(r"k $\rightarrow$",size=20)
 #p.xticks(centers)
 p.yticks(())
-p.xticks((2,8),(r"$(k_L)$",r"$(k_R)$"),size=15)
+p.xticks((2,7),(r"$k_L$",r"$k_R$"),size=20)
 p.ylabel(r"P(k) $\rightarrow$",size=20)
 
 c_=n.array(centers)
 pk=c_[1:]**-1.5
 #p.plot(centers[1:],.4*pk,"ko")
 p.plot(centers[1:],.4*pk,"k-o",label="power-law distribution")
-p.ylim(0,0.4*pk[0]+0.1)
+p.ylim(0,0.4*pk[0]+0.03)
+
+# pontos de intersecção:
+x1=2.5; y=41.16-5
+p.plot((x1,x1),(-1000,y),"g--")
+x2=7.5; y=60.-5
+p.plot((x2,x2),(-1000,y),"g--")
+#p.xticks((x1,x2),(r"$(k_L)$",r"$(k_R)$"),size=25)
+
+p.text(-.28,0.12,"periphery"  ,size=20)
+p.text(4,.3,"intermediary",   size=20)
+p.text(10,.08,"hubs"      ,   size=20)
+
+
 
 p.legend()
-p.show()
+p.savefig("../figs/fser__.png")
+#p.show()

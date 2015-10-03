@@ -326,12 +326,18 @@ The lower degree fat tail corresponds to the border vertices, i.e. the periphera
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{figs/fser_}
-	\caption{Classification of the scale-free network vertices by comparing the degree
-		distribution against that of an Erd\"os-R\'enyi ideal network.
-		The latter has more intermediary vertices, while the former has more peripheral and hub vertices.
-		The sector borders are defined by the two intersections $k_L$ and $k_R$ of the connectivity distributions.
-		Characteristic degrees are in the compact intervals: $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$ for the Erd\"os sectors (periphery, intermediary and hubs).}
+	\includegraphics[width=0.5\textwidth]{figs/fser__}
+	\caption{Classification of vertices by comparing the degree
+		distributions.
+		The binomial distribution of the Erd\"os R\'enyi network exhibit more intermediary vertices, while a scale-free network, associated with the power-law distribution,
+		has more peripheral and hub vertices.
+		The sector borders are defined with respect to the intersections of the distributions.
+Characteristic degrees are in the compact intervals: $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$ for the periphery, intermediary and hubs sectors (the ``Erd\"os sectors'').
+		The empirical distributions of connectivity in interaction networks, e.g. derived from email lists,
+		can be sectioned by comparison with to the associated binomial distribution.
+		In this figure, a snapshot of 1000 messages from CPP list yield the degree distribution
+		of an interaction network of 98 nodes and 235 edges.
+		A throughout exposition of the method is exposed in Section~\ref{sectioning}.}
 		\label{fig:setores}
 \end{figure}
 To ensure statistical validity of the histograms, bins can be chosen to contain at least $\eta$ vertices of the real network. The range $\Delta$ of incident values should be partitioned in $m$ parts $\Delta=\cup_{i=1}^m \Delta_i$, with $\Delta_i\cap \Delta_j \; \forall\; i \neq j$. Thus, $\Delta_i=\{max(\Delta_{i-1})<k\leq j \;\;|\; \sum_{max(\Delta_{i-1})+1}^j \eta_k \geq \eta \text{ and } (\sum_{max(\Delta_{i-1})+1}^{j-1} \eta_k < \eta \text{ or } j=max(\Delta_{i-1})+1) \}$, with $\eta_k$ the number of vertices with degree $k$ and $max(\Delta_{0})=-1$. This changes equation~\ref{criterio} to
