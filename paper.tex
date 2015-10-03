@@ -120,7 +120,7 @@ thus yielding three classes of vertices by comparison against the Erd\"os-R\'eny
 namely hubs, intermediary and periphery.
 The relative size of these three sectors did not vary with time and was essentially the same for all email lists.
 Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and the remainder are peripheral vertices.
-Similar results for the distribution of participants in the three categories and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participa.br. Consistent with expectations from the literature, these properties may be general for human interaction networks, which has important implications in establishing a typology based on quantitative criteria.
+Similar results for the distribution of participants in the three categories and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participabr. Consistent with expectations from the literature, these properties may be general for human interaction networks, which has important implications in establishing a typology based on quantitative criteria.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
@@ -147,17 +147,40 @@ Similar results for the distribution of participants in the three categories and
 
 \section{Introduction}\label{sec:into}
 Studies on human interaction networks have started long before modern computers, dating back to the nineteenth century, while the foundation of
-social network analysis is generally attributed to the psychiatrist Jacob Moreno in mid twentieth century~\cite{moreno}. With the increasing availability of data related to human interactions, research on these networks has grown continuously. Contributions can now be found in a variety of fields, from social sciences and humanities~\cite{latour2013} to computer science~\cite{bird} and physics~\cite{barabasiHumanDyn,newmanFriendship}, given the multidisciplinary nature of the topic. One of the approaches from an exact science perspective is to represent interaction networks as complex networks~\cite{barabasiHumanDyn,newmanFriendship}, with which 
+social network analysis is generally attributed to the psychiatrist Jacob Moreno in mid twentieth century~\cite{moreno,newmanBook}. With the increasing availability of data related to human interactions, research about these networks has grown continuously. Contributions can now be found in a variety of fields, from social sciences and humanities~\cite{latour2013} to computer science~\cite{bird} and physics~\cite{barabasiHumanDyn,newmanFriendship}, given the multidisciplinary nature of the topic. One of the approaches from an exact science perspective is to represent interaction networks as complex networks~\cite{barabasiHumanDyn,newmanFriendship}, with which 
 several features of human interaction have been revealed. For example, the topology of human interaction networks exhibits a scale-free trace, which points to the existence of a small number of highly connected hubs and a large number of poorly connected nodes. The dynamics of complex networks representing human interaction has also been addressed~\cite{barabasiEvo,newmanEvolving}, but only to a limited extent, since research is normally focused on a particular metric or task, such as accessibility or community detection~\cite{access,newmanModularity}. 
 
-In this paper we analyze the evolution of human interaction networks, by considering interaction in email lists as their representative. Using a timeline of activity snapshots with a constant number of contiguous messages in email lists, we found a remarkable stability for several of the network properties. Because these properties were shared by networks from Twitter, Facebook and Participa.br, and are consistent with the complex networks literature, we advocate that some of the conclusions might be valid for more general classes of interaction networks. In particular, this allows us to discuss typologies in such contexts, in an attempt to bridge the gap between approaches based solely on data analysis (i.e. from a hard sciences perspective) and those relevant to the social sciences. This is important insofar as typologies are the canon of scientific literature for classification of human agents, with pragmatic standards~\cite{myers} and critical paradigms~\cite{adorno,typCanon}. 
+In this paper we analyze the evolution of human interaction networks.
+Interaction in email lists was the most convenient for deriving results and for benchmarking,
+but networks from Facebook, Twitter and Participabr were also considered.
+Using a timeline of activity snapshots with a constant number of contiguous messages,
+we found remarkable stability for several of the network properties.
+Namely, the activity along different timescales exhibit pronounced patterns,
+the most basic topological measures always combine into very characteristic principal components,
+and the fractions of participants in each of the hubs, intermediady and periphery sectors
+are unshaken.
+This is not an intuitive result, given that participants transition in network structure constantly.
+Because these properties were shared by networks from various sources,
+and are consistent with the complex networks literature,
+we advocate that the conclusions might be valid for general classes of interaction networks.
+In particular, this allows us to 
+bridge the gap between data analysis 
+and social sciences in the discussion
+of types of networks and participants.
+Noteworthy, typologies are the canon of scientific literature for classification of human agents,
+with pragmatic standards~\cite{myers} and critical paradigms~\cite{adorno,typCanon}. 
 
-The paper is organized as follows. Section~\ref{sec:related} describes related work, while details of the data and methods of analysis are given in  Section~\ref{sec:data} and Section~\ref{sec:carac}. Section~\ref{sec:results} brings the results and discussion, leading to Section~\ref{sec:conc} for conclusions.
-Subsidiary results from the email lists and of networks from Twitter, Facebook and Participa.br are given in the Supporting Information.
+Section~\ref{sec:related} describes related work,
+while details of the data and methods of analysis are given in Section~\ref{sec:data} and Section~\ref{sec:carac}.
+Section~\ref{sec:results} brings the results and discussion, leading to Section~\ref{sec:conc} for conclusions.
+Subsidiary data analysis,
+including directions for video and sound mappings of network structures,
+and numeric results for networks from Twitter, Facebook and Participabr,
+are given in the Supporting Information.
+
 
 \subsection{Related work}\label{sec:related}
-Research on network evolution is often restricted to network growth, in which there is a monotonic increase in the number of events~\cite{barabasiEvo}. Exceptions are reported in this section, with emphasis on those more closely related to the present article.
-
+Research on network evolution is often restricted to network growth, in which there is a monotonic increase in the number of events~\cite{barabasiEvo}.
 Network types have been discussed with regard to the number of participants, intermittence of their activity and network longevity~\cite{barabasiEvo}. Two topologically different networks emerged from human interaction networks, depending on the frequency of interactions, which can either be a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were reported with $\alpha \approx 1.8$~\cite{bird} (as are web browsing and library loans~\cite{barabasiHumanDyn}), and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
 
 Unreciprocated edges often exceed 50\% in the analyzed networks, which matches empirical evidence from the literature~\cite{newmanEvolving} and motivated the inclusion of symmetry metrics in our analysis. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were not considered in our study. Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}, but this was not considered in the present article because email messages and addresses have no gender related metadata~\cite{gmanePack}.
@@ -166,10 +189,13 @@ Unreciprocated edges often exceed 50\% in the analyzed networks, which matches e
 \section{Data description}\label{sec:data}
 
 Email list messages were obtained from
-the GMANE email archive~\cite{gmanePack}, which consists of more than 20,000 email lists and more than 130,000,000 messages~\cite{GMANEwikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus with metadata of its messages, including sent time, place, sender name, and sender email address.
+the GMANE email archive~\cite{gmanePack}, which consists of more than $20\times 10^3$
+email lists and more than $130\times 10^6$ messages~\cite{GMANEwikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus with metadata of its messages, including sent time, place, sender name, and sender email address.
 The GMANE usage in scientific research is reported in studies of isolated lists and of lexical innovations~\cite{GMANE2,bird}. 
 
-We analyzed many email lists (and data from Twitter, Facebook and Participa.br) but selected only four in order to make a thorough analysis, from which general properties can be inferred. These lists, selected as representative of both a diverse set and ordinary lists, are:
+We analyzed many email lists (and data from Twitter, Facebook and Participabr)
+and selected four of them in order to make a thorough analysis,
+from which general properties can be inferred. These lists are:
 \begin{itemize}
 	\item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE.}, with participants holding hybrid artistic and technological interests, from different countries. English is the language used the most. Abbreviated as LAU from now on.
 	\item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE.}, with participants from different countries, and English is the language used the most. A more technical and less active version of LAU. Abbreviated LAD from now on.
@@ -178,7 +204,11 @@ We analyzed many email lists (and data from Twitter, Facebook and Participa.br) 
 \end{itemize} 
 
 The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages indicated in Table~\ref{tab:genLists}.
-In subsidiary experiments we considered 140 additional email lists, also retrieved from the GMANE public database, to analyze the interdependence between the number of participants and the number of discussion threads. Furthermore, we used 12 additional networks from Facebook (8), Twitter (2) and Participa.br (2) to grasp the generality of the results derived from email lists.
+We considered 140 additional email lists to
+report on the interdependence between the number of participants and 
+the number of discussion threads.
+Furthermore, 12 additional networks from Facebook (8), Twitter (2) and Participabr (2)
+are scrutinized as support for the generality of the results.
 
 \begin{table}
 	\centering
@@ -193,6 +223,31 @@ In subsidiary experiments we considered 140 additional email lists, also retriev
 		\input{tables/tab1Geral}
 	\end{tabular}
 \end{table}
+
+\subsection{Availability of data and scripts}\label{scripts}
+The required software to achieve the results reported in this article,
+including all tables and figures of the Supporting Information,
+are available through a public domain Python package and an open Git repository~\cite{gmanePack}.
+
+Data from social networks used in this study were gathered and used within the anthropological physics framework~\cite{anPhy,ccs15}.
+%All data used are also publicly accessible, either because they were already in public domain or because
+%we published our own annotations.
+Messages are downloadable from the GMANE public database~\cite{GMANEwikipedia}.
+Data annotated from Facebook and Twitter are in a public repository~\cite{fbtwData}.
+Data from Participabr was used from the linked data/semantic web RDF triples
+reported in~\cite{opa} and available in~\cite{datahub}.
+
+This open approach is a way to enhance the reliability of the methods,
+of algorithmic routines, of data consistency,
+and of the results themselves.
+Also,
+by handing not only the framework and results,
+but the exact data and processes that render them,
+ this enriches the scientific nature of our contribution~\cite{openSci}.
+
+
+
+
 
 
 \section{Methods}\label{sec:carac}
@@ -436,28 +491,6 @@ The values of $ws$ employed were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 
 
 Networks were visualized with animations, image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution. Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion. Visualization of network structure was especially useful in the inspection of data and derived structures from the email lists.
 
-\subsection{Availability of data and scripts}\label{scripts}
-In order to share routines with the scientific community and the whole of the society,
-all the required software to achieve the results reported in this article,
-including tables and figures in the Supporting Information,
-are available through a public domain Python package and an open Git repository~\cite{gmanePack}.
-
-Data from social networks used in this study were gathered and used within the anthropological physics framework~\cite{anPhy,ccs15}.
-All data used are also publicly accessible, either because they were already in public domain or because
-we published our own annotations.
-Messages were downloaded from the GMANE public database~\cite{GMANEwikipedia}.
-Data annotated from Facebook and Twitter are in a public repository~\cite{fbtwData}.
-Data from Participa.br was used from the linked data/semantic web RDF triples
-reported in~\cite{opa} and available in~\cite{datahub}.
-
-This open approach is a way to enhance the reliability of the methods,
-of algorithmic routines, of data consistency,
-and of the results themselves.
-Also,
-by handing not only the framework and results,
-but the exact data and processes that render them,
- this enriches the scientific nature of our contribution~\cite{openSci}.
-
 %This is a way to enhance the reliability of the methods,
 %of algorithmic routines, of data consistency,
 %and of the results themselves.
@@ -561,7 +594,7 @@ Dispersion was more prevalent in symmetry-related metrics than for the clusterin
 The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects the relevance of the symmetry-related metrics for the variance.
 We conclude that the latter metrics can be more meaningful in characterizing interaction networks (and their participants) than the clustering coefficient, especially for hubs and intermediary vertices.
 
-The relative importance of the topological metrics was also observed for the additional 12 networks from Facebook, Twitter and Participa.br. With the exception of two of these networks, the overall behavior was maintained in that centrality measurements were found to be the most relevant to explain network topology, followed by symmetry-related metrics and then clustering coefficient. The results are given in Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2},~\ref{tab:pcaE3} of the Supporting Information. There are larger differences between two of these networks than between two (GMANE) email networks, as the latter were much more regular.
+The relative importance of the topological metrics was also observed for the additional 12 networks from Facebook, Twitter and Participabr. With the exception of two of these networks, the overall behavior was maintained in that centrality measurements were found to be the most relevant to explain network topology, followed by symmetry-related metrics and then clustering coefficient. The results are given in Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2},~\ref{tab:pcaE3} of the Supporting Information. There are larger differences between two of these networks than between two (GMANE) email networks, as the latter were much more regular.
 
 \subsection{Scalable fat-tail structure: constancy of membership fractions in each Erd\"os sector}\label{subsec:pih}
 
@@ -575,12 +608,12 @@ Stable distributions can also be obtained for 100 or less messages if classifica
 The networks hold their basic structure with as few as 10-50 messages; concentration of activity and the abundance of low-activity participants take place even with very few messages, which is highlighted in Section~\ref{si:frac} of the Supporting Information.
 A minimum window size for the observation of more general properties might be inferred by monitoring the giant component and the degeneration of the Erd\"os sectors.
 
-In order to verify the possible generality of these findings, we obtained the Erd\"os sectors of 12 networks from Facebook, Twitter and Participa.br. The results are given in Table~\ref{tab:secE} in the Supporting Information, which indicate that the percentages of hubs, intermediary and peripheral nodes are essentially the same as for the email lists.
+In order to verify the possible generality of these findings, we obtained the Erd\"os sectors of 12 networks from Facebook, Twitter and Participabr. The results are given in Table~\ref{tab:secE} in the Supporting Information, which indicate that the percentages of hubs, intermediary and peripheral nodes are essentially the same as for the email lists.
 
 \begin{figure*} 
 	\centering
 	\includegraphics[width=\textwidth]{figs/InText-WLAU-S1000}
-	\caption{Fractions of agents in each Erd\"os sector, where the fractions for hubs, intermediary and peripheral vertices are represented in red, green and blue, respectively. We used two simple criteria, namely degree and strength, for the graphics on the left. For the graphics on the right we employed the Exclusivist and Inclusivist compound criteria, with black lines representing the fraction of vertices without class and with more than one class, respectively. See Section~\ref{si:frac} of Supporting Information for a collection of such timeline figures with all simple and compound criteria and metrics. Table~\ref{tab:secE}, also from Supporting Information, presents these fractions of agents in snapshots of networks from Facebook, Twitter and Participa.br.}
+	\caption{Fractions of agents in each Erd\"os sector, where the fractions for hubs, intermediary and peripheral vertices are represented in red, green and blue, respectively. We used two simple criteria, namely degree and strength, for the graphics on the left. For the graphics on the right we employed the Exclusivist and Inclusivist compound criteria, with black lines representing the fraction of vertices without class and with more than one class, respectively. See Section~\ref{si:frac} of Supporting Information for a collection of such timeline figures with all simple and compound criteria and metrics. Table~\ref{tab:secE}, also from Supporting Information, presents these fractions of agents in snapshots of networks from Facebook, Twitter and Participabr.}
 	\label{fig:sectIL}
 \end{figure*}
 
@@ -636,13 +669,13 @@ For example, the relative fractions of participants classified as hubs, intermed
 Furthermore, the PCA analysis of the topological metrics characterizing the networks also indicated that the contribution of each metric did not vary in time.
 Centrality metrics were found to be the most relevant to characterize the network topology, followed by symmetry-related metrics, which were more relevant, with respect to variance, than clustering. 
 
-A systematic study of the activity of participants belonging to the three distinct Erd\"os sectors indicated simple patterns for hubs and peripheral vertices, while the network structure was governed by the intermediary vertices. These properties were shared by all email lists and were time-independent, being consistent with the literature. Moreover, both the distribution of Erd\"os sectors and the contribution from the metrics to the PCA were found to apply to networks from Facebook, Twitter and Participa.br. We may therefore consider the classification of agents into Erd\"os sectors as a first step leading to a human typology which bridges exact sciences, with quantitative procedures for the classification, and human sciences, where there is a legacy in the observation of human types. 
+A systematic study of the activity of participants belonging to the three distinct Erd\"os sectors indicated simple patterns for hubs and peripheral vertices, while the network structure was governed by the intermediary vertices. These properties were shared by all email lists and were time-independent, being consistent with the literature. Moreover, both the distribution of Erd\"os sectors and the contribution from the metrics to the PCA were found to apply to networks from Facebook, Twitter and Participabr. We may therefore consider the classification of agents into Erd\"os sectors as a first step leading to a human typology which bridges exact sciences, with quantitative procedures for the classification, and human sciences, where there is a legacy in the observation of human types. 
 
 
 \begin{acknowledgments}
 	Financial support was obtained from CNPq (140860/2013-4,
 	project 870336/1997-5), United Nations Development Program (contract: 2013/000566; project BRA/12/018) and FAPESP. 
-	The authors are grateful to the American Jewish Committee for maintaining an online copy of the Adorno book used on the epigraph~\cite{adorno}, to GMANE creators and maintainers, and to the communities of the email lists and other groups used in the analysis, and to the Brazilian Presidency of the Republic for keeping Participa.br code and data open.
+	The authors are grateful to the American Jewish Committee for maintaining an online copy of the Adorno book used on the epigraph~\cite{adorno}, to GMANE creators and maintainers, and to the communities of the email lists and other groups used in the analysis, and to the Brazilian Presidency of the Republic for keeping Participabr code and data open.
 	We are also grateful to developers and users of Python scientific tools.
 \end{acknowledgments}
 
