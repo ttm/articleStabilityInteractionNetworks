@@ -467,7 +467,7 @@ with $\Delta_i\cap \Delta_j=\emptyset \; \forall\; i \neq j$:
 %\end{split}
 %\end{equation}
 	
-\noindent where $\eta_k$ is the number of vertices with degree $k$, while $\overline{\Delta}_{i-1}=max(\Delta_{i-1})$, and $\overline{\Delta}_{0}=-1$. This changes equation~\ref{criterio} to
+\noindent where $\eta_k$ is the number of vertices with degree $k$, while $\overline{\Delta}_{i-1}=max(\Delta_{i-1})$, and $\overline{\Delta}_{0}=-1$. Equation~\ref{criterio} can now be written in the form:
 
 \begin{equation}\label{criterio2}
 	\begin{split}
@@ -506,14 +506,17 @@ In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \ga
 
 \noindent and both $\overline{k}_{\gamma,L}$ and $\overline{k}_{\gamma,R}$ are found using $P(\overline{k})$ or $\hat{P}(\overline{k})$ as described above.
 
-Since different metrics can be used to identify the three types of vertices, compound criteria can be defined. For example, a very stringent criterion can be used, according to which a vertex is only regarded as pertaining to a sector if it is so for all the metrics. After a careful consideration of possible combinations, these were reduced to six:
+Since different metrics can be used to identify the three types of vertices, compound criteria were defined for conveniently analysing 
+networks with a low number of messages,
+such as in Section~\ref{si:frac} of the Supporting Information.
+For example, a very stringent criterion can be used, according to which a vertex is only regarded as pertaining to a sector if it is so for all the metrics. After a careful consideration of possible combinations, these were reduced to six:
 
 \begin{itemize}
 	\item Exclusivist criterion $C_1$:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified do not usually reach 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
 	\item Inclusivist criterion $C_2$: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and the total number of members may exceed 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
 	\item Exclusivist cascade $C_3$: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
 	\item Inclusivist cascade $C_4$: vertices are hubs if they are classified as such according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
-	\item Exclusivist externals $C_5$: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes by any metric. The rest of the nodes are classified as intermediary.
+	\item Exclusivist externals $C_5$: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes for any metric. The rest of the nodes are classified as intermediary.
 	\item Inclusivist externals $C_6$: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
 \end{itemize}
 
@@ -536,16 +539,26 @@ Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$
 \end{equation}
 %\end{alignat}
 
-The simplification of all possible compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors. These compound criteria were used to examine network sections considering all degrees and strengths and are especially useful in the case of a low number of messages, such as in Section~\ref{si:frac} of the Supporting Information.
-
-
+Notice that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors. 
+The simplification of all possible compound possibilities to the small set listed above might be formalized in strict mathematical terms, but this was considered out of the scope for current interests.
 
 
 \subsection{Evolution and visualization of the networks}\label{sec:viz}
-The evolution of the networks was observed within a fixed number of messages, which we refer to as the window size $ws$. This same number of contiguous messages $ws$ was considered with different shifts in the message timeline to obtain snapshots. Each snapshot was used both to perform the Erd\"os sectioning and to apply PCA for the topological metrics.  
-The values of $ws$ employed were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000. Within a same $ws$, the number of vertices and edges vary in time, as do other network characteristics, which is exhibited in Section~\ref{si:frac} of the Supporting Information. 
+The evolution of the networks was observed within sequences of snapshots. with a fixed number of messages,
+Each of these sequences had a fixed number of messages, the window size $ws$,
+which was considered with different shifts in the message timeline to obtain snapshots.
+In each snapshot was performed both the PCA with topological metrics and the Erd\"os sectioning.  
+The values of $ws$ employed were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000.
+Variations in the number of vertices, edges
+and other network characteristics
+are exposed in Section~\ref{si:frac}
+of the Supporting Information document. 
 
-Networks were visualized with animations, image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution. Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion. Visualization of network structure was especially useful in the inspection of data and derived structures from the email lists.
+Networks were visualized with animations, sonifications,
+image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}.
+Such \emph{audiovisualizations} were crucial to guide the research into the most important features of network evolution.
+Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion.
+Visualization of network structure was especially useful in the initial inspection of data and of the structures derived from the email lists.
 
 %This is a way to enhance the reliability of the methods,
 %of algorithmic routines, of data consistency,
