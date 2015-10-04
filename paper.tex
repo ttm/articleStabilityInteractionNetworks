@@ -459,15 +459,15 @@ with $\Delta_i\cap \Delta_j=\emptyset \; \forall\; i \neq j$:
 %\begin{equation}
 %\begin{split}
 \begin{align}
-\Delta_i =\left\{ k & | & \overline{\Delta}_{i-1}<k\leq j \text{ and }\\
-& [ & N - \sum_{k=0}^{\overline{\Delta}_{i-1}}< \eta \text{ or }\\
-&	[ & \sum_{k=\overline{\Delta}_{i-1}+1}^j \eta_k \geq \eta \text{ and }\\
-&(&\sum_{\overline{\Delta}_{i-1}+1}^{j-1} \eta_k < \eta \text{ or }   j=\overline{\Delta}_{i-1}+1)] ] \rignt\}
+\Delta_i =\Biggl\{ k\;\; & | & \overline{\Delta}_{i-1}< &\, k\leq j \text{ and }\;\;\;\;\;\;\;\;\;\;\;\;\nonumber\\
+		      & \Biggl[ & N - \sum_{k=0}^{\overline{\Delta}_{i-1}} & \eta_k< \eta \text{ or }\\
+&	\Bigl[ & \sum_{k=\overline{\Delta}_{i-1}+1}^j &  \eta_k \geq \eta \text{ and }\;\;\;\;\;\;\nonumber\\
+& \Bigl( &\sum_{k=\overline{\Delta}_{i-1}+1}^{j-1} &  \eta_k < \eta \text{ or }   j=\overline{\Delta}_{i-1}+1 \Bigr) \;\Bigr] \Biggr] \Biggr\}\nonumber
 \end{align}
 %\end{split}
 %\end{equation}
 	
-\noindent with $\eta_k$ the number of vertices with degree $k$, and $\overline{\Delta}_{i-1}=max(\Delta_{i-1})$, and $max(\Delta_{0})=-1$. This changes equation~\ref{criterio} to
+\noindent where $\eta_k$ is the number of vertices with degree $k$, while $\overline{\Delta}_{i-1}=max(\Delta_{i-1})$, and $\overline{\Delta}_{0}=-1$. This changes equation~\ref{criterio} to
 
 \begin{equation}\label{criterio2}
 	\begin{split}
