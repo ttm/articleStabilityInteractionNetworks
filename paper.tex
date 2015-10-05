@@ -732,22 +732,23 @@ Also, this suggests that these centrality metrics
 are equally adequate for characterizing the networks
 and the participants.
 
-%\begin{figure*} 
-%	\centering
-%	\includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
-%	\caption{The first plot shows degree versus clustering coefficient, a well known pattern characterized by the high clustering being more incident in vertices with lower degrees.
-%		In the second plot, the abscissas is an average of centrality metrics, an intermediary plot to ease understanding.
-%		The third plot exhibits the greater dispersion of the symmetry-related ordinates.
-%		This greater dispersion suggests that symmetry-related metrics are more powerful, with respect to dispersion,
-%		for characterizing interaction networks than the clustering coefficient,
-%		especially for hubs and intermediary vertices.
-%		This figure was obtained with a snapshot of the LAU list in a window size of $ws = 1000$ messages.
-%		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$, in networks derived from email lists,
-%		and in networks from Facebook, Twitter and Participabr,
-%		which suggests a common relationship between the metrics of degrees, strengths and betweenness centrality,
-%		the symmetry-related metrics and clustering coefficient.}
-%	\label{fig:sym}
-%\end{figure*}
+\begin{figure} 
+	\centering
+	%\includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT__}
+	\includegraphics[width=.45\textwidth]{figs/im13PCAPLOT__}
+	\caption{The first plot shows degree versus clustering coefficient, a well known pattern characterized by the high clustering being more incident in vertices with lower degrees.
+		In the second plot, the abscissas is an average of centrality metrics, an intermediary plot to ease understanding.
+		The third plot exhibits the greater dispersion of the symmetry-related ordinates.
+		This greater dispersion suggests that symmetry-related metrics are more powerful, with respect to dispersion,
+		for characterizing interaction networks than the clustering coefficient,
+		especially for hubs and intermediary vertices.
+		This figure was obtained with a snapshot of the LAU list in a window size of $ws = 1000$ messages.
+		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$, in networks derived from email lists,
+		and in networks from Facebook, Twitter and Participabr,
+		which suggests a common relationship between the metrics of degrees, strengths and betweenness centrality,
+		the symmetry-related metrics and clustering coefficient.}
+	\label{fig:sym}
+\end{figure}
 
 Evident in Table~\ref{tab:pcain},
 dispersion is greater in symmetry-related
@@ -863,7 +864,7 @@ in a more selective and explicit manner.
 %between the number of threads and the number of participants.
 \begin{figure}
    \centering
-   \includegraphics[trim={0 0 0 1cm},clip,width=\columnwidth]{figs/mpgamma____________}
+   \includegraphics[trim={0 0 0 1cm},clip,width=.7\columnwidth]{figs/mpgamma____________}
 	\caption{A scatter plot of number of messages $M$ versus number of participants $N$ versus number of threads $\Gamma$ for 140 email lists.
 Highest $\Gamma$ are associated with low $N$.
 The correlation between $N$ and $\Gamma$ is negative for low values of $N$ but positive otherwise.
