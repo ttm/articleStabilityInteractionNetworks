@@ -352,8 +352,8 @@ In order to capture symmetries in the activity of participants, the following me
 	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|$ is the number of neighbors of vertex $i$.
 	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{asy}_i -(e_{ji}-e_{ij}) ]^2  }{|J_i|}  }$.
 	\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
-	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{|J_i|}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
-	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{dis}_i-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{|J_i|}}$.
+	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{w_{ji}-w_{ij}}}{|J_i|}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
+	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}\left[\mu^{dis}_i-\frac{w_{ji}-w_{ij}}{w_{ji}+w_{ij}}\right]^2}{|J_i|}}$.
 \end{itemize}
 
 These measures are used both for the Erd\"os sectioning (described in Secion~\ref{sectioning}) and for performing PCA (as described in Section~\ref{sec:pca}).
