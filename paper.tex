@@ -332,7 +332,9 @@ as expected for a number of social networks~\cite{bird,newmanBook}.
 
 \subsubsection{Topological metrics}\label{measures}
 
-The topology of the networks was studied using a small selection of the most basic and fundamental measurements for each vertex, as follows:
+The topology of the networks was characterized 
+using a small selection of the most basic and 
+fundamental measurements for each vertex, as follows:
 
 \begin{itemize}
 	\item Degree     $k_i$: number of edges linked to vertex $i$.
@@ -341,22 +343,23 @@ The topology of the networks was studied using a small selection of the most bas
 	\item Strength $s$: sum of weights of all edges linked to vertex $i$.
 	\item In-strength $s_i^{in}$: sum of weights of all edges ending at vertex $i$.
 	\item Out-strength $s_i^{out}$: sum of weights of all edges departing from vertex $i$.
-	\item Clustering coefficient $cc_i$: fraction of pairs of neighbors of $i$ that are linked.  The standard clustering coefficient for undirected graphs was used.
-	\item Betweenness centrality $bt_i$: fraction of geodesics that contain vertex $i$. The betweenness centrality index considered directions and weight, as specified in~\cite{faster}.
+	\item Clustering coefficient $cc_i$: fraction of pairs of neighbors of $i$ that are linked, i.e. the standard clustering coefficient metric for undirected graphs.
+	\item Betweenness centrality $bt_i$: fraction of geodesics that contain vertex $i$. The betweenness centrality index was calculated for weighted digraphs as specified in~\cite{faster}.
 \end{itemize}
 
-In order to capture symmetries in the activity of participants, the following metrics were introduced for a vertex $i$: 
+The non-standard metrics bellow were elaborated
+in order to capture symmetries in the activity of participants:
 
 \begin{itemize}
-	\item Asymmetry: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
-	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|$ is the number of neighbors of vertex $i$.
+	\item Asymmetry of vertex $i$: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
+	\item Mean of asymmetry of edges of vertex $i$: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|$ is the number of neighbors of vertex $i$.
 	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{asy}_i -(e_{ji}-e_{ij}) ]^2  }{|J_i|}  }$.
 	\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
 	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{w_{ji}-w_{ij}}}{|J_i|}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
 	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}\left[\mu^{dis}_i-\frac{w_{ji}-w_{ij}}{w_{ji}+w_{ij}}\right]^2}{|J_i|}}$.
 \end{itemize}
 
-These measures are used both for the Erd\"os sectioning (described in Secion~\ref{sectioning}) and for performing PCA (as described in Section~\ref{sec:pca}).
+Both standard and non-standard metrics are used for the Erd\"os sectioning (described in Secion~\ref{sectioning}) and for performing PCA (as described in Section~\ref{sec:pca}).
 
 
 \subsection{Erd\"os sectioning}\label{sectioning}
