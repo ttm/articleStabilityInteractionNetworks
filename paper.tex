@@ -349,11 +349,11 @@ In order to capture symmetries in the activity of participants, the following me
 
 \begin{itemize}
 	\item Asymmetry: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
-	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|=k_i$ is the number of neighbors of vertex $i$.
-	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{asy}_i -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
+	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|$ is the number of neighbors of vertex $i$.
+	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{asy}_i -(e_{ji}-e_{ij}) ]^2  }{|J_i|}  }$.
 	\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
-	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
-	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{dis}_i-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
+	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{|J_i|}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
+	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{dis}_i-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{|J_i|}}$.
 \end{itemize}
 
 These measures are used both for the Erd\"os sectioning (described in Secion~\ref{sectioning}) and for performing PCA (as described in Section~\ref{sec:pca}).
@@ -692,15 +692,23 @@ Table~\ref{tab:secE}, also from Supporting Information document, presents these 
 \end{table}
 
 
-\subsection{Stability of principal components and the prevalence of symmetry over clusterization for dispersion}\label{prevalence}
+\subsection{Stability of principal components and the prevalence of symmetry over clusterization}\label{prevalence}
 %The topology was analyzed using standard, well-established metrics of centrality and clustering.
 %We also introduced symmetry metrics given the evidence of their importance in social contexts~\cite{newmanEvolving}.
-The contribution of each metric to the variance is very similar for all the networks and along time.
-In applying PCA to the snapshots, the contribution of each metric to the principal components presents very small standard deviation.
-Table~\ref{tab:pcain} exemplifies the formation of principal components for the MET email list.
-Similar results are presented in Sections~\ref{si:pcat} and~\ref{si:ext}
-of the Supporting Information document for the other email lists (benchmarks) and other interaction networks,
-with the consideration of strategic combinations of metrics.
+%The contribution of each metric to the variance is very similar for all the networks and along time.
+
+The principal components of the participants are very stable in the topological space,
+i.e. in PCA of network measures.
+Table~\ref{tab:pcain} exemplifies the formation of principal components
+by exposing averages over non-overlapped activity snapshots of a network.
+The most important result of this application of PCA,
+the stability of principal components,
+is underpinned by the very small standard deviations
+of the contribution of
+each metric to each principal component.
+%The contribution of each metric to the
+%principal components presents
+%very small standard deviation.
 
 \begin{table}[!h]
 	\caption{Loadings for the 14 metrics into the principal components for the MET list, $ws=1000$ messages in 20 disjoint positioning. The clustering coefficient (cc) appears as the first metric in the Table, followed by 7 centrality metrics and 6 symmetry-related metrics. Note that the centrality measurements, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics. The clustering coefficient is only relevant for the third principal component. The three components have in average 80\% of the variance.}
@@ -709,39 +717,67 @@ with the consideration of strategic combinations of metrics.
 		\label{tab:pcain}
 	\end{table}
 
-The first principal component is an average of centrality metrics: degrees, strengths and betweenness centrality. Therefore, all of these centrality measurements are equally important for characterizing the networks. On one hand, the relevance of all centrality metrics is not surprising since they are highly correlated, e.g.the degree and strength have Spearman correlation coefficient $\in [0.95,1]$ and Pearson coefficient $\in [0.85,1)$ for $ws>1000$.
-	On the other hand, each of these metrics is related to a different participation characteristic, and their equal relevance is noticeable.
-The clustering coefficient is presented in almost perfect orthogonality to centrality metrics.
-\begin{figure*} 
-	\centering
-	\includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
-	\caption{The first plot shows degree versus clustering coefficient. This typical pattern is well known with high clustering more incident in vertices with lower degrees. 
-		The second plot is analogous but the abscissas is an average of centrality metrics.
-		The third plot exhibits the greater dispersion of the symmetry-related ordinates.
-		This greater dispersion suggests that symmetry-related metrics are more powerful, with respect to dispersion,
-		for characterizing interaction networks than the clustering coefficient,
-		especially for hubs and intermediary vertices.
-		This figure was obtained with a snapshot of the LAU list in a window size of $ws = 1000$ messages.
-		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$, in networks derived from email lists,
-		and in networks from Facebook, Twitter and Participabr,
-		which suggests a common relationship between the metrics of degrees, strengths and betweenness centrality,
-		the symmetry-related metrics and clustering coefficient.}
-	\label{fig:sym}
-\end{figure*}
+The first principal component is an average of centrality metrics:
+degrees, strengths and betweenness centrality.
+On one hand, the similar relevance of all centrality metrics is not surprising since they are highly correlated,
+e.g. degree and strength have Spearman correlation coefficient $\in [0.95,1]$ 
+and Pearson coefficient $\in [0.85,1)$ for window sizes greater than a thousand messages.
+On the other hand, each of these metrics is related to a different participation characteristic,
+and their equal relevance for variability,
+as measured by dispersion, is noticeable.
+Also, this suggests that these centrality metrics 
+are equally adequate for characterizing the networks
+and the participants.
 
-Dispersion was more prevalent in symmetry-related metrics than for the clustering coefficient, as indicated in Table~\ref{tab:pcain}. This is also illustrated in Figure~\ref{fig:sym}, where each vertex is colored according to the sector they belong to. As expected, peripheral vertices have very low values in the first component (centrality related) and greater dispersion in the third component (clustering related).
-The PCA plot in the third system of Figure~\ref{fig:sym}, where all metrics are considered, reflects the relevance of the symmetry-related metrics for the variance.
-We conclude that the symmetry metrics is more useful, with respect to the dispersion in the topological space,
-in characterizing interaction networks (and their participants) than the clustering coefficient,
+%\begin{figure*} 
+%	\centering
+%	\includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT_}
+%	\caption{The first plot shows degree versus clustering coefficient, a well known pattern characterized by the high clustering being more incident in vertices with lower degrees.
+%		In the second plot, the abscissas is an average of centrality metrics, an intermediary plot to ease understanding.
+%		The third plot exhibits the greater dispersion of the symmetry-related ordinates.
+%		This greater dispersion suggests that symmetry-related metrics are more powerful, with respect to dispersion,
+%		for characterizing interaction networks than the clustering coefficient,
+%		especially for hubs and intermediary vertices.
+%		This figure was obtained with a snapshot of the LAU list in a window size of $ws = 1000$ messages.
+%		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$, in networks derived from email lists,
+%		and in networks from Facebook, Twitter and Participabr,
+%		which suggests a common relationship between the metrics of degrees, strengths and betweenness centrality,
+%		the symmetry-related metrics and clustering coefficient.}
+%	\label{fig:sym}
+%\end{figure*}
+
+Evident in Table~\ref{tab:pcain},
+dispersion is greater in symmetry-related
+metrics than in clustering coefficient.
+As expected by basic complex network theory, 
+peripheral vertices have low values
+of centrality metrics
+and greater dispersion with respect to clustering coefficient.
+%The scatter plot in the third system of Figure~\ref{fig:sym},
+%where all metrics are considered and there is a greater dispersion
+%with respect to the ordinates,
+This reflects in the relevance of the symmetry-related metrics.
+We conclude that the symmetry metrics are more powerful,
+with respect to dispersion in the topological space,
+in characterizing interaction networks
+and their participants, than the clustering coefficient,
 especially for hubs and intermediary vertices.
 
-The relative importance of the topological metrics was also observed for the additional 12 networks from Facebook, Twitter and Participabr.
-With the exception of two of these networks, the overall behavior was maintained in that centrality measurements 
-were found prevalent in the first principal component,
-followed by symmetry-related metrics on the second principal component and then clustering coefficient on the third principal component.
-The results are given in Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2},~\ref{tab:pcaE3} of the Supporting Information document.
-Larger variability was found among such networks, which motivated the
+%These results are also reported for 12 networks from Facebook, Twitter and Participabr
+%in Section~\ref{si:ext} of the Supporting Information document.
+Similar results are presented in Sections~\ref{si:pcat} and~\ref{si:ext}
+of the Supporting Information document for other email lists and other interaction networks.
+Larger variability was found among the latter networks,
+which motivated the
 use of interaction networks derived from email lists for benchmarks.
+
+%the overall behavior was maintained in that centrality measurements 
+%were found prevalent in the first principal component,
+%followed by symmetry-related metrics on the second principal
+%component and then clustering coefficient on the third principal component.
+%Similar results are presented in Sections~\ref{si:pcat} and~\ref{si:ext}
+%of the Supporting Information document for other email lists and other interaction networks,
+%with the consideration of strategic combinations of metrics.
 
 \subsection{Types from Erd\"os sectors}\label{sec:pty}
 Assigning a type to a participant raises important 
@@ -824,8 +860,17 @@ in a more selective and explicit manner.
 %between the number of threads and the number of participants.
 \begin{figure}
    \centering
-        \includegraphics[width=\columnwidth]{figs/mpgamma____________}
-	\caption{A scatter plot of number of messages (M) versus number of participants (N) versus number of threads ($\Gamma$) for 140 email lists. Highest numbers of threads are found in lists with few participants. The correlation between $N$ and $\Gamma$ is negative for low values of $N$ but positive otherwise. This negative correlation between $N$ and $\Gamma$ can also be observed in Table~\ref{tab:genLists}. For $M=20000$ messages, positive correlation of $N$ and $\Gamma$ is present mostly above 1500 participants. All LAU, LAD, MET lists present smaller networks.}
+   \includegraphics[trim={0 0 0 1cm},clip,width=\columnwidth]{figs/mpgamma____________}
+	\caption{A scatter plot of number of messages $M$ versus number of participants $N$ versus number of threads $\Gamma$ for 140 email lists.
+Highest $\Gamma$ are associated with low $N$.
+The correlation between $N$ and $\Gamma$ is negative for low values of $N$ but positive otherwise.
+This negative correlation between $N$ and $\Gamma$ can also be observed in Table~\ref{tab:genLists}.
+Accordingly,
+for $M=20000$ messages, this inflection
+of correlation 
+was found to be around $N=1500$
+and LAU, LAD, MET lists 
+present smaller networks.}
 	\label{fig:nmgamma3d}
 \end{figure}
 
