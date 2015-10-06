@@ -258,7 +258,7 @@ human individuals~\cite{anPhy,ccs15}.
 %These procedures are described below.
 
 \subsection{Time activity statistics}\label{sec:mtime}
-Messages were counted over time as histograms in terms of seconds,
+Messages were counted over time as histograms in the scales of seconds,
 minutes, hours, days of the week, days of the month, and months of the year.
 Most standard measures of location and dispersion, such as usual mean and
 standard deviation, hold little meaning in a compact Riemannian manifold.
@@ -583,17 +583,19 @@ Visualization of network structure was especially useful in the initial inspecti
 %    \item Typology speculations are immediate from results (Section~\ref{sec:pty}).
 %\end{itemize}
 \subsection{Activity along time}\label{constDisc}
-The observed activity along time, in terms of seconds, minutes, hours, days and months,  is practically the same for all lists.
-Histograms in each time scale were computed as were circular average and dispersion values.
-We provide detailed values in Table~\ref{tab:circ}-\ref{tab:min2} because they can
-be used for characterizing nodes (participants) in these and other networks,
-and networks themselves.
-For example, they may serve for identification of outliers in a community.
+Regular patterns of activity were observed along time
+in the scales of seconds, minutes, hours, days and months.
+%exhibited the same patterns in different networks.
+Histograms in each of the time scales were computed as were circular average and dispersion values.
+Values and dedicated expositions are provided in Tables~\ref{tab:circ}-\ref{tab:min2}.
+%they can be used for characterizing nodes (participants) in these and other networks,
+%and networks themselves.
+%For example, they may serve for identification of outliers in a community.
 
 \begin{table}
-	\caption{The rescaled circular mean $\theta_\mu'$ and the circular dispersion $\delta(z)$ described in Section~\ref{sec:mtime}.
-		This typical table was constructed using all LAD list messages, and the results are the same for other lists, as shown in Section~\ref{si:circ} of the Supporting Information document.
-	The most uniform distribution of activity was found in seconds and minutes, where the mean has little meaning.
+	\caption{The rescaled circular mean $\theta_\mu'$ and the circular dispersion $\delta(z)$, described in Section~\ref{sec:mtime}, for different timescales.
+		This example table was constructed using all LAD messages, and the results are the same for other lists, as shown in Section~\ref{si:circ} of the Supporting Information document.
+	The most uniform distribution of activity was found in seconds and minutes.
 	Hours of the day exhibited the most concentrated activity (lowest $\delta(z)$), with mean between 14h and 15h ($\theta'=-9.61$).
 	Weekdays, month days and months have mean near zero (i.e. near the beginning of the week, month and year) and high dispersion.}
 	\begin{center}
@@ -609,7 +611,9 @@ For example, they may serve for identification of outliers in a community.
 \end{table}
 
 \begin{table}
-	\caption{Activity percentages along the hours of the day for the CPP list. Nearly identical distributions are found on other lists as shown in Section~\ref{si:hours} of the Supporting Information document. Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight. Around 2/3 of the whole activity takes place from noon to midnight. Nevertheless, the activity peak occurs around midday, with a slight skew toward one hour before noon.}
+	\caption{Activity percentages along the hours of the day. Nearly identical distributions are found on other systems as shown in Section~\ref{si:hours} of the Supporting Information document.
+	Higher activity was observed between noon and 6pm (with 1/3 of total day activity), followed by the time period between 6pm and midnight. Around 2/3 of the activity takes place from noon to midnight.
+Nevertheless, the activity peak occurs between 11 a.m. and 12 p.m. This example and empirical table corresponds to the activity in CPP.}
 	\footnotesize
 	\input{tables/tabHoursCPP_}
 	\label{tab:hin}
@@ -617,7 +621,8 @@ For example, they may serve for identification of outliers in a community.
 
 
 \begin{table}
-	\caption{Activity percentages along the days of the week for the four email lists. Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.}
+	\caption{Activity percentages along the days of the week.
+	Higher activity was observed during weekdays, with a decrease of activity on weekends of at least one third and two thirds in extreme cases.}
 	\begin{center}
 		\begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
 			\hline
@@ -627,22 +632,41 @@ For example, they may serve for identification of outliers in a community.
 	\end{center}
 	\label{tab:win}
 \end{table}
-In the scale of seconds and minutes, activity obeys a homogeneous pattern, with the messages being slightly more evenly distributed in all lists than in simulations using uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}. In the networks, $\frac{min(incidence)}{max(incidence)} \in (0.784,.794)$ while simulations reach these values but have on average more discrepant higher and lower peaks $\xi=\frac{min(incidence')}{max(incidence')} \Rightarrow \mu_\xi=0.7741 \text{ and } \sigma_\xi=0.02619$.
+For example, uniform activity is found with respect to seconds, minutes and days of the months,
+weekend days exhibit about half the activity of regular weekdays,
+and there is a peak of activity between 11am and 12pm.
+
+In the scales of seconds and minutes, activity in uniform,
+with the messages being slightly more evenly distributed in all lists than in simulations with the uniform distribution\footnote{Numpy version 1.6.1, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}.
+In the networks, $\frac{min(incidence)}{max(incidence)} \in (0.784,.794)$ while simulations reach these values but have on average more discrepant higher and lower peaks $\xi=\frac{min(incidence')}{max(incidence')} \Rightarrow \mu_\xi=0.7741 \text{ and } \sigma_\xi=0.02619$.
 Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform.
-In these cases, the circular dispersion is maximized and the mean has little meaning as indicated in Table~\ref{tab:circ}. As for the hours of the day, an abrupt peak appeared around 11am with the most active period being the afternoon. Days of the week revealed a decrease between one third and two thirds of activity on weekends. Days of the month were regarded as homogeneous with an inconclusive slight tendency of the first week being more active. Months of the year revealed patterns matching usual work and academic calendars. The time period examined here was not sufficient for the analysis of activity along the years. These patterns are exemplified in Tables~\ref{tab:hin}-\ref{tab:min2}.
+In these cases, the circular dispersion is maximized and the mean has little meaning as indicated in Table~\ref{tab:circ}.
+As for the hours of the day, an abrupt peak is found between 11am and 12pm with the most active period being the afternoon, with one third of total daily activity, and two thirds of activity is allocated in the second 12h of each day.
+Days of the week revealed a decrease between one third and two thirds of activity on weekends.
+Days of the month were regarded as homogeneous with an inconclusive slight tendency of the first week to be more active.
+Months of the year revealed patterns matching usual work and academic calendars.
+The time period examined here was not sufficient for the analysis of activity along the years. These patterns are exemplified in Tables~\ref{tab:hin}-\ref{tab:min2}.
 
 
 \FloatBarrier
 
 \begin{table}
-	\caption{Activity in the days along the month for the MET list. Nearly identical distributions are found on other lists as indicated in Section~\ref{si:monthdays} of the Supporting Information. Although slightly higher activity rates are found in the beginning of the month, the most important feature seems to be the homogeneity made explicit by the high circular dispersion in Table~\ref{tab:circ}.}
+	\caption{Activity along the days of the month cycle.
+	Nearly identical distributions are found in all systems
+as indicated in Section~\ref{si:monthdays} of the Supporting Information. Although slightly higher activity rates are found in the beginning of the month, the most important feature seems to be the homogeneity made explicit by the high circular dispersion in Table~\ref{tab:circ}.
+This example and empirical table corresponds to the activity of the MET email list.}
 	\footnotesize
 	\input{tables/tabMonthdaysMET}
 	\label{tab:min}
 \end{table}
 
 \begin{table}
-	\caption{Activity percentages of the months along the year from LAU list. Activity is usually concentrated in Jun-Aug and/or in Dec-Mar (see Section~\ref{si:months} of the Supporting Information). These observations fit academic calendars, vacations and end-of-year holidays.}
+	\caption{Activity percentages on months along the year.
+		Activity is usually concentrated in Jun-Aug and/or in Dec-Mar,
+		potentially due to academic calendars, vacations and end-of-year holidays.
+	 This table corresponds to activity in LAU. 
+		Further evidence is in Section~\ref{si:months} of the Supporting Information document.
+	}
 	\footnotesize
 	\input{tables/tabMonthsLAU}
 	\label{tab:min2}
@@ -783,6 +807,9 @@ with respect to dispersion in the topological space,
 in characterizing interaction networks
 and their participants, than the clustering coefficient,
 especially for hubs and intermediary vertices.
+Interestingly, the clustering coefficient is always combined
+with the standard deviation of the asymmetry and disequilibrium
+of edges $\sigma^{asy}$ and $\sigma^{dis}$.
 
 %These results are also reported for 12 networks from Facebook, Twitter and Participabr
 %in Section~\ref{si:ext} of the Supporting Information document.
