@@ -673,11 +673,12 @@ which indicate that the percentages of hubs, intermediary and periphery nodes ar
 \begin{figure*} 
 	\centering
 	\includegraphics[width=\textwidth]{figs/InText-WLAU-S1000_}
-	\caption{Fractions of agents in each Erd\"os sector, where the fractions for hubs, intermediary and peripheral vertices are represented in red, green and blue, respectively. Fractions derived from degree and strength criteria are both on the left.
-	Fractions derived from the exclusivist $C_1$ and the inclusivist $C_2$ compound criteria are exposed in the plots to the right,
-with black lines representing the fraction of vertices without class and with more than one class, respectively. 
-See Section~\ref{si:frac} of Supporting Information document for a collection of such timeline figures with all simple and compound criteria specified in Section~\ref{sectioning}.
-Table~\ref{tab:secE}, also from Supporting Information document, presents these fractions of agents in networks from Facebook, Twitter and Participabr.}
+	\caption{Stability of Erd\"os sector sizes.
+		Fractions of participants derived from degree and strength criteria, $E_1$ and $E_4$ in Section~\ref{sectioning}, are both on the left.
+	Fractions derived from the exclusivist $C_1$ and the inclusivist $C_2$ compound criteria are exposed in the plots to the right.
+	In the ordinates $\overline{e_{n,x}}=\frac{|e_{n,x}|}{N}$ denotes the fraction of participants in sector $x$ through criterion $E_n$
+	and, similarly, $\overline{c_{n,x}}=\frac{|c_{n,x}|}{N}$ denotes the fraction of participants in sector $x$ through criterion $C_n$.
+Sections~\ref{si:frac} and~\ref{si:ext} of the Supporting Information document hold a systematic collection of such timeline figures with all simple and compound criteria specified in Section~\ref{sectioning} and present these fractions of participants in networks from Facebook, Twitter and Participabr.}
 	\label{fig:sectIL}
 \end{figure*}
 
@@ -736,17 +737,17 @@ and the participants.
 	\centering
 	%\includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT__}
 	\includegraphics[width=.45\textwidth]{figs/im13PCAPLOT__}
-	\caption{The first plot shows degree versus clustering coefficient, a well known pattern characterized by the high clustering being more incident in vertices with lower degrees.
-		In the second plot, the abscissas is an average of centrality metrics, an intermediary plot to ease understanding.
-		The third plot exhibits the greater dispersion of the symmetry-related ordinates.
+	\caption{The first plot exposes the wel known pattern of degree versus clustering coefficient, characterized by the higher clustering coefficient of lower degree vertices.
+		The second plot exhibits the greater dispersion of the symmetry-related ordinates.
 		This greater dispersion suggests that symmetry-related metrics are more powerful, with respect to dispersion,
 		for characterizing interaction networks than the clustering coefficient,
 		especially for hubs and intermediary vertices.
-		This figure was obtained with a snapshot of the LAU list in a window size of $ws = 1000$ messages.
-		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$, in networks derived from email lists,
-		and in networks from Facebook, Twitter and Participabr,
-		which suggests a common relationship between the metrics of degrees, strengths and betweenness centrality,
-		the symmetry-related metrics and clustering coefficient.}
+	This figure was reflects a snapshot of the LAU list with $ws= 1000$.}
+
+%		Similar structures were observed in all window sizes $ws\;\in\;[500,10000]$, in networks derived from email lists,
+%		and in networks from Facebook, Twitter and Participabr,
+%		which suggests a common relationship between the metrics of degrees, strengths and betweenness centrality,
+%		the symmetry-related metrics and clustering coefficient.}
 	\label{fig:sym}
 \end{figure}
 
@@ -872,7 +873,7 @@ This negative correlation between $N$ and $\Gamma$ can also be observed in Table
 Accordingly,
 for $M=20000$ messages, this inflection
 of correlation 
-was found to be around $N=1500$
+was found around $N=1500$
 and LAU, LAD, MET lists 
 present smaller networks.}
 	\label{fig:nmgamma3d}

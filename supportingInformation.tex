@@ -43,6 +43,8 @@
 \usepackage[section] {placeins}
 
 \newcommand{\beginsupplement}{%
+%	\setcounter{table}{0}
+	\renewcommand{\thesection}{S\Roman{section}}%
 	\setcounter{table}{0}
 	\renewcommand{\thetable}{S\arabic{table}}%
 	\setcounter{figure}{0}
