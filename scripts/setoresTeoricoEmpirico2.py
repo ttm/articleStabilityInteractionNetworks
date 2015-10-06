@@ -58,7 +58,7 @@ p.subplots_adjust(left=0.05,bottom=0.28,right=0.99,top=0.87)
 
 p.bar([i[0]-0.4 for i in np.bins],
         np.empirical_distribution,
-        alpha=.4, label="empirical distribution")
+        alpha=.4,color="k", label="empirical distribution")
 #p.bar(n.log([i[0]-0.5 for i in np.bins]),
 #      n.log(  np.empirical_distribution),
 #        alpha=.7, label="empirical distribution")
@@ -73,7 +73,7 @@ for i, bin_ in enumerate(np.bins):
     binomial_probs.append(binomial_prob)
 #p.plot(centers,np.binomial.cdf(centers))
 #p.plot(centers,binomial_probs,"ro")
-p.plot(centers,binomial_probs,"r-o",label="binomial distribution")
+p.plot(centers,binomial_probs,"k-.^",label="binomial distribution",linewidth=8,alpha=.8)
 #p.plot(n.log(centers),n.log(binomial_probs),"ro",label="binomial distribution")
 #p.title("Three sections of a scale-free network"+"\nCPP list, {} messages, {} participants, {} edges".format(
 #         ne.window_size, nm.N, nm.E),size=25)
@@ -87,8 +87,8 @@ p.ylabel(r"P(k) $\rightarrow$",size=20)
 c_=n.array(centers)
 pk=c_[1:]**-1.5
 #p.plot(centers[1:],.4*pk,"ko")
-p.plot(centers[1:],.4*pk,"k-o",label="power-law distribution")
-p.ylim(0,0.4*pk[0]+0.03)
+p.plot(centers[1:],.4*pk,"k-o",label="power-law distribution",linewidth=5,alpha=.8)
+p.ylim(0,0.4*pk[0]-0.03)
 
 # pontos de intersecção:
 x1=2.5; y=41.16-5
@@ -98,7 +98,7 @@ p.plot((x2,x2),(-1000,y),"g--")
 #p.xticks((x1,x2),(r"$(k_L)$",r"$(k_R)$"),size=25)
 
 p.text(-.28,0.12,"periphery"  ,size=20)
-p.text(4,.3,"intermediary",   size=20)
+p.text(4,.27,"intermediary",   size=20)
 p.text(10,.08,"hubs"      ,   size=20)
 
 
