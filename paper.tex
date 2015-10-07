@@ -550,22 +550,29 @@ by the most simple associations:
 low absolute values indicate low correlation (and a possible independence);
 high values indicate positive correlation;
 negative values with a high absolute value indicate negative correlation.
-\subsection{Evolution and visualization of the networks}\label{sec:viz}
-The evolution of the networks was observed within sequences of snapshots. with a fixed number of messages,
-Each of these sequences had a fixed number of messages, the window size $ws$,
-which was considered with different shifts in the message timeline to obtain snapshots.
-In each snapshot was performed both the PCA with topological metrics and the Erd\"os sectioning.  
-The values of $ws$ employed were 50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000 and 10000.
+
+\subsection{Evolution and audiovisualization of the networks}\label{sec:viz}
+The evolution of the networks was observed within 
+sequences of snapshots.
+In each sequence,a fixed number of messages,
+the window size $ws$, was used for all snapshots.
+%was considered with different shifts in the message timeline to obtain snapshots.
+The snapshots are disjoint in the message timeline,
+and were used to perform both the PCA
+with topological metrics and the Erd\"os sectioning.  
+Figures and tables were usually inspected in
+$ws=\{50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000, 10000\}$ messages.
 Variations in the number of vertices, edges
-and other network characteristics
+and other network characteristics, within the same window size $ws$,
 are exposed in Section~\ref{si:frac}
 of the Supporting Information document. 
 
-Networks were visualized with animations, sonifications,
-image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}.
-Such \emph{audiovisualizations} were crucial to guide the research into the most important features of network evolution.
-Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion.
-Visualization of network structure was especially useful in the initial inspection of data and of the structures derived from the email lists.
+Network structures were mapped to video animations, sound and musical structures,
+image galleries and online gadgets developed for this research~\cite{animacoes,galGMANE,appGMANE}.
+Such \emph{audiovisualizations} were crucial in the initial steps and
+to guide the research into the most important features of network evolution.
+%Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion.
+%Visualization of network structure was especially useful in the initial inspection of data and of the structures derived from the email lists.
 
 %This is a way to enhance the reliability of the methods,
 %of algorithmic routines, of data consistency,
