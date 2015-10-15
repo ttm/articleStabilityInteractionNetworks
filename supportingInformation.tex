@@ -29,7 +29,7 @@
 \reserveinserts{58}
 %\usepackage{morefloats}
 \usepackage{hyperref}
-\usepackage{xcolor}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{amsmath}
 \hypersetup{
         colorlinks,
@@ -181,7 +181,7 @@ This Supporting Information document holds circular statistics and histograms of
 the fraction of vertices in the peripheral, intermediary and hub sectors in Section~\ref{si:frac}
 and the combination of basic topological measures into principal components with greater variance in Section~\ref{si:pcat}.
 There is a focus on email list interaction networks for benchmarking and
-Section~\ref{si:ext} reinforces the results with the analysis of networks from Facebook, Twitter and Participa.br.
+Section~\ref{si:ext} reinforces the results with the analysis of networks from Facebook, Twitter and Participabr.
 More context (e.g. methods, discussion, data and scripts) is given in the main document~\cite{tpaper}
 to which this current document supplies supporting information.
 
@@ -208,7 +208,7 @@ Greater localization is found in the scale of hours of the day, followed by week
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline\hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline
 	\input{tables/tab2TimeLAU}
     \end{tabular}
 \end{center}
@@ -219,7 +219,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ 
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline\hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline
 	\input{tables/tab2TimeLAD}
     \end{tabular}
 \end{center}
@@ -230,7 +230,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ 
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline\hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline
 	\input{tables/tab2TimeMET}
     \end{tabular}
 \end{center}
@@ -241,7 +241,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ 
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}}$ \\ \hline\hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}}$ \\ \hline
 	\input{tables/tab2TimeCPP}
     \end{tabular}
 \end{center}
@@ -281,12 +281,14 @@ The activity peak occurs around midday, with a slight skew toward one hour befor
 
 \FloatBarrier
 
-\subsubsection{Histograms of activity along the days of the week}
-Most notably, a decrease of activity on weekends of at least one third and at most two thirds.
+\subsubsection{Histograms of activity along weekdays.}
+Most notably, the pattern of activity along weekdays presents
+a decrease of activity on weekend days of at least one third and at most two thirds
+compared against workweek days.
 
 \begin{table}[!h]
 \begin{center}
-    \begin{tabular}{ | l |  c | c | c | c | c |   c | c |}
+    \begin{tabular}{ | l ||  c | c | c | c | c |   c | c |}
         \hline
         & Mon & Tue & Wed & Thu & Fri & Sat & Sun  \\ \hline
 	\input{tables/tabWeekdays}
@@ -356,14 +358,17 @@ The most important feature seems to be the homogeneity made explicit by the high
 
 \FloatBarrier
 \section{PCA of measures along the timeline}\label{si:pcat}
-Loadings for the 14 metrics into the principal components are given for all LAD, LAU, MET, CPP, lists, $ws=1000$ messages in 20 disjoint positioning.
-The clustering coefficient (cc) appears as the first metric in the tables, followed by 7 centrality metrics and 6 symmetry-related metrics.
-The centrality metrics, including degrees, strength and betweenness centrality, are the most important contributors for the first principal component, while the second component is dominated by symmetry metrics.
-The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of strengths and degrees.
-The three components have in average 80.36\% of the variance.
+Loadings for topological metrics in principal components for LAD, LAU, MET, CPP, lists with the window size of $ws=1000$ messages 20 disjoint positioning.
 Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the main document~\cite{tpaper}.
 
+
+
 \subsection{Betweenness, clustering and degree}
+This simplest PCA is characterized by the coupling of
+the centrality measures of degree $k$ and betweenness $bt$
+in the first component.
+Second component is mostly the clustering coefficient $cc$.
+These three measures contribute almost equally to the dispersion of the system: first component holds two thirds of the dispersion and is resultant of two measures while the second component holds one third of the dispersion and results from one measure.
 
 \begin{table}[!h]
 	\caption{LAU principal components formation and concentration of dispersion.}
@@ -395,6 +400,13 @@ Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the
 
 \FloatBarrier
 \subsection{Betweenness, clustering, degrees and strengths}
+In this extension of the previous plot, the set of centrality metrics are extended to include strength $s$ and the in- and out- degrees ($k^{in}$, $k^{out}$) and strengths ($s^{in}$, $s^{out}$).
+First component holds an average of the centrality metrics ($k$, $k^{in}$, $k^{out}$, $s$, $s^{in}$, $s^{out}$) while
+second component is mostly clustering coefficient $cc$.
+All metrics contribute the about same for total dispersion
+($\approx \frac{94}{8}=11.75\%$).
+
+
 
 \begin{table}[!h]
 	\caption{LAU principal components formation and concentration of dispersion.}
@@ -425,6 +437,14 @@ Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the
 \FloatBarrier
 \subsection{Betweenness, clustering, degrees, strengths and symmetry measures}
 
+Loadings for 14 topological metrics in the first three principal components are given for LAD, LAU, MET, CPP, list..
+The clustering coefficient $cc$ appears as the first metric in the tables, followed by 7 centrality metrics and 6 symmetry-related metrics.
+The centrality metrics, including degrees, strengths and betweenness centrality, are most important for the first principal component, while the second component is predominantly symmetry metrics.
+The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of strengths and degrees.
+The three components hold in average $\approx 80.36\%$ of the variance.
+In the PCA measures of the CPP list, in the last table, this general pattern is depicted in {\bf boldface}.
+Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the main document~\cite{tpaper}.
+
 \begin{table}[!h]
 	\caption{LAU principal components formation and concentration of dispersion.}
 	\footnotesize
@@ -453,11 +473,19 @@ Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the
 
 \FloatBarrier
 \section{Fraction of participants in each Erd\"os Sector along the timeline}\label{si:frac}
-	Here we present the fraction of participants in each Erd\"os sector with respect to each criterion defined in Section~\ref{sectioning} of the main document~\cite{tpaper}. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown below, first for CPP, then for  LAD list.
+In this section, the figures present timelines
+with the 
+fractions of participants in each Erd\"os sector with respect to each criterion defined in Section~\ref{sectioning} of the main document~\cite{tpaper}. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown below, first for CPP, then for  LAD list.
 
-							Each step size takes two pages of plot. On the first page, the criterion is based on each centrality metric observed separately: in, out and total degrees and strengths. In the first six plots, the code for the colors is as follows: red for hubs, green for the fraction of intermediary vertices and blue for the peripheral fraction. On the last plot, red is the center (maximum distance to another vertex is equal to radius), blue is periphery (maximum distance equals to diameter) of the greatest component. On the same graph, green represents the disconnected vertices.
+Each step size takes two pages of plot.
+On the first page, the criterion is based on each centrality metric observed separately: total, in and out degrees ($k$, $k^{in}$, $k^{out}$) and strengths ($s$, $s^{in}$, $s^{out}$).
+In the first six plots of every page,
+the colors have meanings as follows: {\bf \color{red} red for hubs}, {\color{Green}\bf green for the intermediary} and {\bf\color{blue} blue for the periphery}.
 
-							On the second page we show the fractions of participants with respect to each compound criterion for the Erd\"os sectioning. In the first plot, the fraction of vertices with unique classification is plotted in black: $\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$. On the second plot, black represents the exceeding classifications for the given vertices: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
+On the last plot of the first page, red is the center (maximum distance to another vertex is equal to radius, i.e. smallest geodesic), blue is periphery (maximum distance equals to diameter, i.e. greatest geodesic) of the greatest component. On the same graph, green represents the disconnected vertices.
+
+On the second page we show the fractions of participants with respect to each compound criterion for the Erd\"os sectioning.
+In the first plot, the {\bf \color{black} fraction of vertices with unique classification is in black}: $\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$. On the second plot, {\bf black represents the fraction of classifications over the number of vertices}: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
 
 
 
@@ -595,9 +623,11 @@ Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the
 
 
 \FloatBarrier
-\section{Stability in other networks: Twitter, Facebook, Participa.br}\label{si:ext}
-To further verify the hypothesis that such stability is a general property of human social networks,
-we analyzed networks from Twitter, Facebook and Participa.br. Selected networks are summarized in
+\section{Stability in other networks: Twitter, Facebook, Participabr}\label{si:ext}
+To ease hypothesizing about the generality of the reported stability of human interaction networks,
+this section presents the topological analysis of
+networks from Twitter, Facebook and Participabr.
+Selected networks are summarized in
 Table~\ref{tab:E}. Their Erd\"os sector relative sizes are given in Table~\ref{tab:secE}. PCA formations are given in
 Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. The friendship networks considered are undirected and unweighted, therefore all measurements of strength, in- and out- centralities, asymmetry and disequilibrium have little or no meaning, which is why F1, F2, F3, F4 and F5 are only present in Table~\ref{tab:pcaE1F}.
 The most important results from this analysis are:
@@ -609,7 +639,10 @@ The most important results from this analysis are:
 \end{itemize}
 
 \begin{table*}[!h]
-	\caption{Overview of selected networks analyzed in addition to email interaction networks. Three social platforms were the sources of network structures: Facebook, Twitter and Participa.br. Both friendship and interaction networks were observed, yielding undirected and directed networks, respectively. The number of agents $N$ and the number of edges $z$ are given on the last columns. The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\ref{tab:pcaE1I},~\ref{tab:pcaE1F},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. All the data were collected in 2013 and 2014 within the anthropological physics framework~\cite{anPhy}.}
+	\caption{Selected networks from three social platforms: Facebook, Twitter and Participabr.
+	Both friendship and interaction networks were observed, yielding undirected and directed networks, respectively.
+The number of agents $N$ and the number of edges $z$ are given on the last columns.
+The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\ref{tab:pcaE1I},~\ref{tab:pcaE1F},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. All the data were collected in 2013 and 2014 within the anthropological physics framework~\cite{anPhy}.}
 \begin{center}
 \begin{tabular}{| l | c | c | c | c | c | c | }\hline
 	acronym & provenance & edge & directed & description & $N$ & $z$ \\ \hline\hline
@@ -637,7 +670,7 @@ The most important results from this analysis are:
 
 
 \begin{table*}[!h]
-	\caption{First three principal components and variance concentration for each of the five friendship networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Participa.br yields the networks that most resemble the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. The friendship network of Renato Fabbri (F1) is the only network whose first component has more than 20\% of clustering coefficient and second component has more than 40\% of degree centrality.}
+	\caption{First three principal components and variance concentration for each of the five friendship networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Participabr yields the networks that most resemble the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. The friendship network of Renato Fabbri (F1) is the only network whose first component has more than 20\% of clustering coefficient and second component has more than 40\% of degree centrality.}
 	\footnotesize
 \begin{center}
 %\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
