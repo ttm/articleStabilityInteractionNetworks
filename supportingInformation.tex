@@ -623,7 +623,7 @@ In the first plot, the {\bf \color{black} fraction of vertices with unique class
 
 
 \FloatBarrier
-\section{Stability in other networks: Twitter, Facebook, Participabr}\label{si:ext}
+\section{Stability in networks from Twitter, Facebook, Participabr}\label{si:ext}
 To ease hypothesizing about the generality of the reported stability of human interaction networks,
 this section presents the topological analysis of
 networks from Twitter, Facebook and Participabr.
@@ -670,7 +670,8 @@ The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\
 
 
 \begin{table*}[!h]
-	\caption{First three principal components and variance concentration for each of the five friendship networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Participabr yields the networks that most resemble the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. The friendship network of Renato Fabbri (F1) is the only network whose first component has more than 20\% of clustering coefficient and second component has more than 40\% of degree centrality.}
+	\caption{Formation of first three principal components for each of the five friendship networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree $k$, clustering coefficient $cc$ and betweenness centrality $bt$. Participabr yields the networks that most resemble the email networks.
+		Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. The friendship network of Renato Fabbri (F1) is the only network whose first component has more than 20\% of clustering coefficient and second component has more than 40\% of degree centrality.}
 	\footnotesize
 \begin{center}
 %\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
@@ -689,7 +690,7 @@ The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\
 \end{table*}
 
 \begin{table*}[!h]
-	\caption{First three principal components and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree, clustering coefficient and betweenness centrality. Twitter yields the networks that most resemble the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component.}
+	\caption{Formation of the first three principal components for each of the seven interaction networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree $k$, clustering coefficient $cc$ and betweenness centrality $bt$. Twitter yields the networks that most resemble the email networks. Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component.}
 	\footnotesize
 	\begin{center}
 		%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
@@ -709,7 +710,12 @@ The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\
 
 
 \begin{table*}[!h]
-	\caption{First three principal components and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} considering dimensions of in- and out- degrees and strengths, clustering coefficient and betweenness centrality. Twitter yields the networks that most resemble email networks. The general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. Important differences are: - the clustering coefficient was only important to the third component for two of the networks ($I2$, $I3$) and does not contribute significantly to any of the first three principal components in $I5$; - in the first component, I5 exhibited less contribution from in-strength, in-degree and betweenness, I4 exhibited less contribution from out-degree.}
+	\caption{Formation of the first three principal components for each of the seven interaction networks of Table~\ref{tab:E} considering total, in- and out- degrees ($k$, $k^{in}$, $k^{out}$) and strengths ($s$, $s^{in}$, $s^{out}$), clustering coefficient $cc$ and betweenness centrality $bt$.
+	Twitter yields the networks that most resemble email networks.
+The general characteristic is preserved: first component is an average of degree and betweenness, while clustering coefficient is the most relevant for the second component.
+Important differences are:
+the clustering coefficient was only important to the third component for two of the networks ($I2$, $I3$) and does not contribute significantly to any of the first three principal components in $I5$;
+in the first component, I5 exhibited less contribution from in-strength, in-degree and betweenness, I4 exhibited less contribution from out-degree.}
 	\footnotesize
 	\begin{center}
 		%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
@@ -729,7 +735,12 @@ The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\
 
 
 \begin{table*}[!h]
-	\caption{First three principal components and variance concentration for each of the seven interaction networks of Table~\ref{tab:E} considering dimensions of in- and out- degrees and strengths, clustering coefficient, betweenness centrality and symmetry related metrics (see Section~\ref{measures}). The characteristics found in email interaction networks are preserved: the first component is an average of degree and betweenness, the second component is mostly governed by symmetry related metrics, and clustering coefficient is mostly relevant for the third component. Standard deviation of asymmetry and disequilibrium metrics are again coupled to clustering coefficient in the third component. Important differences are: - the first component is a less regular average of centrality measures and has a greater contribution of symmetry metrics; - The first component of I5 is formed mostly from symmetry, not centrality, metrics.}
+	\caption{Formation of the first three principal components for each of the seven interaction networks of Table~\ref{tab:E} considering total, in- and out- degrees ($k$, $k^{in}$, $k^{out}$) and strengths ($s$, $s^{in}$, $s^{out}$), clustering coefficient $cc$, betweenness centrality $bt$ and symmetry related metrics ($asy$, $\mu^{asy}$, $\sigma^{asy}$, $dis$, $\mu^{dis}$ and $\sigma^{dis}$ defined in Section~\ref{measures}).
+	The characteristics found in email interaction networks are preserved: the first component is an average of degree and betweenness, the second component is mostly governed by symmetry related metrics, and clustering coefficient is mostly relevant for the third component.
+Standard deviation of asymmetry and disequilibrium metrics are again coupled to clustering coefficient in the third component.
+Important differences are: 
+the first component is a less regular average of centrality measures and has a greater contribution of symmetry metrics;
+The first component of I5 is formed mostly from symmetry, not centrality, metrics.}
 	\footnotesize
 	\begin{center}
 		%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
