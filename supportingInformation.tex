@@ -193,10 +193,10 @@ for supporting the results in Section~\ref{constDisc}.
 The metrics with which we report measurements and results
 of activity along time are the rescaled circular mean $\theta_\mu'$,
 the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$
-and the relation between the minimum and the maximum incidences $\frac{min(incidence)}{max(incidence)}$ at each time scale.
-Also, the mean $ \mu_{\frac{min(incidence')}{max(incidence')}} $ and 
-the standard deviation $ \sigma_{\frac{min(incidence')}{max(incidence')} }$ 
-of the relation between the minimum and the maximum incidences
+and the ration between the lowest $b_l$ and the highest $b_h$ incidences $\frac{b_l}{b_h}$ at each time scale.
+Also, the mean $\mu_{\frac{b_l'}{b_h'}}$ and 
+the standard deviation $\sigma_{\frac{b_l'}{b_h'}}$ 
+of the relation between the minimum $b_l'$ and the maximum $b_h'$ incidences
 are given for 1000 uniform distribution simulations within the 
 same number of bins and with the same number of samples~\footnote{Numpy version 1.8.2, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}}.
 Greater dispersion is found on the scales of seconds and minutes, followed
@@ -208,7 +208,7 @@ Greater localization is found in the scale of hours of the day, followed by week
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{min(incidence)}{max(incidence)}$ & $ \mu_{\frac{min(incidence')}{max(incidence')}} $ & $ \sigma_{\frac{min(incidence')}{max(incidence')} } $ \\ \hline\hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline\hline
 	\input{tables/tab2TimeLAU}
     \end{tabular}
 \end{center}
@@ -219,7 +219,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{min(incidence)}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{min(incidence)}{max(incidence)}$ & $ \mu_{\frac{min(incidence')}{max(incidence')}} $ & $ \sigma_{\frac{min(incidence')}{max(incidence')} } $ \\ \hline\hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline\hline
 	\input{tables/tab2TimeLAD}
     \end{tabular}
 \end{center}
@@ -230,7 +230,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{min(incidence)}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{min(incidence)}{max(incidence)}$ & $ \mu_{\frac{min(incidence')}{max(incidence')}} $ & $ \sigma_{\frac{min(incidence')}{max(incidence')} } $ \\ \hline\hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline\hline
 	\input{tables/tab2TimeMET}
     \end{tabular}
 \end{center}
@@ -241,7 +241,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{min(incidence)}
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{min(incidence)}{max(incidence)}$ & $ \mu_{\frac{min(incidence')}{max(incidence')}} $ & $ \sigma_{\frac{min(incidence')}{max(incidence')} } $ \\ \hline\hline
+scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}}$ \\ \hline\hline
 	\input{tables/tab2TimeCPP}
     \end{tabular}
 \end{center}
