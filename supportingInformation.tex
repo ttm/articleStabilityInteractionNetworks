@@ -438,11 +438,11 @@ All metrics contribute the about same for total dispersion
 \subsection{Betweenness, clustering, degrees, strengths and symmetry measures}
 
 Loadings for 14 topological metrics in the first three principal components are given for LAD, LAU, MET, CPP, list..
-The clustering coefficient $cc$ appears as the first metric in the tables, followed by 7 centrality metrics and 6 symmetry-related metrics.
-The centrality metrics, including degrees, strengths and betweenness centrality, are most important for the first principal component, while the second component is predominantly symmetry metrics.
-The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of strengths and degrees.
-The three components hold in average $\approx 80.36\%$ of the variance.
-In the PCA measures of the CPP list, in the last table, this general pattern is depicted in {\bf boldface}.
+The clustering coefficient $cc$ appears as the first metric in the tables, followed by 7 centrality metrics ($k$, $k^{in}$, $k^{out}$, $s$, $s^{in}$, $s^{ou}$, $bt$) and 6 symmetry-related metrics ($asy$, $\mu^{asy}$, $\sigma^{asy}$, $dis$, $\mu^{dis}$ and $\sigma^{dis}$).
+The centrality metrics are most important for the first principal component, while the second component is predominantly the result of symmetry metrics.
+The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of asymmetry $\sigma^{asy}$ and disequilibrium $\sigma^{dis}$.
+The three components sum up to $\approx90\%$ of the variance.
+In the PCA measures of the CPP list, the last table of these PCA-related tables, this general pattern is depicted in {\bf boldface}.
 Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the main document~\cite{tpaper}.
 
 \begin{table}[!h]
@@ -628,7 +628,8 @@ To ease hypothesizing about the generality of the reported stability of human in
 this section presents the topological analysis of
 networks from Twitter, Facebook and Participabr.
 Selected networks are summarized in
-Table~\ref{tab:E}. Their Erd\"os sector relative sizes are given in Table~\ref{tab:secE}. PCA formations are given in
+Table~\ref{tab:E}. Their Erd\"os sector relative sizes are given in Table~\ref{tab:secE}. The formation of Principal components
+are given in
 Tables~\ref{tab:pcaE1F},~\ref{tab:pcaE1I},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. The friendship networks considered are undirected and unweighted, therefore all measurements of strength, in- and out- centralities, asymmetry and disequilibrium have little or no meaning, which is why F1, F2, F3, F4 and F5 are only present in Table~\ref{tab:pcaE1F}.
 The most important results from this analysis are:
 
@@ -644,8 +645,8 @@ The most important results from this analysis are:
 The number of agents $N$ and the number of edges $z$ are given on the last columns.
 The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\ref{tab:pcaE1I},~\ref{tab:pcaE1F},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. All the data were collected in 2013 and 2014 within the anthropological physics framework~\cite{anPhy}.}
 \begin{center}
-\begin{tabular}{| l | c | c | c | c | c | c | }\hline
-	acronym & provenance & edge & directed & description & $N$ & $z$ \\ \hline\hline
+\begin{tabular}{| l || c | c | c | c | c | c | }\hline
+	acronym & provenance & edge & directed & description & $N$ & $z$ \\ \hline
 	\input{tables/tabExtra}
 \hline
 \end{tabular}
@@ -659,8 +660,8 @@ The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\
 	Percentage of agents in each Erd\"os sector in the friendship and interaction human networks of Table~\ref{tab:E}. The ratios found in email networks are preserved. I1 and I4 are outliers, probably because they should be better characterized as a superposition of networks, rather than one coherent network. The degree was used for establishing the sectors.
 	}
 \begin{center}
-\begin{tabular}{| l | c | c | c |}\hline
-	 & periphery & intermediary & hubs \\ \hline\hline
+\begin{tabular}{| l || c | c | c |}\hline
+	 & periphery & intermediary & hubs \\ \hline
 	\input{tables/tabSectorsExtra}
 \hline
 \end{tabular}
