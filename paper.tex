@@ -651,8 +651,9 @@ Values and dedicated expositions are provided in Tables~\ref{tab:circ}-\ref{tab:
 	\caption{The rescaled circular mean $\theta_\mu'$ and the circular dispersion $\delta(z)$, described in Section~\ref{sec:mtime}, for different timescales.
 		This example table was constructed using all LAD messages, and the results are the same for other lists, as shown in Section~\ref{si:circ} of the Supporting Information document.
 	The most uniform distribution of activity was found in seconds and minutes.
-	Hours of the day exhibited the most concentrated activity (lowest $\delta(z)$), with mean between 14h and 15h ($\theta'=-9.61$).
-	Weekdays, month days and months have mean near zero (i.e. near the beginning of the week, month and year) and high dispersion.}
+	Hours of the day exhibited the most concentrated activity (lowest $\delta(z)$), with mean between 2 p.m. and 3 p.m. ($\theta'=-9.61$).
+	Weekdays, month days and months have mean near zero (i.e. near the beginning of the week, month and year) and high dispersion.
+Notice that $\theta_u'$ has the dimensional unit of the corresponding time period while $\delta(z)$ is dimensionless.}
 	\begin{center}
 		\begin{tabular}{ |l|| c|c| }
 			\hline
@@ -666,9 +667,12 @@ Values and dedicated expositions are provided in Tables~\ref{tab:circ}-\ref{tab:
 \end{table}
 
 \begin{table}
-	\caption{Activity percentages along the hours of the day. Nearly identical distributions are found on other systems as shown in Section~\ref{si:hours} of the Supporting Information document.
-	Higher activity was observed between noon and 6pm (with 1/3 of total day activity), followed by the time period between 6pm and midnight. Around 2/3 of the activity takes place from noon to midnight.
-Nevertheless, the activity peak occurs between 11 a.m. and 12 p.m. This example and empirical table corresponds to the activity in CPP.}
+	\caption{Activity percentages along the hours of the day. Nearly identical distributions
+		were observed on other social systems as shown in Section~\ref{si:hours} of the Supporting Information document.
+	Highest activity was observed between noon and 6pm (with 1/3 of total day activity), followed by the time period between 6pm and midnight.
+	Around 2/3 of the activity takes place from noon to midnight
+	but the activity peak occurs between 11 a.m. and 12 p.m.
+	This table shows results for the activity in CPP.}
 	\footnotesize
 	\input{tables/tabHoursCPP_}
 	\label{tab:hin}
@@ -691,7 +695,7 @@ For example, uniform activity is found with respect to seconds, minutes and days
 weekend days exhibit about half the activity of regular weekdays,
 and there is a peak of activity between 11am and 12pm.
 
-In the scales of seconds and minutes, activity in uniform,
+In the scales of seconds and minutes, activity is uniform,
 with the messages being slightly more evenly distributed in all lists than in simulations with the uniform distribution\footnote{Numpy version 1.8.2, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}.
 In the networks, $\frac{min(incidence)}{max(incidence)} \in (0.784,.794)$ while simulations reach these values but have on average more discrepant higher and lower peaks $\xi=\frac{min(incidence')}{max(incidence')} \Rightarrow \mu_\xi=0.7741 \text{ and } \sigma_\xi=0.02619$.
 Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform.
@@ -709,7 +713,7 @@ The time period examined here was not sufficient for the analysis of activity al
 	\caption{Activity along the days of the month cycle.
 	Nearly identical distributions are found in all systems
 as indicated in Section~\ref{si:monthdays} of the Supporting Information. Although slightly higher activity rates are found in the beginning of the month, the most important feature seems to be the homogeneity made explicit by the high circular dispersion in Table~\ref{tab:circ}.
-This example and empirical table corresponds to the activity of the MET email list.}
+This specific example and empirical table corresponds to the activity of the MET email list.}
 	\footnotesize
 	\input{tables/tabMonthdaysMET}
 	\label{tab:min}
@@ -720,8 +724,7 @@ This example and empirical table corresponds to the activity of the MET email li
 		Activity is usually concentrated in Jun-Aug and/or in Dec-Mar,
 		potentially due to academic calendars, vacations and end-of-year holidays.
 	 This table corresponds to activity in LAU. 
-		Further evidence is in Section~\ref{si:months} of the Supporting Information document.
-	}
+		Similar results are posted in Section~\ref{si:months} of the Supporting Information document.}
 	\footnotesize
 	\input{tables/tabMonthsLAU}
 	\label{tab:min2}
@@ -730,19 +733,19 @@ This example and empirical table corresponds to the activity of the MET email li
 
 \subsection{Stable sizes of Erd\"os sectors}\label{subsec:pih}
 
-The distribution of vertices in the hubs, intermediary, periphery Erd\"os sectors 
-is remarkably stable along time is samples of 200 or more messages,
+The distribution of vertices in the hub, intermediary, periphery Erd\"os sectors 
+is remarkably stable along time if the snapshots hold 200 or more messages,
 as evident in Figure~\ref{fig:sectIL} of current document
 and in Section~\ref{si:frac} of the Supporting Information document. 
 %Moreover, all email lists analyzed exhibit the same distribution profile.
 Activity is highly concentrated on the hubs,
 while a very large number of peripheral vertices contribute to only a fraction of the activity.
 This is expected for a system with a scale-free profile
-and confirmed by Table~\ref{autores} in the distribution of activity among participants.
+and confirmed by Table~\ref{autores} of the distribution of activity among participants.
 
-Typically, $\approx [3-12]\%$ of the vertices are hubs,
-$\approx [15-45]\%$ are intermediary and $\approx [44-81]\%$ are peripheral,
-which is consistent with the literature~\cite{secFree}.
+Typically, $[3\%-12\%]$ of the vertices are hubs,
+$[15\%-45\%]$ are intermediary and $[44\%-81\%]$ are peripheral,
+which is consistent with other studies~\cite{secFree}.
 These results hold for the total, in and out degrees and strengths.
 Stable sizes are also observed for 100 or less messages if classification 
 of the three sectors is performed with one of the compound criteria established in Section~\ref{sectioning}. 
@@ -753,7 +756,7 @@ A minimum window size for the observation of more general properties might be in
 both the giant component and the degeneration of the Erd\"os sectors.
 
 In order to support hypotheses about the generality of these findings,
-we expose the Erd\"os sector sizes of 12 networks from Facebook, Twitter and Participabr
+we list the Erd\"os sector sizes of 12 networks from Facebook, Twitter and Participabr
 in Table~\ref{tab:secE} of the Supporting Information document.
 The fractions of hubs, intermediary and periphery nodes are
 essentially the same as for the email list networks but with exceptions and a greater variability.
@@ -764,9 +767,9 @@ essentially the same as for the email list networks but with exceptions and a gr
 	\caption{Stability of Erd\"os sector sizes.
 		Fractions of participants derived from degree and strength criteria, $E_1$ and $E_4$ in Section~\ref{sectioning}, are both on the left.
 	Fractions derived from the exclusivist $C_1$ and the inclusivist $C_2$ compound criteria are exposed in the plots to the right.
-	In the ordinates $\overline{e_{n,x}}=\frac{|e_{n,x}|}{N}$ denotes the fraction of participants in sector $x$ through criterion $E_n$
+	The ordinates $\overline{e_{n,x}}=\frac{|e_{n,x}|}{N}$ denote the fraction of participants in sector $x$ through criterion $E_n$
 	and, similarly, $\overline{c_{n,x}}=\frac{|c_{n,x}|}{N}$ denotes the fraction of participants in sector $x$ through criterion $C_n$.
-Sections~\ref{si:frac} and~\ref{si:ext} of the Supporting Information document hold a systematic collection of such timeline figures with all simple and compound criteria specified in Section~\ref{sectioning} and present these fractions of participants in networks from Facebook, Twitter and Participabr.}
+Sections~\ref{si:frac} and~\ref{si:ext} of the Supporting Information document hold a systematic collection of such timeline figures with all simple and compound criteria specified in Section~\ref{sectioning}, and present these results in networks from Facebook, Twitter and Participabr.}
 	\label{fig:sectIL}
 \end{figure*}
 
@@ -797,12 +800,12 @@ The last decile $D_{-1}$ column exposes the maximum percentage of participants r
 %The contribution of each metric to the variance is very similar for all the networks and along time.
 
 The principal components of the participants are very stable in the topological space,
-i.e. in PCA of network measures.
+i.e. in PCA space of network measures.
 Table~\ref{tab:pcain} exemplifies the formation of principal components
 by exposing averages over non-overlapped activity snapshots of a network.
 The most important result of this application of PCA,
 the stability of principal components,
-is underpinned by the very small standard deviations
+is underpinned by the very small dispersion 
 of the contribution of
 each metric to each principal component.
 %The contribution of each metric to the
