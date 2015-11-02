@@ -50,7 +50,8 @@
 %\title[Evolution of interaction networks]{On the evolution of interaction networks: a primitive typology of vertex}% Force line breaks with \\
 %\title[Stability of interaction networks]{Stability in human interaction networks: sector relative sizes, prominence of topological measures and time activity statistics.}% Force line breaks with \\
 %\title[Stability in human interaction networks]{Sector relative sizes and topological metrics time stability in human interaction networks}% Force line breaks with \\
-\title[Stability of interaction networks]{Temporal stability in human interaction networks: sector sizes, topological prominence and activity along diverse timescales}% Force line breaks with \\
+\title[Stability of interaction networks]{Temporal stability in human interaction networks}
+% : sector sizes, topological prominence and activity along diverse timescales}% Force line breaks with \\
 \author{Renato Fabbri}%
 \homepage{http://ifsc.usp.br/~fabbri/}
 \email{fabbri@usp.br}
@@ -107,28 +108,28 @@
 %  but any date may be explicitly specified
 
 \begin{abstract}
-In this study we report on stable aspects of human interaction networks,
+This paper reports on stable properties of human interaction networks,
 with benchmarks derived from public email lists.
 Activity along time and topology evolution were observed by snapshots in a timeline 
-and in various scales.
-Notably, the activity in timescales, ranging from seconds to months, is practically the same for all networks.
-The most important metrics to the dispersion of participants in the topological measures space 
+and at different scales.
+Our analysis show that the activity across timescales, ranging from seconds to months, is practically the same for all networks.
+The most important metrics to the dispersion of participants in the topological measures space are shown to be
 are centrality measurements (degree, strength and betweenness),
 followed by symmetry-related metrics and then clustering coefficient.
-The activity of participants followed the expected scale-free trace,
-thus yielding the hubs, intermediary and periphery classes of vertices by comparison against the Erd\"os-R\'enyi model.
-The relative sizes of these three sectors were essentially the same for all email lists and the same along time.
+The observed activity of participants follows the expected scale-free trace,
+thus yielding the hub, intermediary and periphery classes of vertices by comparison against the Erd\"os-R\'enyi model.
+The relative sizes of these three sectors are shown to be essentially the same for all email lists and the same along time.
 Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and 44-81\% are peripheral vertices.
-Similar results for the distribution of participants in the three categories
+Similar results for the distribution of participants in the three sectors
 and for the relative importance of the topological metrics were obtained for 12 additional networks
 from Facebook, Twitter and Participabr.
-Consistent with expectations derived from the literature,
-these properties may be general for human interaction networks,
-which has important implications in establishing a typology of participants based on quantitative criteria.
+These properties are consistent with expectations derived from the literature
+and may be general for human interaction networks,
+which has important implications for establishing a typology of participants based on quantitative criteria.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
-\keywords{complex networks, pattern recognition, statistics, social network analysis, anthropological physics, social psychology of big data}
+\keywords{complex networks, pattern recognition, statistics, social network analysis, anthropological physics, social psychology of big data, typology}
 \maketitle
 
 \begin{quotation}
@@ -157,72 +158,77 @@ With the increasing availability of data related to human interactions, research
 several features of human interaction have been revealed. For example, the topology of human interaction networks exhibits a scale-free trace, which points to the existence of a small number of highly connected hubs and a large number of poorly connected nodes. The dynamics of complex networks representing human interaction has also been addressed~\cite{barabasiEvo,newmanEvolving}, but only to a limited extent, since research is normally focused on a particular metric or task, such as accessibility or community detection~\cite{access,newmanModularity}. 
 
 In this paper we analyze the evolution of human interaction networks.
-Interaction in email lists was the most convenient for deriving results and for benchmarking,
-but networks from Facebook, Twitter and Participabr were also considered.
+Interaction networks from email lists were the most convenient for deriving results and for benchmarking
+while networks from Facebook, Twitter and Participabr enhanced the generalization.
 Using a timeline of activity snapshots with a constant number of contiguous messages,
-we found remarkable stability for several of the network properties.
-Namely, the activity along different timescales exhibit pronounced patterns,
-the most basic topological measures always combine into very characteristic principal components,
+we found remarkable stability for important network properties.
+For instance, the activity along different timescales exhibit pronounced patterns;
+the most basic topological measures always combine into very characteristic principal components;
 and the fractions of participants in each of the hubs, intermediady and periphery Erd\"os sectors
 are unshaken.
-This is not an intuitive result, given that participants transition in network structure constantly.
+This is not an intuitive result, given that participants constantly transition in network structure.
 Because these properties were shared by networks from various sources,
 and are consistent with the complex networks literature,
 we advocate that the conclusions might be valid for general classes of interaction networks.
 In particular, this allows us to 
 bridge the gap between data analysis 
 and social sciences in the discussion
-of types of networks and participants.
+of types of networks and of participants.
 Noteworthy, typologies are the canon of scientific literature for the classification of human agents,
 with pragmatic standards~\cite{myers} and critical paradigms~\cite{adorno,typCanon}. 
 
 Section~\ref{sec:related} describes related work,
 while data, scripts and methods of analysis are given in Section~\ref{sec:data} and Section~\ref{sec:carac}.
 Section~\ref{sec:results} reports results and discussion, leading to Section~\ref{sec:conc} for conclusions.
-Subsidiary data analysis,
+Supplementary data analysis,
 including directions for video and sound mappings of network structures,
-and numeric results for networks from Twitter, Facebook and Participabr,
-are given in the Supporting Information document.
+and numeric detailed results for networks from Twitter, Facebook and Participabr,
+are provided in the Supporting Information document.
 
 
 \subsection{Related work}\label{sec:related}
 Research on network evolution is often restricted to network growth, in which there is a monotonic increase in the number of events~\cite{barabasiEvo}.
-Network types have been discussed with regard to the number of participants, intermittence of their activity and network longevity~\cite{barabasiEvo}. Two topologically different networks emerged from human interaction networks, depending on the frequency of interactions, which can either be a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were reported with $\alpha \approx 1.8$~\cite{bird} (as are web browsing and library loans~\cite{barabasiHumanDyn}), and different linguistic traces were related to weak and strong ties~\cite{GMANE2}.
+Network types have been discussed with regard to the number of participants, intermittence of their activity and network longevity~\cite{barabasiEvo}. Two topologically different networks emerged from human interaction networks, depending on whether the frequency of interactions follows a generalized power law or an exponential connectivity distribution~\cite{barabasiTopologicalEv}. In email list networks, scale-free properties were reported with $\alpha \approx 1.8$~\cite{bird} (as in web browsing and library loans~\cite{barabasiHumanDyn}), and different linguistic traces were related to weak and strong ties~\cite{Gmane2}.
 
-Unreciprocated edges often exceed 50\% in the analyzed networks, which matches empirical evidence from the literature~\cite{newmanEvolving} and motivated the inclusion of symmetry metrics in our analysis. No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo}, therefore geographical positions were not considered in our study. Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex} but is not relevant for the present article because email messages and addresses have no gender related metadata~\cite{gmanePack}.
+The fact that unreciprocated edges often exceed 50\% in human interaction networks~\cite{newmanEvolving} motivated the inclusion of symmetry metrics in our analysis.
+No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo},
+therefore geographical positions were not considered in our study.
+Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}
+but is not relevant for the present manuscript because email messages and addresses have no gender related metadata~\cite{gmanePack}.
 
 
 \section{Data and scripts}\label{sec:data}\label{scripts}
 
 Email list messages were obtained from
-the GMANE email archive~\cite{gmanePack}, which consists of more than $20\times 10^3$
-email lists and more than $130\times 10^6$ messages~\cite{GMANEwikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus with metadata of its messages, including sent time, place, sender name, and sender email address.
-The GMANE usage in scientific research is reported in studies of isolated lists and of lexical innovations~\cite{GMANE2,bird}. 
+the Gmane email archive~\cite{gmanePack}, which consists of more than $20,000$
+email lists (discussion groups) and more than $130\times 10^6$ messages~\cite{Gmanewikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus along with message metadata, including sent time, place, sender name, and sender email address.
+The usage of the Gmane database in scientific research is reported in studies of isolated lists and of lexical innovations~\cite{Gmane2,bird}. 
 
-We analyzed many email lists (and data from Twitter, Facebook and Participabr)
-and selected four of them in order to expose a thorough analysis,
-from which general properties can be inferred. These lists are:
+We analyzed many email lists together with data from Twitter, Facebook and Participabr
+and selected four email lists for a thorough analysis,
+from which general properties can be inferred:
 \begin{itemize}
-	\item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in GMANE.},
+	\item Linux Audio Users list\footnote{gmane.linux.audio.users is list ID in Gmane.},
 		with participants from different countries with artistic and technological interests.
-		English is the most used language. Abbreviated as LAU from now on.
-	\item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in GMANE.},
-		with participants from different countries,
+		English is the prevailing language. Abbreviated as LAU from now on.
+	\item Linux Audio Developers list\footnote{gmane.linux.audio.devel is list ID in Gmane.},
+		with participants from different countries;
 		a more technical and less active version of LAU.
-		English is the language used the most. 
+		English is the prevailing language. 
 		Abbreviated as LAD from now on.
-	\item Development list for the standard C++ library\footnote{gmane.comp.gcc.libstdc++.devel is list ID in GMANE.},
+	\item Developer's list for the standard C++ library\footnote{gmane.comp.gcc.libstdc++.devel is list ID in Gmane.},
 		with computer programmers from different countries.
-		English is the most used language.
+		English is the prevailing language.
 		Abbreviated as CPP from now on.
-	\item List of the MetaReciclagem project\footnote{gmane.politics.organizations.metareciclagem is list ID in GMANE.},
+	\item List of the MetaReciclagem project\footnote{gmane.politics.organizations.metareciclagem is list ID in Gmane.},
 		a Brazilian digital culture interested email list.
-		Portuguese is the most used language,
+		Portuguese is the prevailing language,
 		although Spanish and English are also incident.
 		Abbreviated as MET from now on.
 \end{itemize} 
 
-The first 20,000 messages of each list were considered, with total timespan, authors, threads and missing messages indicated in Table~\ref{tab:genLists}.
+The first 20,000 messages of each list were considered,
+with basic attributes of total timespan, authors, threads and missing messages indicated in Table~\ref{tab:genLists}.
 We considered 140 additional email lists to
 report on the interdependence between the number of participants and 
 the number of discussion threads.
@@ -244,18 +250,18 @@ about the generality of the results.
 		\input{tables/tab1Geral}
 	\end{tabular}
 \end{table}
-
+\subsection{Availability}
 All data and scripts needed to derive results, figures, tables and this article itself
 are publicly available.
-Email messages are downloadable from the GMANE public database~\cite{GMANEwikipedia}.
+Email messages are downloadable from the Gmane public database~\cite{Gmanewikipedia}.
 Data annotated from Facebook and Twitter are in a public repository~\cite{fbtwData}.
 Data from Participabr was used from the linked data/semantic web RDF triples
-reported in~\cite{opa} and available in~\cite{datahub}.
+reported~\cite{opa} and available~\cite{datahub}.
 Computer scripts are delivered through a public domain Python PyPI package and
 an open Git repository~\cite{gmanePack}.
 This open approach to both data and scripts
 reinforces the scientific aspect of the contribution~\cite{openSci}
-and mitigates ethical and moral issues of researching 
+and mitigates ethical and moral issues involved in researching 
 systems constituted of
 human individuals~\cite{anPhy,ccs15}.
 
@@ -266,10 +272,11 @@ human individuals~\cite{anPhy,ccs15}.
 \subsection{Time activity statistics}\label{sec:mtime}
 Messages were counted over time as histograms in the scales of seconds,
 minutes, hours, days of the week, days of the month, and months of the year.
-Most standard measures of location and dispersion, such as usual mean and
-standard deviation, hold little meaning in a compact Riemannian manifold.
+Most standard measures of location and dispersion, e.g. the usual mean and
+standard deviation, hold little meaning in a compact Riemannian manifold,
+such as the recurrent time periods that we are interested in.
 Equivalent measures were taken using circular statistics,
-in which each measurement $t$ is represented as a unity complex number,
+in which each measurement $t$ is represented as a unit complex number,
 $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=t\frac{2\pi}{T}$,
 and $T$ is the period in which the counting is repeated.
 For example, $\theta=12\frac{2\pi}{24}=\pi$ for a message sent at $t=12h$ and given $T=24h$ for days.
@@ -301,8 +308,8 @@ The circular dispersion $\delta(z)$ was found more sensitive and therefore prefe
 in the discussion of results.
 
 \subsection{Interaction networks}\label{intNet}
-Interaction networks can be modeled both weighted or unweighted,
-both directed or undirected~\cite{bird,newmanCommunityDirected,newmanCommunity2013}.
+Edges in interaction networks can be modeled both as weighted or unweighted,
+both as directed or undirected~\cite{bird,newmanCommunityDirected,newmanCommunity2013}.
 Networks in this paper are directed and weighted, the most informative of the possibilities.
 We did not investigate directed unweighted, undirected weighted,
 and undirected unweighted representations of the interaction networks. 
@@ -314,7 +321,7 @@ he/she read what A wrote and formulated a response, so B assimilated information
 Edges in both directions are allowed.
 Each time an interaction occurs, the value of one is added to the edge weight.
 Selfloops were regarded as non-informative and discarded.
-Inverting edge direction yields the status network:
+Inverting edge direction canonically yields the status network:
 B read the message and considered what A wrote worth responding, giving status to A,
 thus $B\rightarrow A$.
 This paper considers by convention the information network as described above ($A\rightarrow B$) and depicted in Figure~\ref{formationNetwork}.
@@ -340,7 +347,7 @@ as expected for a number of social networks~\cite{bird,newmanBook}.
 \subsubsection{Topological metrics}\label{measures}
 
 The topology of the networks was characterized 
-using a small selection of the most basic and 
+from a small selection of the most basic and 
 fundamental measurements for each vertex, as follows:
 
 \begin{itemize}
@@ -351,18 +358,18 @@ fundamental measurements for each vertex, as follows:
 	\item In-strength $s_i^{in}$: sum of weights of all edges ending at vertex $i$.
 	\item Out-strength $s_i^{out}$: sum of weights of all edges departing from vertex $i$.
 	\item Clustering coefficient $cc_i$: fraction of pairs of neighbors of $i$ that are linked, i.e. the standard clustering coefficient metric for undirected graphs.
-	\item Betweenness centrality $bt_i$: fraction of geodesics that contain vertex $i$. The betweenness centrality index was calculated for weighted digraphs as specified in~\cite{faster}.
+	\item Betweenness centrality $bt_i$: fraction of geodesics that contain vertex $i$. The betweenness centrality index was computed for weighted digraphs as specified in~\cite{faster}.
 \end{itemize}
 
-The non-standard metrics bellow were elaborated
-in order to capture symmetries in the activity of participants:
+The non-standard metrics bellow were formulated
+to capture symmetries in the activity of participants:
 
 \begin{itemize}
 	\item Asymmetry of vertex $i$: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
-	\item Mean of asymmetry of edges of vertex $i$: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|$ is the number of neighbors of vertex $i$.
+	\item Average asymmetry of edges at vertex $i$: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|}$, where $e_{ij}$ is 1 if there is an edge from $i$ to $j$, and $0$ otherwise, and $J_i$ is the set of neighbors of vertex $i$.
 	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu^{asy}_i -(e_{ji}-e_{ij}) ]^2  }{|J_i|}  }$.
 	\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
-	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{w_{ji}-w_{ij}}}{|J_i|}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
+	\item Average disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{w_{ji}-w_{ij}}}{|J_i|}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
 	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}\left[\mu^{dis}_i-\frac{w_{ji}-w_{ij}}{w_{ji}+w_{ij}}\right]^2}{|J_i|}}$.
 \end{itemize}
 
@@ -370,7 +377,17 @@ Both standard and non-standard metrics are used for the Erd\"os sectioning (desc
 
 
 \subsection{Erd\"os sectioning}\label{sectioning}
-In a scale-free network, the peripheral, intermediary and hubs sectors can be derived from a comparison against an Erd\"os-R\'enyi network with the same number of edges and vertices~\cite{3setores}, as depicted in Figure~\ref{fig:setores}. We refer to this procedure as \emph{Erd\"os sectioning}, with the resulting sectors regarded as \emph{Erd\"os sectors}.
+It is often useful to think of
+vertices as
+hubs, peripheral and intermediary.
+Following this pattern,
+the peripheral, intermediary and hub sectors of the empirical networks were derived
+from a comparison against an Erd\"os-R\'enyi network with the same number of edges and vertices,
+as depicted in Figure~\ref{fig:setores}.
+We refer to this procedure as \emph{Erd\"os sectioning},
+with the resulting sectors regarded as \emph{Erd\"os sectors}.
+The Erd\"os sectioning was theorized about by M. O. Jackson in his video lectures~\cite{3setores},
+but this might be the first time the method is reported to be applied.
 
 The degree distribution $\widetilde{P}(k)$ of a
 scale-free network $\mathcal{N}_f(N,z)$ with $N$ vertices and $z$ edges has less
@@ -391,7 +408,7 @@ A vertex in the ideal Erd\"os-R\'enyi digraph with the same number of vertices a
 
 The lower degree fat tail corresponds to the border vertices, i.e. the peripheral sector or periphery where $\widetilde{P}(k)>P(k)$ and $k$ is lower than any intermediary sector value of $k$.
 The higher degree fat tail is the hub sector, i.e. $\widetilde{P}(k)>P(k)$ and $k$ is higher than any intermediary sector value of $k$.
-The reasoning for this classification is as follows: vertices so connected that they are virtually inexistent in networks connected without distinction of the vertices, i.e. without preferential attachment and as in the Erd\"os-R\'enyi model, are correctly associated to the hubs sector.
+The reasoning for this classification is as follows: vertices so connected that they are virtually inexistent in networks connected without distinction of the vertices, i.e. without preferential attachment and as in the Erd\"os-R\'enyi model, are correctly associated to the hub sector.
 Vertices with very few connections, which are way more abundant than expected in the Erd\"os-R\'enyi model, are assigned to the periphery.
 Vertices with degree values predicted as the most abundant in a Erd\"os-R\'enyi model,
 near the average, and less frequent in the real network, are classified as intermediary.
@@ -400,18 +417,18 @@ near the average, and less frequent in the real network, are classified as inter
 	\centering
 	\includegraphics[width=0.5\textwidth]{figs/fser__}
 	\caption{Classification of vertices by comparing degree
-		distributions.
-		The binomial distribution of the Erd\"os-R\'enyi network model exhibit more intermediary vertices,
+		distributions~\cite{3setores}.
+		The binomial distribution of the Erd\"os-R\'enyi network model exhibits more intermediary vertices,
 		while a scale-free network, associated with the power-law distribution,
 		has more peripheral and hub vertices.
 		The sector borders are defined with respect to the intersections of the distributions.
 Characteristic degrees are in the compact intervals: $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$ for the periphery,
-intermediary and hubs sectors, the ``Erd\"os sectors''.
+intermediary and hub sectors, the ``Erd\"os sectors''.
 		The connectivity distribution of empirical interaction networks, e.g. derived from email lists,
 		can be sectioned by comparison against the associated binomial distribution with the same number of vertices and edges.
 		In this figure, a snapshot of 1000 messages from CPP list yield the degree distribution
 		of an interaction network of 98 nodes and 235 edges.
-		A throughout exposition of the method is exposed in Section~\ref{sectioning}.}
+		A through exposition of the method is exposed in Section~\ref{sectioning}.}
 		\label{fig:setores}
 \end{figure}
 To ensure statistical validity of the histograms, bins can be chosen to contain at least $\eta$ vertices of the real network.
@@ -432,17 +449,17 @@ with $\Delta_i\cap \Delta_j=\emptyset \; \forall\; i \neq j$ and:
 
 \begin{equation}\label{criterio2}
 	\begin{split}
-		\sum_{x=min(\Delta_i)}^{\overline{\Delta}_i} \widetilde{P}(x) < \sum_{x=min(\Delta_i)}^{\overline{\Delta}_i} P(x) \Rightarrow \\
-	\Rightarrow \Delta_i \text{ holds intermediary degree values.}
+		\sum_{x=min(\Delta_i)}^{\overline{\Delta}_i} \widetilde{P}(x) < \sum_{x=min(\Delta_i)}^{\overline{\Delta}_i} P(x) \Leftrightarrow \\
+	\Leftrightarrow \Delta_i \text{ spans intermediary degree values.}
 	\end{split}
 \end{equation}
 
-If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used, where $\overline{w}=2\frac{z}{\sum_is_i}$ is the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees ($k^{in}$, $k^{out}$), comparison of the real network should be made against
+If the strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used, where $\overline{w}=2\frac{z}{\sum_is_i}$ is the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees ($k^{in}$, $k^{out}$), the real network should be compared against
 \begin{equation}
 	\hat{P}(k^{way})=\binom{N-1}{k^{way}}p_e^k(1-p_e)^{N-1-k^{way}},
 \end{equation}
 
-\noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths ($s^{in}$, $s^{out}$) are divided by $\overline{w}$ and compared also using $\hat{P}$. Note that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$ as with the total degree.
+\noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths ($s^{in}$, $s^{out}$) are divided by $\overline{w}$ and compared also using $\hat{P}$. Note that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$, as with the total degree.
 
 In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$, and each of the basic six Erd\"os sectioning possibilities $\{E_{\gamma}\}$ have three Erd\"os sectors $E_{\gamma}= \{e_{\gamma, \phi} \}$ defined as
 
@@ -489,11 +506,11 @@ After a careful consideration of possible combinations, these were reduced to si
 		Peripheral vertices are those which are classified as such with respect to all metrics.
 	\item Exclusivist externals $C_5$: vertices are hubs if they are classified as such according to all the metrics.
 		The remaining vertices are peripheral if they are peripheral or hubs for all metrics.
-		The rest of the nodes are intermediary.
+		The remaining nodes are intermediary.
 	\item Inclusivist externals $C_6$: hubs are vertices classified as hubs according to any metric. The remaining vertices are peripheral if they are classified as such according to any metric. The rest of the vertices are intermediary.
 \end{itemize}
 
-Using equations~\ref{eq:part}, these \emph{compound criteria} $C_\delta$, with $\delta$ integer in the interval $1\leq\delta\leq6$, can be specified as:
+Using Equations~(\ref{eq:part}), these \emph{compound criteria} $C_\delta$, with $\delta$ integer in the interval $1\leq\delta\leq6$, can be specified as:
 
 %\begin{alignat}{3}
 \begin{equation}
@@ -520,8 +537,13 @@ The simplification of all possible compound possibilities to the small set liste
 
 %\subsubsection{Sectioning of networks in peripheral, intermediary and hubs sectors}\label{sectioning}
 \subsection{Principal Component Analysis of topological metrics}\label{sec:pca}
-Principal Component Analysis (PCA) is a well documented technique~\cite{pca} and was used to acquire knowledge about:
-1) which metrics contribute to each principal component and in which proportion; 2) how much of the dispersion is concentrated in each component; 3) expected values and dispersions for these quantities over various networks.
+Principal Component Analysis (PCA) is a well documented technique~\cite{pca}
+and was employed in the investigation to acquire knowledge about:
+1) which metrics contribute to each principal component and in what proportion;
+2) how much of the dispersion is concentrated in each component;
+3) expected values and dispersions for these quantities over various networks.
+This enables a characterization of the human interaction networks
+in terms of the relative importance of networks measures ad the way they combine.
 
 Let $\mathbf{X}=\{X[i,j]\}$ be a matrix of all vertices $i$ and the respective
 values for each metric $j$, 
@@ -593,7 +615,7 @@ are exposed in Section~\ref{si:frac}
 of the Supporting Information document. 
 
 Network structures were mapped to video animations, sound and musical structures,
-image galleries and online gadgets developed for this research~\cite{animacoes,galGMANE,appGMANE}.
+image galleries and online gadgets developed for this research~\cite{animacoes,galGmane,appGmane}.
 Such \emph{audiovisualizations} were crucial in the initial steps and
 to guide the research into the most important features of network evolution.
 %Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion.
@@ -1018,7 +1040,7 @@ of the extreme linguistic differences found in each of the Erd\"os sectors~\cite
 \begin{acknowledgments}
 	Financial support was obtained from CNPq (140860/2013-4,
 	project 870336/1997-5), United Nations Development Program (contract: 2013/000566; project BRA/12/018) and FAPESP. 
-	The authors are grateful to the American Jewish Committee for maintaining an online copy of the Adorno book used on the epigraph~\cite{adorno}, to GMANE creators and maintainers for the public email list data, to the communities of the email lists and other groups used in the analysis, and to the Brazilian Presidency of the Republic for keeping Participabr code and data open.
+	The authors are grateful to the American Jewish Committee for maintaining an online copy of the Adorno book used on the epigraph~\cite{adorno}, to Gmane creators and maintainers for the public email list data, to the communities of the email lists and other groups used in the analysis, and to the Brazilian Presidency of the Republic for keeping Participabr code and data open.
 	We are also grateful to developers and users of Python scientific tools.
 \end{acknowledgments}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
