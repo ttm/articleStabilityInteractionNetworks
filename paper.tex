@@ -545,9 +545,10 @@ and was employed in the investigation to acquire knowledge about:
 This enables a characterization of the human interaction networks
 in terms of the relative importance of networks measures ad the way they combine.
 
-Let $\mathbf{X}=\{X[i,j]\}$ be a matrix of all vertices $i$ and the respective
-values for each metric $j$, 
-$\mu_X [j]=\frac{\sum_i X[i,j]}{I}$ the mean of metric $j$ over all $I$ vertices, 
+Let $\mathbf{X}=\{X[i,j]\}$ be a matrix where each element is the value
+of of each metric $j$ at vertex $i$ .
+Let
+$\mu_X [j]=\frac{\sum_i X[i,j]}{I}$ be the mean of metric $j$ over all $I$ vertices, 
 $\sigma_X [j]=\sqrt{\frac{\sum_i (X[i,j]-\mu_X [j])^2}{I}}$ the standard deviation of metric $j$,
 and $\mathbf{X'}=\{X'[i,j]\}=\left\{\frac{X[i,j]-\mu_X[j]}{\sigma_X[j]}\right\}$ 
 the matrix with the \emph{z-score} of each metric. 
@@ -561,14 +562,14 @@ that is directly proportional to the measure $j$.
 %With $k$ eigenvectors 
 %$D[k]$,
 %it is enough to 
-Be $\mathbf{D}=\{D[k]\}$ the eigenvalues associated to the eigenvectors $\mathbf{V}$,
+Let $\mathbf{D}=\{D[k]\}$ be the eigenvalues associated to the eigenvectors $\mathbf{V}$,
 then $D'[k]=100\frac{D[k]}{\sum_{k'}D[k']}$
 is the percentage of total dispersion of the system that the principal component $k$
 is responsible for.
 We consider, in general, the three greatest eigenvalues and
 the respective eigenvectors in percentages:
 $\{(D'[k],\;V'[j,k])\}$.
-These usually sum between 60 and 95\% of the dispersion
+These usually sum up between 60 and 95\% of the dispersion
 and reveal patterns for a first analysis.
 In particular, 
 given $L$ snapshots $l$ of the interaction network,
@@ -601,12 +602,12 @@ negative values with a high absolute value indicate negative correlation.
 \subsection{Evolution and audiovisualization of the networks}\label{sec:viz}
 The evolution of the networks was observed within 
 sequences of snapshots.
-In each sequence,a fixed number of messages,
-the window size $ws$, was used for all snapshots.
+In each sequence, a fixed number of messages,
+i.e. the window size $ws$, was used for all snapshots.
 %was considered with different shifts in the message timeline to obtain snapshots.
 The snapshots are disjoint in the message timeline,
-and were used to perform both the PCA
-with topological metrics and the Erd\"os sectioning.  
+and were used to perform both PCA
+with topological metrics and Erd\"os sectioning.  
 Figures and tables were usually inspected in
 $ws=\{50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000, 10000\}$ messages.
 Variations in the number of vertices, edges
