@@ -315,7 +315,7 @@ The higher degree fat tail is the hub sector, i.e. $\widetilde{P}(k)>P(k)$ and $
 \caption{Classification of vertices by comparing degree
 distributions~\cite{3setores}.
 The binomial distribution of the Erd\"os-R\'enyi network model exhibits more intermediary vertices, while a scale-free network, associated with the power-law distribution, has more peripheral and hub vertices. The sector borders are defined with respect to the intersections of the distributions. Characteristic degrees are in the compact intervals: $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$ for the periphery, intermediary and hub sectors, the ``Erd\"os sectors''.
-The connectivity distribution of empirical interaction networks, e.g. derived from email lists, can be sectioned by comparison against the associated binomial distribution with the same number of vertices and edges. In this figure, a snapshot of 1000 messages from CPP list yields the degree distribution of an interaction network of 98 nodes and 235 edges. A through explanation of the method is provided in Section~\ref{sectioning}.}
+The connectivity distribution of empirical interaction networks, e.g. derived from email lists, can be sectioned by comparison against the associated binomial distribution with the same number of vertices and edges. In this figure, a snapshot of 1000 messages from CPP list yields the degree distribution of an interaction network of 98 nodes and 235 edges. A thorough explanation of the method is provided in Section~\ref{sectioning}.}
 \label{fig:setores}
 \end{figure}
 
@@ -473,6 +473,12 @@ by the most simple associations:
 low absolute values indicate low correlation (and a possible independence);
 high values indicate positive correlation;
 negative values with a high absolute value indicate negative correlation.
+Notice that in this case the variable $k$ is not the degree value
+but a principal component.
+In the results the principal components are numbered
+according to the magnitude of associated eigenvalue and $k$ is incorporated into
+the notation (e.g. PC2 for measures of $\mu_{V'}[j,2]$).
+
 
 \subsection{Evolution and audiovisualization of the networks}\label{sec:viz}
 The evolution of the networks was observed within 
@@ -800,7 +806,8 @@ present smaller networks.}
 % contextualization in the academic knowledge
 
 \subsection{Implications of the main findings}\label{sec:impl}
-The findings reported here arose from an exploratory procedure to inspect visually the networks and obtain considerable amounts of data from snapshots of interaction networks deriving mainly from email lists but also from other networks. While this procedure has certainly an ad hoc nature, the statistics in the data are sufficiently robust for important features from these interaction networks to be extracted.  Temporal stability, in the sense that interaction networks could be considered as stationary time series, is the most important feature. Also relevant is the significant stability found on the principal components, on the fraction of participants in each Erd\"os Sector and on the activity along different timescales. In fact, these findings confirm our initial hypothesis - based on the literature~\cite{newmanBook} - that interaction networks should exhibit some stability traces. The potential generality of these findings are suggested by the analysis of networks derived from diverse systems, with interaction networks from public email lists serving as proper benchmarks. Indeed, with such benchmarks one can compare any social network system. Furthermore, this analysis enables us to establish an outline of human interaction networks. It takes the hub, intermediary and periphery sectors out of the scientific folklore and into classes drawn from quantitative criteria. It enables the conception of non-static human types derived from natural properties.
+The findings reported here arose from an exploratory procedure to inspect visually the networks and obtain considerable amounts of data from snapshots of interaction networks deriving mainly from email lists but also from other networks. While this procedure has certainly an ad hoc nature, the statistics in the data are sufficiently robust for important features from these interaction networks to be extracted.
+Temporal stability, in the sense that interaction networks could be considered as stationary time series, is the most important feature. Also relevant is the significant stability found on the principal components, on the fraction of participants in each Erd\"os Sector and on the activity along different timescales. In fact, these findings confirm our initial hypothesis - based on the literature~\cite{newmanBook} - that interaction networks should exhibit some stability traces. The potential generality of these findings are suggested by the analysis of networks derived from diverse systems, with interaction networks from public email lists serving as proper benchmarks. Indeed, with such benchmarks one can compare any social network system. Furthermore, this analysis enables us to establish an outline of human interaction networks. It takes the hub, intermediary and periphery sectors out of the scientific folklore and into classes drawn from quantitative criteria. It enables the conception of non-static human types derived from natural properties.
 
  
 We envisage that the knowledge generated in the analysis may be exploited in applications where the type of each participant and the relative proportion of participants in each sector can be useful metadata. Just by way of illustration, this could be applied in semantic web initiatives, given that the Erd\"os sectorialization is static in a given snapshot. These results are also useful for classifying resources, e.g. in social media, and for resources recommendation to users~\cite{opa}. 
