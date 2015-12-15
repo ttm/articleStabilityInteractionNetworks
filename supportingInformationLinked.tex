@@ -7,6 +7,17 @@
 
 % Use this file as a source of example code for your aip document.
 % Use the file aiptemplate.tex as a template for your document.
+
+\newcommand{\wbalsup}[1] {
+	  This is the Wikibook about LaTeX 
+	    supported by #1}
+
+\newcommand{\minput}[1] {
+	  /home/r/repos/percolation/tests/tables/#1}
+\newcommand{\tinput}[1] {
+%	\input{/home/r/repos/percolation/tests/tables/#1}
+	\input{/home/r/repos/documentation/tables/#1}
+}
 \documentclass[%
  aip,
  jmp,%
@@ -17,6 +28,8 @@
 %author-year,%
 %author-numerical,%
 ]{revtex4-1}
+
+\usepackage{longtable}
 \usepackage{graphicx}% Include figure files
 \usepackage{grffile}
 \usepackage{dcolumn}% Align table columns on decimal point
@@ -185,6 +198,18 @@ Section~\ref{si:ext} reinforces the results with the analysis of networks from F
 More context (e.g. methods, discussion, data and scripts) is given in the main document~\cite{tpaper}
 to which this current document supplies supporting information.
 
+\section{RDF units}\label{sec:rdf}
+% n triples, subs preds objs
+% n classes, n individuos
+%\input{tables/tab2TimeLAD}
+% 
+\tinput{rdfUnits}
+\section{Overview of the systems}\label{sec:over}
+% n participants, n relations, n interactions
+% date snap or from to
+% provenance: fb, tw, irc, email
+
+% retoma secoes anteriores, renderizando as tabelas quando cabivel
 \bibliography{supportingInformation}% Produces the bibliography via BibTeX.
 \end{document}
 %
