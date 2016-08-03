@@ -104,10 +104,10 @@
 %%  \email{ldfcosta@gmail.com}
 %  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 %
-\author{Leonardo P. Maia}
-  \homepage{http://www.ifsc.usp.br/~lpmaia/}
-  \email{lpmaia@ifsc.usp.br }
- \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
+% \author{Leonardo P. Maia}
+%   \homepage{http://www.ifsc.usp.br/~lpmaia/}
+%   \email{lpmaia@ifsc.usp.br }
+%  \altaffiliation[Also at ]{IFSC-USP}%Lines break automatically or can be forced with \\
 
 
 \author{Osvaldo N. Oliveira Jr.}
@@ -185,17 +185,17 @@ Section~\ref{si:ext} reinforces the results with the analysis of networks from F
 More context (e.g. methods, discussion, data and scripts) is given in the main document~\cite{tpaper}
 to which this current document supplies supporting information.
 
-\section{Time activity in different scales}\label{sec:time}
-This section presents information derived from the theory presented in Section~\ref{sec:mtime}
-for supporting the results in Section~\ref{constDisc}.
+\section{Temporal activity in different scales}\label{sec:time}
+This section presents information derived from the theory presented in Section~\ref*{sec:mtime}
+for supporting the results in Section~\ref*{constDisc}.
 
-\subsection{Time circular measures}\label{si:circ}
+\subsection{Temporal circular measures}\label{si:circ}
 The metrics with which we report measurements and results
 of activity along time are the rescaled circular mean $\theta_\mu'$,
 the standard deviation $S(z)$, the variance $Var(z)$, the circular dispersion $\delta(z)$
-and the ration between the lowest $b_l$ and the highest $b_h$ incidences $\frac{b_l}{b_h}$ at each time scale.
-Also, the mean $\mu_{\frac{b_l'}{b_h'}}$ and 
-the standard deviation $\sigma_{\frac{b_l'}{b_h'}}$ 
+and the ratio between the lowest $b_l$ and the highest $b_h$ incidences $\frac{b_l}{b_h}$ at each time scale.
+Also, the mean $\mu(\frac{b_l'}{b_h'})$ and 
+the standard deviation $\sigma(\frac{b_l'}{b_h'})$ 
 of the relation between the minimum $b_l'$ and the maximum $b_h'$ incidences
 are given for 1000 uniform distribution simulations within the 
 same number of bins and with the same number of samples~\footnote{Numpy version 1.8.2, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}}.
@@ -208,7 +208,7 @@ Greater localization is found in the scale of hours of the day, followed by week
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline
+    scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu(\frac{b_l'}{b_h'}) $ & $ \sigma(\frac{b_l'}{b_h'}) $ \\ \hline
 	\input{tables/tab2TimeLAU}
     \end{tabular}
 \end{center}
@@ -219,7 +219,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ 
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline
+        scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu(\frac{b_l'}{b_h'}) $ & $ \sigma(\frac{b_l'}{b_h'}) $ \\ \hline
 	\input{tables/tab2TimeLAD}
     \end{tabular}
 \end{center}
@@ -230,7 +230,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ 
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}} $ \\ \hline
+        scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu(\frac{b_l'}{b_h'}) $ & $ \sigma(\frac{b_l'}{b_h'}) $ \\ \hline
 	\input{tables/tab2TimeMET}
     \end{tabular}
 \end{center}
@@ -241,7 +241,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ 
 \begin{center}
     \begin{tabular}{ |l|| c|c|c|c|c||c|c| }
         \hline
-scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu_{\frac{b_l'}{b_h'}} $ & $ \sigma_{\frac{b_l'}{b_h'}}$ \\ \hline
+        scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ \mu(\frac{b_l'}{b_h'}) $ & $ \sigma(\frac{b_l'}{b_h'})$ \\ \hline
 	\input{tables/tab2TimeCPP}
     \end{tabular}
 \end{center}
@@ -249,7 +249,7 @@ scale & $\theta_\mu'$ & $S(z)$ & $Var(z)$ & $\delta(z)$ & $\frac{b_l}{b_h}$ & $ 
 \end{table*}
 
 \FloatBarrier
-\subsection{Time histograms}
+\subsection{Temporal histograms}
 \subsubsection{Histograms of activity along the hours of the day}\label{si:hours}
 
 Higher activity was observed between noon and 6pm, followed by the time period between 6pm and midnight.
@@ -359,7 +359,7 @@ The most important feature seems to be the homogeneity made explicit by the high
 \FloatBarrier
 \section{PCA of measures along the timeline}\label{si:pcat}
 Loadings for topological metrics in principal components for LAD, LAU, MET, CPP, lists with the window size of $ws=1000$ messages 20 disjoint positioning.
-Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the main document~\cite{tpaper}.
+Further details are given in Sections~\ref*{measures} and~\ref*{prevalence} of the main document~\cite{tpaper}.
 
 
 
@@ -437,13 +437,13 @@ All metrics contribute the about same for total dispersion
 \FloatBarrier
 \subsection{Betweenness, clustering, degrees, strengths and symmetry measures}
 
-Loadings for 14 topological metrics in the first three principal components are given for LAD, LAU, MET, CPP, list..
+Loadings for 14 topological metrics in the first three principal components are given for LAD, LAU, MET, CPP, list.
 The clustering coefficient $cc$ appears as the first metric in the tables, followed by 7 centrality metrics ($k$, $k^{in}$, $k^{out}$, $s$, $s^{in}$, $s^{ou}$, $bt$) and 6 symmetry-related metrics ($asy$, $\mu^{asy}$, $\sigma^{asy}$, $dis$, $\mu^{dis}$ and $\sigma^{dis}$).
 The centrality metrics are most important for the first principal component, while the second component is predominantly the result of symmetry metrics.
 The clustering coefficient is only relevant for the third principal component, coupled with standard deviations of asymmetry $\sigma^{asy}$ and disequilibrium $\sigma^{dis}$.
 The three components sum up to $\approx90\%$ of the variance.
 In the PCA measures of the CPP list, the last table of these PCA-related tables, this general pattern is depicted in {\bf boldface}.
-Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the main document~\cite{tpaper}.
+Further details are given in Sections~\ref*{measures} and~\ref*{prevalence} of the main document~\cite{tpaper}.
 
 \begin{table}[!h]
 	\caption{LAU principal components formation and concentration of dispersion.}
@@ -475,17 +475,20 @@ Further details are given in Sections~\ref{measures} and~\ref{prevalence} of the
 \section{Fraction of participants in each Erd\"os Sector along the timeline}\label{si:frac}
 In this section, the figures present timelines
 with the 
-fractions of participants in each Erd\"os sector with respect to each criterion defined in Section~\ref{sectioning} of the main document~\cite{tpaper}. Step sizes of 50, 100, 250, 500, 1000 and 5000 are shown below, first for CPP, then for  LAD list.
+fractions of participants in each Erd\"os sector with respect to each criterion defined in Section~\ref*{sectioning} of the main document~\cite{tpaper}. Step and window sizes of 50, 100, 250, 500, 1000 and 5000 messages are shown below, first for CPP, then for  LAD list.
 
 Each step size takes two pages of plot.
 On the first page, the criterion is based on each centrality metric observed separately: total, in and out degrees ($k$, $k^{in}$, $k^{out}$) and strengths ($s$, $s^{in}$, $s^{out}$).
 In the first six plots of every page,
 the colors have meanings as follows: {\bf \color{red} red for hubs}, {\color{Green}\bf green for the intermediary} and {\bf\color{blue} blue for the periphery}.
 
-On the last plot of the first page, red is the center (maximum distance to another vertex is equal to radius, i.e. smallest geodesic), blue is periphery (maximum distance equals to diameter, i.e. greatest geodesic) of the greatest component. On the same graph, green represents the disconnected vertices.
+% On the last plot of the first page, red is the center (maximum distance to another vertex is equal to radius, i.e. smallest geodesic), blue is periphery (maximum distance equals to diameter, i.e. greatest geodesic) of the greatest component. On the same graph, green represents the disconnected vertices.
 
 On the second page we show the fractions of participants with respect to each compound criterion for the Erd\"os sectioning.
-In the first plot, the {\bf \color{black} fraction of vertices with unique classification is in black}: $\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$. On the second plot, {\bf black represents the fraction of classifications over the number of vertices}: $\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
+In the first plot, the fraction of vertices with unique classification is in {\bf black}:
+$\frac{\text{number of nodes uniquely classified}}{\text{number of nodes}}$.
+On the second plot, {\bf black} represents the fraction of classifications beyond the number of vertices:
+$\frac{\text{number of classifications} - \text{number of nodes}}{\text{number of nodes}}$.
 
 
 
@@ -636,14 +639,14 @@ The most important results from this analysis are:
 \begin{itemize}
 %	\item the stability reported for email interaction networks is also valid for a broader class of phenomena.
 	\item a further indicative that the stability reported with a focus on email interaction networks is valid for a broader class of phenomena.
-	\item The stability in email interaction networks is higher than for the other networks, considering the same number of participants. This is especially important for benchmarking and probing general properties.
+	\item The stability in email interaction networks is higher than for the other networks, considering the same number of participants. This was especially important in choosing email networks for benchmarking and probing general properties.
 \end{itemize}
 
 \begin{table*}[!h]
 	\caption{Selected networks from three social platforms: Facebook, Twitter and Participabr.
 	Both friendship and interaction networks were observed, yielding undirected and directed networks, respectively.
 The number of agents $N$ and the number of edges $z$ are given on the last columns.
-The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\ref{tab:pcaE1I},~\ref{tab:pcaE1F},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. All the data were collected in 2013 and 2014 within the anthropological physics framework~\cite{anPhy}.}
+The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\ref{tab:pcaE1I},~\ref{tab:pcaE1F},~\ref{tab:pcaE2} and~\ref{tab:pcaE3}. Data was collected in 2013 and 2014 within the anthropological physics framework~\cite{anPhy}.}
 \begin{center}
 \begin{tabular}{| l || c | c | c | c | c | c | }\hline
 	acronym & provenance & edge & directed & description & $N$ & $z$ \\ \hline
@@ -657,7 +660,7 @@ The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\
 
 \begin{table*}[!h]
 	\caption{
-	Percentage of agents in each Erd\"os sector in the friendship and interaction human networks of Table~\ref{tab:E}. The ratios found in email networks are preserved. I1 and I4 are outliers, probably because they should be better characterized as a superposition of networks, rather than one coherent network. The degree was used for establishing the sectors.
+	Percentage of agents in each Erd\"os sector in the friendship and interaction networks of Table~\ref{tab:E}. The ratios found in email networks are preserved. I1 and I4 are outliers, probably because they should be better characterized as a superposition of networks, rather than one coherent network. The degree was used for establishing the sectors.
 	}
 \begin{center}
 \begin{tabular}{| l || c | c | c |}\hline
@@ -672,7 +675,7 @@ The acronyms, one for each network, are used throughout Tables~\ref{tab:secE},~\
 
 \begin{table*}[!h]
 	\caption{Formation of first three principal components for each of the five friendship networks of Table~\ref{tab:E} in the simplest case: dimensions correspond to degree $k$, clustering coefficient $cc$ and betweenness centrality $bt$. Participabr yields the networks that most resemble the email networks.
-		Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. The friendship network of Renato Fabbri (F1) is the only network whose first component has more than 20\% of clustering coefficient and second component has more than 40\% of degree centrality.}
+		Overall, the general characteristic is preserved: first component is an average of degree and betweenness, while clustering is the most relevant for the second component. The friendship network of Renato Fabbri (F1) is the only network whose first component has more than 20\% of clustering coefficient and second component has more than 20\% of degree centrality.}
 	\footnotesize
 \begin{center}
 %\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
@@ -736,12 +739,12 @@ in the first component, I5 exhibited less contribution from in-strength, in-degr
 
 
 \begin{table*}[!h]
-	\caption{Formation of the first three principal components for each of the seven interaction networks of Table~\ref{tab:E} considering total, in- and out- degrees ($k$, $k^{in}$, $k^{out}$) and strengths ($s$, $s^{in}$, $s^{out}$), clustering coefficient $cc$, betweenness centrality $bt$ and symmetry related metrics ($asy$, $\mu^{asy}$, $\sigma^{asy}$, $dis$, $\mu^{dis}$ and $\sigma^{dis}$ defined in Section~\ref{measures}).
+	\caption{Formation of the first three principal components for each of the seven interaction networks of Table~\ref{tab:E} considering total, in- and out- degrees ($k$, $k^{in}$, $k^{out}$) and strengths ($s$, $s^{in}$, $s^{out}$), clustering coefficient $cc$, betweenness centrality $bt$ and symmetry related metrics ($asy$, $\mu^{asy}$, $\sigma^{asy}$, $dis$, $\mu^{dis}$ and $\sigma^{dis}$ defined in Section~\ref*{measures}).
 	The characteristics found in email interaction networks are preserved: the first component is an average of degree and betweenness, the second component is mostly governed by symmetry related metrics, and clustering coefficient is mostly relevant for the third component.
 Standard deviation of asymmetry and disequilibrium metrics are again coupled to clustering coefficient in the third component.
 Important differences are: 
 the first component is a less regular average of centrality measures and has a greater contribution of symmetry metrics;
-The first component of I5 is formed mostly from symmetry, not centrality, metrics.}
+the first component of I5 is formed mostly from symmetry, not centrality, metrics.}
 	\footnotesize
 	\begin{center}
 		%\begin{tabular}{| l | c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c |c | c | c | c |}\hline
