@@ -106,7 +106,7 @@ Centro de Ci\^encias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC
 \begin{abstract}
 This paper reports on stable properties of human interaction networks,
 with benchmarks derived from public email lists. Activity along time and topology were observed in snapshots in a timeline, 
-and at different scales. Our analysis shows that activity is practically the same for all networks across timescales ranging from seconds to months. The most important metrics to the dispersion of participants in the topological measures space are related to centrality (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient. The activity of participants follows the expected scale-free trace, thus yielding the hub, intermediary and peripheral classes of vertices by comparison against the Erd\"os-R\'enyi model. The relative sizes of these three sectors are essentially the same for all email lists and the same along time. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and 44-81\% are peripheral vertices. Similar results for the distribution of participants in the three sectors and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participabr. These properties are consistent with expectations from the literature and may be general for human interaction networks, which has important implications for establishing a typology of participants based on quantitative criteria.
+and at different scales. Our analysis shows that activity is practically the same for all networks across timescales ranging from seconds to months. The most important metrics to the dispersion of participants in the topological measures space are related to centrality (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient. The activity of participants follows the expected scale-free trace, thus yielding the hub, intermediary and peripheral classes of vertices by comparison against the Erd\"os-R\'enyi model. The relative sizes of these three sectors are essentially the same for all email lists and the same along time. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and 44-81\% are peripheral vertices. Similar results for the distribution of participants in the three sectors and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participabr. These properties are consistent with the literature and may be general for human interaction networks, which has important implications for establishing a typology of participants based on quantitative criteria.
 \end{abstract}
 
 \pacs{89.75.Fb,05.65.+b,89.65.-s}% PACS, the Physics and Astronomy
@@ -133,14 +133,14 @@ and at different scales. Our analysis shows that activity is practically the sam
 
 
 \section{Introduction}\label{sec:into}
-The first studies dealing with human interaction networks explicitly
+The first studies dealing explicitly with human interaction networks
 date from the nineteenth century while the foundation of
 social network analysis is generally attributed to the psychiatrist Jacob Moreno in mid twentieth century~\cite{moreno,newmanBook}. With the increasing availability of data related to human interactions, research about these networks has grown continuously. Contributions can now be found in a variety of fields, from social sciences and humanities~\cite{latour2013} to computer science~\cite{bird} and physics~\cite{barabasiHumanDyn,newmanFriendship}, given the multidisciplinary nature of the topic. One of the approaches from an exact science perspective is to represent interaction networks as complex networks~\cite{barabasiHumanDyn,newmanFriendship}, with which 
 several features of human interaction have been revealed. For example, the topology of human interaction networks exhibits a scale-free trace, which points to the existence of a small number of highly connected hubs and a large number of poorly connected nodes. The dynamics of complex networks representing human interaction has also been addressed~\cite{barabasiEvo,newmanEvolving}, but only to a limited extent, since research is normally focused on a particular metric or task, such as accessibility or community detection~\cite{access,newmanModularity}. 
 
 In this paper we analyze the evolution of human interaction networks.
 Interaction networks from email lists were the most convenient for deriving results and for benchmarking while networks from Facebook, Twitter and Participabr were used for the sake of generalization.
-Using a timeline of activity snapshots with a constant number of contiguous messages, we found remarkable stability for important network properties. For instance, activity along different timescales follows specific patterns; the most basic topological metrics can always be combined into characteristic principal components; and the fractions of participants in different sectors do not vary with time. This is not an intuitive result, given that participants constantly transition in network structure. Because these properties were shared by networks from various sources, and are consistent with the literature in complex networks, we advocate that the conclusions might be valid for general classes of interaction networks. In particular, this allows us to 
+Using a timeline of activity snapshots with a constant number of contiguous messages, we found remarkable stability for important network properties. For instance, activity along different timescales follows specific patterns; the most basic topological metrics can always be combined into characteristic principal components; and the fractions of participants in different sectors do not vary with time. This is not an intuitive result, given that participants constantly transition in network structure. Because these properties were shared by networks from various sources, and are consistent with the literature in complex networks~\cite{newmanBook}, we advocate that the conclusions might be valid for general classes of interaction networks. In particular, this allows us to 
 bridge the gap between data analysis and social sciences in the discussion of types of networks and of participants.
 It is worth noting that typologies are the canon of scientific literature for the classification of human agents, with pragmatic standards~\cite{myers} and critical paradigms~\cite{adorno,typCanon}. 
 
@@ -157,7 +157,7 @@ The fact that unreciprocated edges often exceed 50\% in human interaction networ
 No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo},
 therefore geographical positions were not considered in our study.
 Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}
-but is not relevant for the present manuscript because email messages and addresses have no gender related metadata~\cite{gmanePack}.
+but is not relevant for the present work because email messages and addresses have no gender related metadata~\cite{gmanePack}.
 
 
 \section{Data and scripts}\label{sec:data}\label{scripts}
@@ -167,7 +167,7 @@ the Gmane email archive~\cite{gmanePack}, which consists of more than $20,000$
 email lists (discussion groups) and more than $130\times 10^6$ messages~\cite{Gmanewikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus along with message metadata, including sent time, place, sender name, and sender email address.
 The usage of the Gmane database in scientific research is reported in studies of isolated lists and of lexical innovations~\cite{Gmane2,bird}. 
 
-We analyzed many email lists together with data from Twitter, Facebook and Participabr and selected four email lists for a thorough analysis,
+We observed various email lists and selected four of them together with data from Twitter, Facebook and Participabr for a thorough analysis,
 from which general properties can be inferred. These lists are as follows:
 
 \begin{itemize}
@@ -192,7 +192,7 @@ $\overline{M}$ is the number of messages missing in the 20,000 collection
 \label{tab:genLists}
 \begin{tabular}{|l|c|c|c|c|c|}\hline
 list & $date_1$ & $date_{M}$    & $N$  & $\Gamma$ & $\overline{M}$ \\\hline
-\input{tables/tab1Geral}
+\input{tables/tab1Overview}
 \end{tabular}
 \end{table}
 \subsection{Availability}
@@ -210,7 +210,7 @@ minutes, hours, days of the week, days of the month, and months of the year.
 Most standard measures of location and dispersion, e.g. the usual mean and
 standard deviation, hold little meaning in a compact Riemannian manifold,
 such as the recurrent time periods that we are interested in.
-Similar measures were taken using circular statistics,
+Similar measures were taken using circular statistics~\cite{directionalStats},
 in which each measurement $t$ is represented as a unit complex number,
 $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=t\frac{2\pi}{T}$,
 and $T$ is the period in which the counting is repeated.
@@ -248,7 +248,7 @@ Edges in both directions are allowed. Each time an interaction occurs, the value
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.44\textwidth]{figs/criaRede2_}
+\includegraphics[width=0.29\textwidth]{figs/criaRede3_}
 \caption{The formation of interaction networks from exchanged messages. Each vertex represents a participant. A reply message from author B to a message from author A is regarded as evidence that B received information from A and yields a directed edge. 	Multiple messages add ``weight'' to a directed edge. Further details are given in Section~\ref{intNet}.}
 \label{formationNetwork}
 \end{figure}
@@ -260,7 +260,7 @@ Edges in both directions are allowed. Each time an interaction occurs, the value
 
 The topology of the networks was characterized 
 from a small selection of the most basic 
-and fundamental measurements for each vertex, as follows:
+and fundamental measurements for each vertex~\cite{newmanBook}, as follows:
 
 \begin{itemize}
 \item Degree     $k_i$: number of edges linked to vertex $i$.
@@ -643,7 +643,7 @@ list & hub & $ Q_1 $ & $ Q_3 $ & $D_{-1}$ \\ \hline
 \end{table}
 
 
-\subsection{Stability of principal components and the prevalence of symmetry over clusterization}\label{prevalence}
+\subsection{Stability of principal components}\label{prevalence}
 %The topology was analyzed using standard, well-established metrics of centrality and clustering.
 %We also introduced symmetry metrics given the evidence of their importance in social contexts~\cite{newmanEvolving}.
 %The contribution of each metric to the variance is very similar for all the networks and along time.
@@ -821,7 +821,7 @@ present smaller networks.}
 The findings reported in this article arose from an exploratory procedure to visually inspect the networks and to analyze considerable amounts of interaction networks data.
 % deriving from email lists and also from other networks.
 While this procedure has certainly an ad hoc nature, the statistics in the data are sufficiently robust for important features from these interaction networks to be extracted.
-Temporal stability, in the sense that interaction networks could be considered as stationary time series, is the most important feature. Also relevant is the significant stability found on the principal components, on the fraction of participants in each Erd\"os Sector and on the activity along different timescales. In fact, these findings confirm our initial hypothesis - based on the literature~\cite{newmanBook} - that interaction networks should exhibit some stability traces. The potential generality of these findings are suggested by the analysis of networks derived from diverse systems, with interaction networks from public email lists serving as proper benchmarks. Indeed, with such benchmarks one can compare any social network system. Furthermore, this analysis enables us to establish an outline of human interaction networks. It takes the hub, intermediary and periphery sectors out of the scientific folklore and into classes drawn from quantitative criteria. It enables the conception of non-static human types derived from natural properties.
+Temporal stability, in the sense that interaction networks could be considered as stationary time series, is the most important feature. Also relevant is the significant stability found on the principal components, on the fraction of participants in each Erd\"os Sector and on the activity along different timescales. In fact, these findings confirm our initial hypothesis - based on the literature~\cite{newmanBook} - that interaction networks should exhibit some stability traces. The potential generality of these findings is suggested by the analysis of networks derived from diverse systems, with interaction networks from public email lists serving as proper benchmarks. Indeed, with such benchmarks one can compare any social network system. Furthermore, this analysis enables us to establish an outline of human interaction networks. It takes the hub, intermediary and periphery sectors out of the scientific folklore and into classes drawn from quantitative criteria. It enables the conception of non-static human types derived from natural properties.
 
  
 We envisage that the knowledge generated in the analysis may be exploited in applications where the type of each participant and the relative proportion of participants in each sector can be useful metadata. Just by way of illustration, this could be applied in semantic web initiatives, given that the Erd\"os sectorialization is static in a given snapshot. These results are also useful for classifying resources, e.g. in social media, and for resources recommendation to users~\cite{opa}. 
@@ -893,8 +893,7 @@ the linguistic differences found in each of the Erd\"os sectors~\cite{rcText}.
 Financial support was obtained from CNPq (140860/2013-4,
 project 870336/1997-5), United Nations Development Program (contract: 2013/000566; project BRA/12/018) and FAPESP. 
 The authors are grateful to the American Jewish Committee for maintaining an online copy of the Adorno book used on the epigraph~\cite{adorno}, to Gmane creators and maintainers for the public email list data, to the communities of the email lists and other groups used in the analysis, and to the Presidency of the Brazilian Republic for keeping Participabr code and data open.
-We are also grateful to developers and users of Python scientific tools
-and to Leonardo Paulo Maia (IFSC/USP) for valuable insights.
+We are also grateful to developers and users of Python scientific tools, to Leonardo Paulo Maia (IFSC/USP) and to Francisco J. P. Lopes (UFRJ) for valuable insights.
 \end{acknowledgments}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{*}
