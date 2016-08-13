@@ -163,7 +163,7 @@ but is not relevant for the present work because email messages and addresses ha
 \section{Data and scripts}\label{sec:data}\label{scripts}
 
 Email list messages were obtained from
-the Gmane email archive~\cite{gmanePack}, which consists of more than $20,000$
+the Gmane email archive, which consists of more than $20,000$
 email lists (discussion groups) and more than $130\times 10^6$ messages~\cite{Gmanewikipedia}. These lists cover a variety of topics, mostly technology-related. The archive can be described as a corpus along with message metadata, including sent time, place, sender name, and sender email address.
 The usage of the Gmane database in scientific research is reported in studies of isolated lists and of lexical innovations~\cite{Gmane2,bird}. 
 
@@ -501,7 +501,8 @@ $ws=\{50, 100, 200, 400, 500, 800, 1000, 2000, 2500, 5000, 10000\}$ messages. Va
 and other network characteristics, within the same window size $ws$,
 are given in Section~\ref*{si:frac} of the Supporting Information document. 
 
-Network structures were mapped to video animations, sound and musical structures, image galleries and online gadgets developed for this research~\cite{animacoes,galGmane,appGmane}. Such \emph{audiovisualizations} were crucial in the initial steps and
+Network structures were mapped to video animations, sound and musical structures developed for this research~\cite{animacoes}.% ,galGmane,appGmane}.
+Such \emph{audiovisualizations} were crucial in the initial steps and
 to guide the research into the most important features of network evolution.
 %Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion.
 %Visualization of network structure was especially useful in the initial inspection of data and of the structures derived from the email lists.
@@ -567,7 +568,7 @@ Higher activity was observed during workweek days, with a decrease of activity o
 \end{table}
 
 In the scales of seconds and minutes, activity is uniform,
-with the messages being slightly more evenly distributed in all lists than in simulations with the uniform distribution\footnote{Numpy version 1.8.2, ``random.randint'' function, was used for simulations, algorithms in \url{https://pypi.python.org/pypi/gmane}.}.
+with the messages being slightly more evenly distributed in all lists than in simulations with the uniform distribution\footnote{Numpy version 1.8.2, ``random.randint'' function, was used for simulations, algorithms in \url{https://github.com/ttm/percolation}.}.
 In the networks, $\frac{min(incidence)}{max(incidence)} \in (0.784,.794)$ while simulations reach these values but have on average more discrepant higher and lower peaks, i.e. if $\xi=\frac{min(incidence')}{max(incidence')}$ than $\mu_\xi=0.7741 \text{ and } \sigma_\xi=0.02619$.
 Therefore, the incidence of messages at each second of a minute and at each minute of an hour was considered uniform.
 In these cases, the circular dispersion is maximized and the mean has little meaning as indicated in Table~\ref{tab:circ}.
