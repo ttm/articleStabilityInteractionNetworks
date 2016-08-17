@@ -108,7 +108,7 @@ Centro de Ci\^encias Naturais e Humanas, Universidade Federal do ABC (CCNH/UFABC
 with benchmarks derived from public email lists. Activity along time and topology were observed in snapshots in a timeline, 
 and at different scales. Our analysis shows that activity is practically the same for all networks across timescales ranging from seconds to months.
 % The most important metrics to the dispersion of participants in the topological measures space are related to centrality (degree, strength and betweenness), followed by symmetry-related metrics and then clustering coefficient.
-The principal components of the participants in the topological measures space remain practically unchanged as different sets of messages are considered.
+The principal components of the participants in the topological metrics space remain practically unchanged as different sets of messages are considered.
 The activity of participants follows the expected scale-free trace, thus yielding the hub, intermediary and peripheral classes of vertices by comparison against the Erd\"os-R\'enyi model. The relative sizes of these three sectors are essentially the same for all email lists and the same along time. Typically, 3-12\% of the vertices are hubs, 15-45\% are intermediary and 44-81\% are peripheral vertices. Similar results for the distribution of participants in the three sectors and for the relative importance of the topological metrics were obtained for 12 additional networks from Facebook, Twitter and Participabr. These properties are consistent with the literature and may be general for human interaction networks, which has important implications for establishing a typology of participants based on quantitative criteria.
 \end{abstract}
 
@@ -160,7 +160,7 @@ The fact that unreciprocated edges often exceed 50\% in human interaction networ
 No correlation of topological characteristics and geographical coordinates was found~\cite{barabasiGeo},
 therefore geographical positions were not considered in our study.
 Gender related behavior in mobile phone datasets was indeed reported~\cite{barabasiSex}
-but is not relevant for the present work because email messages and addresses have no gender related metadata~\cite{gmanePack}.
+but it is not relevant for the present work because email messages and addresses have no gender related metadata~\cite{gmanePack}.
 
 
 \section{Data and scripts}\label{sec:data}\label{scripts}
@@ -354,7 +354,7 @@ Equation~\ref{criterio} can now be written in the form:
 \end{split}
 \end{equation}
 
-If the strength $s$ is used for comparison of the real network against the Erdös-Rényi model,
+If the strength $s$ is used for comparison of the real network against the Erd\"os-R\'enyi model,
 $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used, where $\overline{w}=2\frac{z}{\sum_is_i}$ is the average weight of an edge and $s_i$ is the strength of vertex $i$. For in and out degrees ($k^{in}$, $k^{out}$), the real network should be compared against
 \begin{equation}
 \hat{P}(k^{way})=\binom{N-1}{k^{way}}p_e^k(1-p_e)^{N-1-k^{way}},
@@ -383,10 +383,10 @@ e_{\gamma,3}&=\{\;i\;|\;&&\overline{k}_{\gamma,i}>\overline{k}_{\gamma,R}\} \non
 \end{split}
 \end{equation}
 
-\noindent and both $\overline{k}_{\gamma,L}$ and $\overline{k}_{\gamma,R}$ are found using $P(\overline{k})$ or $\hat{P}(\overline{k})$ as described above and exposed in Figure~\ref{fig:setores}.
+\noindent and both $\overline{k}_{\gamma,L}$ and $\overline{k}_{\gamma,R}$ are found using $P(\overline{k})$ or $\hat{P}(\overline{k})$ as described above and illustrated in Figure~\ref{fig:setores}.
 
 Since different metrics can be used to identify the three types of vertices, more than one metric can be used simultaneously, which is convenient when analysing small networks,
-such as the cases where only 50 messages are considered in the Section~\ref*{si:frac} of the Supporting Information.
+such as the cases where only 50 messages are considered in Section~\ref*{si:frac} of the Supporting Information.
 %For example, a very stringent criterion can be used, according to which a vertex is only regarded as pertaining to a sector if it is so for all the metrics.
 After a careful consideration of possible combinations, these were reduced to six:
 
@@ -443,7 +443,7 @@ the matrix with the \emph{z-score} of each metric.
 Let $\mathbf{V}=\{V[j,k]\}$ be the matrix $J\times J$ of eigenvectors
 of the covariance matrix $\mathbf{C}$
 of $\mathbf{X'}$, one eigenvector per column.
-Each eigenvector combines the original measures into one principal component, therefore
+Each eigenvector combines the original metrics into one principal component, therefore
 $V'[j,k]=100\frac{|V[j,k]|}{\sum_{j'} |V[j',k]|}$
 is the percentage of the principal component $k$
 that is proportional to the metric $j$.
@@ -454,7 +454,7 @@ Let $\mathbf{D}=\{D[k]\}$ be the eigenvalues associated with the eigenvectors $\
 then $D'[k]=100\frac{D[k]}{\sum_{k'}D[k']}$
 is the percentage of total dispersion of the system that the principal component $k$
 is responsible for.
-We consider, in general, the three greatest eigenvalues and
+We consider, in general, the three largest eigenvalues and
 the respective eigenvectors in percentages:
 $\{(D'[k],\;V'[j,k])\}$.
 These usually sum up between 60 and 95\% of the dispersion
@@ -490,7 +490,7 @@ Notice that in this case the variable $k$ is not the degree value
 but a principal component.
 In the results the principal components are numbered
 according to the magnitude of associated eigenvalue and $k$ is incorporated into
-the notation (e.g. PC2 for measures of $\mu_{V'}[j,2]$).
+the notation (e.g. PC2 for metrics of $\mu_{V'}[j,2]$).
 
 
 \subsection{Evolution and audiovisualization of the networks}\label{sec:viz}
@@ -528,7 +528,7 @@ to guide the research into the most important features of network evolution.
 \subsection{Activity along time}\label{constDisc}
 Regular patterns of activity were observed along time
 in the scales of seconds, minutes, hours, days and months.
-Histograms in each of the time scales were computed as were circular average and dispersion values, and the results are given in Tables~\ref{tab:circ}-\ref{tab:min2}. For example, uniform activity is found with respect to seconds, minutes and days of the months. Weekend days exhibit about half the activity of regular weekdays, and there is a peak of activity between 11am and 12pm.
+Histograms in each of the time scales were computed as were circular average and dispersion values, and the results are given in Tables~\ref{tab:circ}-\ref{tab:min2}. For example, uniform activity is found with respect to seconds, minutes and days of the months. Weekend days exhibit about half the activity of regular weekdays, and there is a peak of activity between 11am and noon.
 
 
 \begin{table}
@@ -682,9 +682,9 @@ and the participants.
 \centering
 %\includegraphics[width=.6\textwidth,height=10cm]{figs/im13PCAPLOT__}
 \includegraphics[width=.45\textwidth]{figs/im13PCAPLOT__}
-\caption{The first plot exposes the well-known pattern of degree versus clustering coefficient, characterized by the higher clustering coefficient of lower degree vertices.
+\caption{The first plot highlights the well-known pattern of degree versus clustering coefficient, characterized by the higher clustering coefficient of lower degree vertices.
     The second plot shows the greater dispersion of the symmetry-related ordinates dominant in the second principal component (PC2).
-This greater dispersion suggests that symmetry-related metrics are more powerful,
+This larger dispersion suggests that symmetry-related metrics are more powerful,
 for characterizing interaction networks than the clustering coefficient,
 especially for hubs and intermediary vertices.
 This figure reflects a snapshot of the LAU list with 1000 contiguous messages.}
@@ -703,7 +703,7 @@ dispersion is larger in symmetry-related metrics than in clustering coefficient.
 % %where all metrics are considered and there is a greater dispersion
 % %with respect to the ordinates,
 % This reflects in the relevance of the symmetry-related metrics.
-We conclude that the symmetry metrics are more powerful, in terms of dispersion in the topological measures space, in characterizing interaction networks and their participants, than the clustering coefficient, especially for hubs and intermediary vertices (peripheral vertices have larger dispersion with regard to the clustering coefficient).
+We conclude that the symmetry metrics are more powerful, in terms of dispersion in the topological metrics space, in characterizing interaction networks and their participants, than the clustering coefficient, especially for hubs and intermediary vertices (peripheral vertices have larger dispersion with regard to the clustering coefficient).
 Interestingly, the clustering coefficient is always combined
 with the standard deviation of the asymmetry and disequilibrium
 of edges $\sigma^{asy}$ and $\sigma^{dis}$ in the third principal component.
@@ -844,9 +844,8 @@ The very small standard deviations of principal components formation
 the presence of the Erd\"os sectors even in networks with
 few participants (see Sections~\ref{sectioning} and~\ref{subsec:pih}),
 and the recurrent activity patterns along different timescales (see Sections~\ref{sec:mtime} and~\ref{constDisc}),
-goes a step further in characterizing scale-free networks in the context
+go a step further in characterizing scale-free networks in the context
 of the interaction of human individuals.
-
 Furthermore, the importance of symmetry-related metrics,
 which surpassed that of clustering coefficient,
 with respect to dispersion of the system in the topological measures space,
