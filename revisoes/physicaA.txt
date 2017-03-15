@@ -1,0 +1,114 @@
+In this manuscript the authors consider human interaction networks using
+e-mail lists, Facebook, Twitter and Participabr databasis.  Authors
+(agents) are considered vertices and a directed and weighted link is set
+up from vertex A to B only if B answers a message from A.  Each message
+is identified by its subject and the link weight is increased by one
+each time there is one more answer to that subject.
+
+Contrary to most studies in the field, directed and weighted networks
+are addressed and circular statistics in different time scales, ranging
+from seconds to months is used.  The richness of the built networks
+forces one to deal with many (statistical) estimators.  The global
+network activity is obtained from local agent activity.  The activity is
+the relevant quantity in the study but not clearly defined.*****  I imagine
+it is the number of messages exchanged during the time interval
+considered.
+
+It turns out that the dispersion around the averaged activity (not the
+		average itself) is the quantity to be analyzed.  Concerning the
+activity, the networks present a robust uniform stability along time.
+This result is important since it was obtained using very good
+statistics (each cell of the histograms has an assured large amount of
+		realizations) and different databases.  Concerning the links, the
+networks belong to the scale-free class and the authors proposed to
+compare these power-law distributions with the Erdos-Renyi one.
+
+This procedure (which seems to be the first time applied to empirical
+		data) allows one to classify vertices as hub, intermediate or peripheral
+ones.  The important role played by the intermediate vertices are
+stressed in the manuscript.  This manuscript present the invariance of
+the activity along timescales for the human interaction networks
+unequivocally (using very good statistics, methods and different
+		databases).  It also stresses the consistency of comparing scale-free
+networks to Erdos-Renyi ones to classify vertices.  For these reasons, I
+recommend its publication in Physica A.
+
+I would like to raise some minor points that maybe should help in the
+presentation of the results.
+
+(1) To emphasize from the very beginning (abstract) the definition of
+"activity".
+-- Triggered change in sentence:
+" Activity, recognized through messages sent,
+along time and topology were observed in snapshots in a timeline..."
+
+(2) Abstract: there are gaps and overlaps in the quantity of hubs,
+intermediate and peripheral vertices (3-12%, 15-45% and 44-81%),
+although stable these number are rough estimation it would be better
+presented as (< 15%, 15-45%, 45%).
+-- Triggered change in sentence:
+Typically, <15\% of the vertices are hubs, 15-45\% are intermediary and >45\% are peripheral vertices. 
+
+(3) No need to have subsections with only one paragraph.  In the
+introduction, for instance, the last paragraph could be switched
+with the previous one.  In Sec. II, the subsection could be part of
+text or even a footnote.
+-- Triggered changes:
+- Switched the paragraphs at the end of the introduction (related work).
+- Subsection heading of Sec. II was removed and the text incorporated
+to Sec. II.
+
+(4) To mention since the beginning one is dealing with directed and
+weighted networks and tell the reader how they are built.
+-- Triggered the add of the sentence:
+"Directed and weighted representations were built through the observation of replies as links."
+at the beginning of the second paragraph in the introduction.
+
+---------------------------------------------
+Ms. Ref. No.:  PHYSA-161418
+Title: Temporal stability in human interaction networks
+Physica A
+
+Dear Dr. Fabbri,
+
+Reviewers have now commented on your manuscript and recommend a revision.  For your guidance, reviewers' comments are appended below.
+
+If you decide to revise the work, please submit a carefully revised manuscript, and a list of your responses, point by point to comments made by each of the referees, as well as a list of all the changes made to the manuscript.
+
+To submit a revision, please go to https://ees.elsevier.com/physa/ and login as an Author.
+
+Your username is: fabbri@usp.br
+If you need to retrieve password details, please go to:
+http://ees.elsevier.com/physa/automail_query.asp
+
+NOTE: Upon submitting your revised manuscript, please upload the source files for your article. For additional details regarding acceptable file formats, please refer to the Guide for Authors at: http://www.elsevier.com/journals/physica-a-statistical-mechanics-and-its-applications/0378-4371/guide-for-authors
+
+When submitting your revised paper, we ask that you include the following items:
+
+Manuscript and Figure Source Files (mandatory)
+
+We cannot accommodate PDF manuscript files for production purposes. We also ask that when submitting your revision you follow the journal formatting guidelines.  Figures and tables may be embedded within the source file for the submission as long as they are of sufficient resolution for Production.For any figure that cannot be embedded within the source file (such as *.PSD Photoshop files), the original figure needs to be uploaded separately. Refer to the Guide for Authors for additional information.
+http://www.elsevier.com/journals/physica-a-statistical-mechanics-and-its-applications/0378-4371/guide-for-authors
+
+Highlights (mandatory)
+
+Highlights consist of a short collection of bullet points that convey the core findings of the article and should be submitted in a separate file in the online submission system. Please use 'Highlights' in the file name and include 3 to 5 bullet points (maximum 85 characters, including spaces, per bullet point). See the following website for more information
+http://www.elsevier.com/highlights
+
+On your Main Menu page is a folder entitled "Submissions Needing Revision". You will find your submission record there.
+
+Please note that this journal offers a new, free service called AudioSlides: brief, webcast-style presentations that are shown next to published articles on ScienceDirect (see also http://www.elsevier.com/audioslides). If your paper is accepted for publication, you will automatically receive an invitation to create an AudioSlides presentation.
+
+Physica A features the Interactive Plot Viewer, see: http://www.elsevier.com/interactiveplots. Interactive Plots provide easy access to the data behind plots. To include one with your article, please prepare a .csv file with your plot data and test it online at http://authortools.elsevier.com/interactiveplots/verification before submission as supplementary material.
+
+Please note that we allow 60 days for author revisions.
+
+Physica A features the Interactive Map Viewer, http://www.elsevier.com/googlemaps, allowing you to visualize geospatial data with your article in a GoogleMap. Our author tool, http://elsevier-apps.sciverse.com/GoogleMaps/verification , enables creation of simple Interactive Map files by typing coordinates and a description, and choosing place markers. For more advanced maps, a GIS system or Google Earth can be used. For those, the author tool can be used for inspecting how the file will display online. In both cases, the created .kml/.kmz file should be uploaded along with the manuscript in the supplementary files section.
+
+Yours sincerely,
+
+Eugene Stanley, Ph.D.
+Main Editor
+Physica A
+
+Note: While submitting the revised manuscript, please double check the author names provided in the submission so that authorship related changes are made in the revision stage. If your manuscript is accepted, any authorship change will involve approval from co-authors and respective editor handling the submission and this may cause a significant delay in publishing your manuscript.
