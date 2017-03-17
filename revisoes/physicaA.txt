@@ -85,7 +85,7 @@ NOTE: Upon submitting your revised manuscript, please upload the source files fo
 
 When submitting your revised paper, we ask that you include the following items:
 
-Manuscript and Figure Source Files (mandatory)
+Manuscript and Figure Source Files (mandatory) *********** TTM
 
 We cannot accommodate PDF manuscript files for production purposes. We also ask that when submitting your revision you follow the journal formatting guidelines.  Figures and tables may be embedded within the source file for the submission as long as they are of sufficient resolution for Production.For any figure that cannot be embedded within the source file (such as *.PSD Photoshop files), the original figure needs to be uploaded separately. Refer to the Guide for Authors for additional information.
 http://www.elsevier.com/journals/physica-a-statistical-mechanics-and-its-applications/0378-4371/guide-for-authors
@@ -112,3 +112,12 @@ Main Editor
 Physica A
 
 Note: While submitting the revised manuscript, please double check the author names provided in the submission so that authorship related changes are made in the revision stage. If your manuscript is accepted, any authorship change will involve approval from co-authors and respective editor handling the submission and this may cause a significant delay in publishing your manuscript.
+
+___________
+
+Questões:
+*) mandamos o artigo com os grifos com um nome diferente? Qual?
+*) qual a formatação que eles aceitam para publicação? Transferimos o artigo?
+*) mandar o docx com as respostas para revisão do Chu.
+*) SI é Supplemental material? Se sim, seguir as orientações em:
+https://www.elsevier.com/journals/physica-a-statistical-mechanics-and-its-applications/0378-4371/guide-for-authors
