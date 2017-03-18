@@ -121,3 +121,12 @@ Questões:
 *) mandar o docx com as respostas para revisão do Chu.
 *) SI é Supplemental material? Se sim, seguir as orientações em:
 https://www.elsevier.com/journals/physica-a-statistical-mechanics-and-its-applications/0378-4371/guide-for-authors
+
+----------
+Checklist:
+*) Highlights.rtf
+*) Manuscript
+*) Manuscript with enhancements marked
+*) Supporting Information
+*) Zip file with sources
+*) Footnote on title
